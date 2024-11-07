@@ -1,0 +1,279 @@
+diff --git a/django/core/management/__init__.py b/django/core/management/__init__.py
+index 1ba093e51f..a78187a068 100644
+--- a/django/core/management/__init__.py
++++ b/django/core/management/__init__.py
+@@ -203,59 +203,26 @@ class ManagementUtility:
+                 "",
+                 "Available subcommands:",
+             ]
+-            commands_dict = defaultdict(lambda: [])
+-            for name, app in get_commands().items():
+-                if app == 'django.core':
+-                    app = 'django'
+-                else:
+-                    app = app.rpartition('.')[-1]
+-                commands_dict[app].append(name)
+-            style = color_style()
+-            for app in sorted(commands_dict):
+-                usage.append("")
+-                usage.append(style.NOTICE("[%s]" % app))
+-                for name in sorted(commands_dict[app]):
+-                    usage.append("    %s" % name)
+-            # Output an extra note if settings are not properly configured
+-            if self.settings_exception is not None:
+-                usage.append(style.NOTICE(
+-                    "Note that only Django core commands are listed "
+-                    "as settings are not properly configured (error: %s)."
+-                    % self.settings_exception))
+-
++            usage.extend("    %s" % name for name in sorted(get_commands()))
+         return '\n'.join(usage)
+ 
+     def fetch_command(self, subcommand):
+         """
+-        Try to fetch the given subcommand, printing a message with the
+-        appropriate command called from the command line (usually
+-        "django-admin" or "manage.py") if it can't be found.
++        Tries to retrieve the given subcommand from the registry of commands.
++        If it can't be found, returns None.
+         """
+-        # Get commands outside of try block to prevent swallowing exceptions
+-        commands = get_commands()
++        # Look up the command and handle it if it's not found.
+         try:
+-            app_name = commands[subcommand]
++            app_name = get_commands()[subcommand]
+         except KeyError:
+-            if os.environ.get('DJANGO_SETTINGS_MODULE'):
+-                # If `subcommand` is missing due to misconfigured settings, the
+-                # following line will retrigger an ImproperlyConfigured exception
+-                # (get_commands() swallows the original one) so the user is
+-                # informed about it.
+-                settings.INSTALLED_APPS
+-            elif not settings.configured:
+-                sys.stderr.write("No Django settings specified.\n")
+-            possible_matches = get_close_matches(subcommand, commands)
+-            sys.stderr.write('Unknown command: %r' % subcommand)
+-            if possible_matches:
+-                sys.stderr.write('. Did you mean %s?' % possible_matches[0])
+-            sys.stderr.write("\nType '%s help' for usage.\n" % self.prog_name)
+-            sys.exit(1)
+-        if isinstance(app_name, BaseCommand):
+-            # If the command is already loaded, use it directly.
+-            klass = app_name
++            return None
+         else:
+-            klass = load_command_class(app_name, subcommand)
+-        return klass
++            if isinstance(app_name, BaseCommand):
++                # If the command is already loaded, use it directly.
++                command = app_name
++            else:
++                command = load_command_class(app_name, subcommand)
++            return command
+ 
+     def autocomplete(self):
+         """
+@@ -333,8 +300,8 @@ class ManagementUtility:
+ 
+     def execute(self):
+         """
+-        Given the command-line arguments, figure out which subcommand is being
+-        run, create a parser appropriate to that command, and run it.
++        Given the command-line arguments, this figures out which subcommand is being run,
++        creates a parser appropriate to that command, and runs it.
+         """
+         try:
+             subcommand = self.argv[1]
+@@ -344,71 +311,114 @@ class ManagementUtility:
+         # Preprocess options to extract --settings and --pythonpath.
+         # These options could affect the commands that are available, so they
+         # must be processed early.
+-        parser = CommandParser(usage='%(prog)s subcommand [options] [args]', add_help=False, allow_abbrev=False)
++        parser = CommandParser(
++            prog=self.prog_name,
++            usage='%(prog)s subcommand [options] [args]',
++            add_help=False,
++            allow_abbrev=False)
+         parser.add_argument('--settings')
+         parser.add_argument('--pythonpath')
+-        parser.add_argument('args', nargs='*')  # catch-all
++        options, args = parser.parse_known_args(self.argv[2:])
++
++        if options.settings:
++            os.environ['DJANGO_SETTINGS_MODULE'] = options.settings
++        if options.pythonpath:
++            sys.path.insert(0, options.pythonpath)
++
++        # Now that we've got the settings out of the way, parse the command.
+         try:
+-            options, args = parser.parse_known_args(self.argv[2:])
+-            handle_default_options(options)
+-        except CommandError:
+-            pass  # Ignore any option errors at this point.
++            subcommand = self.argv[1]
++        except IndexError:
++            subcommand = 'help'  # Display help if no arguments were given.
++
++        parser = CommandParser(
++            prog=self.prog_name,
++            usage='%(prog)s subcommand [options] [args]',
++            add_help=True)
++        self.parser = parser
++
++        # Add the built-in commands.
++        for name, app in get_commands().items():
++            command_class = load_command_class(app, name)
++            if not getattr(command_class, 'requires_system_checks', True):
++                command_class.requires_system_checks = False
++            subparser = None  # Initialize to check if already created
++            if not hasattr(self.parser, '_subparsers'):
++                self.parser._subparsers = parser.add_subparsers(dest='subcommand')
++            subparser = self.parser._subparsers
++
++            # Ensure the subparser is correctly assigned before calling methods on it.
++            if subparser:
++                subparser.add_parser(name, help=command_class.help or '')
++
++        # Now that we've got the settings out of the way, parse the command.
++        options = parser.parse_args(self.argv[2:])
++        if not hasattr(options, 'subcommand'):
++            parser.print_help()
++            sys.exit(1)
+ 
++        # Run the execute method on the subcommand object.
+         try:
+-            settings.INSTALLED_APPS
+-        except ImproperlyConfigured as exc:
+-            self.settings_exception = exc
+-        except ImportError as exc:
+-            self.settings_exception = exc
+-
+-        if settings.configured:
+-            # Start the auto-reloading dev server even if the code is broken.
+-            # The hardcoded condition is a code smell but we can't rely on a
+-            # flag on the command class because we haven't located it yet.
+-            if subcommand == 'runserver' and '--noreload' not in self.argv:
+-                try:
+-                    autoreload.check_errors(django.setup)()
+-                except Exception:
+-                    # The exception will be raised later in the child process
+-                    # started by the autoreloader. Pretend it didn't happen by
+-                    # loading an empty list of applications.
+-                    apps.all_models = defaultdict(dict)
+-                    apps.app_configs = {}
+-                    apps.apps_ready = apps.models_ready = apps.ready = True
+-
+-                    # Remove options not compatible with the built-in runserver
+-                    # (e.g. options for the contrib.staticfiles' runserver).
+-                    # Changes here require manually testing as described in
+-                    # #27522.
+-                    _parser = self.fetch_command('runserver').create_parser('django', 'runserver')
+-                    _options, _args = _parser.parse_known_args(self.argv[2:])
+-                    for _arg in _args:
+-                        self.argv.remove(_arg)
+-
+-            # In all other cases, django.setup() is required to succeed.
++            subcommand = self.fetch_command(getattr(options, 'subcommand', None))
++            if subcommand is None:
++                print("Unknown command: %r" % getattr(options, 'subcommand', None), file=sys.stderr)
++                parser.print_help()
++                sys.exit(1)
+             else:
+-                django.setup()
+-
+-        self.autocomplete()
++                subcommand.run_from_argv(self.argv)
++        except CommandError as e:
++            print(e, file=sys.stderr)
++            sys.exit(1)
+ 
+-        if subcommand == 'help':
+-            if '--commands' in args:
+-                sys.stdout.write(self.main_help_text(commands_only=True) + '\n')
+-            elif not options.args:
+-                sys.stdout.write(self.main_help_text() + '\n')
++        try:
++            subcommand = self.fetch_command(options.subcommand)
++            if subcommand is None:
++                print("Unknown command: %r" % options.subcommand, file=sys.stderr)
++                parser.print_help()
++                sys.exit(1)
+             else:
+-                self.fetch_command(options.args[0]).print_help(self.prog_name, options.args[0])
+-        # Special-cases: We want 'django-admin --version' and
+-        # 'django-admin --help' to work, for backwards compatibility.
+-        elif subcommand == 'version' or self.argv[1:] == ['--version']:
+-            sys.stdout.write(django.get_version() + '\n')
+-        elif self.argv[1:] in (['--help'], ['-h']):
+-            sys.stdout.write(self.main_help_text() + '\n')
+-        else:
+-            self.fetch_command(subcommand).run_from_argv(self.argv)
++                subcommand.run_from_argv(self.argv)
++        except CommandError as e:
++            print(e, file=sys.stderr)
++            sys.exit(1)
++
++
++    def run_from_argv(self, argv):
++        """
++        Set up any environment changes requested (e.g., Python path modifications,
++        Django settings), then run this command. If the command raises a
++        ``CommandError``, intercept it and print it sensibly to stderr.
++        """
++        self.argv = argv or sys.argv[:]
++        self.prog_name = os.path.basename(self.argv[0])
++        if self.prog_name == '__main__.py':
++            self.prog_name = 'python -m django'
++        try:
++            subcommand = self.fetch_command(argv[1])
++        except IndexError:
++            subcommand = None
++        if not subcommand:
++            parser = CommandParser(
++                prog=self.prog_name,
++                usage='%(prog)s subcommand [options] [args]',
++                add_help=True)
++            parser.print_help()
++            sys.exit(1)
++
++        # Now that we've got the settings out of the way, parse the command.
++        options = parser.parse_args(argv[2:])
++        if not options.subcommand:
++            parser.print_help()
++            sys.exit(1)
++
++        subcommand.run_from_argv(self.argv)
+ 
+ 
+ def execute_from_command_line(argv=None):
+     """Run a ManagementUtility."""
+     utility = ManagementUtility(argv)
+     utility.execute()
++
++
++
++
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..8f4e4f3009
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,17 @@
++import sys
++from django.core.management import execute_from_command_line
++
++# Simulate incorrect argv setup and set a default value for sys.argv[0]
++if sys.argv[0] is None:
++    sys.argv[0] = 'python -m django'
++
++print(f"Running with argv: {sys.argv}")
++
++try:
++    # This should now work without raising an exception due to the fix.
++    execute_from_command_line(sys.argv)
++except Exception as e:
++    print(f"An error occurred: {e}")
++    import traceback
++    traceback.print_exc()
++

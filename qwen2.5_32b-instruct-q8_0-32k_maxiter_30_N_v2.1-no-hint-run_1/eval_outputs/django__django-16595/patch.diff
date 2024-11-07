@@ -1,0 +1,85 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..f6eea5de41
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,79 @@
++from django.db import migrations, models
++from django.apps.registry import Apps
++from django.db.migrations.autodetector import MigrationAutodetector
++from django.db.migrations.optimizer import MigrationOptimizer
++
++operations = [
++    migrations.AddField(
++        model_name="book",
++        name="title",
++        field=models.CharField(max_length=256, null=True),
++    ),
++    migrations.AlterField(
++        model_name="book",
++        name="title",
++        field=models.CharField(max_length=128, null=True),
++    ),
++    migrations.AlterField(
++        model_name="book",
++        name="title",
++        field=models.CharField(max_length=128, null=True, help_text="help"),
++    ),
++    migrations.AlterField(
++        model_name="book",
++        name="title",
++        field=models.CharField(max_length=128, null=True, help_text="help", default=None),
++    ),
++]
++
++class Migration(migrations.Migration):
++    operations = operations
++
++if __name__ == "__main__":
++    # Create a dummy state for the autodetector and optimizer.
++    apps = Apps()
++
++    # Define old_state with an initial model definition
++    from django.db.migrations.state import ProjectState, ModelState
++    old_models = {
++        'books': [
++            ('Book', ModelState(
++                "books",
++                name="Book",
++                fields=[
++                    ("id", models.AutoField(primary_key=True)),
++                ],
++            )),
++        ],
++    }
++    old_state = ProjectState(models=old_models)
++
++    # Define new_state with the final model definition after all operations
++    new_models = {
++        'books': [
++            ('Book', ModelState(
++                "books",
++                name="Book",
++                fields=[
++                    ("id", models.AutoField(primary_key=True)),
++                    ("title", models.CharField(max_length=128, null=True, help_text="help")),
++                ],
++            )),
++        ],
++    }
++    new_state = ProjectState(models=new_models)
++
++    # Detect changes (this step is usually done by Django's migration framework).
++    autodetector = MigrationAutodetector(old_state, new_state)
++    changes = autodetector.changes(graph=None, apps=apps)
++
++    # Optimize the detected operations.
++    optimizer = MigrationOptimizer()
++    optimized_operations = optimizer.optimize(changes.migrations.values(), "books")
++
++    print("Optimized Operations:", optimized_operations)
++
++
++class Migration(migrations.Migration):
++    operations = operations
++

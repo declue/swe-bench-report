@@ -1,0 +1,92 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 000000000..3e93dc670
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,22 @@
++import numpy as np
++from sklearn.datasets import load_iris
++from sklearn.linear_model import LogisticRegression
++from sklearn.ensemble import RandomForestClassifier, VotingClassifier
++
++X, y = load_iris(return_X_y=True)
++voter = VotingClassifier(
++    estimators=[('lr', LogisticRegression()), ('rf', RandomForestClassifier())]
++)
++
++# Fit the model with sample weights
++voter.fit(X, y, sample_weight=np.ones(y.shape))
++
++# Set one of the estimators to None and try fitting again
++voter.set_params(lr=None)
++try:
++    voter.fit(X, y, sample_weight=np.ones(y.shape))
++except Exception as e:
++    print(f"Error: {e}")
++else:
++    print("No error occurred.")
++
+diff --git a/sklearn/ensemble/voting.py b/sklearn/ensemble/voting.py
+index 7afa7180c..c1d23bafc 100644
+--- a/sklearn/ensemble/voting.py
++++ b/sklearn/ensemble/voting.py
+@@ -29,13 +29,14 @@ from ..utils import Bunch
+ 
+ def _parallel_fit_estimator(estimator, X, y, sample_weight=None):
+     """Private function used to fit an estimator within a job."""
++    if estimator is None:
++        return None
+     if sample_weight is not None:
+         estimator.fit(X, y, sample_weight=sample_weight)
+     else:
+         estimator.fit(X, y)
+     return estimator
+ 
+-
+ class _BaseVoting(_BaseComposition, TransformerMixin):
+     """Base class for voting.
+ 
+@@ -85,21 +86,34 @@ class _BaseVoting(_BaseComposition, TransformerMixin):
+         names, clfs = zip(*self.estimators)
+         self._validate_names(names)
+ 
++        n_isnone = np.sum([clf is None for _, clf in self.estimators])
++        if n_isnone == len(self.estimators):
++            raise ValueError('All estimators are None. At least one is '
++                             'required!')
+         n_isnone = np.sum([clf is None for _, clf in self.estimators])
+         if n_isnone == len(self.estimators):
+             raise ValueError('All estimators are None. At least one is '
+                              'required!')
+ 
++        # Skip any estimator that is set to `None`
+         self.estimators_ = Parallel(n_jobs=self.n_jobs)(
+                 delayed(_parallel_fit_estimator)(clone(clf), X, y,
+                                                  sample_weight=sample_weight)
+                 for clf in clfs if clf is not None)
+ 
++        self.named_estimators_ = Bunch()
++        for k, e in zip(self.estimators, self.estimators_):
++            # Ensure we only add non-None estimators to named_estimators_
++            if e is not None:
++                self.named_estimators_[k[0]] = e
++        return self
++
+         self.named_estimators_ = Bunch()
+         for k, e in zip(self.estimators, self.estimators_):
+             self.named_estimators_[k[0]] = e
+         return self
+ 
++
+     def set_params(self, **params):
+         """ Setting the parameters for the ensemble estimator
+ 
+@@ -486,3 +500,8 @@ class VotingRegressor(_BaseVoting, RegressorMixin):
+         """
+         check_is_fitted(self, 'estimators_')
+         return self._predict(X)
++
++
++
++
++

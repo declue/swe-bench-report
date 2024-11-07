@@ -1,0 +1,92 @@
+diff --git a/django/contrib/auth/forms.py b/django/contrib/auth/forms.py
+index b3cfc6723c..5f0282592e 100644
+--- a/django/contrib/auth/forms.py
++++ b/django/contrib/auth/forms.py
+@@ -163,13 +163,19 @@ class UserChangeForm(forms.ModelForm):
+         super().__init__(*args, **kwargs)
+         password = self.fields.get("password")
+         if password:
+-            password.help_text = password.help_text.format("../password/")
++            # Update the help text to use the correct relative path
++            password.help_text = password.help_text.format(f"../../{self.instance.pk}/password/")
+         user_permissions = self.fields.get("user_permissions")
+         if user_permissions:
+             user_permissions.queryset = user_permissions.queryset.select_related(
+                 "content_type"
+             )
+ 
++        if user_permissions:
++            user_permissions.queryset = user_permissions.queryset.select_related(
++                "content_type"
++            )
++
+ 
+ class AuthenticationForm(forms.Form):
+     """
+@@ -483,3 +489,4 @@ class AdminPasswordChangeForm(forms.Form):
+             if name not in data:
+                 return []
+         return ["password"]
++
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..e445c3caf9
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,56 @@
++from django.contrib.auth.models import User
++from django.test import TestCase
++
++class ReproduceError(TestCase):
++    def test_password_reset_link(self):
++        user = User.objects.create_user(username='testuser', password='password')
++        response = self.client.get(f'/admin/auth/user/{user.pk}/change/?_to_field=uuid')
++        self.assertContains(response, 'href="../../{}/password/'.format(user.pk))
++
++
++from django.contrib.auth.models import User
++from django.test import TestCase, override_settings
++
++class ReproduceError(TestCase):
++    def test_password_reset_link(self):
++        user = User.objects.create_user(username='testuser', password='password')
++        response = self.client.get(f'/admin/auth/user/{user.pk}/change/?_to_field=uuid')
++        self.assertContains(response, 'href="../../{}/password/'.format(user.pk))
++
++if __name__ == '__main__':
++    from django.core.management import execute_from_command_line
++    import sys
++
++    # Override settings to ensure the test database is used.
++    @override_settings(DEBUG=True)
++    def run_tests():
++        argv = [sys.argv[0], 'test', '--settings=django.test.utils.settings']
++        execute_from_command_line(argv)
++
++    run_tests()
++
++
++
++
++from django.contrib.auth.models import User
++from django.test import TestCase, override_settings
++
++class ReproduceError(TestCase):
++    def test_password_reset_link(self):
++        user = User.objects.create_user(username='testuser', password='password')
++        response = self.client.get(f'/admin/auth/user/{user.pk}/change/?_to_field=uuid')
++        self.assertContains(response, 'href="../../{}/password/'.format(user.pk))
++
++if __name__ == '__main__':
++    from django.core.management import execute_from_command_line
++    import sys
++
++    # Override settings to ensure the test database is used.
++    @override_settings(DEBUG=True)
++    def run_tests():
++        argv = [sys.argv[0], 'test', '--settings=django.test.utils.settings']
++        execute_from_command_line(argv)
++
++    run_tests()
++
++

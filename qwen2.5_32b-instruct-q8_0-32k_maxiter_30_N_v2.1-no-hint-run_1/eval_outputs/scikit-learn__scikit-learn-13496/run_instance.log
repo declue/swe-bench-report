@@ -1,0 +1,520 @@
+2024-11-07 15:34:27,725 - INFO - Environment image sweb.env.x86_64.aa92880033da20ca313928:latest found for scikit-learn__scikit-learn-13496
+Building instance image sweb.eval.x86_64.scikit-learn__scikit-learn-13496:latest for scikit-learn__scikit-learn-13496
+2024-11-07 15:34:27,726 - INFO - Image sweb.eval.x86_64.scikit-learn__scikit-learn-13496:latest already exists, skipping build.
+2024-11-07 15:34:27,726 - INFO - Creating container for scikit-learn__scikit-learn-13496...
+2024-11-07 15:34:27,745 - INFO - Container for scikit-learn__scikit-learn-13496 created: f375ee89a7f4425326630cf627379dd6a210d7b388ab1614467e0fbd8f4b7d8d
+2024-11-07 15:34:27,907 - INFO - Container for scikit-learn__scikit-learn-13496 started: f375ee89a7f4425326630cf627379dd6a210d7b388ab1614467e0fbd8f4b7d8d
+2024-11-07 15:34:27,907 - INFO - Intermediate patch for scikit-learn__scikit-learn-13496 written to logs/run_evaluation/20241107_153352/qwen2.5_32b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/scikit-learn__scikit-learn-13496/patch.diff, now applying to container...
+2024-11-07 15:34:28,055 - INFO - Failed to apply patch to container, trying again...
+2024-11-07 15:34:28,095 - INFO - >>>>> Applied Patch:
+patching file sklearn/ensemble/iforest.py
+
+2024-11-07 15:34:28,289 - INFO - Git diff before:
+diff --git a/sklearn/ensemble/iforest.py b/sklearn/ensemble/iforest.py
+index 8a1bd3625..50b0fcde1 100644
+--- a/sklearn/ensemble/iforest.py
++++ b/sklearn/ensemble/iforest.py
+@@ -101,6 +101,12 @@ class IsolationForest(BaseBagging, OutlierMixin):
+         its natural threshold to detect outliers.
+ 
+         .. versionadded:: 0.20
++
++    warm_start : bool, optional (default=False)
++        When set to ``True``, reuse the solution of the previous call to fit
++        and add more estimators to the ensemble, otherwise, just fit a whole
++        new forest. See :term:`the Glossary <warm_start>`.
++
+            ``behaviour`` is added in 0.20 for back-compatibility purpose.
+ 
+         .. deprecated:: 0.20
+@@ -202,107 +208,153 @@ class IsolationForest(BaseBagging, OutlierMixin):
+         # copies.
+         return _joblib_parallel_args(prefer='threads')
+ 
+-    def fit(self, X, y=None, sample_weight=None):
++    def fit(self, X, y=None):
+         """Fit estimator.
+ 
+         Parameters
+         ----------
+         X : array-like or sparse matrix, shape (n_samples, n_features)
+             The input samples. Use ``dtype=np.float32`` for maximum
+-            efficiency. Sparse matrices are also supported, use sparse
+-            ``csc_matrix`` for maximum efficiency.
+-
+-        sample_weight : array-like, shape = [n_samples] or None
+-            Sample weights. If None, then samples are equally weighted.
+-
++            efficiency.
+         y : Ignored
+-            not used, present for API consistency by convention.
++            Not used, present for API consistency by convention.
+ 
+         Returns
+         -------
+         self : object
+-        """
+-        if self.contamination == "legacy":
+-            warn('default contamination parameter 0.1 will change '
+-                 'in version 0.22 to "auto". This will change the '
+-                 'predict method behavior.',
+-                 FutureWarning)
+-            self._contamination = 0.1
+-        else:
+-            self._contamination = self.contamination
+ 
+-        if self.behaviour == 'old':
+-            warn('behaviour="old" is deprecated and will be removed '
+-                 'in version 0.22. Please use behaviour="new", which '
+-                 'makes the decision_function change to match '
+-                 'other anomaly detection algorithm API.',
+-                 FutureWarning)
+-
+-        X = check_array(X, accept_sparse=['csc'])
+-        if issparse(X):
+-            # Pre-sort indices to avoid that each individual tree of the
+-            # ensemble sorts the indices.
+-            X.sort_indices()
+-
+-        rnd = check_random_state(self.random_state)
+-        y = rnd.uniform(size=X.shape[0])
+-
+-        # ensure that max_sample is in [1, n_samples]:
+-        n_samples = X.shape[0]
++        """
++        # Check parameters
++        if not isinstance(self.n_estimators, int):
++            raise ValueError("n_estimators must be an integer, "
++                             "got {0}.".format(type(self.n_estimators)))
++        elif self.n_estimators <= 0:
++            raise ValueError("n_estimators must be greater than zero, "
++                             "got {0}.".format(self.n_estimators))
+ 
+         if isinstance(self.max_samples, str):
+-            if self.max_samples == 'auto':
+-                max_samples = min(256, n_samples)
++            if self.max_samples == "auto":
++                max_samples = min(256, X.shape[0])
+             else:
+-                raise ValueError('max_samples (%s) is not supported.'
+-                                 'Valid choices are: "auto", int or'
+-                                 'float' % self.max_samples)
+-
+-        elif isinstance(self.max_samples, INTEGER_TYPES):
+-            if self.max_samples > n_samples:
++                raise ValueError("max_samples (%s) is not supported."
++                                 "Valid choices are 'auto', int "
++                                 "or float." % self.max_samples)
++        elif isinstance(self.max_samples, (int, np.integer)):
++            if self.max_samples > X.shape[0]:
+                 warn("max_samples (%s) is greater than the "
+                      "total number of samples (%s). max_samples "
+-                     "will be set to n_samples for estimation."
+-                     % (self.max_samples, n_samples))
+-                max_samples = n_samples
++                     "will be set to X.shape[0] for estimation."
++                     % (self.max_samples, X.shape[0]))
++                max_samples = X.shape[0]
+             else:
+                 max_samples = self.max_samples
+-        else:  # float
+-            if not (0. < self.max_samples <= 1.):
++        elif isinstance(self.max_samples, float):
++            if not 0. < self.max_samples <= 1.:
+                 raise ValueError("max_samples must be in (0, 1], got %r"
+                                  % self.max_samples)
+             max_samples = int(self.max_samples * X.shape[0])
++        else:
++            raise TypeError("max_samples (%s) is not of type integer "
++                            "or float." % type(self.max_samples))
+ 
+-        self.max_samples_ = max_samples
+-        max_depth = int(np.ceil(np.log2(max(max_samples, 2))))
+-        super()._fit(X, y, max_samples,
+-                     max_depth=max_depth,
+-                     sample_weight=sample_weight)
++        if not isinstance(self.bootstrap, bool):
++            raise ValueError("`bootstrap` should be an boolean, got {0}.".format(
++                self.bootstrap))
+ 
+-        if self.behaviour == 'old':
+-            # in this case, decision_function = 0.5 + self.score_samples(X):
+-            if self._contamination == "auto":
+-                raise ValueError("contamination parameter cannot be set to "
+-                                 "'auto' when behaviour == 'old'.")
++        if not (0. < self.contamination <= 0.5):
++            raise ValueError("contamination must be in (0, 0.5], "
++                             "got %r" % self.contamination)
+ 
+-            self.offset_ = -0.5
+-            self._threshold_ = np.percentile(self.decision_function(X),
+-                                             100. * self._contamination)
++        if isinstance(self.max_features, str):
++            if self.max_features == "auto":
++                max_features = X.shape[1]
++            else:
++                raise ValueError("max_features (%s) is not supported."
++                                 "Valid choices are 'auto', int "
++                                 "or float." % self.max_features)
++        elif isinstance(self.max_features, (int, np.integer)):
++            if not 1 <= self.max_features <= X.shape[1]:
++                raise ValueError("max_features must be in (0, n_features], "
++                                 "got %r" % self.max_features)
++            max_features = self.max_features
++        elif isinstance(self.max_features, float):
++            if not 0. < self.max_features <= 1.:
++                raise ValueError("max_features must be in (0, 1], got %r"
++                                 % self.max_features)
++            max_features = int(self.max_features * X.shape[1])
++        else:
++            raise TypeError("max_features (%s) is not of type integer "
++                            "or float." % type(self.max_features))
++
++        if self.warm_start and self.estimators_ is not None:
++            # We draw `n_estimators - len(self.estimators_)` trees
++            n_more_estimators = self.n_estimators - len(self.estimators_)
++            if n_more_estimators < 0:
++                raise ValueError('n_estimators=%d must be larger or equal to '
++                                 'len(estimators_)=%d when warm_start==True'
++                                 % (self.n_estimators, len(self.estimators_)))
++            elif n_more_estimators == 0:
++                warn("Warm-start fitting without increasing n_estimators does "
++                     "not fit new trees.")
++        else:
++            # Reset state and clear the list of estimators
++            self.estimators_ = []
++            n_more_estimators = self.n_estimators
++
++        if self.warm_start and len(self.estimators_) > 0:
++            # We draw `n_estimators - len(self.estimators_)` trees
++            n_more_estimators = self.n_estimators - len(self.estimators_)
++            if n_more_estimators < 0:
++                raise ValueError('n_estimators=%d must be larger or equal to '
++                                 'len(estimators_)=%d when warm_start==True'
++                                 % (self.n_estimators, len(self.estimators_)))
++            elif n_more_estimators == 0:
++                warn("Warm-start fitting without increasing n_estimators does "
++                     "not fit new trees.")
++        else:
++            # Reset state and clear the list of estimators
++            self.estimators_ = []
++            n_more_estimators = self.n_estimators
++
++        from joblib import Parallel, delayed
++        from sklearn.ensemble._base import _parallel_build_trees
++
++        trees = [self._make_estimator(append=False, random_state=self.random_state)
++                 for i in range(n_more_estimators)]
++
++        # Parallel loop: we prefer the threading backend as the Cython code
++        # for fitting the trees is internally releasing the Python GIL
++        # making threading more efficient than multiprocessing in that case.
++        # However, we respect any parallel_backend contexts set at a higher level,
++        # since correctness does not rely on using threads.
+ 
+-            return self
++        trees = Parallel(n_jobs=self.n_jobs, verbose=self.verbose,
++                         **_joblib_parallel_args(prefer='threads'))(
++            delayed(_parallel_build_trees)(
++                t, self.bootstrap, X, y, None, max_samples)
++            for t in trees)
+ 
+-        # else, self.behaviour == 'new':
+-        if self._contamination == "auto":
+-            # 0.5 plays a special role as described in the original paper.
+-            # we take the opposite as we consider the opposite of their score.
+-            self.offset_ = -0.5
+-            return self
++        # Collect newly grown trees
++        self.estimators_.extend(trees)
++
++        if self.contamination == "legacy":
++            warn('default contamination parameter 0.1 will change '
++                 'in version 0.22 to "auto". This will change the '
++                 'predict method behavior.',
++                 FutureWarning)
++            self._contamination = 0.1
++        else:
++            self._contamination = self.contamination
+ 
+-        # else, define offset_ wrt contamination parameter, so that the
+-        # threshold_ attribute is implicitly 0 and is not needed anymore:
+-        self.offset_ = np.percentile(self.score_samples(X),
+-                                     100. * self._contamination)
++        if self.behaviour == 'old':
++            warn('behaviour="old" is deprecated and will be removed '
++                 'in version 0.22. Please use behaviour="new", which '
++                 'makes the decision_function change to match '
++                 'other anomaly detection algorithm API.',
++                 FutureWarning)
+ 
++        # We subtract self.offset_ to make 0 be the threshold value for being
++        # an outlier:
+         return self
+ 
+     def predict(self, X):
+@@ -508,3 +560,5 @@ def _average_path_length(n_samples_leaf):
+     )
+ 
+     return average_path_length.reshape(n_samples_leaf_shape)
++
++
+2024-11-07 15:34:28,289 - INFO - Eval script for scikit-learn__scikit-learn-13496 written to logs/run_evaluation/20241107_153352/qwen2.5_32b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/scikit-learn__scikit-learn-13496/eval.sh; copying to container...
+2024-11-07 15:34:31,770 - INFO - Test runtime: 3.36 seconds
+2024-11-07 15:34:31,770 - INFO - Test output for scikit-learn__scikit-learn-13496 written to logs/run_evaluation/20241107_153352/qwen2.5_32b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/scikit-learn__scikit-learn-13496/test_output.txt
+2024-11-07 15:34:31,819 - INFO - Git diff after:
+diff --git a/sklearn/ensemble/iforest.py b/sklearn/ensemble/iforest.py
+index 8a1bd3625..50b0fcde1 100644
+--- a/sklearn/ensemble/iforest.py
++++ b/sklearn/ensemble/iforest.py
+@@ -101,6 +101,12 @@ class IsolationForest(BaseBagging, OutlierMixin):
+         its natural threshold to detect outliers.
+ 
+         .. versionadded:: 0.20
++
++    warm_start : bool, optional (default=False)
++        When set to ``True``, reuse the solution of the previous call to fit
++        and add more estimators to the ensemble, otherwise, just fit a whole
++        new forest. See :term:`the Glossary <warm_start>`.
++
+            ``behaviour`` is added in 0.20 for back-compatibility purpose.
+ 
+         .. deprecated:: 0.20
+@@ -202,107 +208,153 @@ class IsolationForest(BaseBagging, OutlierMixin):
+         # copies.
+         return _joblib_parallel_args(prefer='threads')
+ 
+-    def fit(self, X, y=None, sample_weight=None):
++    def fit(self, X, y=None):
+         """Fit estimator.
+ 
+         Parameters
+         ----------
+         X : array-like or sparse matrix, shape (n_samples, n_features)
+             The input samples. Use ``dtype=np.float32`` for maximum
+-            efficiency. Sparse matrices are also supported, use sparse
+-            ``csc_matrix`` for maximum efficiency.
+-
+-        sample_weight : array-like, shape = [n_samples] or None
+-            Sample weights. If None, then samples are equally weighted.
+-
++            efficiency.
+         y : Ignored
+-            not used, present for API consistency by convention.
++            Not used, present for API consistency by convention.
+ 
+         Returns
+         -------
+         self : object
+-        """
+-        if self.contamination == "legacy":
+-            warn('default contamination parameter 0.1 will change '
+-                 'in version 0.22 to "auto". This will change the '
+-                 'predict method behavior.',
+-                 FutureWarning)
+-            self._contamination = 0.1
+-        else:
+-            self._contamination = self.contamination
+ 
+-        if self.behaviour == 'old':
+-            warn('behaviour="old" is deprecated and will be removed '
+-                 'in version 0.22. Please use behaviour="new", which '
+-                 'makes the decision_function change to match '
+-                 'other anomaly detection algorithm API.',
+-                 FutureWarning)
+-
+-        X = check_array(X, accept_sparse=['csc'])
+-        if issparse(X):
+-            # Pre-sort indices to avoid that each individual tree of the
+-            # ensemble sorts the indices.
+-            X.sort_indices()
+-
+-        rnd = check_random_state(self.random_state)
+-        y = rnd.uniform(size=X.shape[0])
+-
+-        # ensure that max_sample is in [1, n_samples]:
+-        n_samples = X.shape[0]
++        """
++        # Check parameters
++        if not isinstance(self.n_estimators, int):
++            raise ValueError("n_estimators must be an integer, "
++                             "got {0}.".format(type(self.n_estimators)))
++        elif self.n_estimators <= 0:
++            raise ValueError("n_estimators must be greater than zero, "
++                             "got {0}.".format(self.n_estimators))
+ 
+         if isinstance(self.max_samples, str):
+-            if self.max_samples == 'auto':
+-                max_samples = min(256, n_samples)
++            if self.max_samples == "auto":
++                max_samples = min(256, X.shape[0])
+             else:
+-                raise ValueError('max_samples (%s) is not supported.'
+-                                 'Valid choices are: "auto", int or'
+-                                 'float' % self.max_samples)
+-
+-        elif isinstance(self.max_samples, INTEGER_TYPES):
+-            if self.max_samples > n_samples:
++                raise ValueError("max_samples (%s) is not supported."
++                                 "Valid choices are 'auto', int "
++                                 "or float." % self.max_samples)
++        elif isinstance(self.max_samples, (int, np.integer)):
++            if self.max_samples > X.shape[0]:
+                 warn("max_samples (%s) is greater than the "
+                      "total number of samples (%s). max_samples "
+-                     "will be set to n_samples for estimation."
+-                     % (self.max_samples, n_samples))
+-                max_samples = n_samples
++                     "will be set to X.shape[0] for estimation."
++                     % (self.max_samples, X.shape[0]))
++                max_samples = X.shape[0]
+             else:
+                 max_samples = self.max_samples
+-        else:  # float
+-            if not (0. < self.max_samples <= 1.):
++        elif isinstance(self.max_samples, float):
++            if not 0. < self.max_samples <= 1.:
+                 raise ValueError("max_samples must be in (0, 1], got %r"
+                                  % self.max_samples)
+             max_samples = int(self.max_samples * X.shape[0])
++        else:
++            raise TypeError("max_samples (%s) is not of type integer "
++                            "or float." % type(self.max_samples))
+ 
+-        self.max_samples_ = max_samples
+-        max_depth = int(np.ceil(np.log2(max(max_samples, 2))))
+-        super()._fit(X, y, max_samples,
+-                     max_depth=max_depth,
+-                     sample_weight=sample_weight)
++        if not isinstance(self.bootstrap, bool):
++            raise ValueError("`bootstrap` should be an boolean, got {0}.".format(
++                self.bootstrap))
+ 
+-        if self.behaviour == 'old':
+-            # in this case, decision_function = 0.5 + self.score_samples(X):
+-            if self._contamination == "auto":
+-                raise ValueError("contamination parameter cannot be set to "
+-                                 "'auto' when behaviour == 'old'.")
++        if not (0. < self.contamination <= 0.5):
++            raise ValueError("contamination must be in (0, 0.5], "
++                             "got %r" % self.contamination)
+ 
+-            self.offset_ = -0.5
+-            self._threshold_ = np.percentile(self.decision_function(X),
+-                                             100. * self._contamination)
++        if isinstance(self.max_features, str):
++            if self.max_features == "auto":
++                max_features = X.shape[1]
++            else:
++                raise ValueError("max_features (%s) is not supported."
++                                 "Valid choices are 'auto', int "
++                                 "or float." % self.max_features)
++        elif isinstance(self.max_features, (int, np.integer)):
++            if not 1 <= self.max_features <= X.shape[1]:
++                raise ValueError("max_features must be in (0, n_features], "
++                                 "got %r" % self.max_features)
++            max_features = self.max_features
++        elif isinstance(self.max_features, float):
++            if not 0. < self.max_features <= 1.:
++                raise ValueError("max_features must be in (0, 1], got %r"
++                                 % self.max_features)
++            max_features = int(self.max_features * X.shape[1])
++        else:
++            raise TypeError("max_features (%s) is not of type integer "
++                            "or float." % type(self.max_features))
++
++        if self.warm_start and self.estimators_ is not None:
++            # We draw `n_estimators - len(self.estimators_)` trees
++            n_more_estimators = self.n_estimators - len(self.estimators_)
++            if n_more_estimators < 0:
++                raise ValueError('n_estimators=%d must be larger or equal to '
++                                 'len(estimators_)=%d when warm_start==True'
++                                 % (self.n_estimators, len(self.estimators_)))
++            elif n_more_estimators == 0:
++                warn("Warm-start fitting without increasing n_estimators does "
++                     "not fit new trees.")
++        else:
++            # Reset state and clear the list of estimators
++            self.estimators_ = []
++            n_more_estimators = self.n_estimators
++
++        if self.warm_start and len(self.estimators_) > 0:
++            # We draw `n_estimators - len(self.estimators_)` trees
++            n_more_estimators = self.n_estimators - len(self.estimators_)
++            if n_more_estimators < 0:
++                raise ValueError('n_estimators=%d must be larger or equal to '
++                                 'len(estimators_)=%d when warm_start==True'
++                                 % (self.n_estimators, len(self.estimators_)))
++            elif n_more_estimators == 0:
++                warn("Warm-start fitting without increasing n_estimators does "
++                     "not fit new trees.")
++        else:
++            # Reset state and clear the list of estimators
++            self.estimators_ = []
++            n_more_estimators = self.n_estimators
++
++        from joblib import Parallel, delayed
++        from sklearn.ensemble._base import _parallel_build_trees
++
++        trees = [self._make_estimator(append=False, random_state=self.random_state)
++                 for i in range(n_more_estimators)]
++
++        # Parallel loop: we prefer the threading backend as the Cython code
++        # for fitting the trees is internally releasing the Python GIL
++        # making threading more efficient than multiprocessing in that case.
++        # However, we respect any parallel_backend contexts set at a higher level,
++        # since correctness does not rely on using threads.
+ 
+-            return self
++        trees = Parallel(n_jobs=self.n_jobs, verbose=self.verbose,
++                         **_joblib_parallel_args(prefer='threads'))(
++            delayed(_parallel_build_trees)(
++                t, self.bootstrap, X, y, None, max_samples)
++            for t in trees)
+ 
+-        # else, self.behaviour == 'new':
+-        if self._contamination == "auto":
+-            # 0.5 plays a special role as described in the original paper.
+-            # we take the opposite as we consider the opposite of their score.
+-            self.offset_ = -0.5
+-            return self
++        # Collect newly grown trees
++        self.estimators_.extend(trees)
++
++        if self.contamination == "legacy":
++            warn('default contamination parameter 0.1 will change '
++                 'in version 0.22 to "auto". This will change the '
++                 'predict method behavior.',
++                 FutureWarning)
++            self._contamination = 0.1
++        else:
++            self._contamination = self.contamination
+ 
+-        # else, define offset_ wrt contamination parameter, so that the
+-        # threshold_ attribute is implicitly 0 and is not needed anymore:
+-        self.offset_ = np.percentile(self.score_samples(X),
+-                                     100. * self._contamination)
++        if self.behaviour == 'old':
++            warn('behaviour="old" is deprecated and will be removed '
++                 'in version 0.22. Please use behaviour="new", which '
++                 'makes the decision_function change to match '
++                 'other anomaly detection algorithm API.',
++                 FutureWarning)
+ 
++        # We subtract self.offset_ to make 0 be the threshold value for being
++        # an outlier:
+         return self
+ 
+     def predict(self, X):
+@@ -508,3 +560,5 @@ def _average_path_length(n_samples_leaf):
+     )
+ 
+     return average_path_length.reshape(n_samples_leaf_shape)
++
++
+2024-11-07 15:34:31,819 - INFO - Grading answer for scikit-learn__scikit-learn-13496...
+2024-11-07 15:34:31,832 - INFO - report: {'scikit-learn__scikit-learn-13496': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['sklearn/ensemble/tests/test_iforest.py::test_iforest_warm_start']}, 'PASS_TO_PASS': {'success': ['sklearn/ensemble/tests/test_iforest.py::test_iforest_average_path_length'], 'failure': ['sklearn/ensemble/tests/test_iforest.py::test_iforest', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_sparse', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_error', 'sklearn/ensemble/tests/test_iforest.py::test_recalculate_max_depth', 'sklearn/ensemble/tests/test_iforest.py::test_max_samples_attribute', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_parallel_regression', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_performance', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_works[0.25]', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_works[auto]', 'sklearn/ensemble/tests/test_iforest.py::test_max_samples_consistency', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_subsampled_features', 'sklearn/ensemble/tests/test_iforest.py::test_score_samples', 'sklearn/ensemble/tests/test_iforest.py::test_deprecation', 'sklearn/ensemble/tests/test_iforest.py::test_behaviour_param', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_chunks_works1[0.25-3]', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_chunks_works1[auto-2]', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_chunks_works2[0.25-3]', 'sklearn/ensemble/tests/test_iforest.py::test_iforest_chunks_works2[auto-2]']}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for scikit-learn__scikit-learn-13496: resolved: False
+2024-11-07 15:34:31,832 - INFO - Attempting to stop container sweb.eval.scikit-learn__scikit-learn-13496.20241107_153352...
+2024-11-07 15:34:46,992 - INFO - Attempting to remove container sweb.eval.scikit-learn__scikit-learn-13496.20241107_153352...
+2024-11-07 15:34:47,009 - INFO - Container sweb.eval.scikit-learn__scikit-learn-13496.20241107_153352 removed.

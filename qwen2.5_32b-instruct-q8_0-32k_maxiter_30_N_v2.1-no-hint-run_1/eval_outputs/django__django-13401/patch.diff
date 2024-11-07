@@ -1,0 +1,61 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..43b3c21ff3
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,55 @@
++import os
++os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
++
++# Importing settings after setting DJANGO_SETTINGS_MODULE environment variable
++from django.conf import settings
++
++if not settings.configured:
++    settings.configure(
++        INSTALLED_APPS=['test_app'],
++        DATABASES={
++            'default': {
++                'ENGINE': 'django.db.backends.sqlite3',
++                'NAME': ':memory:',
++            }
++        },
++    )
++
++# Importing Django's setup function to initialize the app registry
++import django
++
++django.setup()
++
++from django.apps import apps  # Ensure apps is imported here
++
++class TestAppConfig(django.apps.AppConfig):
++    name = 'test_app'
++    path = '/dummy/path'  # Dummy path to satisfy the requirement
++
++apps.app_configs['test_app'] = TestAppConfig('test_app', __name__)
++# Directly populate the app registry with our custom configuration
++django.apps.all_models['test_app'] = {}
++
++from django.db import models
++
++class A(models.Model):
++    class Meta:
++        abstract = True
++        app_label = 'test_app'
++    myfield = models.IntegerField()
++
++class B(A):
++    class Meta:
++        app_label = 'test_app'
++
++class C(A):
++    class Meta:
++        app_label = 'test_app'
++
++# Check if the fields are considered equal and have unique hashes
++b_field = B._meta.get_field('myfield')
++c_field = C._meta.get_field('myfield')
++
++print(f"Are the fields equal? {b_field == c_field}")
++print(f"Do they have different hashes? {hash(b_field) != hash(c_field)}")
++

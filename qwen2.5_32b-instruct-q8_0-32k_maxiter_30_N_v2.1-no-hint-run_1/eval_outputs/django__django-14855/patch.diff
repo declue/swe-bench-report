@@ -1,0 +1,147 @@
+diff --git a/django/contrib/admin/helpers.py b/django/contrib/admin/helpers.py
+index dd154f72ee..522ef516fc 100644
+--- a/django/contrib/admin/helpers.py
++++ b/django/contrib/admin/helpers.py
+@@ -203,16 +203,20 @@ class AdminReadonlyField:
+         label = self.field['label']
+         return format_html('<label{}>{}{}</label>', flatatt(attrs), capfirst(label), self.form.label_suffix)
+ 
+-    def get_admin_url(self, remote_field, remote_obj):
+-        url_name = 'admin:%s_%s_change' % (
+-            remote_field.model._meta.app_label,
+-            remote_field.model._meta.model_name,
+-        )
+-        try:
+-            url = reverse(url_name, args=[quote(remote_obj.pk)])
+-            return format_html('<a href="{}">{}</a>', url, remote_obj)
+-        except NoReverseMatch:
+-            return str(remote_obj)
++def get_admin_url(self, remote_field, remote_obj):
++    url_name = 'admin:%s_%s_change' % (
++        remote_field.model._meta.app_label,
++        remote_field.model._meta.model_name,
++    )
++    try:
++        # Add the current_app parameter to include the admin site's name
++        url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)
++        return format_html('<a href="{}">{}</a>', url, remote_obj)
++    except NoReverseMatch:
++        return str(remote_obj)
++
++        return str(remote_obj)
++
+ 
+     def contents(self):
+         from django.contrib.admin.templatetags.admin_list import _boolean_icon
+@@ -249,6 +253,18 @@ class AdminReadonlyField:
+                 result_repr = linebreaksbr(result_repr)
+         return conditional_escape(result_repr)
+ 
++    def get_admin_url(self, remote_field, remote_obj):
++        url_name = 'admin:%s_%s_change' % (
++            remote_field.model._meta.app_label,
++            remote_field.model._meta.model_name,
++        )
++        try:
++            # Add the current_app parameter to include the admin site's name
++            url = reverse(url_name, args=[quote(remote_obj.pk)], current_app=self.model_admin.admin_site.name)
++            return format_html('<a href="{}">{}</a>', url, remote_obj)
++        except NoReverseMatch:
++            return str(remote_obj)
++
+ 
+ class InlineAdminFormSet:
+     """
+@@ -439,3 +455,5 @@ class AdminErrorList(forms.utils.ErrorList):
+                 self.extend(inline_formset.non_form_errors())
+                 for errors_in_inline_form in inline_formset.errors:
+                     self.extend(errors_in_inline_form.values())
++
++
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..212527104c
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,33 @@
++import os
++os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
++
++from django.contrib.admin.helpers import AdminReadonlyField
++from django.test import TestCase
++
++class TestAdminUrl(TestCase):
++    def test_get_admin_url(self):
++        # Mocking a model admin and remote object for testing purposes
++        class MockModelAdmin:
++            admin_site = type('MockSite', (object,), {'name': 'custom-admin'})
++
++        mock_model_admin = MockModelAdmin()
++        mock_remote_obj = type('MockRemoteObj', (object,), {'pk': 1})
++
++        # Creating an instance of AdminReadonlyField for testing
++        field_instance = AdminReadonlyField(None, None, False, model_admin=mock_model_admin)
++
++        # Calling the get_admin_url method and checking if it includes 'custom-admin'
++        url = field_instance.get_admin_url(None, mock_remote_obj)
++        self.assertIn('custom-admin', url)
++
++
++if __name__ == '__main__':
++    import unittest
++    suite = unittest.TestLoader().loadTestsFromTestCase(TestAdminUrl)
++    result = unittest.TextTestRunner(verbosity=2).run(suite)
++
++    if not result.wasSuccessful():
++        print("Test Failed!")
++    else:
++        print("Test Passed!")
++
+diff --git a/test_output.log b/test_output.log
+new file mode 100644
+index 0000000000..b80f1a2dae
+--- /dev/null
++++ b/test_output.log
+@@ -0,0 +1,42 @@
++ERROR
++
++======================================================================
++ERROR: setUpClass (__main__.TestAdminUrl)
++----------------------------------------------------------------------
++Traceback (most recent call last):
++  File "/testbed/django/test/testcases.py", line 1201, in setUpClass
++    super().setUpClass()
++  File "/testbed/django/test/testcases.py", line 187, in setUpClass
++    cls._add_databases_failures()
++  File "/testbed/django/test/testcases.py", line 209, in _add_databases_failures
++    cls.databases = cls._validate_databases()
++  File "/testbed/django/test/testcases.py", line 195, in _validate_databases
++    if alias not in connections:
++  File "/testbed/django/utils/connection.py", line 73, in __iter__
++    return iter(self.settings)
++  File "/testbed/django/utils/functional.py", line 48, in __get__
++    res = instance.__dict__[self.name] = self.func(instance)
++  File "/testbed/django/utils/connection.py", line 45, in settings
++    self._settings = self.configure_settings(self._settings)
++  File "/testbed/django/db/utils.py", line 144, in configure_settings
++    databases = super().configure_settings(databases)
++  File "/testbed/django/utils/connection.py", line 50, in configure_settings
++    settings = getattr(django_settings, self.settings_name)
++  File "/testbed/django/conf/__init__.py", line 84, in __getattr__
++    self._setup(name)
++  File "/testbed/django/conf/__init__.py", line 71, in _setup
++    self._wrapped = Settings(settings_module)
++  File "/testbed/django/conf/__init__.py", line 179, in __init__
++    mod = importlib.import_module(self.SETTINGS_MODULE)
++  File "/opt/miniconda3/envs/testbed/lib/python3.8/importlib/__init__.py", line 127, in import_module
++    return _bootstrap._gcd_import(name[level:], package, level)
++  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
++  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
++  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
++ModuleNotFoundError: No module named 'settings'
++
++----------------------------------------------------------------------
++Ran 0 tests in 0.001s
++
++FAILED (errors=1)
++Test Failed!

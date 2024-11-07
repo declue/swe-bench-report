@@ -1,0 +1,65 @@
+diff --git a/sympy/matrices/common.py b/sympy/matrices/common.py
+index 056d9bc497..c576674178 100644
+--- a/sympy/matrices/common.py
++++ b/sympy/matrices/common.py
+@@ -86,12 +86,14 @@ def entry(i, j):
+                 return self[i, j]
+             elif pos <= j < pos + other.cols:
+                 return other[i, j - pos]
+-            return self[i, j - pos - other.cols]
++            # Correct the shift for elements after the inserted columns
++            return self[i, j - other.cols]
+ 
+         return self._new(self.rows, self.cols + other.cols,
+                          lambda i, j: entry(i, j))
+ 
+     def _eval_col_join(self, other):
++
+         rows = self.rows
+ 
+         def entry(i, j):
+@@ -2317,3 +2319,4 @@ def classof(A, B):
+     except Exception:
+         pass
+     raise TypeError("Incompatible classes %s, %s" % (A.__class__, B.__class__))
++
+diff --git a/sympy/matrices/test_col_insert.py b/sympy/matrices/test_col_insert.py
+new file mode 100644
+index 0000000000..96248fc997
+--- /dev/null
++++ b/sympy/matrices/test_col_insert.py
+@@ -0,0 +1,5 @@
++from sympy import Matrix, ones
++M = Matrix.eye(6)
++V = 2 * ones(6, 2)
++result = M.col_insert(3, V)
++print(result)
+diff --git a/sympy/matrices/test_col_insert_edge_cases.py b/sympy/matrices/test_col_insert_edge_cases.py
+new file mode 100644
+index 0000000000..d31cfe71ab
+--- /dev/null
++++ b/sympy/matrices/test_col_insert_edge_cases.py
+@@ -0,0 +1,23 @@
++from sympy import Matrix, ones
++
++# Test inserting into an empty matrix
++M_empty = Matrix.zeros(0, 0)
++V = 2 * ones(6, 2)
++result_empty = M_empty.col_insert(0, V)
++print('Empty Matrix Insert:', result_empty)
++
++# Test inserting at position 0 (beginning)
++M_begin = Matrix.eye(6)
++result_begin = M_begin.col_insert(0, V)
++print('Insert at Position 0:', result_begin)
++
++# Test inserting at the last possible position
++M_end = Matrix.eye(6)
++result_end = M_end.col_insert(M_end.cols, V)
++print('Insert at Last Position:', result_end)
++
++# Test inserting columns larger than the original matrix
++M_large = Matrix.eye(3)
++V_large = 2 * ones(3, 5)
++result_large = M_large.col_insert(1, V_large)
++print('Larger Columns Insert:', result_large)

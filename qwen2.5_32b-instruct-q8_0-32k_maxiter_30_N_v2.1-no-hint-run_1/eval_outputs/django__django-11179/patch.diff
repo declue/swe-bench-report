@@ -1,0 +1,135 @@
+diff --git a/django/db/models/deletion.py b/django/db/models/deletion.py
+index 92fe4affb9..1b6625fc45 100644
+--- a/django/db/models/deletion.py
++++ b/django/db/models/deletion.py
+@@ -273,11 +273,95 @@ class Collector:
+ 
+         # Optimize for the case with a single obj and no dependencies
+         if len(self.data) == 1 and len(instances) == 1:
+-            instance = list(instances)[0]
+-            if self.can_fast_delete(instance):
+-                with transaction.mark_for_rollback_on_error():
+-                    count = sql.DeleteQuery(model).delete_batch([instance.pk], self.using)
+-                return count, {model._meta.label: count}
++            if len(self.data) == 1 and len(instances) == 1:
++                instance = list(instances)[0]
++                if self.can_fast_delete(instance):
++                    with transaction.mark_for_rollback_on_error():
++                        count = sql.DeleteQuery(model).delete_batch([instance.pk], self.using)
++                    # Set the PK to None after deletion for non-auto-created models
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++
++                    if not model._meta.auto_created:
++                        setattr(instance, model._meta.pk.attname, None)
++            else:
++                instance = list(instances)[0]
++                if self.can_fast_delete(instance):
++                    with transaction.mark_for_rollback_on_error():
++                        count = sql.DeleteQuery(model).delete_batch([instance.pk], self.using)
++                    return count, {model._meta.label: count}
+ 
+         with transaction.atomic(using=self.using, savepoint=False):
+             # send pre_delete signals
+@@ -325,3 +409,29 @@ class Collector:
+             for instance in instances:
+                 setattr(instance, model._meta.pk.attname, None)
+         return sum(deleted_counter.values()), dict(deleted_counter)
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++

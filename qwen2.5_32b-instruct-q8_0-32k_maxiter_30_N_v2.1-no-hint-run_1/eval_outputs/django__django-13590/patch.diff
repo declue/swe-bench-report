@@ -1,0 +1,114 @@
+diff --git a/minimal_django_project/manage.py b/minimal_django_project/manage.py
+new file mode 100644
+index 0000000000..3187ea85d9
+--- /dev/null
++++ b/minimal_django_project/manage.py
+@@ -0,0 +1,15 @@
++#!/usr/bin/env python
++import os
++import sys
++
++if __name__ == "__main__":
++    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "minimal_django_project.settings")
++    try:
++        from django.core.management import execute_from_command_line
++    except ImportError as exc:
++        raise ImportError(
++            "Couldn't import Django. Are you sure it's installed and "
++            "available on your PYTHONPATH environment variable? Did you "
++            "forget to activate a virtual environment?"
++        ) from exc
++    execute_from_command_line(sys.argv)
+diff --git a/minimal_django_project/myapp/__init__.py b/minimal_django_project/myapp/__init__.py
+new file mode 100644
+index 0000000000..8b13789179
+--- /dev/null
++++ b/minimal_django_project/myapp/__init__.py
+@@ -0,0 +1 @@
++
+diff --git a/minimal_django_project/myapp/management/__init__.py b/minimal_django_project/myapp/management/__init__.py
+new file mode 100644
+index 0000000000..8b13789179
+--- /dev/null
++++ b/minimal_django_project/myapp/management/__init__.py
+@@ -0,0 +1 @@
++
+diff --git a/minimal_django_project/myapp/management/commands/reproduce_error.py b/minimal_django_project/myapp/management/commands/reproduce_error.py
+new file mode 100644
+index 0000000000..17a7640fb4
+--- /dev/null
++++ b/minimal_django_project/myapp/management/commands/reproduce_error.py
+@@ -0,0 +1,19 @@
++from django.core.management.base import BaseCommand
++from collections import namedtuple
++
++class Command(BaseCommand):
++    help = 'Reproduces the named tuple issue in Django 3.0'
++
++    def handle(self, *args, **options):
++        from django.db.models import Model, CharField, IntegerField
++        from django.db import models
++        
++        class NamedTuple(models.Model):
++            name = CharField(max_length=50)
++            value = IntegerField()
++
++        Range = namedtuple('Range', ['near', 'far'])
++        range_obj = Range(1, 2)
++
++        # This should raise an error in Django 3.0 due to the issue described.
++        NamedTuple.objects.filter(value__range=range_obj)
+diff --git a/minimal_django_project/settings.py b/minimal_django_project/settings.py
+new file mode 100644
+index 0000000000..1a472476d3
+--- /dev/null
++++ b/minimal_django_project/settings.py
+@@ -0,0 +1,16 @@
++import os
++
++BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
++
++INSTALLED_APPS = [
++    'myapp',
++    'django.contrib.contenttypes',
++]
++
++DATABASES = {
++    'default': {
++        'ENGINE': 'django.db.backends.sqlite3',
++        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
++    }
++}
++
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..e396a00168
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,26 @@
++import os
++os.environ['DJANGO_SETTINGS_MODULE'] = 'minimal_django_project.settings'
++
++from django.conf import settings
++settings.configure()
++
++# Import models and setup Django environment
++from django.db import models
++import django
++
++class NamedTuple(models.Model):
++    name = models.CharField(max_length=50)
++    value = models.IntegerField()
++
++def test_named_tuple():
++    from collections import namedtuple
++    Range = namedtuple('Range', ['near', 'far'])
++    range_obj = Range(1, 2)
++
++    # This should raise an error in Django 3.0 due to the issue described.
++    NamedTuple.objects.filter(value__range=range_obj)
++
++if __name__ == '__main__':
++    django.setup()
++    test_named_tuple()
++
