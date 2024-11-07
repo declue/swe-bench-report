@@ -1,0 +1,34 @@
+diff --git a/scripts/reproduce_error.py b/scripts/reproduce_error.py
+new file mode 100644
+index 0000000000..d6da620a2b
+--- /dev/null
++++ b/scripts/reproduce_error.py
+@@ -0,0 +1,28 @@
++import json
++from django.contrib.admin.views.autocomplete import AutocompleteJsonView
++
++class CustomAutocompleteJsonView(AutocompleteJsonView):
++    def get(self, request, *args, **kwargs):
++        self.term, self.model_admin, self.source_field, to_field_name = self.process_request(request)
++        if not self.has_perm(request):
++            raise PermissionDenied
++        self.object_list = self.get_queryset()
++        context = self.get_context_data()
++        return JsonResponse({
++            'results': [
++                {'id': str(getattr(obj, to_field_name)), 'text': str(obj)}
++                for obj in context['object_list']
++            ],
++            'pagination': {'more': context['page_obj'].has_next()},
++        })
++
++# Example usage
++if __name__ == '__main__':
++    class MockRequest:
++        GET = {'q': 'test'}
++    
++    request = MockRequest()
++    view = CustomAutocompleteJsonView()
++    response = view.get(request)
++    print(response.content.decode())
++

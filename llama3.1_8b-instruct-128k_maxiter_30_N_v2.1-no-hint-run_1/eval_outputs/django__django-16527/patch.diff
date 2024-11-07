@@ -1,0 +1,9 @@
+diff --git a/error.log b/error.log
+new file mode 100644
+index 0000000000..9fb15c09c4
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1,3 @@
++Traceback (most recent call last):
++  File "<string>", line 1, in <module>
++AttributeError: module 'django.contrib.admin.templatetags.admin_modify' has no attribute 'show_save_as_new'

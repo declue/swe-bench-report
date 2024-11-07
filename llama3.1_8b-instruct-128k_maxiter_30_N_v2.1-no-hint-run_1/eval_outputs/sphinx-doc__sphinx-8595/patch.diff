@@ -1,0 +1,23 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 000000000..f087b93e7
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,17 @@
++import sphinx
++from sphinx.ext.autodoc import get_documenter, autodoc
++
++class TestClass:
++    def __init__(self):
++        pass
++
++    @classmethod
++    def class_method(cls):
++        return cls()
++
++test = TestClass()
++__all__ = []
++
++documenter = get_documenter('TestClass', 'module')
++autodoc(documenter)
++

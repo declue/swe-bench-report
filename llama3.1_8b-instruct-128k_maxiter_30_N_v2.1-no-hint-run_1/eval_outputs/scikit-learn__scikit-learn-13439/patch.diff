@@ -1,0 +1,31 @@
+diff --git a/error.log b/error.log
+new file mode 100644
+index 000000000..64607d47e
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1,4 @@
++Traceback (most recent call last):
++  File "reproduce_error.py", line 15, in <module>
++    print(len(pipe))
++TypeError: object of type 'Pipeline' has no len()
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 000000000..c569eb9a2
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,15 @@
++from sklearn import svm
++from sklearn.datasets import samples_generator
++from sklearn.feature_selection import SelectKBest
++from sklearn.feature_selection import f_regression
++from sklearn.pipeline import Pipeline
++
++# generate some data to play with
++X, y = samples_generator.make_classification(
++    n_informative=5, n_redundant=0, random_state=42)
++
++anova_filter = SelectKBest(f_regression, k=5)
++clf = svm.SVC(kernel='linear')
++pipe = Pipeline([('anova', anova_filter), ('svc', clf)])
++
++print(len(pipe))

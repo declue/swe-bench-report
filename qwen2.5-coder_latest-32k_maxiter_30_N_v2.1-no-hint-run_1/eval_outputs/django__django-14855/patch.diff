@@ -1,0 +1,7 @@
+diff --git a/server.log b/server.log
+new file mode 100644
+index 0000000000..32c8601cf8
+--- /dev/null
++++ b/server.log
+@@ -0,0 +1 @@
++python: can't open file '/workspace/django__django__4.0/reproduce_error.py': [Errno 2] No such file or directory

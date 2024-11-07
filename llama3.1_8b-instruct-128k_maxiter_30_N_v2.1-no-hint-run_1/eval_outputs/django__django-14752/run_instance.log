@@ -1,0 +1,25 @@
+2024-11-07 16:38:08,312 - INFO - Environment image sweb.env.x86_64.297af196949a2a635bce66:latest found for django__django-14752
+Building instance image sweb.eval.x86_64.django__django-14752:latest for django__django-14752
+2024-11-07 16:38:08,318 - INFO - Image sweb.eval.x86_64.django__django-14752:latest already exists, skipping build.
+2024-11-07 16:38:08,318 - INFO - Creating container for django__django-14752...
+2024-11-07 16:38:08,407 - INFO - Container for django__django-14752 created: 2a3bedec4a34479fbd0fd4ab7f4e5a341575fc3b9cae288b936f0133cade8d5a
+2024-11-07 16:38:08,729 - INFO - Container for django__django-14752 started: 2a3bedec4a34479fbd0fd4ab7f4e5a341575fc3b9cae288b936f0133cade8d5a
+2024-11-07 16:38:08,729 - INFO - Intermediate patch for django__django-14752 written to logs/run_evaluation/20241107_163758/llama3.1_8b-instruct-128k_maxiter_30_N_v2.1-no-hint-run_1/django__django-14752/patch.diff, now applying to container...
+2024-11-07 16:38:08,856 - INFO - Failed to apply patch to container, trying again...
+2024-11-07 16:38:08,888 - INFO - >>>>> Applied Patch:
+patching file fix_error.py
+patching file reproduce_error.py
+
+2024-11-07 16:38:09,533 - INFO - Git diff before:
+
+2024-11-07 16:38:09,534 - INFO - Eval script for django__django-14752 written to logs/run_evaluation/20241107_163758/llama3.1_8b-instruct-128k_maxiter_30_N_v2.1-no-hint-run_1/django__django-14752/eval.sh; copying to container...
+2024-11-07 16:38:15,041 - INFO - Test runtime: 5.38 seconds
+2024-11-07 16:38:15,041 - INFO - Test output for django__django-14752 written to logs/run_evaluation/20241107_163758/llama3.1_8b-instruct-128k_maxiter_30_N_v2.1-no-hint-run_1/django__django-14752/test_output.txt
+2024-11-07 16:38:15,085 - INFO - Git diff after:
+
+2024-11-07 16:38:15,085 - INFO - Grading answer for django__django-14752...
+2024-11-07 16:38:15,087 - INFO - report: {'django__django-14752': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_serialize_result (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)']}, 'PASS_TO_PASS': {'success': ['test_custom_to_field (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'test_custom_to_field_custom_pk (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'test_custom_to_field_permission_denied (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'test_field_does_not_allowed (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'test_field_does_not_exist (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'test_field_no_related_field (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'Search results are paginated.', 'Users require the change permission for the related model to the', 'test_limit_choices_to (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'test_missing_search_fields (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'test_must_be_logged_in (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'Searching across model relations use QuerySet.distinct() to avoid', 'test_success (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'test_to_field_resolution_with_fk_pk (admin_views.test_autocomplete_view.AutocompleteJsonViewTests)', 'to_field resolution should correctly resolve for target models using'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-14752: resolved: False
+2024-11-07 16:38:15,087 - INFO - Attempting to stop container sweb.eval.django__django-14752.20241107_163758...
+2024-11-07 16:38:30,251 - INFO - Attempting to remove container sweb.eval.django__django-14752.20241107_163758...
+2024-11-07 16:38:30,273 - INFO - Container sweb.eval.django__django-14752.20241107_163758 removed.

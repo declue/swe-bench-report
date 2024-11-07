@@ -1,0 +1,17 @@
+diff --git a/scripts/reproduce_error.py b/scripts/reproduce_error.py
+new file mode 100644
+index 0000000000..99eca45180
+--- /dev/null
++++ b/scripts/reproduce_error.py
+@@ -0,0 +1,11 @@
++import os
++from django.core.files.storage import FileSystemStorage
++
++def test_file_upload_permissions():
++    fs = FileSystemStorage()
++    file_path = fs.save('test.txt', 'Hello, world!')
++    os.chmod(file_path, 0o644)
++    print(f'Permissions of {file_path}: {oct(os.stat(file_path).st_mode)}')
++
++if __name__ == '__main__':
++    test_file_upload_permissions()

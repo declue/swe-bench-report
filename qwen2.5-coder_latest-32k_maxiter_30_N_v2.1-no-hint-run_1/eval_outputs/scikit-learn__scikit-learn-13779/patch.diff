@@ -1,0 +1,64 @@
+diff --git a/sklearn/reproduce_error.py b/sklearn/reproduce_error.py
+new file mode 100644
+index 000000000..3202fbde9
+--- /dev/null
++++ b/sklearn/reproduce_error.py
+@@ -0,0 +1,34 @@
++import numpy as np
++from sklearn.ensemble import VotingClassifier
++from sklearn.linear_model import LogisticRegression
++from sklearn.ensemble import RandomForestClassifier
++from sklearn.datasets import load_iris  # Add this line
++
++def reproduce_error():
++    X, y = load_iris(return_X_y=True)
++    voter = VotingClassifier(
++        estimators=[('lr', LogisticRegression()),
++                    ('rf', RandomForestClassifier())]
++    )
++    voter.fit(X, y, sample_weight=np.ones(y.shape))
++    voter.set_params(lr=None)
++    voter.fit(X, y, sample_weight=np.ones(y.shape))
++
++if __name__ == '__main__':
++    reproduce_error()
++
++from sklearn.ensemble import RandomForestClassifier
++
++def reproduce_error():
++    X, y = load_iris(return_X_y=True)
++    voter = VotingClassifier(
++        estimators=[('lr', LogisticRegression()),
++                    ('rf', RandomForestClassifier())]
++    )
++    voter.fit(X, y, sample_weight=np.ones(y.shape))
++    voter.set_params(lr=None)
++    voter.fit(X, y, sample_weight=np.ones(y.shape))
++
++if __name__ == '__main__':
++    reproduce_error()
++
+diff --git a/sklearn/server.log b/sklearn/server.log
+new file mode 100644
+index 000000000..47170fd92
+--- /dev/null
++++ b/sklearn/server.log
+@@ -0,0 +1,18 @@
++/testbed/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
++  FutureWarning)
++/testbed/sklearn/linear_model/logistic.py:469: FutureWarning: Default multi_class will be changed to 'auto' in 0.22. Specify the multi_class option to silence this warning.
++  "this warning.", FutureWarning)
++/testbed/sklearn/ensemble/forest.py:245: FutureWarning: The default value of n_estimators will change from 10 in version 0.20 to 100 in 0.22.
++  "10 in version 0.20 to 100 in 0.22.", FutureWarning)
++Traceback (most recent call last):
++  File "reproduce_error.py", line 18, in <module>
++    reproduce_error()
++  File "reproduce_error.py", line 15, in reproduce_error
++    voter.fit(X, y, sample_weight=np.ones(y.shape))
++  File "/testbed/sklearn/ensemble/voting.py", line 273, in fit
++    return super().fit(X, transformed_y, sample_weight)
++  File "/testbed/sklearn/ensemble/voting.py", line 81, in fit
++    if not has_fit_parameter(step, 'sample_weight'):
++  File "/testbed/sklearn/utils/validation.py", line 808, in has_fit_parameter
++    return parameter in signature(estimator.fit).parameters
++AttributeError: 'NoneType' object has no attribute 'fit'

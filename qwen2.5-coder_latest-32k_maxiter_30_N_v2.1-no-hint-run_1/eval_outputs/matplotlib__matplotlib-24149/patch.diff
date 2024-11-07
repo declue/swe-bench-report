@@ -1,0 +1,11 @@
+diff --git a/examples/reproduce_error.py b/examples/reproduce_error.py
+new file mode 100644
+index 0000000000..e7af91da6c
+--- /dev/null
++++ b/examples/reproduce_error.py
+@@ -0,0 +1,5 @@
++import numpy as np
++import matplotlib.pyplot as plt
++
++f, ax = plt.subplots()
++ax.bar([np.nan], [np.nan])

@@ -1,0 +1,7 @@
+diff --git a/django/test_output.txt b/django/test_output.txt
+new file mode 100644
+index 0000000000..3d2d6834c9
+--- /dev/null
++++ b/django/test_output.txt
+@@ -0,0 +1 @@
++python: can't open file 'manage.py': [Errno 2] No such file or directory

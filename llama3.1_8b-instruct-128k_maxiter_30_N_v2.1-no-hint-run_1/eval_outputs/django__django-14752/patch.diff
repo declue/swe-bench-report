@@ -1,0 +1,27 @@
+diff --git a/fix_error.py b/fix_error.py
+new file mode 100644
+index 0000000000..ae936fcd24
+--- /dev/null
++++ b/fix_error.py
+@@ -0,0 +1,8 @@
++
++from django.contrib.postgres import forms
++import psycopg2.extras
++
++class MyForm(forms.Form):
++    field = forms.CharField()
++
++form = MyForm()
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..44dfe8a2ae
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,7 @@
++
++from django.contrib.postgres import forms
++
++class MyForm(forms.Form):
++    field = forms.CharField()
++
++form = MyForm()
