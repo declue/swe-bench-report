@@ -1,0 +1,24 @@
+diff --git a/sklearn/ensemble/_voting.py b/sklearn/ensemble/_voting.py
+new file mode 100644
+index 000000000..da9e77f5b
+--- /dev/null
++++ b/sklearn/ensemble/_voting.py
+@@ -0,0 +1,18 @@
++from sklearn.utils.validation import check_is_fitted
++
++...
++
++def fit(self, X, y, sample_weight=None, **fit_params):
++    """Get common fit operations."""
++    names, clfs = self._validate_estimators()
++
++    if self.weights is not None and len(self.weights) != len(self.estimators):
++        raise ValueError(
++            "Number of `estimators` and weights must be equal; got"
++            f" {len(self.weights)} weights, {len(self.estimators)} estimators"
++        )
++
++    if any(est is None for est in clfs):
++        raise ValueError("Cannot use None estimator(s)")
++
++    ...

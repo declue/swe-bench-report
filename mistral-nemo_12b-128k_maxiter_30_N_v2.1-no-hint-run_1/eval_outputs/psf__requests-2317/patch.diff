@@ -1,0 +1,16 @@
+diff --git a/requests/reproduce_error.py b/requests/reproduce_error.py
+new file mode 100644
+index 00000000..b21c0592
+--- /dev/null
++++ b/requests/reproduce_error.py
+@@ -0,0 +1,10 @@
++import requests
++
++def main():
++    url = 'http://example.com'
++    method = b'GET'
++    response = requests.request(method, url)
++    print(response.status_code)
++
++if __name__ == '__main__':
++    main()
