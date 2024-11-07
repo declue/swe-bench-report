@@ -3,7 +3,7 @@ import os
 import json
 
 
-#st.set_page_config(layout="wide")
+st.set_page_config(layout="wide")
 
 st.markdown("# SWE Bench Output Viewer")
 
@@ -66,12 +66,17 @@ completion_folder = os.path.join(root, folder, 'llm_completions', selected_insta
 files = sorted(os.listdir(completion_folder))
 
 
-for file in files:
-    with open(os.path.join(completion_folder, file), 'r', encoding='UTF-8') as fd:
-        json_data = json.load(fd)
-        for message in json_data['messages']:
-            with st.chat_message(message['role']):
-                st.text(message['content'])
+for _file in files:
+    if _file.startswith("draft"):
+        continue
+    file = _file
+st.write(files)
+st.write(file)
+with open(os.path.join(completion_folder, file), 'r', encoding='UTF-8') as fd:
+    json_data = json.load(fd)
+    for message in json_data['messages']:
+        with st.chat_message(message['role']):
+            st.text(message['content'])
 
 
 
