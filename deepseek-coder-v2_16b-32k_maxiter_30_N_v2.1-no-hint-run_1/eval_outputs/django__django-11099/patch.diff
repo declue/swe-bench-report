@@ -1,0 +1,15 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..cdedf52f77
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,9 @@
++from django.contrib.auth.validators import ASCIIUsernameValidator, UnicodeUsernameValidator
++
++# Test cases for ASCIIUsernameValidator
++print(ASCIIUsernameValidator().regex)  # Should print the regex pattern used by ASCIIUsernameValidator
++print(ASCIIUsernameValidator().clean('test\n'))  # This should raise a validation error due to newline at the end
++
++# Test cases for UnicodeUsernameValidator
++print(UnicodeUsernameValidator().regex)  # Should print the regex pattern used by UnicodeUsernameValidator
++print(UnicodeUsernameValidator().clean('test\n'))  # This should raise a validation error due to newline at the end

@@ -1,0 +1,61 @@
+diff --git a/error.log b/error.log
+new file mode 100644
+index 0000000000..1b85fef5d7
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1,14 @@
++Traceback (most recent call last):
++  File "reproduce_error.py", line 5, in <module>
++    class MyModel(models.Model):
++  File "/testbed/django/db/models/base.py", line 108, in __new__
++    app_config = apps.get_containing_app_config(module)
++  File "/testbed/django/apps/registry.py", line 253, in get_containing_app_config
++    self.check_apps_ready()
++  File "/testbed/django/apps/registry.py", line 135, in check_apps_ready
++    settings.INSTALLED_APPS
++  File "/testbed/django/conf/__init__.py", line 67, in __getattr__
++    self._setup(name)
++  File "/testbed/django/conf/__init__.py", line 48, in _setup
++    raise ImproperlyConfigured(
++django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..333be17450
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,7 @@
++from django.db import models
++class MyBigAutoField(models.BigAutoField):
++    pass
++
++class MyModel(models.Model):
++    pk = models.AutoField(primary_key=True)
++
+diff --git a/settings.py b/settings.py
+new file mode 100644
+index 0000000000..80767331aa
+--- /dev/null
++++ b/settings.py
+@@ -0,0 +1,22 @@
++import os
++
++SECRET_KEY = 'your_secret_key_here'
++DEBUG = True
++ALLOWED_HOSTS = ['*']
++
++INSTALLED_APPS = [
++    'django.contrib.admin',
++    'django.contrib.auth',
++    'django.contrib.contenttypes',
++    'django.contrib.sessions',
++    'django.contrib.messages',
++    'django.contrib.staticfiles',
++    'example.core.models',  # Add this line to include the custom model
++]
++
++DATABASES = {
++    'default': {
++        'ENGINE': 'django.db.backends.sqlite3',
++        'NAME': os.path.join(os.getcwd(), 'db.sqlite3'),
++    }
++}

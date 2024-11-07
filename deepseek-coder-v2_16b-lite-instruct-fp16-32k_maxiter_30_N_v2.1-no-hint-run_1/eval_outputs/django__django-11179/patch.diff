@@ -1,0 +1,39 @@
+diff --git a/models.py b/models.py
+new file mode 100644
+index 0000000000..da07496c01
+--- /dev/null
++++ b/models.py
+@@ -0,0 +1,9 @@
++from django.db import models
++
++class MyModel(models.Model):
++    name = models.CharField(max_length=255)
++
++    def delete(self, *args, **kwargs):
++        super().delete(*args, **kwargs)
++        self.pk = None  # Set the primary key to None after deletion
++
+diff --git a/tests/models.py b/tests/models.py
+new file mode 100644
+index 0000000000..2c90628728
+--- /dev/null
++++ b/tests/models.py
+@@ -0,0 +1,5 @@
++# Add this at the end of the file
++from django.db import models
++
++class MyModel(models.Model):
++    name = models.CharField(max_length=255)
+diff --git a/tests/test_models.py b/tests/test_models.py
+new file mode 100644
+index 0000000000..1ecae514bf
+--- /dev/null
++++ b/tests/test_models.py
+@@ -0,0 +1,7 @@
++# Add this at the end of the file
++import django
++from django.db import models
++
++class MyModel(models.Model):
++    name = models.CharField(max_length=255)
++

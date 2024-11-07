@@ -1,0 +1,36 @@
+diff --git a/optimizer.py b/optimizer.py
+new file mode 100644
+index 0000000000..009c5ff9d6
+--- /dev/null
++++ b/optimizer.py
+@@ -0,0 +1,30 @@
++class AlterField:
++    def __init__(self, model_name, name, field):
++        self.model_name = model_name
++        self.name = name
++        self.field = field
++
++    def reduce(self, operation):
++        """
++        This method reduces multiple AlterField operations when they are separated by a non-elidable migration or inside a non-squashed migration.
++
++        Args:
++            operation (AlterField): The next operation in the list to be reduced.
++
++        Returns:
++            list: A list containing only the current AlterField operation if it is also an AlterField with the same field attributes, otherwise an empty list.
++        """
++        if isinstance(operation, AlterField) and self.is_same_field_operation(
++            operation
++        ):
++            return [self]
++        else:
++            return []
++
++    def is_same_field_operation(self, other):
++        return (
++            self.model_name == other.model_name
++            and self.name == other.name
++            and self.field == other.field
++        )
++

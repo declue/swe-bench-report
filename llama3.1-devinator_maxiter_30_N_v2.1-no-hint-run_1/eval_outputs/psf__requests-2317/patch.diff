@@ -1,0 +1,10 @@
+diff --git a/error.log b/error.log
+new file mode 100644
+index 00000000..c47d0a00
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1,4 @@
++Traceback (most recent call last):
++  File "/workspace/reproduce_error.py", line 1, in <module>
++    method = builtin_str(method)
++NameError: name 'builtin_str' is not defined

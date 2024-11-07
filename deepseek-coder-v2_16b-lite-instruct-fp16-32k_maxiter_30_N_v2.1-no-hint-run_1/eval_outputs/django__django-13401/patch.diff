@@ -1,0 +1,36 @@
+diff --git a/django__django__3.2/reproduce_error.py b/django__django__3.2/reproduce_error.py
+new file mode 100644
+index 0000000000..3e07d342db
+--- /dev/null
++++ b/django__django__3.2/reproduce_error.py
+@@ -0,0 +1,30 @@
++from django.db import models
++import os
++os.environ['DJANGO_SETTINGS_MODULE'] = 'your_project_name.settings'  # Replace with your actual project name
++
++class A(models.Model):
++    class Meta:
++        abstract = True
++    myfield = models.IntegerField()
++
++class B(A):
++    pass
++
++class C(A):
++    pass
++
++import os
++from django.db import models
++os.environ['DJANGO_SETTINGS_MODULE'] = 'myproject.settings'  # Replace with your actual project name
++
++class A(models.Model):
++    class Meta:
++        abstract = True
++    myfield = models.IntegerField()
++
++class B(A):
++    pass
++
++class C(A):
++    pass
++

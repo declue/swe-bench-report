@@ -1,0 +1,10 @@
+2024-11-04 13:56:39,639 - INFO - Building image: ghcr.io/all-hands-ai/runtime:oh_v0.12.0_q1f5uxk6fgtn0uvu_cvtclm1oaf9cheg4
+2024-11-04 13:58:43,538 - INFO - Image [ghcr.io/all-hands-ai/runtime:oh_v0.12.0_q1f5uxk6fgtn0uvu_cvtclm1oaf9cheg4] build finished.
+2024-11-04 13:58:43,544 - INFO - Re-tagged image [ghcr.io/all-hands-ai/runtime:oh_v0.12.0_q1f5uxk6fgtn0uvu_cvtclm1oaf9cheg4] with more generic tag [oh_v0.12.0_q1f5uxk6fgtn0uvu]
+2024-11-04 13:58:43,545 - INFO - Image ghcr.io/all-hands-ai/runtime with tags [oh_v0.12.0_q1f5uxk6fgtn0uvu_cvtclm1oaf9cheg4, oh_v0.12.0_q1f5uxk6fgtn0uvu] built successfully
+2024-11-04 13:58:43,553 - INFO - [runtime 3e204b37-bf31-4ec6-ba1e-9f4f8f21960a-bff8b837f438ec8e] Starting runtime with image: ghcr.io/all-hands-ai/runtime:oh_v0.12.0_q1f5uxk6fgtn0uvu_cvtclm1oaf9cheg4
+2024-11-04 13:58:43,698 - ERROR - [runtime 3e204b37-bf31-4ec6-ba1e-9f4f8f21960a-bff8b837f438ec8e] Error: Instance openhands-runtime-3e204b37-bf31-4ec6-ba1e-9f4f8f21960a-bff8b837f438ec8e FAILED to start container!
+
+2024-11-04 13:58:43,698 - ERROR - [runtime 3e204b37-bf31-4ec6-ba1e-9f4f8f21960a-bff8b837f438ec8e] 500 Server Error for http+docker://localhost/v1.47/containers/be743139172f13c02eccd9c04d99c96cf438e1f99aecad00c12f33ebec40baa5/start: Internal Server Error ("driver failed programming external connectivity on endpoint openhands-runtime-3e204b37-bf31-4ec6-ba1e-9f4f8f21960a-bff8b837f438ec8e (1d6a420f690a20b6a1b589c6d11106fec156c6ba6fad45646529ac01833c1399): failed to bind port 0.0.0.0:37856/tcp: Error starting userland proxy: listen tcp4 0.0.0.0:37856: bind: address already in use")
+2024-11-04 13:58:48,219 - INFO - [runtime 3e204b37-bf31-4ec6-ba1e-9f4f8f21960a-bff8b837f438ec8e] Container started: openhands-runtime-3e204b37-bf31-4ec6-ba1e-9f4f8f21960a-bff8b837f438ec8e
+2024-11-04 13:58:48,219 - INFO - [runtime 3e204b37-bf31-4ec6-ba1e-9f4f8f21960a-bff8b837f438ec8e] Waiting for client to become ready at http://localhost:34043...

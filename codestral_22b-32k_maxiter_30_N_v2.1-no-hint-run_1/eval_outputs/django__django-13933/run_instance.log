@@ -1,0 +1,24 @@
+2024-11-07 09:58:14,586 - INFO - Environment image sweb.env.x86_64.297af196949a2a635bce66:latest found for django__django-13933
+Building instance image sweb.eval.x86_64.django__django-13933:latest for django__django-13933
+2024-11-07 09:58:14,595 - INFO - Image sweb.eval.x86_64.django__django-13933:latest already exists, skipping build.
+2024-11-07 09:58:14,595 - INFO - Creating container for django__django-13933...
+2024-11-07 09:58:14,628 - INFO - Container for django__django-13933 created: 92d4662dc23c7ffeb5dfac0e345add1c2332351dc840cb76ffa770e1b25df8a4
+2024-11-07 09:58:15,212 - INFO - Container for django__django-13933 started: 92d4662dc23c7ffeb5dfac0e345add1c2332351dc840cb76ffa770e1b25df8a4
+2024-11-07 09:58:15,213 - INFO - Intermediate patch for django__django-13933 written to logs/run_evaluation/20241107_095659/codestral_22b-32k_maxiter_30_N_v2.1-no-hint-run_1/django__django-13933/patch.diff, now applying to container...
+2024-11-07 09:58:15,406 - INFO - Failed to apply patch to container, trying again...
+2024-11-07 09:58:15,444 - INFO - >>>>> Applied Patch:
+patching file reproduce_error.py
+
+2024-11-07 09:58:17,280 - INFO - Git diff before:
+
+2024-11-07 09:58:17,281 - INFO - Eval script for django__django-13933 written to logs/run_evaluation/20241107_095659/codestral_22b-32k_maxiter_30_N_v2.1-no-hint-run_1/django__django-13933/eval.sh; copying to container...
+2024-11-07 09:58:22,101 - INFO - Test runtime: 4.60 seconds
+2024-11-07 09:58:22,102 - INFO - Test output for django__django-13933 written to logs/run_evaluation/20241107_095659/codestral_22b-32k_maxiter_30_N_v2.1-no-hint-run_1/django__django-13933/test_output.txt
+2024-11-07 09:58:22,197 - INFO - Git diff after:
+
+2024-11-07 09:58:22,197 - INFO - Grading answer for django__django-13933...
+2024-11-07 09:58:22,200 - INFO - report: {'django__django-13933': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_modelchoicefield_value_placeholder (forms_tests.tests.test_error_messages.ModelChoiceFieldErrorMessagesTestCase)']}, 'PASS_TO_PASS': {'success': ['test_modelchoicefield (forms_tests.tests.test_error_messages.ModelChoiceFieldErrorMessagesTestCase)', 'test_booleanfield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_charfield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_choicefield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_datefield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_datetimefield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_decimalfield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_emailfield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_error_messages_escaping (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_filefield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_floatfield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_generic_ipaddressfield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_integerfield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_multiplechoicefield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_regexfield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_splitdatetimefield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_subclassing_errorlist (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_timefield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)', 'test_urlfield (forms_tests.tests.test_error_messages.FormsErrorMessagesTestCase)'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-13933: resolved: False
+2024-11-07 09:58:22,201 - INFO - Attempting to stop container sweb.eval.django__django-13933.20241107_095659...
+2024-11-07 09:58:37,392 - INFO - Attempting to remove container sweb.eval.django__django-13933.20241107_095659...
+2024-11-07 09:58:37,411 - INFO - Container sweb.eval.django__django-13933.20241107_095659 removed.

@@ -1,0 +1,7 @@
+2024-11-04 13:56:39,639 - INFO - Building image: ghcr.io/all-hands-ai/runtime:oh_v0.12.0_ghi4u4608aa9lgf5_cvtclm1oaf9cheg4
+2024-11-04 13:58:32,258 - INFO - Image [ghcr.io/all-hands-ai/runtime:oh_v0.12.0_ghi4u4608aa9lgf5_cvtclm1oaf9cheg4] build finished.
+2024-11-04 13:58:32,274 - INFO - Re-tagged image [ghcr.io/all-hands-ai/runtime:oh_v0.12.0_ghi4u4608aa9lgf5_cvtclm1oaf9cheg4] with more generic tag [oh_v0.12.0_ghi4u4608aa9lgf5]
+2024-11-04 13:58:32,275 - INFO - Image ghcr.io/all-hands-ai/runtime with tags [oh_v0.12.0_ghi4u4608aa9lgf5_cvtclm1oaf9cheg4, oh_v0.12.0_ghi4u4608aa9lgf5] built successfully
+2024-11-04 13:58:32,283 - INFO - [runtime b5489e1e-45d9-4fe3-a417-425f76d44ba3-516f87b0d4d9cc1a] Starting runtime with image: ghcr.io/all-hands-ai/runtime:oh_v0.12.0_ghi4u4608aa9lgf5_cvtclm1oaf9cheg4
+2024-11-04 13:58:32,550 - INFO - [runtime b5489e1e-45d9-4fe3-a417-425f76d44ba3-516f87b0d4d9cc1a] Container started: openhands-runtime-b5489e1e-45d9-4fe3-a417-425f76d44ba3-516f87b0d4d9cc1a
+2024-11-04 13:58:32,551 - INFO - [runtime b5489e1e-45d9-4fe3-a417-425f76d44ba3-516f87b0d4d9cc1a] Waiting for client to become ready at http://localhost:31877...

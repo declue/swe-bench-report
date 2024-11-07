@@ -1,0 +1,30 @@
+diff --git a/output.log b/output.log
+new file mode 100644
+index 0000000000..43253a16b2
+--- /dev/null
++++ b/output.log
+@@ -0,0 +1,17 @@
++Traceback (most recent call last):
++  File "/testbed/test.py", line 1, in <module>
++    import numpy as np; import matplotlib.pyplot as plt; f, ax = plt.subplots(); ax.bar([np.nan], [np.nan])
++                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/testbed/lib/matplotlib/__init__.py", line 1423, in inner
++    return func(ax, *map(sanitize_sequence, args), **kwargs)
++           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/testbed/lib/matplotlib/axes/_axes.py", line 2373, in bar
++    width = self._convert_dx(width, x0, x, self.convert_xunits)
++            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/testbed/lib/matplotlib/axes/_axes.py", line 2182, in _convert_dx
++    x0 = cbook._safe_first_finite(x0)
++         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/testbed/lib/matplotlib/cbook/__init__.py", line 1749, in _safe_first_finite
++    return next(val for val in obj if safe_isfinite(val))
++           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++StopIteration
+diff --git a/test.py b/test.py
+new file mode 100644
+index 0000000000..85b68d871f
+--- /dev/null
++++ b/test.py
+@@ -0,0 +1 @@
++import numpy as np; import matplotlib.pyplot as plt; f, ax = plt.subplots(); ax.bar([np.nan], [np.nan])

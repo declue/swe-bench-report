@@ -1,0 +1,73 @@
+diff --git a/astropy/astropy/core/nddata.py b/astropy/astropy/core/nddata.py
+new file mode 100644
+index 0000000000..692cbf9aa0
+--- /dev/null
++++ b/astropy/astropy/core/nddata.py
+@@ -0,0 +1,20 @@
++import numpy as np
++from astropy.nddata import NDDataRef
++
++class NDDataRef:
++    ...
++
++    def _arithmetic_mask(self, operation, operand2, **kwargs):
++        if self.mask is None and operand2.mask is not None:
++            return operand2.mask
++        elif self.mask is not None and operand2.mask is None:
++            return self.mask
++        else:
++            return np.bitwise_or(self.mask, operand2.mask)
++
++    def multiply(self, operand2, handle_mask=np.bitwise_or):
++        ...
++
++    def add(self, operand2, handle_mask=np.bitwise_or):
++        ...
++
+diff --git a/error.log b/error.log
+new file mode 100644
+index 0000000000..faca14f50a
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1,12 @@
++Traceback (most recent call last):
++  File "/testbed/reproduce_error.py", line 17, in <module>
++    nref_mask.multiply(1., handle_mask=np.bitwise_or).mask
++  File "/testbed/astropy/nddata/mixins/ndarithmetic.py", line 618, in multiply
++    return self._prepare_then_do_arithmetic(
++  File "/testbed/astropy/nddata/mixins/ndarithmetic.py", line 731, in _prepare_then_do_arithmetic
++    result, init_kwds = operand._arithmetic(operation, operand2, **kwargs)
++  File "/testbed/astropy/nddata/mixins/ndarithmetic.py", line 335, in _arithmetic
++    kwargs["mask"] = self._arithmetic_mask(
++  File "/testbed/astropy/nddata/mixins/ndarithmetic.py", line 527, in _arithmetic_mask
++    return handle_mask(self.mask, operand.mask, **kwds)
++TypeError: unsupported operand type(s) for |: 'int' and 'NoneType'
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..e6a3d52a02
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,23 @@
++import numpy as np
++from astropy.nddata import NDDataRef
++
++array = np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]])
++mask = np.array([[0, 1, 64], [8, 0, 1], [2, 1, 0]])
++
++nref_nomask = NDDataRef(array)
++nref_mask = NDDataRef(array, mask=mask)
++
++# multiply no mask by constant (no mask * no mask)
++nref_nomask.multiply(1., handle_mask=np.bitwise_or).mask
++
++# multiply no mask by itself (no mask * no mask)
++nref_nomask.multiply(nref_nomask, handle_mask=np.bitwise_or).mask
++
++# multiply mask by constant (mask * no mask)
++nref_mask.multiply(1., handle_mask=np.bitwise_or).mask
++
++# multiply mask by itself (mask * mask)
++nref_mask.multiply(nref_mask, handle_mask=np.bitwise_or).mask
++
++# multiply mask by no mask (mask * no mask)
++nref_mask.multiply(nref_nomask, handle_mask=np.bitwise_or).mask

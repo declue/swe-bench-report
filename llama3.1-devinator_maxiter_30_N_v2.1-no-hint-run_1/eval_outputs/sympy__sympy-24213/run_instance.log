@@ -1,0 +1,25 @@
+2024-11-05 14:29:00,064 - INFO - Environment image sweb.env.x86_64.c795f4b88616b8462021ed:latest found for sympy__sympy-24213
+Building instance image sweb.eval.x86_64.sympy__sympy-24213:latest for sympy__sympy-24213
+2024-11-05 14:29:00,066 - INFO - Image sweb.eval.x86_64.sympy__sympy-24213:latest already exists, skipping build.
+2024-11-05 14:29:00,066 - INFO - Creating container for sympy__sympy-24213...
+2024-11-05 14:29:00,085 - INFO - Container for sympy__sympy-24213 created: d23c147b2b01e68499e45db070ba32ac06646552c4fd02bbd3754fd6997f06f4
+2024-11-05 14:29:00,260 - INFO - Container for sympy__sympy-24213 started: d23c147b2b01e68499e45db070ba32ac06646552c4fd02bbd3754fd6997f06f4
+2024-11-05 14:29:00,260 - INFO - Intermediate patch for sympy__sympy-24213 written to logs/run_evaluation/20241105_142258/llama3.1-devinator_maxiter_30_N_v2.1-no-hint-run_1/sympy__sympy-24213/patch.diff, now applying to container...
+2024-11-05 14:29:00,435 - INFO - Failed to apply patch to container, trying again...
+2024-11-05 14:29:00,482 - INFO - >>>>> Applied Patch:
+patching file test.log
+patching file version.log
+
+2024-11-05 14:29:01,011 - INFO - Git diff before:
+
+2024-11-05 14:29:01,012 - INFO - Eval script for sympy__sympy-24213 written to logs/run_evaluation/20241105_142258/llama3.1-devinator_maxiter_30_N_v2.1-no-hint-run_1/sympy__sympy-24213/eval.sh; copying to container...
+2024-11-05 14:29:04,832 - INFO - Test runtime: 3.69 seconds
+2024-11-05 14:29:04,832 - INFO - Test output for sympy__sympy-24213 written to logs/run_evaluation/20241105_142258/llama3.1-devinator_maxiter_30_N_v2.1-no-hint-run_1/sympy__sympy-24213/test_output.txt
+2024-11-05 14:29:04,886 - INFO - Git diff after:
+
+2024-11-05 14:29:04,886 - INFO - Grading answer for sympy__sympy-24213...
+2024-11-05 14:29:04,887 - INFO - report: {'sympy__sympy-24213': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_issue_24211']}, 'PASS_TO_PASS': {'success': ['test_str_repr', 'test_eq', 'test_convert_to', 'test_Quantity_definition', 'test_abbrev', 'test_print', 'test_Quantity_eq', 'test_add_sub', 'test_quantity_abs', 'test_check_unit_consistency', 'test_mul_div', 'test_units', 'test_issue_quart', 'test_issue_5565', 'test_find_unit', 'test_Quantity_derivative', 'test_quantity_postprocessing', 'test_factor_and_dimension', 'test_dimensional_expr_of_derivative', 'test_get_dimensional_expr_with_function', 'test_binary_information', 'test_conversion_with_2_nonstandard_dimensions', 'test_eval_subs', 'test_issue_14932', 'test_issue_14547', 'test_deprecated_quantity_methods', 'test_issue_22164', 'test_issue_22819', 'test_issue_20288', 'test_issue_24062', 'test_prefixed_property'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for sympy__sympy-24213: resolved: False
+2024-11-05 14:29:04,887 - INFO - Attempting to stop container sweb.eval.sympy__sympy-24213.20241105_142258...
+2024-11-05 14:29:20,128 - INFO - Attempting to remove container sweb.eval.sympy__sympy-24213.20241105_142258...
+2024-11-05 14:29:20,180 - INFO - Container sweb.eval.sympy__sympy-24213.20241105_142258 removed.

@@ -1,0 +1,44 @@
+2024-11-04 18:43:21,914 - INFO - Environment image sweb.env.x86_64.428468730904ff6b4232aa:latest found for astropy__astropy-12907
+Building instance image sweb.eval.x86_64.astropy__astropy-12907:latest for astropy__astropy-12907
+2024-11-04 18:43:21,921 - INFO - Image sweb.eval.x86_64.astropy__astropy-12907:latest already exists, skipping build.
+2024-11-04 18:43:21,922 - INFO - Creating container for astropy__astropy-12907...
+2024-11-04 18:43:22,055 - INFO - Container for astropy__astropy-12907 created: 326a5f0b2177f9093689b5e2c294bfe6aa9374d1b2ec62061464b1541ce95443
+2024-11-04 18:43:22,432 - INFO - Container for astropy__astropy-12907 started: 326a5f0b2177f9093689b5e2c294bfe6aa9374d1b2ec62061464b1541ce95443
+2024-11-04 18:43:22,433 - INFO - Intermediate patch for astropy__astropy-12907 written to logs/run_evaluation/20241104_184311/deepseek-coder-v2_16b-32k_maxiter_30_N_v2.1-no-hint-run_1/astropy__astropy-12907/patch.diff, now applying to container...
+2024-11-04 18:43:22,582 - INFO - Failed to apply patch to container, trying again...
+2024-11-04 18:43:22,613 - INFO - >>>>> Applied Patch:
+patching file reproduce_scripts/reproduce_error.py
+
+2024-11-04 18:43:22,967 - INFO - Git diff before:
+diff --git a/pyproject.toml b/pyproject.toml
+index 3364d30740..02dddbe713 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools",
++requires = ["setuptools==68.0.0",
+             "setuptools_scm>=6.2",
+             "wheel",
+             "cython==0.29.22",
+2024-11-04 18:43:22,967 - INFO - Eval script for astropy__astropy-12907 written to logs/run_evaluation/20241104_184311/deepseek-coder-v2_16b-32k_maxiter_30_N_v2.1-no-hint-run_1/astropy__astropy-12907/eval.sh; copying to container...
+2024-11-04 18:44:09,456 - INFO - Test runtime: 46.40 seconds
+2024-11-04 18:44:09,456 - INFO - Test output for astropy__astropy-12907 written to logs/run_evaluation/20241104_184311/deepseek-coder-v2_16b-32k_maxiter_30_N_v2.1-no-hint-run_1/astropy__astropy-12907/test_output.txt
+2024-11-04 18:44:09,498 - INFO - Git diff after:
+diff --git a/pyproject.toml b/pyproject.toml
+index 3364d30740..02dddbe713 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools",
++requires = ["setuptools==68.0.0",
+             "setuptools_scm>=6.2",
+             "wheel",
+             "cython==0.29.22",
+2024-11-04 18:44:09,498 - INFO - Grading answer for astropy__astropy-12907...
+2024-11-04 18:44:09,518 - INFO - report: {'astropy__astropy-12907': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['astropy/modeling/tests/test_separable.py::test_separable[compound_model6-result6]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model9-result9]']}, 'PASS_TO_PASS': {'success': ['astropy/modeling/tests/test_separable.py::test_coord_matrix', 'astropy/modeling/tests/test_separable.py::test_cdot', 'astropy/modeling/tests/test_separable.py::test_cstack', 'astropy/modeling/tests/test_separable.py::test_arith_oper', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7]', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8]', 'astropy/modeling/tests/test_separable.py::test_custom_model_separable'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for astropy__astropy-12907: resolved: False
+2024-11-04 18:44:09,518 - INFO - Attempting to stop container sweb.eval.astropy__astropy-12907.20241104_184311...
+2024-11-04 18:44:24,639 - INFO - Attempting to remove container sweb.eval.astropy__astropy-12907.20241104_184311...
+2024-11-04 18:44:24,666 - INFO - Container sweb.eval.astropy__astropy-12907.20241104_184311 removed.

@@ -1,0 +1,17 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 000000000..dc616e3ce
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,11 @@
++from sklearn.datasets import load_iris
++from sklearn.ensemble import VotingClassifier
++from sklearn.linear_model import LogisticRegression
++from sklearn.ensemble import RandomForestClassifier
++import numpy as np
++
++X, y = load_iris(return_X_y=True)
++voter = VotingClassifier(estimators=[('lr', LogisticRegression()), ('rf', RandomForestClassifier())])
++voter.fit(X, y, sample_weight=np.ones(y.shape))
++voter.set_params(lr=None)
++voter.fit(X, y, sample_weight=np.ones(y.shape))

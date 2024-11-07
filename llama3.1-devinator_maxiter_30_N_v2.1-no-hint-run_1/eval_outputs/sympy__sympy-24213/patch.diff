@@ -1,0 +1,10 @@
+diff --git a/test.log b/test.log
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git a/version.log b/version.log
+new file mode 100644
+index 0000000000..eefa31a8cc
+--- /dev/null
++++ b/version.log
+@@ -0,0 +1 @@
++1.12.dev

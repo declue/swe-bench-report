@@ -1,0 +1,19 @@
+diff --git a/test_matrix_col_insert.py b/test_matrix_col_insert.py
+new file mode 100644
+index 0000000000..b0ec13c209
+--- /dev/null
++++ b/test_matrix_col_insert.py
+@@ -0,0 +1,13 @@
++import sympy as sm
++
++def test_col_insert():
++    M = sm.eye(6)
++    V = 2 * sm.ones(6, 2)
++    try:
++        M_new = M.col_insert(3, V)
++        print("Matrix after col_insert:", M_new)
++    except Exception as e:
++        print("Error during col_insert:", str(e))
++
++if __name__ == "__main__":
++    test_col_insert()

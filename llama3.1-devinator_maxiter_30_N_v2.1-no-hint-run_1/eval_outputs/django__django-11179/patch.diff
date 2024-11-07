@@ -1,0 +1,47 @@
+diff --git a/delete_instance.py b/delete_instance.py
+new file mode 100644
+index 0000000000..b10be0d06e
+--- /dev/null
++++ b/delete_instance.py
+@@ -0,0 +1,7 @@
++from django.db import models
++
++class MyModel(models.Model):
++    pass
++
++obj = MyModel.objects.create()
++obj.delete()  # This should clear the PK on the model
+diff --git a/error.log b/error.log
+new file mode 100644
+index 0000000000..bdc295422c
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1,25 @@
++Traceback (most recent call last):
++  File "delete_instance.py", line 3, in <module>
++    class MyModel(models.Model):
++  File "/testbed/django/db/models/base.py", line 103, in __new__
++    app_config = apps.get_containing_app_config(module)
++  File "/testbed/django/apps/registry.py", line 252, in get_containing_app_config
++    self.check_apps_ready()
++  File "/testbed/django/apps/registry.py", line 134, in check_apps_ready
++    settings.INSTALLED_APPS
++  File "/testbed/django/conf/__init__.py", line 76, in __getattr__
++    self._setup(name)
++  File "/testbed/django/conf/__init__.py", line 63, in _setup
++    self._wrapped = Settings(settings_module)
++  File "/testbed/django/conf/__init__.py", line 142, in __init__
++    mod = importlib.import_module(self.SETTINGS_MODULE)
++  File "/opt/miniconda3/envs/testbed/lib/python3.6/importlib/__init__.py", line 126, in import_module
++    return _bootstrap._gcd_import(name[level:], package, level)
++  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
++  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
++  File "<frozen importlib._bootstrap>", line 941, in _find_and_load_unlocked
++  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
++  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
++  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
++  File "<frozen importlib._bootstrap>", line 953, in _find_and_load_unlocked
++ModuleNotFoundError: No module named 'myproject'
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..e69de29bb2

@@ -1,0 +1,80 @@
+diff --git a/django/contrib/sitemaps/__init__.py b/django/contrib/sitemaps/__init__.py
+index 27756d9d96..0296327363 100644
+--- a/django/contrib/sitemaps/__init__.py
++++ b/django/contrib/sitemaps/__init__.py
+@@ -12,11 +12,9 @@ from django.utils.deprecation import RemovedInDjango50Warning
+ 
+ PING_URL = "https://www.google.com/webmasters/tools/ping"
+ 
+-
+ class SitemapNotFound(Exception):
+     pass
+ 
+-
+ def ping_google(sitemap_url=None, ping_url=PING_URL, sitemap_uses_https=True):
+     """
+     Alert Google that the sitemap for the current site has been updated.
+@@ -28,7 +26,6 @@ def ping_google(sitemap_url=None, ping_url=PING_URL, sitemap_uses_https=True):
+     params = urlencode({"sitemap": sitemap_full_url})
+     urlopen("%s?%s" % (ping_url, params))
+ 
+-
+ def _get_sitemap_full_url(sitemap_url, sitemap_uses_https=True):
+     if not django_apps.is_installed("django.contrib.sites"):
+         raise ImproperlyConfigured(
+@@ -57,7 +54,6 @@ def _get_sitemap_full_url(sitemap_url, sitemap_uses_https=True):
+     scheme = "https" if sitemap_uses_https else "http"
+     return "%s://%s%s" % (scheme, current_site.domain, sitemap_url)
+ 
+-
+ class Sitemap:
+     # This limit is defined by Google. See the index documentation at
+     # https://www.sitemaps.org/protocol.html#index.
+@@ -162,17 +158,6 @@ class Sitemap:
+         domain = self.get_domain(site)
+         return self._urls(page, protocol, domain)
+ 
+-    def get_latest_lastmod(self):
+-        if not hasattr(self, "lastmod"):
+-            return None
+-        if callable(self.lastmod):
+-            try:
+-                return max([self.lastmod(item) for item in self.items()])
+-            except TypeError:
+-                return None
+-        else:
+-            return self.lastmod
+-
+     def _urls(self, page, protocol, domain):
+         urls = []
+         latest_lastmod = None
+@@ -227,7 +212,6 @@ class Sitemap:
+ 
+         return urls
+ 
+-
+ class GenericSitemap(Sitemap):
+     priority = None
+     changefreq = None
+@@ -249,10 +233,14 @@ class GenericSitemap(Sitemap):
+         return None
+ 
+     def get_latest_lastmod(self):
+-        if self.date_field is not None:
+-            return (
+-                self.queryset.order_by("-" + self.date_field)
+-                .values_list(self.date_field, flat=True)
+-                .first()
+-            )
+-        return None
++        if not hasattr(self, "lastmod"):
++            return None
++        items = self.items()
++        if callable(self.lastmod) and items:
++            try:
++                return max([self.lastmod(item) for item in items])
++            except (TypeError, ValueError):
++                return None
++        else:
++            return self.lastmod
++

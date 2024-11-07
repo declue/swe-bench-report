@@ -1,0 +1,72 @@
+diff --git a/django/http/response.py b/django/http/response.py
+index 6a84e193ba..5f352169ba 100644
+--- a/django/http/response.py
++++ b/django/http/response.py
+@@ -478,26 +478,33 @@ class HttpResponsePermanentRedirect(HttpResponseRedirectBase):
+ 
+ class HttpResponseNotModified(HttpResponse):
+     status_code = 304
+-
+-    def __init__(self, *args, **kwargs):
+-        super().__init__(*args, **kwargs)
+-        del self['content-type']
+-
+-    @HttpResponse.content.setter
+-    def content(self, value):
+-        if value:
+-            raise AttributeError("You cannot set content to a 304 (Not Modified) response")
++def __init__(self, *args, **kwargs):
++    super().__init__(*args, **kwargs)
++    if self.content is not None:
++        if isinstance(self.content, memoryview):
++            self._container = [self.content.tobytes()]
++        else:
++            self._container = [self.make_bytes(self.content)]
++    del self['content-type']
++
++@HttpResponse.content.setter
++def content(self, value):
++    if value is not None and self.status_code == 304:
++        raise AttributeError("You cannot set content to a 304 (Not Modified) response")
++    elif value is not None:
++        if isinstance(value, memoryview):
++            self._container = [value.tobytes()]
++        else:
++            self._container = [self.make_bytes(value)]
++    else:
+         self._container = []
+ 
+-
+ class HttpResponseBadRequest(HttpResponse):
+     status_code = 400
+ 
+-
+ class HttpResponseNotFound(HttpResponse):
+     status_code = 404
+-
+-
++   
+ class HttpResponseForbidden(HttpResponse):
+     status_code = 403
+ 
+@@ -556,3 +563,4 @@ class JsonResponse(HttpResponse):
+         kwargs.setdefault('content_type', 'application/json')
+         data = json.dumps(data, cls=encoder, **json_dumps_params)
+         super().__init__(content=data, **kwargs)
++
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..48031a6cd3
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,10 @@
++from django.http import HttpResponse
++from django.conf import settings
++
++def test_memoryview_content():
++    settings.configure()  # Added this line to configure Django settings
++    response = HttpResponse(memoryview(b"My Content"))
++    assert response.content == b"My Content", f"Expected b'My Content', but got {response.content}"
++
++test_memoryview_content()
++

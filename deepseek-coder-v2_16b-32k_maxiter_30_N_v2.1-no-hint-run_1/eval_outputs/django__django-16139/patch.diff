@@ -1,0 +1,21 @@
+diff --git a/admin/forms.py b/admin/forms.py
+new file mode 100644
+index 0000000000..34b1f03980
+--- /dev/null
++++ b/admin/forms.py
+@@ -0,0 +1,15 @@
++from django import forms
++from django.contrib.auth.models import User
++from django.utils.translation import gettext_lazy as _
++
++class UserChangeForm(forms.ModelForm):
++    class Meta:
++        model = User
++        fields = '__all__'
++    
++    def __init__(self, *args, **kwargs):
++        super().__init__(*args, **kwargs)
++        password = self.fields.get("password")
++        if password:
++            password.help_text = password.help_text.format(f"../../{self.instance.pk}/password/")
++

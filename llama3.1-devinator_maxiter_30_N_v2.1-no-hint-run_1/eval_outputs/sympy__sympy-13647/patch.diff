@@ -1,0 +1,36 @@
+diff --git a/doc.log b/doc.log
+new file mode 100644
+index 0000000000..7718aa804a
+--- /dev/null
++++ b/doc.log
+@@ -0,0 +1,20 @@
++Insert one or more columns at the given column position.
++
++        Examples
++        ========
++
++        >>> from sympy import zeros, ones
++        >>> M = zeros(3)
++        >>> V = ones(3, 1)
++        >>> M.col_insert(1, V)
++        Matrix([
++        [0, 1, 0, 0],
++        [0, 1, 0, 0],
++        [0, 1, 0, 0]])
++
++        See Also
++        ========
++
++        col
++        row_insert
++        
+diff --git a/output.log b/output.log
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git a/version.log b/version.log
+new file mode 100644
+index 0000000000..f8679b4590
+--- /dev/null
++++ b/version.log
+@@ -0,0 +1 @@
++1.1.2.dev

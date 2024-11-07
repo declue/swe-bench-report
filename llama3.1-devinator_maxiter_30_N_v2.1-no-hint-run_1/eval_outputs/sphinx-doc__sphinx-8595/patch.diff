@@ -1,0 +1,9 @@
+diff --git a/output.log b/output.log
+new file mode 100644
+index 000000000..44000fc50
+--- /dev/null
++++ b/output.log
+@@ -0,0 +1,3 @@
++Traceback (most recent call last):
++  File "<string>", line 1, in <module>
++ModuleNotFoundError: No module named 'example'

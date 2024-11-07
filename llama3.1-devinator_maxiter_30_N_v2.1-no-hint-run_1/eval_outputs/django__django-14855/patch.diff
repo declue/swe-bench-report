@@ -1,0 +1,60 @@
+diff --git a/django/contrib/admin/helpers.py b/django/contrib/admin/helpers.py
+index dd154f72ee..3704b845f6 100644
+--- a/django/contrib/admin/helpers.py
++++ b/django/contrib/admin/helpers.py
+@@ -203,7 +203,7 @@ class AdminReadonlyField:
+         label = self.field['label']
+         return format_html('<label{}>{}{}</label>', flatatt(attrs), capfirst(label), self.form.label_suffix)
+ 
+-    def get_admin_url(self, remote_field, remote_obj):
++    def get_admin_url(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(self, remote_field, remote_obj):
+         url_name = 'admin:%s_%s_change' % (
+             remote_field.model._meta.app_label,
+             remote_field.model._meta.model_name,
+@@ -243,7 +243,7 @@ class AdminReadonlyField:
+                     isinstance(f.remote_field, (ForeignObjectRel, OneToOneField)) and
+                     value is not None
+                 ):
+-                    result_repr = self.get_admin_url(f.remote_field, value)
++                    result_repr = self.get_admin_url(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(f.remote_field, value)
+                 else:
+                     result_repr = display_for_field(value, f, self.empty_value_display)
+                 result_repr = linebreaksbr(result_repr)
+diff --git a/error.log b/error.log
+new file mode 100644
+index 0000000000..fac06db7db
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1,13 @@
++Traceback (most recent call last):
++  File "reproduce_error.py", line 2, in <module>
++    from django.contrib.admin.helpers import get_admin_url
++  File "/testbed/django/contrib/admin/__init__.py", line 2, in <module>
++    from django.contrib.admin.filters import (
++  File "/testbed/django/contrib/admin/filters.py", line 10, in <module>
++    from django.contrib.admin.options import IncorrectLookupParameters
++  File "/testbed/django/contrib/admin/options.py", line 10, in <module>
++    from django.contrib.admin import helpers, widgets
++  File "/testbed/django/contrib/admin/helpers.py", line 206
++    def get_admin_url(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(current_app=self.model_admin.admin_site.name)(self, remote_field, remote_obj):
++                                                                   ^
++SyntaxError: invalid syntax
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..5fdab1122a
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,13 @@
++
++from django.contrib.admin.helpers import get_admin_url
++
++class MyAdminSite(admin.AdminSite):
++    def get_urls(self):
++        return []
++
++admin_site = MyAdminSite(name='custom-admin')
++model_admin = admin.ModelAdmin(admin_site=admin_site)
++
++url_name = 'my_model_detail'
++remote_obj = model_admin.model.objects.get(id=1)
++print(get_admin_url(url_name, args=[quote(remote_obj.pk)]))

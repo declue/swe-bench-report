@@ -1,0 +1,25 @@
+diff --git a/error.log b/error.log
+new file mode 100644
+index 0000000000..a2e5e172ba
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1 @@
++python3: can't open file '/testbed/reproduce_error.py': [Errno 2] No such file or directory
+diff --git a/output.log b/output.log
+new file mode 100644
+index 0000000000..506e9a2791
+--- /dev/null
++++ b/output.log
+@@ -0,0 +1,4 @@
++  File "/testbed/path/to/source/code.py", line 3
++    
++    ^
++IndentationError: expected an indented block
+diff --git a/path/to/source/code.py b/path/to/source/code.py
+new file mode 100644
+index 0000000000..26c881f997
+--- /dev/null
++++ b/path/to/source/code.py
+@@ -0,0 +1,2 @@
++def my_function():
++    # code here

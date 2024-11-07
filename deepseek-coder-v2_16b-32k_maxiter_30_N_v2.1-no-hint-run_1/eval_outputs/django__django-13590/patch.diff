@@ -1,0 +1,26 @@
+diff --git a/django__django__3.2/repo/some_module.py b/django__django__3.2/repo/some_module.py
+new file mode 100644
+index 0000000000..b137b9b023
+--- /dev/null
++++ b/django__django__3.2/repo/some_module.py
+@@ -0,0 +1,20 @@
++# some_module.py
++import os
++import django
++from django.db import models
++
++os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
++django.setup()
++
++class MyModel(models.Model):
++    name = models.CharField(max_length=100)
++    value = models.IntegerField()
++
++def reproduce_error():
++    # Example usage that causes the error
++    named_tuple = (1, 2)
++    queryset = MyModel.objects.filter(**dict(named_tuple))
++
++if __name__ == "__main__":
++    reproduce_error()
++

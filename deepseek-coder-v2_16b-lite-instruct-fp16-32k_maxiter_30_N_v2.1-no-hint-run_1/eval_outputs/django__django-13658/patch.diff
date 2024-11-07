@@ -1,0 +1,46 @@
+diff --git a/django/core/management/__init__.py b/django/core/management/__init__.py
+index 1ba093e51f..0cadc3dc46 100644
+--- a/django/core/management/__init__.py
++++ b/django/core/management/__init__.py
+@@ -181,6 +181,17 @@ def call_command(command_name, *args, **options):
+     return command.execute(*args, **defaults)
+ 
+ 
++class ManagementUtility:
++    """
++    Encapsulate the logic of the django-admin and manage.py utilities.
++    """
++    def __init__(self, argv=None):
++        self.argv = argv or sys.argv[:]
++        self.prog_name = os.path.basename(self.argv[0])
++        if self.prog_name == '__main__.py':
++            self.prog_name = 'python -m django'
++        self.settings_exception = None
++
+ class ManagementUtility:
+     """
+     Encapsulate the logic of the django-admin and manage.py utilities.
+@@ -412,3 +423,4 @@ def execute_from_command_line(argv=None):
+     """Run a ManagementUtility."""
+     utility = ManagementUtility(argv)
+     utility.execute()
++
+diff --git a/manage.py b/manage.py
+new file mode 100644
+index 0000000000..9ff4758964
+--- /dev/null
++++ b/manage.py
+@@ -0,0 +1,13 @@
++import os
++import sys
++
++if __name__ == "__main__":
++    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")  # Replace 'settings' with your settings module if different
++    try:
++        from django.core.management import execute_from_command_line
++    except ImportError as exc:
++        raise ImportError(
++            "Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?"
++        ) from exc
++    # This line is the key part that causes the error due to incorrect parsing of prog name
++    execute_from_command_line(sys.argv)

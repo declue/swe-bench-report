@@ -1,0 +1,29 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..e2d041e9a3
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,23 @@
++import unittest
++from django import forms
++from django.conf import settings
++import django
++
++# Configure Django settings to avoid ImproperlyConfigured error
++settings.configure()
++
++# Load Django apps to avoid AppRegistryNotReady error
++django.setup()
++
++class InvalidChoiceTestCase(unittest.TestCase):
++    def test_invalid_choice(self):
++        class TestForm(forms.Form):
++            choice = forms.ModelChoiceField(queryset=None)  # 'choices' argument removed as per the draft
++
++        form = TestForm({'choice': 'c'})
++        with self.assertRaises(forms.ValidationError) as cm:
++            form.is_valid()
++
++if __name__ == '__main__':
++    unittest.main()
++

@@ -1,0 +1,15 @@
+diff --git a/error.log b/error.log
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git a/test.py b/test.py
+new file mode 100644
+index 0000000000..84a45dad01
+--- /dev/null
++++ b/test.py
+@@ -0,0 +1,6 @@
++
++from django.http import HttpResponse
++
++def test_view():
++    content = memoryview(b"My Content")
++    return HttpResponse(content)

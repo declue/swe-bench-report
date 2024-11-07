@@ -1,0 +1,80 @@
+diff --git a/django/contrib/auth/validators.py b/django/contrib/auth/validators.py
+index b4878cfd45..c8f2902328 100644
+--- a/django/contrib/auth/validators.py
++++ b/django/contrib/auth/validators.py
+@@ -7,19 +7,20 @@ from django.utils.translation import gettext_lazy as _
+ 
+ @deconstructible
+ class ASCIIUsernameValidator(validators.RegexValidator):
+-    regex = r'^[\w.@+-]+$'
++    regex = r'\A[\w.@+-]+\Z'
+     message = _(
+         'Enter a valid username. This value may contain only English letters, '
+         'numbers, and @/./+/-/_ characters.'
+     )
+     flags = re.ASCII
+ 
+-
+-@deconstructible
+-class UnicodeUsernameValidator(validators.RegexValidator):
+-    regex = r'^[\w.@+-]+$'
+-    message = _(
+-        'Enter a valid username. This value may contain only letters, '
+-        'numbers, and @/./+/-/_ characters.'
+-    )
++    @deconstructible
++    class UnicodeUsernameValidator(validators.RegexValidator):
++        regex = r'\A[\w.@+-]+\Z'
++        message = _(
++            'Enter a valid username. This value may contain only letters, '
++            'numbers, and @/./+/-/_ characters.'
++        )
++   
+     flags = 0
++
+diff --git a/test_validators.py b/test_validators.py
+new file mode 100644
+index 0000000000..d901ab2275
+--- /dev/null
++++ b/test_validators.py
+@@ -0,0 +1,40 @@
++import os
++import django
++from django.conf import settings
++import sys
++sys.path.append('/workspace/django__django__3.0')  # Add the project root directory to the Python path
++from django.contrib.auth.validators import UnicodeUsernameValidator, ASCIIUsernameValidator  # Import both validators directly from the absolute path
++
++# Set up Django settings manually
++settings.configure(
++    INSTALLED_APPS=[
++        'django.contrib.auth',
++        'django.contrib.contenttypes',
++    ],
++    DATABASES={
++        'default': {
++            'ENGINE': 'django.db.backends.sqlite3',
++            'NAME': ':memory:',
++        }
++    },
++)
++
++# Apply migrations to create the necessary database tables
++django.setup()
++
++from django.contrib.auth import get_user_model
++
++def test_username_validator():
++    User = get_user_model()
++    invalid_usernames = ['username\n', 'username\r', 'username\r\n']
++    for username in invalid_usernames:
++        try:
++            User.objects.create_user(username=username)
++        except Exception as e:
++            print(f'Username "{username}" is invalid: {e}')
++        else:
++            print(f'Username "{username}" is valid, but it should be invalid!')
++
++if __name__ == '__main__':
++    test_username_validator()
++

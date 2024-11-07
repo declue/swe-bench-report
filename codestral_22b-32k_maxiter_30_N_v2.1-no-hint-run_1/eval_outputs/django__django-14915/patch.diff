@@ -1,0 +1,52 @@
+diff --git a/django/forms/models.py b/django/forms/models.py
+index 5dcf923c12..3490352249 100644
+--- a/django/forms/models.py
++++ b/django/forms/models.py
+@@ -1171,8 +1171,11 @@ class ModelChoiceIteratorValue:
+             other = other.value
+         return self.value == other
+ 
++    def __hash__(self):
++        return hash((self.value, id(self.instance)))
+ 
+ class ModelChoiceIterator:
++   
+     def __init__(self, field):
+         self.field = field
+         self.queryset = field.queryset
+@@ -1422,3 +1425,4 @@ def modelform_defines_fields(form_class):
+         form_class._meta.fields is not None or
+         form_class._meta.exclude is not None
+     )
++
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..bdc7e5aa36
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,25 @@
++class ModelChoiceIteratorValue:
++    def __init__(self, value):
++        self.value = value
++
++    def __hash__(self):
++        return hash(self.value)
++
++import json
++
++show_fields = {1: ['first_name', 'last_name']}
++allowed_values = [1, 2]
++
++def create_option(value):
++    if not value:
++        return {}
++    if value in show_fields: # This is a dict {1: ['first_name', 'last_name']}
++        context = {'attrs': {}}
++        context['attrs']['data-fields'] = json.dumps(show_fields[value])
++        return context
++    elif value in allowed_values: # This is an array [1, 2]
++        return {}
++
++# Test with unhashable type (ModelChoiceIteratorValue)
++create_option(ModelChoiceIteratorValue(1))
++

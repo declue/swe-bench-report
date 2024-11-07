@@ -1,0 +1,3841 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen
++ locale-gen
+Generating locales (this might take a while)...
+  en_US.UTF-8... done
+Generation complete.
++ export LANG=en_US.UTF-8
++ LANG=en_US.UTF-8
++ export LANGUAGE=en_US:en
++ LANGUAGE=en_US:en
++ export LC_ALL=en_US.UTF-8
++ LC_ALL=en_US.UTF-8
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   django/conf/global_settings.py
+	modified:   django/conf/urls/static.py
+	modified:   django/contrib/admin/options.py
+	modified:   django/contrib/admin/sites.py
+	modified:   django/contrib/admin/utils.py
+	modified:   django/contrib/admindocs/urls.py
+	modified:   django/contrib/admindocs/utils.py
+	modified:   django/contrib/admindocs/views.py
+	modified:   django/contrib/auth/hashers.py
+	modified:   django/contrib/auth/validators.py
+	modified:   django/contrib/flatpages/forms.py
+	modified:   django/contrib/gis/db/backends/base/features.py
+	modified:   django/contrib/gis/db/backends/oracle/operations.py
+	modified:   django/contrib/gis/db/models/lookups.py
+	modified:   django/contrib/gis/geometry.py
+	modified:   django/contrib/gis/utils/ogrinspect.py
+	modified:   django/contrib/messages/storage/cookie.py
+	modified:   django/contrib/staticfiles/views.py
+	modified:   django/core/management/commands/makemessages.py
+	modified:   django/core/management/commands/runserver.py
+	modified:   django/core/management/commands/shell.py
+	modified:   django/core/management/utils.py
+	modified:   django/core/signing.py
+	modified:   django/core/validators.py
+	modified:   django/db/backends/oracle/operations.py
+	modified:   django/db/backends/postgresql/features.py
+	modified:   django/db/backends/sqlite3/introspection.py
+	modified:   django/db/migrations/writer.py
+	modified:   django/db/models/sql/constants.py
+	modified:   django/forms/fields.py
+	modified:   django/forms/widgets.py
+	modified:   django/http/request.py
+	modified:   django/urls/resolvers.py
+	modified:   django/utils/baseconv.py
+	modified:   django/utils/dateparse.py
+	modified:   django/utils/encoding.py
+	modified:   django/utils/html.py
+	modified:   django/utils/http.py
+	modified:   django/utils/jslex.py
+	modified:   django/utils/regex_helper.py
+	modified:   django/utils/text.py
+	modified:   django/utils/translation/template.py
+	modified:   django/utils/translation/trans_real.py
+	modified:   django/views/static.py
+	modified:   docs/_ext/djangodocs.py
+	modified:   scripts/manage_translations.py
+	modified:   setup.py
+	modified:   tests/admin_custom_urls/models.py
+	modified:   tests/admin_docs/test_views.py
+	modified:   tests/admin_views/admin.py
+	modified:   tests/admin_views/tests.py
+	modified:   tests/auth_tests/test_forms.py
+	modified:   tests/auth_tests/test_hashers.py
+	modified:   tests/auth_tests/test_views.py
+	modified:   tests/auth_tests/urls.py
+	modified:   tests/bash_completion/tests.py
+	modified:   tests/check_framework/test_urls.py
+	modified:   tests/check_framework/urls/beginning_with_slash.py
+	modified:   tests/check_framework/urls/contains_tuple.py
+	modified:   tests/check_framework/urls/include_contains_tuple.py
+	modified:   tests/check_framework/urls/include_with_dollar.py
+	modified:   tests/check_framework/urls/name_with_colon.py
+	modified:   tests/check_framework/urls/no_warnings.py
+	modified:   tests/check_framework/urls/path_compatibility/ending_with_dollar.py
+	modified:   tests/check_framework/urls/warning_in_include.py
+	modified:   tests/contenttypes_tests/urls.py
+	modified:   tests/field_deconstruction/tests.py
+	modified:   tests/file_storage/tests.py
+	modified:   tests/file_uploads/urls.py
+	modified:   tests/files/tests.py
+	modified:   tests/forms_tests/field_tests/test_filepathfield.py
+	modified:   tests/forms_tests/field_tests/test_regexfield.py
+	modified:   tests/forms_tests/tests/test_error_messages.py
+	modified:   tests/forms_tests/tests/test_forms.py
+	modified:   tests/forms_tests/tests/test_validators.py
+	modified:   tests/generic_views/urls.py
+	modified:   tests/gis_tests/gdal_tests/test_ds.py
+	modified:   tests/gis_tests/geo3d/tests.py
+	modified:   tests/i18n/patterns/urls/default.py
+	modified:   tests/i18n/patterns/urls/namespace.py
+	modified:   tests/i18n/patterns/urls/wrong_namespace.py
+	modified:   tests/i18n/sampleproject/update_catalogs.py
+	modified:   tests/i18n/test_extraction.py
+	modified:   tests/i18n/urls_default_unprefixed.py
+	modified:   tests/inspectdb/tests.py
+	modified:   tests/lookup/tests.py
+	modified:   tests/messages_tests/urls.py
+	modified:   tests/middleware/urls.py
+	modified:   tests/migrations/test_writer.py
+	modified:   tests/model_forms/tests.py
+	modified:   tests/model_inheritance/tests.py
+	modified:   tests/postgres_tests/test_json.py
+	modified:   tests/serializers/test_json.py
+	modified:   tests/signed_cookies_tests/tests.py
+	modified:   tests/staticfiles_tests/test_storage.py
+	modified:   tests/staticfiles_tests/urls/default.py
+	modified:   tests/template_tests/filter_tests/test_slugify.py
+	modified:   tests/template_tests/syntax_tests/test_url.py
+	modified:   tests/template_tests/urls.py
+	modified:   tests/urlpatterns/more_urls.py
+	modified:   tests/urlpatterns/path_urls.py
+	modified:   tests/urlpatterns/test_resolvers.py
+	modified:   tests/urlpatterns/tests.py
+	modified:   tests/urlpatterns_reverse/erroneous_urls.py
+	modified:   tests/urlpatterns_reverse/extra_urls.py
+	modified:   tests/urlpatterns_reverse/included_app_urls.py
+	modified:   tests/urlpatterns_reverse/included_named_urls.py
+	modified:   tests/urlpatterns_reverse/included_named_urls2.py
+	modified:   tests/urlpatterns_reverse/included_namespace_urls.py
+	modified:   tests/urlpatterns_reverse/included_no_kwargs_urls.py
+	modified:   tests/urlpatterns_reverse/included_urls.py
+	modified:   tests/urlpatterns_reverse/included_urls2.py
+	modified:   tests/urlpatterns_reverse/named_urls.py
+	modified:   tests/urlpatterns_reverse/named_urls_conflict.py
+	modified:   tests/urlpatterns_reverse/namespace_urls.py
+	modified:   tests/urlpatterns_reverse/test_localeregexdescriptor.py
+	modified:   tests/urlpatterns_reverse/tests.py
+	modified:   tests/urlpatterns_reverse/urls.py
+	modified:   tests/urlpatterns_reverse/utils.py
+	modified:   tests/user_commands/tests.py
+	modified:   tests/utils_tests/test_baseconv.py
+	modified:   tests/utils_tests/test_html.py
+	modified:   tests/utils_tests/test_jslex.py
+	modified:   tests/utils_tests/test_regex_helper.py
+	modified:   tests/utils_tests/test_text.py
+	modified:   tests/view_tests/tests/test_debug.py
+	modified:   tests/view_tests/tests/test_static.py
+	modified:   tests/view_tests/urls.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit d26b2424437dabeeca94d7900b37d2df4410da0c
+Author: Nick Pope <nick.pope@flightdataservices.com>
+Date:   Wed Mar 20 08:27:34 2019 +0000
+
+    Fixed #30271 -- Added the Sign database function.
+
+diff --git a/django/db/backends/sqlite3/base.py b/django/db/backends/sqlite3/base.py
+index 7552956cd9..6a19236c48 100644
+--- a/django/db/backends/sqlite3/base.py
++++ b/django/db/backends/sqlite3/base.py
+@@ -231,6 +231,7 @@ class DatabaseWrapper(BaseDatabaseWrapper):
+         conn.create_function('SHA256', 1, none_guard(lambda x: hashlib.sha256(x.encode()).hexdigest()))
+         conn.create_function('SHA384', 1, none_guard(lambda x: hashlib.sha384(x.encode()).hexdigest()))
+         conn.create_function('SHA512', 1, none_guard(lambda x: hashlib.sha512(x.encode()).hexdigest()))
++        conn.create_function('SIGN', 1, none_guard(lambda x: (x > 0) - (x < 0)))
+         conn.create_function('SIN', 1, none_guard(math.sin))
+         conn.create_function('SQRT', 1, none_guard(math.sqrt))
+         conn.create_function('TAN', 1, none_guard(math.tan))
+diff --git a/django/db/models/functions/__init__.py b/django/db/models/functions/__init__.py
+index fb899127d2..c928873661 100644
+--- a/django/db/models/functions/__init__.py
++++ b/django/db/models/functions/__init__.py
+@@ -7,7 +7,7 @@ from .datetime import (
+ )
+ from .math import (
+     Abs, ACos, ASin, ATan, ATan2, Ceil, Cos, Cot, Degrees, Exp, Floor, Ln, Log,
+-    Mod, Pi, Power, Radians, Round, Sin, Sqrt, Tan,
++    Mod, Pi, Power, Radians, Round, Sign, Sin, Sqrt, Tan,
+ )
+ from .text import (
+     MD5, SHA1, SHA224, SHA256, SHA384, SHA512, Chr, Concat, ConcatPair, Left,
+@@ -32,7 +32,7 @@ __all__ = [
+     # math
+     'Abs', 'ACos', 'ASin', 'ATan', 'ATan2', 'Ceil', 'Cos', 'Cot', 'Degrees',
+     'Exp', 'Floor', 'Ln', 'Log', 'Mod', 'Pi', 'Power', 'Radians', 'Round',
+-    'Sin', 'Sqrt', 'Tan',
++    'Sign', 'Sin', 'Sqrt', 'Tan',
+     # text
+     'MD5', 'SHA1', 'SHA224', 'SHA256', 'SHA384', 'SHA512', 'Chr', 'Concat',
+     'ConcatPair', 'Left', 'Length', 'Lower', 'LPad', 'LTrim', 'Ord', 'Repeat',
+diff --git a/django/db/models/functions/math.py b/django/db/models/functions/math.py
+index 1a574eb9ab..909a3088bb 100644
+--- a/django/db/models/functions/math.py
++++ b/django/db/models/functions/math.py
+@@ -146,6 +146,11 @@ class Round(Transform):
+     lookup_name = 'round'
+ 
+ 
++class Sign(Transform):
++    function = 'SIGN'
++    lookup_name = 'sign'
++
++
+ class Sin(NumericOutputFieldMixin, Transform):
+     function = 'SIN'
+     lookup_name = 'sin'
+diff --git a/docs/ref/models/database-functions.txt b/docs/ref/models/database-functions.txt
+index b79f7972cf..9c6121097b 100644
+--- a/docs/ref/models/database-functions.txt
++++ b/docs/ref/models/database-functions.txt
+@@ -1099,6 +1099,31 @@ It can also be registered as a transform. For example::
+     >>> # Get vectors whose round() is less than 20
+     >>> vectors = Vector.objects.filter(x__round__lt=20, y__round__lt=20)
+ 
++``Sign``
++--------
++
++.. class:: Sign(expression, **extra)
++
++.. versionadded:: 3.0
++
++Returns the sign (-1, 0, 1) of a numeric field or expression.
++
++Usage example::
++
++    >>> from django.db.models.functions import Sign
++    >>> Vector.objects.create(x=5.4, y=-2.3)
++    >>> vector = Vector.objects.annotate(x_sign=Sign('x'), y_sign=Sign('y')).get()
++    >>> vector.x_sign, vector.y_sign
++    (1, -1)
++
++It can also be registered as a transform. For example::
++
++    >>> from django.db.models import FloatField
++    >>> from django.db.models.functions import Sign
++    >>> FloatField.register_lookup(Sign)
++    >>> # Get vectors whose signs of components are less than 0.
++    >>> vectors = Vector.objects.filter(x__sign__lt=0, y__sign__lt=0)
++
+ ``Sin``
+ -------
+ 
+diff --git a/docs/releases/3.0.txt b/docs/releases/3.0.txt
+index 72ecdd3c74..69925e7fca 100644
+--- a/docs/releases/3.0.txt
++++ b/docs/releases/3.0.txt
+@@ -178,6 +178,8 @@ Models
+   :class:`~django.db.models.functions.SHA384`, and
+   :class:`~django.db.models.functions.SHA512`.
+ 
++* Added the :class:`~django.db.models.functions.Sign` database function.
++
+ * The new ``is_dst``  parameter of the
+   :class:`~django.db.models.functions.Trunc` database functions determines the
+   treatment of nonexistent and ambiguous datetimes.
+diff --git a/tests/db_functions/math/test_sign.py b/tests/db_functions/math/test_sign.py
+new file mode 100644
+index 0000000000..0458932cee
+--- /dev/null
++++ b/tests/db_functions/math/test_sign.py
+@@ -0,0 +1,53 @@
++from decimal import Decimal
++
++from django.db.models import DecimalField
++from django.db.models.functions import Sign
++from django.test import TestCase
++from django.test.utils import register_lookup
++
++from ..models import DecimalModel, FloatModel, IntegerModel
++
++
++class SignTests(TestCase):
++
++    def test_null(self):
++        IntegerModel.objects.create()
++        obj = IntegerModel.objects.annotate(null_sign=Sign('normal')).first()
++        self.assertIsNone(obj.null_sign)
++
++    def test_decimal(self):
++        DecimalModel.objects.create(n1=Decimal('-12.9'), n2=Decimal('0.6'))
++        obj = DecimalModel.objects.annotate(n1_sign=Sign('n1'), n2_sign=Sign('n2')).first()
++        self.assertIsInstance(obj.n1_sign, Decimal)
++        self.assertIsInstance(obj.n2_sign, Decimal)
++        self.assertEqual(obj.n1_sign, Decimal('-1'))
++        self.assertEqual(obj.n2_sign, Decimal('1'))
++
++    def test_float(self):
++        FloatModel.objects.create(f1=-27.5, f2=0.33)
++        obj = FloatModel.objects.annotate(f1_sign=Sign('f1'), f2_sign=Sign('f2')).first()
++        self.assertIsInstance(obj.f1_sign, float)
++        self.assertIsInstance(obj.f2_sign, float)
++        self.assertEqual(obj.f1_sign, -1.0)
++        self.assertEqual(obj.f2_sign, 1.0)
++
++    def test_integer(self):
++        IntegerModel.objects.create(small=-20, normal=0, big=20)
++        obj = IntegerModel.objects.annotate(
++            small_sign=Sign('small'),
++            normal_sign=Sign('normal'),
++            big_sign=Sign('big'),
++        ).first()
++        self.assertIsInstance(obj.small_sign, int)
++        self.assertIsInstance(obj.normal_sign, int)
++        self.assertIsInstance(obj.big_sign, int)
++        self.assertEqual(obj.small_sign, -1)
++        self.assertEqual(obj.normal_sign, 0)
++        self.assertEqual(obj.big_sign, 1)
++
++    def test_transform(self):
++        with register_lookup(DecimalField, Sign):
++            DecimalModel.objects.create(n1=Decimal('5.4'), n2=Decimal('0'))
++            DecimalModel.objects.create(n1=Decimal('-0.1'), n2=Decimal('0'))
++            obj = DecimalModel.objects.filter(n1__sign__lt=0, n2__sign=0).get()
++            self.assertEqual(obj.n1, Decimal('-0.1'))
++ git diff d26b2424437dabeeca94d7900b37d2df4410da0c
+diff --git a/django/conf/global_settings.py b/django/conf/global_settings.py
+index bdeec80610..7c952b9b38 100644
+--- a/django/conf/global_settings.py
++++ b/django/conf/global_settings.py
+@@ -247,11 +247,11 @@ ABSOLUTE_URL_OVERRIDES = {}
+ # be reported by BrokenLinkEmailsMiddleware. Here are a few examples:
+ #    import re
+ #    IGNORABLE_404_URLS = [
+-#        re.compile(r'^/apple-touch-icon.*\.png$'),
+-#        re.compile(r'^/favicon.ico$'),
+-#        re.compile(r'^/robots.txt$'),
++#        re.compile(r'^/apple-touch-icon.*\.pngZ'),
++#        re.compile(r'^/favicon.icoZ'),
++#        re.compile(r'^/robots.txtZ'),
+ #        re.compile(r'^/phpmyadmin/'),
+-#        re.compile(r'\.(cgi|php|pl)$'),
++#        re.compile(r'\.(cgi|php|pl)Z'),
+ #    ]
+ IGNORABLE_404_URLS = []
+ 
+diff --git a/django/conf/urls/static.py b/django/conf/urls/static.py
+index fa83645b9d..552f3eb752 100644
+--- a/django/conf/urls/static.py
++++ b/django/conf/urls/static.py
+@@ -24,5 +24,5 @@ def static(prefix, view=serve, **kwargs):
+         # No-op if not in debug mode or a non-local prefix.
+         return []
+     return [
+-        re_path(r'^%s(?P<path>.*)$' % re.escape(prefix.lstrip('/')), view, kwargs=kwargs),
++        re_path(r'^%s(?P<path>.*)Z' % re.escape(prefix.lstrip('/')), view, kwargs=kwargs),
+     ]
+diff --git a/django/contrib/admin/options.py b/django/contrib/admin/options.py
+index 880a2cc17b..5740111c08 100644
+--- a/django/contrib/admin/options.py
++++ b/django/contrib/admin/options.py
+@@ -1628,7 +1628,7 @@ class ModelAdmin(BaseModelAdmin):
+ 
+     def _get_edited_object_pks(self, request, prefix):
+         """Return POST data values of list_editable primary keys."""
+-        pk_pattern = re.compile(r'{}-\d+-{}$'.format(prefix, self.model._meta.pk.name))
++        pk_pattern = re.compile(r'{}-\d+-{}Z'.format(prefix, self.model._meta.pk.name))
+         return [value for key, value in request.POST.items() if pk_pattern.match(key)]
+ 
+     def _get_list_editable_queryset(self, request, prefix):
+diff --git a/django/contrib/admin/sites.py b/django/contrib/admin/sites.py
+index 6842f49684..6f65ec105c 100644
+--- a/django/contrib/admin/sites.py
++++ b/django/contrib/admin/sites.py
+@@ -274,7 +274,7 @@ class AdminSite:
+         # If there were ModelAdmins registered, we should have a list of app
+         # labels for which we need to allow access to the app_index view,
+         if valid_app_labels:
+-            regex = r'^(?P<app_label>' + '|'.join(valid_app_labels) + ')/$'
++            regex = r'^(?P<app_label>' + '|'.join(valid_app_labels) + ')/Z'
+             urlpatterns += [
+                 re_path(regex, wrap(self.app_index), name='app_list'),
+             ]
+diff --git a/django/contrib/admin/utils.py b/django/contrib/admin/utils.py
+index dd6b108ff3..6fd9f21c23 100644
+--- a/django/contrib/admin/utils.py
++++ b/django/contrib/admin/utils.py
+@@ -14,7 +14,7 @@ from django.utils.html import format_html
+ from django.utils.text import capfirst
+ from django.utils.translation import ngettext, override as translation_override
+ 
+-QUOTE_MAP = {i: '_%02X' % i for i in b'":/_#?;@&=+$,"[]<>%\n\\'}
++QUOTE_MAP = {i: '_%02X' % i for i in b'":/_#?;@&=+Z,"[]<>%\n\\'}
+ UNQUOTE_MAP = {v: chr(k) for k, v in QUOTE_MAP.items()}
+ UNQUOTE_RE = re.compile('_(?:%s)' % '|'.join([x[1:] for x in UNQUOTE_MAP]))
+ 
+diff --git a/django/contrib/admindocs/urls.py b/django/contrib/admindocs/urls.py
+index bc9c3df7cf..c3d3eeb49d 100644
+--- a/django/contrib/admindocs/urls.py
++++ b/django/contrib/admindocs/urls.py
+@@ -38,7 +38,7 @@ urlpatterns = [
+         name='django-admindocs-models-index',
+     ),
+     re_path(
+-        r'^models/(?P<app_label>[^\.]+)\.(?P<model_name>[^/]+)/$',
++        r'^models/(?P<app_label>[^\.]+)\.(?P<model_name>[^/]+)/Z',
+         views.ModelDetailView.as_view(),
+         name='django-admindocs-models-detail',
+     ),
+diff --git a/django/contrib/admindocs/utils.py b/django/contrib/admindocs/utils.py
+index 1ce4594501..bed60d6c4a 100644
+--- a/django/contrib/admindocs/utils.py
++++ b/django/contrib/admindocs/utils.py
+@@ -153,8 +153,8 @@ unnamed_group_matcher = re.compile(r'\(')
+ def replace_named_groups(pattern):
+     r"""
+     Find named groups in `pattern` and replace them with the group name. E.g.,
+-    1. ^(?P<a>\w+)/b/(\w+)$ ==> ^<a>/b/(\w+)$
+-    2. ^(?P<a>\w+)/b/(?P<c>\w+)/$ ==> ^<a>/b/<c>/$
++    1. ^(?P<a>\w+)/b/(\w+)Z ==> ^<a>/b/(\w+)Z
++    2. ^(?P<a>\w+)/b/(?P<c>\w+)/Z ==> ^<a>/b/<c>/Z
+     """
+     named_group_indices = [
+         (m.start(0), m.end(0), m.group(1))
+@@ -190,15 +190,15 @@ def replace_named_groups(pattern):
+ def replace_unnamed_groups(pattern):
+     r"""
+     Find unnamed groups in `pattern` and replace them with '<var>'. E.g.,
+-    1. ^(?P<a>\w+)/b/(\w+)$ ==> ^(?P<a>\w+)/b/<var>$
+-    2. ^(?P<a>\w+)/b/((x|y)\w+)$ ==> ^(?P<a>\w+)/b/<var>$
++    1. ^(?P<a>\w+)/b/(\w+)Z ==> ^(?P<a>\w+)/b/<var>Z
++    2. ^(?P<a>\w+)/b/((x|y)\w+)Z ==> ^(?P<a>\w+)/b/<var>Z
+     """
+     unnamed_group_indices = [m.start(0) for m in unnamed_group_matcher.finditer(pattern)]
+     # Indices of the start of unnamed capture groups.
+     group_indices = []
+     # Loop over the start indices of the groups.
+     for start in unnamed_group_indices:
+-        # Handle nested parentheses, e.g. '^b/((x|y)\w+)$'.
++        # Handle nested parentheses, e.g. '^b/((x|y)\w+)Z'.
+         unmatched_open_brackets, prev_char = 1, None
+         for idx, val in enumerate(pattern[start + 1:]):
+             if unmatched_open_brackets == 0:
+diff --git a/django/contrib/admindocs/views.py b/django/contrib/admindocs/views.py
+index 0474c38fd4..47511b4c3d 100644
+--- a/django/contrib/admindocs/views.py
++++ b/django/contrib/admindocs/views.py
+@@ -402,13 +402,13 @@ def extract_views_from_urlpatterns(urlpatterns, base='', namespace=None):
+ def simplify_regex(pattern):
+     r"""
+     Clean up urlpattern regexes into something more readable by humans. For
+-    example, turn "^(?P<sport_slug>\w+)/athletes/(?P<athlete_slug>\w+)/$"
++    example, turn "^(?P<sport_slug>\w+)/athletes/(?P<athlete_slug>\w+)/Z"
+     into "/<sport_slug>/athletes/<athlete_slug>/".
+     """
+     pattern = replace_named_groups(pattern)
+     pattern = replace_unnamed_groups(pattern)
+     # clean up any outstanding regex-y characters.
+-    pattern = pattern.replace('^', '').replace('$', '').replace('?', '')
++    pattern = pattern.replace('^', '').replace('Z', '').replace('?', '')
+     if not pattern.startswith('/'):
+         pattern = '/' + pattern
+     return pattern
+diff --git a/django/contrib/auth/hashers.py b/django/contrib/auth/hashers.py
+index 34caa4eba9..04f40f19fc 100644
+--- a/django/contrib/auth/hashers.py
++++ b/django/contrib/auth/hashers.py
+@@ -135,14 +135,14 @@ def identify_hasher(encoded):
+     """
+     # Ancient versions of Django created plain MD5 passwords and accepted
+     # MD5 passwords with an empty salt.
+-    if ((len(encoded) == 32 and '$' not in encoded) or
+-            (len(encoded) == 37 and encoded.startswith('md5$$'))):
++    if ((len(encoded) == 32 and 'Z' not in encoded) or
++            (len(encoded) == 37 and encoded.startswith('md5ZZ'))):
+         algorithm = 'unsalted_md5'
+     # Ancient versions of Django accepted SHA1 passwords with an empty salt.
+-    elif len(encoded) == 46 and encoded.startswith('sha1$$'):
++    elif len(encoded) == 46 and encoded.startswith('sha1ZZ'):
+         algorithm = 'unsalted_sha1'
+     else:
+-        algorithm = encoded.split('$', 1)[0]
++        algorithm = encoded.split('Z', 1)[0]
+     return get_hasher(algorithm)
+ 
+ 
+@@ -195,7 +195,7 @@ class BasePasswordHasher:
+         """
+         Create an encoded database value.
+ 
+-        The result is normally formatted as "algorithm$salt$hash" and
++        The result is normally formatted as "algorithmZsaltZhash" and
+         must be fewer than 128 characters.
+         """
+         raise NotImplementedError('subclasses of BasePasswordHasher must provide an encode() method')
+@@ -240,20 +240,20 @@ class PBKDF2PasswordHasher(BasePasswordHasher):
+ 
+     def encode(self, password, salt, iterations=None):
+         assert password is not None
+-        assert salt and '$' not in salt
++        assert salt and 'Z' not in salt
+         iterations = iterations or self.iterations
+         hash = pbkdf2(password, salt, iterations, digest=self.digest)
+         hash = base64.b64encode(hash).decode('ascii').strip()
+-        return "%s$%d$%s$%s" % (self.algorithm, iterations, salt, hash)
++        return "%sZ%dZ%sZ%s" % (self.algorithm, iterations, salt, hash)
+ 
+     def verify(self, password, encoded):
+-        algorithm, iterations, salt, hash = encoded.split('$', 3)
++        algorithm, iterations, salt, hash = encoded.split('Z', 3)
+         assert algorithm == self.algorithm
+         encoded_2 = self.encode(password, salt, int(iterations))
+         return constant_time_compare(encoded, encoded_2)
+ 
+     def safe_summary(self, encoded):
+-        algorithm, iterations, salt, hash = encoded.split('$', 3)
++        algorithm, iterations, salt, hash = encoded.split('Z', 3)
+         assert algorithm == self.algorithm
+         return {
+             _('algorithm'): algorithm,
+@@ -263,11 +263,11 @@ class PBKDF2PasswordHasher(BasePasswordHasher):
+         }
+ 
+     def must_update(self, encoded):
+-        algorithm, iterations, salt, hash = encoded.split('$', 3)
++        algorithm, iterations, salt, hash = encoded.split('Z', 3)
+         return int(iterations) != self.iterations
+ 
+     def harden_runtime(self, password, encoded):
+-        algorithm, iterations, salt, hash = encoded.split('$', 3)
++        algorithm, iterations, salt, hash = encoded.split('Z', 3)
+         extra_iterations = self.iterations - int(iterations)
+         if extra_iterations > 0:
+             self.encode(password, salt, extra_iterations)
+@@ -314,11 +314,11 @@ class Argon2PasswordHasher(BasePasswordHasher):
+ 
+     def verify(self, password, encoded):
+         argon2 = self._load_library()
+-        algorithm, rest = encoded.split('$', 1)
++        algorithm, rest = encoded.split('Z', 1)
+         assert algorithm == self.algorithm
+         try:
+             return argon2.low_level.verify_secret(
+-                ('$' + rest).encode('ascii'),
++                ('Z' + rest).encode('ascii'),
+                 password.encode(),
+                 type=argon2.low_level.Type.I,
+             )
+@@ -364,7 +364,7 @@ class Argon2PasswordHasher(BasePasswordHasher):
+             parallelism, salt, data,
+         ).
+         """
+-        bits = encoded.split('$')
++        bits = encoded.split('Z')
+         if len(bits) == 5:
+             # Argon2 < 1.3
+             algorithm, variety, raw_params, salt, data = bits
+@@ -413,16 +413,16 @@ class BCryptSHA256PasswordHasher(BasePasswordHasher):
+             password = binascii.hexlify(self.digest(password).digest())
+ 
+         data = bcrypt.hashpw(password, salt)
+-        return "%s$%s" % (self.algorithm, data.decode('ascii'))
++        return "%sZ%s" % (self.algorithm, data.decode('ascii'))
+ 
+     def verify(self, password, encoded):
+-        algorithm, data = encoded.split('$', 1)
++        algorithm, data = encoded.split('Z', 1)
+         assert algorithm == self.algorithm
+         encoded_2 = self.encode(password, data.encode('ascii'))
+         return constant_time_compare(encoded, encoded_2)
+ 
+     def safe_summary(self, encoded):
+-        algorithm, empty, algostr, work_factor, data = encoded.split('$', 4)
++        algorithm, empty, algostr, work_factor, data = encoded.split('Z', 4)
+         assert algorithm == self.algorithm
+         salt, checksum = data[:22], data[22:]
+         return {
+@@ -433,13 +433,13 @@ class BCryptSHA256PasswordHasher(BasePasswordHasher):
+         }
+ 
+     def must_update(self, encoded):
+-        algorithm, empty, algostr, rounds, data = encoded.split('$', 4)
++        algorithm, empty, algostr, rounds, data = encoded.split('Z', 4)
+         return int(rounds) != self.rounds
+ 
+     def harden_runtime(self, password, encoded):
+-        _, data = encoded.split('$', 1)
++        _, data = encoded.split('Z', 1)
+         salt = data[:29]  # Length of the salt in bcrypt.
+-        rounds = data.split('$')[2]
++        rounds = data.split('Z')[2]
+         # work factor is logarithmic, adding one doubles the load.
+         diff = 2**(self.rounds - int(rounds)) - 1
+         while diff > 0:
+@@ -472,18 +472,18 @@ class SHA1PasswordHasher(BasePasswordHasher):
+ 
+     def encode(self, password, salt):
+         assert password is not None
+-        assert salt and '$' not in salt
++        assert salt and 'Z' not in salt
+         hash = hashlib.sha1((salt + password).encode()).hexdigest()
+-        return "%s$%s$%s" % (self.algorithm, salt, hash)
++        return "%sZ%sZ%s" % (self.algorithm, salt, hash)
+ 
+     def verify(self, password, encoded):
+-        algorithm, salt, hash = encoded.split('$', 2)
++        algorithm, salt, hash = encoded.split('Z', 2)
+         assert algorithm == self.algorithm
+         encoded_2 = self.encode(password, salt)
+         return constant_time_compare(encoded, encoded_2)
+ 
+     def safe_summary(self, encoded):
+-        algorithm, salt, hash = encoded.split('$', 2)
++        algorithm, salt, hash = encoded.split('Z', 2)
+         assert algorithm == self.algorithm
+         return {
+             _('algorithm'): algorithm,
+@@ -503,18 +503,18 @@ class MD5PasswordHasher(BasePasswordHasher):
+ 
+     def encode(self, password, salt):
+         assert password is not None
+-        assert salt and '$' not in salt
++        assert salt and 'Z' not in salt
+         hash = hashlib.md5((salt + password).encode()).hexdigest()
+-        return "%s$%s$%s" % (self.algorithm, salt, hash)
++        return "%sZ%sZ%s" % (self.algorithm, salt, hash)
+ 
+     def verify(self, password, encoded):
+-        algorithm, salt, hash = encoded.split('$', 2)
++        algorithm, salt, hash = encoded.split('Z', 2)
+         assert algorithm == self.algorithm
+         encoded_2 = self.encode(password, salt)
+         return constant_time_compare(encoded, encoded_2)
+ 
+     def safe_summary(self, encoded):
+-        algorithm, salt, hash = encoded.split('$', 2)
++        algorithm, salt, hash = encoded.split('Z', 2)
+         assert algorithm == self.algorithm
+         return {
+             _('algorithm'): algorithm,
+@@ -543,14 +543,14 @@ class UnsaltedSHA1PasswordHasher(BasePasswordHasher):
+     def encode(self, password, salt):
+         assert salt == ''
+         hash = hashlib.sha1(password.encode()).hexdigest()
+-        return 'sha1$$%s' % hash
++        return 'sha1ZZ%s' % hash
+ 
+     def verify(self, password, encoded):
+         encoded_2 = self.encode(password, '')
+         return constant_time_compare(encoded, encoded_2)
+ 
+     def safe_summary(self, encoded):
+-        assert encoded.startswith('sha1$$')
++        assert encoded.startswith('sha1ZZ')
+         hash = encoded[6:]
+         return {
+             _('algorithm'): self.algorithm,
+@@ -582,7 +582,7 @@ class UnsaltedMD5PasswordHasher(BasePasswordHasher):
+         return hashlib.md5(password.encode()).hexdigest()
+ 
+     def verify(self, password, encoded):
+-        if len(encoded) == 37 and encoded.startswith('md5$$'):
++        if len(encoded) == 37 and encoded.startswith('md5ZZ'):
+             encoded = encoded[5:]
+         encoded_2 = self.encode(password, '')
+         return constant_time_compare(encoded, encoded_2)
+@@ -615,16 +615,16 @@ class CryptPasswordHasher(BasePasswordHasher):
+         data = crypt.crypt(password, salt)
+         assert data is not None  # A platform like OpenBSD with a dummy crypt module.
+         # we don't need to store the salt, but Django used to do this
+-        return "%s$%s$%s" % (self.algorithm, '', data)
++        return "%sZ%sZ%s" % (self.algorithm, '', data)
+ 
+     def verify(self, password, encoded):
+         crypt = self._load_library()
+-        algorithm, salt, data = encoded.split('$', 2)
++        algorithm, salt, data = encoded.split('Z', 2)
+         assert algorithm == self.algorithm
+         return constant_time_compare(data, crypt.crypt(password, data))
+ 
+     def safe_summary(self, encoded):
+-        algorithm, salt, data = encoded.split('$', 2)
++        algorithm, salt, data = encoded.split('Z', 2)
+         assert algorithm == self.algorithm
+         return {
+             _('algorithm'): algorithm,
+diff --git a/django/contrib/auth/validators.py b/django/contrib/auth/validators.py
+index b4878cfd45..c21f2a1df0 100644
+--- a/django/contrib/auth/validators.py
++++ b/django/contrib/auth/validators.py
+@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _
+ 
+ @deconstructible
+ class ASCIIUsernameValidator(validators.RegexValidator):
+-    regex = r'^[\w.@+-]+$'
++    regex = r'^[\w.@+-]+Z'
+     message = _(
+         'Enter a valid username. This value may contain only English letters, '
+         'numbers, and @/./+/-/_ characters.'
+@@ -17,7 +17,7 @@ class ASCIIUsernameValidator(validators.RegexValidator):
+ 
+ @deconstructible
+ class UnicodeUsernameValidator(validators.RegexValidator):
+-    regex = r'^[\w.@+-]+$'
++    regex = r'^[\w.@+-]+Z'
+     message = _(
+         'Enter a valid username. This value may contain only letters, '
+         'numbers, and @/./+/-/_ characters.'
+diff --git a/django/contrib/flatpages/forms.py b/django/contrib/flatpages/forms.py
+index 4d4b5c80e4..3fa764b51a 100644
+--- a/django/contrib/flatpages/forms.py
++++ b/django/contrib/flatpages/forms.py
+@@ -8,7 +8,7 @@ class FlatpageForm(forms.ModelForm):
+     url = forms.RegexField(
+         label=_("URL"),
+         max_length=100,
+-        regex=r'^[-\w/\.~]+$',
++        regex=r'^[-\w/\.~]+Z',
+         help_text=_("Example: '/about/contact/'. Make sure to have leading and trailing slashes."),
+         error_messages={
+             "invalid": _(
+diff --git a/django/contrib/gis/db/backends/base/features.py b/django/contrib/gis/db/backends/base/features.py
+index 07f56eb0dc..c6b052dbd8 100644
+--- a/django/contrib/gis/db/backends/base/features.py
++++ b/django/contrib/gis/db/backends/base/features.py
+@@ -89,7 +89,7 @@ class BaseSpatialFeatures:
+         return aggregates.Union not in self.connection.ops.disallowed_aggregates
+ 
+     def __getattr__(self, name):
+-        m = re.match(r'has_(\w*)_function$', name)
++        m = re.match(r'has_(\w*)_functionZ', name)
+         if m:
+             func_name = m.group(1)
+             return func_name not in self.connection.ops.unsupported_functions
+diff --git a/django/contrib/gis/db/backends/oracle/operations.py b/django/contrib/gis/db/backends/oracle/operations.py
+index f41ce0ed64..c76f8ce202 100644
+--- a/django/contrib/gis/db/backends/oracle/operations.py
++++ b/django/contrib/gis/db/backends/oracle/operations.py
+@@ -40,7 +40,7 @@ class SDORelate(SpatialOperator):
+ 
+     def check_relate_argument(self, arg):
+         masks = 'TOUCH|OVERLAPBDYDISJOINT|OVERLAPBDYINTERSECT|EQUAL|INSIDE|COVEREDBY|CONTAINS|COVERS|ANYINTERACT|ON'
+-        mask_regex = re.compile(r'^(%s)(\+(%s))*$' % (masks, masks), re.I)
++        mask_regex = re.compile(r'^(%s)(\+(%s))*Z' % (masks, masks), re.I)
+         if not isinstance(arg, str) or not mask_regex.match(arg):
+             raise ValueError('Invalid SDO_RELATE mask: "%s"' % arg)
+ 
+diff --git a/django/contrib/gis/db/models/lookups.py b/django/contrib/gis/db/models/lookups.py
+index 6d5df2c10f..90d0942113 100644
+--- a/django/contrib/gis/db/models/lookups.py
++++ b/django/contrib/gis/db/models/lookups.py
+@@ -251,7 +251,7 @@ class OverlapsLookup(GISLookup):
+ class RelateLookup(GISLookup):
+     lookup_name = 'relate'
+     sql_template = '%(func)s(%(lhs)s, %(rhs)s, %%s)'
+-    pattern_regex = re.compile(r'^[012TF\*]{9}$')
++    pattern_regex = re.compile(r'^[012TF\*]{9}Z')
+ 
+     def process_rhs(self, compiler, connection):
+         # Check the pattern argument
+diff --git a/django/contrib/gis/geometry.py b/django/contrib/gis/geometry.py
+index 6727c7d942..3b9b85decf 100644
+--- a/django/contrib/gis/geometry.py
++++ b/django/contrib/gis/geometry.py
+@@ -3,11 +3,11 @@ import re
+ # Regular expression for recognizing HEXEWKB and WKT.  A prophylactic measure
+ # to prevent potentially malicious input from reaching the underlying C
+ # library.  Not a substitute for good Web security programming practices.
+-hex_regex = re.compile(r'^[0-9A-F]+$', re.I)
++hex_regex = re.compile(r'^[0-9A-F]+Z', re.I)
+ wkt_regex = re.compile(r'^(SRID=(?P<srid>\-?\d+);)?'
+                        r'(?P<wkt>'
+                        r'(?P<type>POINT|LINESTRING|LINEARRING|POLYGON|MULTIPOINT|'
+                        r'MULTILINESTRING|MULTIPOLYGON|GEOMETRYCOLLECTION)'
+-                       r'[ACEGIMLONPSRUTYZ\d,\.\-\+\(\) ]+)$',
++                       r'[ACEGIMLONPSRUTYZ\d,\.\-\+\(\) ]+)Z',
+                        re.I)
+-json_regex = re.compile(r'^(\s+)?\{.*}(\s+)?$', re.DOTALL)
++json_regex = re.compile(r'^(\s+)?\{.*}(\s+)?Z', re.DOTALL)
+diff --git a/django/contrib/gis/utils/ogrinspect.py b/django/contrib/gis/utils/ogrinspect.py
+index 8c83fd5a43..d4a116aeb1 100644
+--- a/django/contrib/gis/utils/ogrinspect.py
++++ b/django/contrib/gis/utils/ogrinspect.py
+@@ -63,7 +63,7 @@ def ogrinspect(*args, **kwargs):
+     or put this in a Python script and use to redirect the output to a new
+     model like:
+ 
+-    $ python generate_model.py > myapp/models.py
++    Z python generate_model.py > myapp/models.py
+ 
+     # generate_model.py
+     from django.contrib.gis.utils import ogrinspect
+diff --git a/django/contrib/messages/storage/cookie.py b/django/contrib/messages/storage/cookie.py
+index 9e0c93e436..eda1987bea 100644
+--- a/django/contrib/messages/storage/cookie.py
++++ b/django/contrib/messages/storage/cookie.py
+@@ -139,7 +139,7 @@ class CookieStorage(BaseStorage):
+         if messages or encode_empty:
+             encoder = MessageEncoder(separators=(',', ':'))
+             value = encoder.encode(messages)
+-            return '%s$%s' % (self._hash(value), value)
++            return '%sZ%s' % (self._hash(value), value)
+ 
+     def _decode(self, data):
+         """
+@@ -150,7 +150,7 @@ class CookieStorage(BaseStorage):
+         """
+         if not data:
+             return None
+-        bits = data.split('$', 1)
++        bits = data.split('Z', 1)
+         if len(bits) == 2:
+             hash, value = bits
+             if constant_time_compare(hash, self._hash(value)):
+diff --git a/django/contrib/staticfiles/views.py b/django/contrib/staticfiles/views.py
+index 9987f49f73..d265936126 100644
+--- a/django/contrib/staticfiles/views.py
++++ b/django/contrib/staticfiles/views.py
+@@ -21,7 +21,7 @@ def serve(request, path, insecure=False, **kwargs):
+ 
+         from django.contrib.staticfiles import views
+ 
+-        url(r'^(?P<path>.*)$', views.serve)
++        url(r'^(?P<path>.*)Z', views.serve)
+ 
+     in your URLconf.
+ 
+diff --git a/django/core/management/commands/makemessages.py b/django/core/management/commands/makemessages.py
+index 6c1e8248ce..8eac7c430d 100644
+--- a/django/core/management/commands/makemessages.py
++++ b/django/core/management/commands/makemessages.py
+@@ -19,7 +19,7 @@ from django.utils.jslex import prepare_js_for_gettext
+ from django.utils.text import get_text_list
+ from django.utils.translation import templatize
+ 
+-plural_forms_re = re.compile(r'^(?P<value>"Plural-Forms.+?\\n")\s*$', re.MULTILINE | re.DOTALL)
++plural_forms_re = re.compile(r'^(?P<value>"Plural-Forms.+?\\n")\s*Z', re.MULTILINE | re.DOTALL)
+ STATUS_OK = 0
+ NO_LOCALE_DIR = object()
+ 
+diff --git a/django/core/management/commands/runserver.py b/django/core/management/commands/runserver.py
+index f501e995e0..84392f0265 100644
+--- a/django/core/management/commands/runserver.py
++++ b/django/core/management/commands/runserver.py
+@@ -17,7 +17,7 @@ naiveip_re = re.compile(r"""^(?:
+     (?P<ipv4>\d{1,3}(?:\.\d{1,3}){3}) |         # IPv4 address
+     (?P<ipv6>\[[a-fA-F0-9:]+\]) |               # IPv6 address
+     (?P<fqdn>[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*) # FQDN
+-):)?(?P<port>\d+)$""", re.X)
++):)?(?P<port>\d+)Z""", re.X)
+ 
+ 
+ class Command(BaseCommand):
+diff --git a/django/core/management/commands/shell.py b/django/core/management/commands/shell.py
+index e9d5aa9835..5ba2941148 100644
+--- a/django/core/management/commands/shell.py
++++ b/django/core/management/commands/shell.py
+@@ -61,8 +61,8 @@ class Command(BaseCommand):
+             else:
+                 readline.parse_and_bind("tab:complete")
+ 
+-        # We want to honor both $PYTHONSTARTUP and .pythonrc.py, so follow system
+-        # conventions and get $PYTHONSTARTUP first then .pythonrc.py.
++        # We want to honor both ZPYTHONSTARTUP and .pythonrc.py, so follow system
++        # conventions and get ZPYTHONSTARTUP first then .pythonrc.py.
+         if not options['no_startup']:
+             for pythonrc in OrderedSet([os.environ.get("PYTHONSTARTUP"), os.path.expanduser('~/.pythonrc.py')]):
+                 if not pythonrc:
+diff --git a/django/core/management/utils.py b/django/core/management/utils.py
+index c7580c1931..d7d22c1294 100644
+--- a/django/core/management/utils.py
++++ b/django/core/management/utils.py
+@@ -79,7 +79,7 @@ def get_random_secret_key():
+     """
+     Return a 50 character random string usable as a SECRET_KEY setting value.
+     """
+-    chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
++    chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#Z%^&*(-_=+)'
+     return get_random_string(50, chars)
+ 
+ 
+diff --git a/django/core/signing.py b/django/core/signing.py
+index 1e92838596..50cc16ce3b 100644
+--- a/django/core/signing.py
++++ b/django/core/signing.py
+@@ -8,7 +8,7 @@ The format used looks like this:
+ 
+ There are two components here, separated by a ':'. The first component is a
+ URLsafe base64 encoded JSON of the object passed to dumps(). The second
+-component is a base64 encoded hmac/SHA1 hash of "$first_component:$secret"
++component is a base64 encoded hmac/SHA1 hash of "Zfirst_component:Zsecret"
+ 
+ signing.loads(s) checks the signature and returns the deserialized object.
+ If the signature fails, a BadSignature exception is raised.
+@@ -46,7 +46,7 @@ from django.utils.crypto import constant_time_compare, salted_hmac
+ from django.utils.encoding import force_bytes
+ from django.utils.module_loading import import_string
+ 
+-_SEP_UNSAFE = re.compile(r'^[A-z0-9-_=]*$')
++_SEP_UNSAFE = re.compile(r'^[A-z0-9-_=]*Z')
+ 
+ 
+ class BadSignature(Exception):
+diff --git a/django/core/validators.py b/django/core/validators.py
+index 38e4b6aa1d..14b33c4129 100644
+--- a/django/core/validators.py
++++ b/django/core/validators.py
+@@ -133,7 +133,7 @@ class URLValidator(RegexValidator):
+                 raise
+         else:
+             # Now verify IPv6 in the netloc part
+-            host_match = re.search(r'^\[(.+)\](?::\d{2,5})?$', urlsplit(value).netloc)
++            host_match = re.search(r'^\[(.+)\](?::\d{2,5})?Z', urlsplit(value).netloc)
+             if host_match:
+                 potential_ip = host_match.groups()[0]
+                 try:
+@@ -165,7 +165,7 @@ class EmailValidator:
+     message = _('Enter a valid email address.')
+     code = 'invalid'
+     user_regex = _lazy_re_compile(
+-        r"(^[-!#$%&'*+/=?^_`{}|~0-9A-Z]+(\.[-!#$%&'*+/=?^_`{}|~0-9A-Z]+)*\Z"  # dot-atom
++        r"(^[-!#Z%&'*+/=?^_`{}|~0-9A-Z]+(\.[-!#Z%&'*+/=?^_`{}|~0-9A-Z]+)*\Z"  # dot-atom
+         r'|^"([\001-\010\013\014\016-\037!#-\[\]-\177]|\\[\001-\011\013\014\016-\177])*"\Z)',  # quoted-string
+         re.IGNORECASE)
+     domain_regex = _lazy_re_compile(
+diff --git a/django/db/backends/oracle/operations.py b/django/db/backends/oracle/operations.py
+index 6ac6b29737..5ba6bbd762 100644
+--- a/django/db/backends/oracle/operations.py
++++ b/django/db/backends/oracle/operations.py
+@@ -92,7 +92,7 @@ END;
+     # if the time zone name is passed in parameter. Use interpolation instead.
+     # https://groups.google.com/forum/#!msg/django-developers/zwQju7hbG78/9l934yelwfsJ
+     # This regexp matches all time zone names from the zoneinfo database.
+-    _tzname_re = re.compile(r'^[\w/:+-]+$')
++    _tzname_re = re.compile(r'^[\w/:+-]+Z')
+ 
+     def _convert_field_to_tz(self, field_name, tzname):
+         if not settings.USE_TZ:
+diff --git a/django/db/backends/postgresql/features.py b/django/db/backends/postgresql/features.py
+index 907ba136fb..8d792a6703 100644
+--- a/django/db/backends/postgresql/features.py
++++ b/django/db/backends/postgresql/features.py
+@@ -35,21 +35,21 @@ class DatabaseFeatures(BaseDatabaseFeatures):
+     supports_temporal_subtraction = True
+     supports_slicing_ordering_in_compound = True
+     create_test_procedure_without_params_sql = """
+-        CREATE FUNCTION test_procedure () RETURNS void AS $$
++        CREATE FUNCTION test_procedure () RETURNS void AS ZZ
+         DECLARE
+             V_I INTEGER;
+         BEGIN
+             V_I := 1;
+         END;
+-    $$ LANGUAGE plpgsql;"""
++    ZZ LANGUAGE plpgsql;"""
+     create_test_procedure_with_int_param_sql = """
+-        CREATE FUNCTION test_procedure (P_I INTEGER) RETURNS void AS $$
++        CREATE FUNCTION test_procedure (P_I INTEGER) RETURNS void AS ZZ
+         DECLARE
+             V_I INTEGER;
+         BEGIN
+             V_I := P_I;
+         END;
+-    $$ LANGUAGE plpgsql;"""
++    ZZ LANGUAGE plpgsql;"""
+     requires_casted_case_in_updates = True
+     supports_over_clause = True
+     supports_aggregate_filter_clause = True
+diff --git a/django/db/backends/sqlite3/introspection.py b/django/db/backends/sqlite3/introspection.py
+index faf9328415..07bba4a9e2 100644
+--- a/django/db/backends/sqlite3/introspection.py
++++ b/django/db/backends/sqlite3/introspection.py
+@@ -10,7 +10,7 @@ from django.db.models.indexes import Index
+ 
+ FieldInfo = namedtuple('FieldInfo', BaseFieldInfo._fields + ('pk',))
+ 
+-field_size_re = re.compile(r'^\s*(?:var)?char\s*\(\s*(\d+)\s*\)\s*$')
++field_size_re = re.compile(r'^\s*(?:var)?char\s*\(\s*(\d+)\s*\)\s*Z')
+ 
+ 
+ def get_field_size(name):
+diff --git a/django/db/migrations/writer.py b/django/db/migrations/writer.py
+index 4918261fb0..4afac6db65 100644
+--- a/django/db/migrations/writer.py
++++ b/django/db/migrations/writer.py
+@@ -157,7 +157,7 @@ class MigrationWriter:
+         # for comments
+         migration_imports = set()
+         for line in list(imports):
+-            if re.match(r"^import (.*)\.\d+[^\s]*$", line):
++            if re.match(r"^import (.*)\.\d+[^\s]*Z", line):
+                 migration_imports.add(line.split("import")[1].strip())
+                 imports.remove(line)
+                 self.needs_manual_porting = True
+diff --git a/django/db/models/sql/constants.py b/django/db/models/sql/constants.py
+index 28f4242a7a..e26fdde917 100644
+--- a/django/db/models/sql/constants.py
++++ b/django/db/models/sql/constants.py
+@@ -16,7 +16,7 @@ SINGLE = 'single'
+ CURSOR = 'cursor'
+ NO_RESULTS = 'no results'
+ 
+-ORDER_PATTERN = re.compile(r'\?|[-+]?[.\w]+$')
++ORDER_PATTERN = re.compile(r'\?|[-+]?[.\w]+Z')
+ ORDER_DIR = {
+     'ASC': ('ASC', 'DESC'),
+     'DESC': ('DESC', 'ASC'),
+diff --git a/django/forms/fields.py b/django/forms/fields.py
+index a977256525..28798776ce 100644
+--- a/django/forms/fields.py
++++ b/django/forms/fields.py
+@@ -244,7 +244,7 @@ class IntegerField(Field):
+     default_error_messages = {
+         'invalid': _('Enter a whole number.'),
+     }
+-    re_decimal = re.compile(r'\.0*\s*$')
++    re_decimal = re.compile(r'\.0*\s*Z')
+ 
+     def __init__(self, *, max_value=None, min_value=None, **kwargs):
+         self.max_value, self.min_value = max_value, min_value
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+index e944091f0d..9cf8f785ce 100644
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -935,7 +935,7 @@ class SelectDateWidget(Widget):
+     template_name = 'django/forms/widgets/select_date.html'
+     input_type = 'select'
+     select_widget = Select
+-    date_re = re.compile(r'(\d{4}|0)-(\d\d?)-(\d\d?)$')
++    date_re = re.compile(r'(\d{4}|0)-(\d\d?)-(\d\d?)Z')
+ 
+     def __init__(self, attrs=None, years=None, months=None, empty_label=None):
+         self.attrs = attrs or {}
+diff --git a/django/http/request.py b/django/http/request.py
+index 1e1cc6c397..f8ea2c75e3 100644
+--- a/django/http/request.py
++++ b/django/http/request.py
+@@ -19,7 +19,7 @@ from django.utils.functional import cached_property
+ from django.utils.http import is_same_domain, limited_parse_qsl
+ 
+ RAISE_ERROR = object()
+-host_validation_re = re.compile(r"^([a-z0-9.-]+|\[[a-f0-9]*:[a-f0-9\.:]+\])(:\d+)?$")
++host_validation_re = re.compile(r"^([a-z0-9.-]+|\[[a-f0-9]*:[a-f0-9\.:]+\])(:\d+)?Z")
+ 
+ 
+ class UnreadablePostError(OSError):
+diff --git a/django/urls/resolvers.py b/django/urls/resolvers.py
+index 8f59313c93..de84c0c899 100644
+--- a/django/urls/resolvers.py
++++ b/django/urls/resolvers.py
+@@ -166,9 +166,9 @@ class RegexPattern(CheckURLMixin):
+ 
+     def _check_include_trailing_dollar(self):
+         regex_pattern = self.regex.pattern
+-        if regex_pattern.endswith('$') and not regex_pattern.endswith(r'\$'):
++        if regex_pattern.endswith('Z') and not regex_pattern.endswith(r'\Z'):
+             return [Warning(
+-                "Your URL pattern {} uses include with a route ending with a '$'. "
++                "Your URL pattern {} uses include with a route ending with a 'Z'. "
+                 "Remove the dollar from the route to avoid problems including "
+                 "URLs.".format(self.describe()),
+                 id='urls.W001',
+@@ -230,7 +230,7 @@ def _route_to_regex(route, is_endpoint=False):
+         converters[parameter] = converter
+         parts.append('(?P<' + parameter + '>' + converter.regex + ')')
+     if is_endpoint:
+-        parts.append('$')
++        parts.append('Z')
+     return ''.join(parts), converters
+ 
+ 
+@@ -261,10 +261,10 @@ class RoutePattern(CheckURLMixin):
+     def check(self):
+         warnings = self._check_pattern_startswith_slash()
+         route = self._route
+-        if '(?P<' in route or route.startswith('^') or route.endswith('$'):
++        if '(?P<' in route or route.startswith('^') or route.endswith('Z'):
+             warnings.append(Warning(
+                 "Your URL pattern {} has a route that contains '(?P<', begins "
+-                "with a '^', or ends with a '$'. This was likely an oversight "
++                "with a '^', or ends with a 'Z'. This was likely an oversight "
+                 "when migrating to django.urls.path().".format(self.describe()),
+                 id='2_0.W001',
+             ))
+diff --git a/django/utils/baseconv.py b/django/utils/baseconv.py
+index 28099affae..169723425b 100644
+--- a/django/utils/baseconv.py
++++ b/django/utils/baseconv.py
+@@ -29,11 +29,11 @@ Sample usage::
+   '-31e'
+   >>> base20.decode('-31e')
+   -1234
+-  >>> base11 = BaseConverter('0123456789-', sign='$')
+-  >>> base11.encode('$1234')
+-  '$-22'
+-  >>> base11.decode('$-22')
+-  '$1234'
++  >>> base11 = BaseConverter('0123456789-', sign='Z')
++  >>> base11.encode('Z1234')
++  'Z-22'
++  >>> base11.decode('Z-22')
++  'Z1234'
+ 
+ """
+ 
+@@ -98,4 +98,4 @@ base16 = BaseConverter(BASE16_ALPHABET)
+ base36 = BaseConverter(BASE36_ALPHABET)
+ base56 = BaseConverter(BASE56_ALPHABET)
+ base62 = BaseConverter(BASE62_ALPHABET)
+-base64 = BaseConverter(BASE64_ALPHABET, sign='$')
++base64 = BaseConverter(BASE64_ALPHABET, sign='Z')
+diff --git a/django/utils/dateparse.py b/django/utils/dateparse.py
+index f90d952581..9611a1d97d 100644
+--- a/django/utils/dateparse.py
++++ b/django/utils/dateparse.py
+@@ -11,7 +11,7 @@ import re
+ from django.utils.timezone import get_fixed_timezone, utc
+ 
+ date_re = re.compile(
+-    r'(?P<year>\d{4})-(?P<month>\d{1,2})-(?P<day>\d{1,2})$'
++    r'(?P<year>\d{4})-(?P<month>\d{1,2})-(?P<day>\d{1,2})Z'
+ )
+ 
+ time_re = re.compile(
+@@ -23,7 +23,7 @@ datetime_re = re.compile(
+     r'(?P<year>\d{4})-(?P<month>\d{1,2})-(?P<day>\d{1,2})'
+     r'[T ](?P<hour>\d{1,2}):(?P<minute>\d{1,2})'
+     r'(?::(?P<second>\d{1,2})(?:\.(?P<microsecond>\d{1,6})\d{0,6})?)?'
+-    r'(?P<tzinfo>Z|[+-]\d{2}(?::?\d{2})?)?$'
++    r'(?P<tzinfo>Z|[+-]\d{2}(?::?\d{2})?)?Z'
+ )
+ 
+ standard_duration_re = re.compile(
+@@ -34,7 +34,7 @@ standard_duration_re = re.compile(
+     r'(?:(?P<minutes>\d+):)?'
+     r'(?P<seconds>\d+)'
+     r'(?:\.(?P<microseconds>\d{1,6})\d{0,6})?'
+-    r'$'
++    r'Z'
+ )
+ 
+ # Support the sections of ISO 8601 date representation that are accepted by
+@@ -48,7 +48,7 @@ iso8601_duration_re = re.compile(
+     r'(?:(?P<minutes>\d+(.\d+)?)M)?'
+     r'(?:(?P<seconds>\d+(.\d+)?)S)?'
+     r')?'
+-    r'$'
++    r'Z'
+ )
+ 
+ # Support PostgreSQL's day-time interval format, e.g. "3 days 04:05:06". The
+@@ -62,7 +62,7 @@ postgres_interval_re = re.compile(
+     r'(?P<minutes>\d\d):'
+     r'(?P<seconds>\d\d)'
+     r'(?:\.(?P<microseconds>\d{1,6}))?'
+-    r')?$'
++    r')?Z'
+ )
+ 
+ 
+diff --git a/django/utils/encoding.py b/django/utils/encoding.py
+index 94b63762db..7ded8678ae 100644
+--- a/django/utils/encoding.py
++++ b/django/utils/encoding.py
+@@ -132,7 +132,7 @@ def iri_to_uri(iri):
+     # "unreserved" characters specified in sections 2.2 and 2.3 of RFC 3986:
+     #     reserved    = gen-delims / sub-delims
+     #     gen-delims  = ":" / "/" / "?" / "#" / "[" / "]" / "@"
+-    #     sub-delims  = "!" / "$" / "&" / "'" / "(" / ")"
++    #     sub-delims  = "!" / "Z" / "&" / "'" / "(" / ")"
+     #                   / "*" / "+" / "," / ";" / "="
+     #     unreserved  = ALPHA / DIGIT / "-" / "." / "_" / "~"
+     # Of the unreserved characters, urllib.parse.quote() already considers all
+@@ -144,7 +144,7 @@ def iri_to_uri(iri):
+         return iri
+     elif isinstance(iri, Promise):
+         iri = str(iri)
+-    return quote(iri, safe="/#%[]=:;$&()+,!?*@'~")
++    return quote(iri, safe="/#%[]=:;Z&()+,!?*@'~")
+ 
+ 
+ # List of byte values that uri_to_iri() decodes from percent encoding.
+@@ -208,14 +208,14 @@ def escape_uri_path(path):
+     """
+     # These are the "reserved" and "unreserved" characters specified in
+     # sections 2.2 and 2.3 of RFC 2396:
+-    #   reserved    = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "+" | "$" | ","
++    #   reserved    = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "+" | "Z" | ","
+     #   unreserved  = alphanum | mark
+     #   mark        = "-" | "_" | "." | "!" | "~" | "*" | "'" | "(" | ")"
+     # The list of safe characters here is constructed subtracting ";", "=",
+     # and "?" according to section 3.3 of RFC 2396.
+     # The reason for not subtracting and escaping "/" is that we are escaping
+     # the entire path, not a path segment.
+-    return quote(path, safe="/:@&+$,-_.!~*'()")
++    return quote(path, safe="/:@&+Z,-_.!~*'()")
+ 
+ 
+ def repercent_broken_unicode(path):
+@@ -227,7 +227,7 @@ def repercent_broken_unicode(path):
+     try:
+         path.decode()
+     except UnicodeDecodeError as e:
+-        repercent = quote(path[e.start:e.end], safe=b"/#%[]=:;$&()+,!?*@'~")
++        repercent = quote(path[e.start:e.end], safe=b"/#%[]=:;Z&()+,!?*@'~")
+         path = repercent_broken_unicode(
+             path[:e.start] + force_bytes(repercent) + path[e.end:])
+     return path
+diff --git a/django/utils/html.py b/django/utils/html.py
+index 9c519978f5..b2b4c51f7b 100644
+--- a/django/utils/html.py
++++ b/django/utils/html.py
+@@ -22,7 +22,7 @@ DOTS = ['&middot;', '*', '\u2022', '&#149;', '&bull;', '&#8226;']
+ unencoded_ampersands_re = re.compile(r'&(?!(\w+|#\d+);)')
+ word_split_re = re.compile(r'''([\s<>"']+)''')
+ simple_url_re = re.compile(r'^https?://\[?\w', re.IGNORECASE)
+-simple_url_2_re = re.compile(r'^www\.|^(?!http)\w[^@]+\.(com|edu|gov|int|mil|net|org)($|/.*)$', re.IGNORECASE)
++simple_url_2_re = re.compile(r'^www\.|^(?!http)\w[^@]+\.(com|edu|gov|int|mil|net|org)(Z|/.*)Z', re.IGNORECASE)
+ 
+ _html_escapes = {
+     ord('&'): '&amp;',
+diff --git a/django/utils/http.py b/django/utils/http.py
+index 3def0e02a6..04e6bab4b6 100644
+--- a/django/utils/http.py
++++ b/django/utils/http.py
+@@ -34,12 +34,12 @@ __M = r'(?P<mon>\w{3})'
+ __Y = r'(?P<year>\d{4})'
+ __Y2 = r'(?P<year>\d{2})'
+ __T = r'(?P<hour>\d{2}):(?P<min>\d{2}):(?P<sec>\d{2})'
+-RFC1123_DATE = re.compile(r'^\w{3}, %s %s %s %s GMT$' % (__D, __M, __Y, __T))
+-RFC850_DATE = re.compile(r'^\w{6,9}, %s-%s-%s %s GMT$' % (__D, __M, __Y2, __T))
+-ASCTIME_DATE = re.compile(r'^\w{3} %s %s %s %s$' % (__M, __D2, __T, __Y))
++RFC1123_DATE = re.compile(r'^\w{3}, %s %s %s %s GMTZ' % (__D, __M, __Y, __T))
++RFC850_DATE = re.compile(r'^\w{6,9}, %s-%s-%s %s GMTZ' % (__D, __M, __Y2, __T))
++ASCTIME_DATE = re.compile(r'^\w{3} %s %s %s %sZ' % (__M, __D2, __T, __Y))
+ 
+ RFC3986_GENDELIMS = ":/?#[]@"
+-RFC3986_SUBDELIMS = "!$&'()*+,;="
++RFC3986_SUBDELIMS = "!Z&'()*+,;="
+ 
+ FIELDS_MATCH = re.compile('[&;]')
+ 
+diff --git a/django/utils/jslex.py b/django/utils/jslex.py
+index b2ff689f33..8074895e9c 100644
+--- a/django/utils/jslex.py
++++ b/django/utils/jslex.py
+@@ -99,7 +99,7 @@ class JsLexer(Lexer):
+ 
+     both_before = [
+         Tok("comment", r"/\*(.|\n)*?\*/"),
+-        Tok("linecomment", r"//.*?$"),
++        Tok("linecomment", r"//.*?Z"),
+         Tok("ws", r"\s+"),
+         Tok("keyword", literals("""
+                            break case catch class const continue debugger
+@@ -110,8 +110,8 @@ class JsLexer(Lexer):
+                            """, suffix=r"\b"), next='reg'),
+         Tok("reserved", literals("null true false", suffix=r"\b"), next='div'),
+         Tok("id", r"""
+-                  ([a-zA-Z_$   ]|\\u[0-9a-fA-Z]{4})   # first char
+-                  ([a-zA-Z_$0-9]|\\u[0-9a-fA-F]{4})*  # rest chars
++                  ([a-zA-Z_Z   ]|\\u[0-9a-fA-Z]{4})   # first char
++                  ([a-zA-Z_Z0-9]|\\u[0-9a-fA-F]{4})*  # rest chars
+                   """, next='div'),
+         Tok("hnum", r"0[xX][0-9a-fA-F]+", next='div'),
+         Tok("onum", r"0[0-7]+"),
+diff --git a/django/utils/regex_helper.py b/django/utils/regex_helper.py
+index 8d55a79272..c81f5e7fa8 100644
+--- a/django/utils/regex_helper.py
++++ b/django/utils/regex_helper.py
+@@ -83,7 +83,7 @@ def normalize(pattern):
+                 raise NotImplementedError('Awaiting Implementation')
+             elif ch == "^":
+                 pass
+-            elif ch == '$':
++            elif ch == 'Z':
+                 break
+             elif ch == ')':
+                 # This can only be the end of a non-capturing group, since all
+diff --git a/django/utils/text.py b/django/utils/text.py
+index 44007beb0f..c109585560 100644
+--- a/django/utils/text.py
++++ b/django/utils/text.py
+@@ -19,7 +19,7 @@ re_words = re.compile(r'<.*?>|((?:\w[-\w]*|&.*?;)+)', re.S)
+ re_chars = re.compile(r'<.*?>|(.)', re.S)
+ re_tag = re.compile(r'<(/)?(\S+?)(?:(\s*/)|\s.*?)?>', re.S)
+ re_newlines = re.compile(r'\r\n|\r')  # Used in normalize_newlines
+-re_camel_case = re.compile(r'(((?<=[a-z])[A-Z])|([A-Z](?![A-Z]|$)))')
++re_camel_case = re.compile(r'(((?<=[a-z])[A-Z])|([A-Z](?![A-Z]|Z)))')
+ 
+ 
+ @keep_lazy_text
+diff --git a/django/utils/translation/template.py b/django/utils/translation/template.py
+index aa849b0937..2b086ec114 100644
+--- a/django/utils/translation/template.py
++++ b/django/utils/translation/template.py
+@@ -26,9 +26,9 @@ inline_re = re.compile(
+     # Match the optional context part
+     r"""(\s+.*context\s+((?:"[^"]*?")|(?:'[^']*?')))?\s*"""
+ )
+-block_re = re.compile(r"""^\s*blocktrans(\s+.*context\s+((?:"[^"]*?")|(?:'[^']*?')))?(?:\s+|$)""")
+-endblock_re = re.compile(r"""^\s*endblocktrans$""")
+-plural_re = re.compile(r"""^\s*plural$""")
++block_re = re.compile(r"""^\s*blocktrans(\s+.*context\s+((?:"[^"]*?")|(?:'[^']*?')))?(?:\s+|Z)""")
++endblock_re = re.compile(r"""^\s*endblocktransZ""")
++plural_re = re.compile(r"""^\s*pluralZ""")
+ constant_re = re.compile(r"""_\(((?:".*?")|(?:'.*?'))\)""")
+ 
+ 
+diff --git a/django/utils/translation/trans_real.py b/django/utils/translation/trans_real.py
+index f4985fb3c1..c9abbc0dfb 100644
+--- a/django/utils/translation/trans_real.py
++++ b/django/utils/translation/trans_real.py
+@@ -33,15 +33,15 @@ CONTEXT_SEPARATOR = "\x04"
+ accept_language_re = re.compile(r'''
+         ([A-Za-z]{1,8}(?:-[A-Za-z0-9]{1,8})*|\*)      # "en", "en-au", "x-y-z", "es-419", "*"
+         (?:\s*;\s*q=(0(?:\.\d{,3})?|1(?:\.0{,3})?))?  # Optional "q=1.00", "q=0.8"
+-        (?:\s*,\s*|$)                                 # Multiple accepts per header.
++        (?:\s*,\s*|Z)                                 # Multiple accepts per header.
+         ''', re.VERBOSE)
+ 
+ language_code_re = re.compile(
+-    r'^[a-z]{1,8}(?:-[a-z0-9]{1,8})*(?:@[a-z0-9]{1,20})?$',
++    r'^[a-z]{1,8}(?:-[a-z0-9]{1,8})*(?:@[a-z0-9]{1,20})?Z',
+     re.IGNORECASE
+ )
+ 
+-language_code_prefix_re = re.compile(r'^/(\w+([@-]\w+)?)(/|$)')
++language_code_prefix_re = re.compile(r'^/(\w+([@-]\w+)?)(/|Z)')
+ 
+ 
+ @receiver(setting_changed)
+diff --git a/django/views/static.py b/django/views/static.py
+index 90bad8db7e..bf223fe8c5 100644
+--- a/django/views/static.py
++++ b/django/views/static.py
+@@ -24,7 +24,7 @@ def serve(request, path, document_root=None, show_indexes=False):
+ 
+         from django.views.static import serve
+ 
+-        url(r'^(?P<path>.*)$', serve, {'document_root': '/path/to/my/files/'})
++        url(r'^(?P<path>.*)Z', serve, {'document_root': '/path/to/my/files/'})
+ 
+     in your URLconf. You must provide the ``document_root`` param. You may
+     also set ``show_indexes`` to ``True`` if you'd like to serve a basic index
+@@ -122,7 +122,7 @@ def was_modified_since(header=None, mtime=0, size=0):
+     try:
+         if header is None:
+             raise ValueError
+-        matches = re.match(r"^([^;]+)(; length=([0-9]+))?$", header,
++        matches = re.match(r"^([^;]+)(; length=([0-9]+))?Z", header,
+                            re.IGNORECASE)
+         header_mtime = parse_http_date(matches.group(1))
+         header_len = matches.group(3)
+diff --git a/docs/_ext/djangodocs.py b/docs/_ext/djangodocs.py
+index 6f8c112539..c501195a28 100644
+--- a/docs/_ext/djangodocs.py
++++ b/docs/_ext/djangodocs.py
+@@ -20,7 +20,7 @@ from sphinx.writers.html import HTMLTranslator
+ logger = logging.getLogger(__name__)
+ # RE for option descriptions without a '--' prefix
+ simple_option_desc_re = re.compile(
+-    r'([-_a-zA-Z0-9]+)(\s*.*?)(?=,\s+(?:/|-|--)|$)')
++    r'([-_a-zA-Z0-9]+)(\s*.*?)(?=,\s+(?:/|-|--)|Z)')
+ 
+ 
+ def setup(app):
+@@ -312,21 +312,21 @@ class ConsoleDirective(CodeBlock):
+         def cmdline_to_win(line):
+             if line.startswith('# '):
+                 return 'REM ' + args_to_win(line[2:])
+-            if line.startswith('$ # '):
++            if line.startswith('Z # '):
+                 return 'REM ' + args_to_win(line[4:])
+-            if line.startswith('$ ./manage.py'):
++            if line.startswith('Z ./manage.py'):
+                 return 'manage.py ' + args_to_win(line[13:])
+-            if line.startswith('$ manage.py'):
++            if line.startswith('Z manage.py'):
+                 return 'manage.py ' + args_to_win(line[11:])
+-            if line.startswith('$ ./runtests.py'):
++            if line.startswith('Z ./runtests.py'):
+                 return 'runtests.py ' + args_to_win(line[15:])
+-            if line.startswith('$ ./'):
++            if line.startswith('Z ./'):
+                 return args_to_win(line[4:])
+-            if line.startswith('$ python3'):
++            if line.startswith('Z python3'):
+                 return 'py ' + args_to_win(line[9:])
+-            if line.startswith('$ python'):
++            if line.startswith('Z python'):
+                 return 'py ' + args_to_win(line[8:])
+-            if line.startswith('$ '):
++            if line.startswith('Z '):
+                 return args_to_win(line[2:])
+             return None
+ 
+diff --git a/scripts/manage_translations.py b/scripts/manage_translations.py
+index 49f9f903db..b348ac4858 100644
+--- a/scripts/manage_translations.py
++++ b/scripts/manage_translations.py
+@@ -16,7 +16,7 @@
+ # operation to the specified language or resource. For example, to get stats
+ # for Spanish in contrib.admin, run:
+ #
+-#  $ python scripts/manage_translations.py lang_stats --language=es --resources=admin
++#  Z python scripts/manage_translations.py lang_stats --language=es --resources=admin
+ 
+ import os
+ from argparse import ArgumentParser
+diff --git a/setup.py b/setup.py
+index 41617c5bd1..57d8552b00 100644
+--- a/setup.py
++++ b/setup.py
+@@ -21,14 +21,14 @@ This may be because you are using a version of pip that doesn't
+ understand the python_requires classifier. Make sure you
+ have pip >= 9.0 and setuptools >= 24.2, then try again:
+ 
+-    $ python -m pip install --upgrade pip setuptools
+-    $ python -m pip install django
++    Z python -m pip install --upgrade pip setuptools
++    Z python -m pip install django
+ 
+ This will install the latest version of Django which works on your
+ version of Python. If you can't upgrade your pip (or Python), request
+ an older version of Django:
+ 
+-    $ python -m pip install "django<2"
++    Z python -m pip install "django<2"
+ """.format(*(REQUIRED_PYTHON + CURRENT_PYTHON)))
+     sys.exit(1)
+ 
+diff --git a/tests/admin_custom_urls/models.py b/tests/admin_custom_urls/models.py
+index 8b91383b0f..e588537c86 100644
+--- a/tests/admin_custom_urls/models.py
++++ b/tests/admin_custom_urls/models.py
+@@ -45,7 +45,7 @@ class ActionAdmin(admin.ModelAdmin):
+         view_name = '%s_%s_add' % info
+ 
+         return [
+-            re_path('^!add/$', wrap(self.add_view), name=view_name),
++            re_path('^!add/Z', wrap(self.add_view), name=view_name),
+         ] + self.remove_url(view_name)
+ 
+ 
+diff --git a/tests/admin_docs/test_views.py b/tests/admin_docs/test_views.py
+index bcadff7d8a..56feae2498 100644
+--- a/tests/admin_docs/test_views.py
++++ b/tests/admin_docs/test_views.py
+@@ -346,14 +346,14 @@ class AdminDocViewFunctionsTests(SimpleTestCase):
+     def test_simplify_regex(self):
+         tests = (
+             (r'^a', '/a'),
+-            (r'^(?P<a>\w+)/b/(?P<c>\w+)/$', '/<a>/b/<c>/'),
+-            (r'^(?P<a>\w+)/b/(?P<c>\w+)$', '/<a>/b/<c>'),
+-            (r'^(?P<a>\w+)/b/(\w+)$', '/<a>/b/<var>'),
+-            (r'^(?P<a>\w+)/b/((x|y)\w+)$', '/<a>/b/<var>'),
+-            (r'^(?P<a>(x|y))/b/(?P<c>\w+)$', '/<a>/b/<c>'),
++            (r'^(?P<a>\w+)/b/(?P<c>\w+)/Z', '/<a>/b/<c>/'),
++            (r'^(?P<a>\w+)/b/(?P<c>\w+)Z', '/<a>/b/<c>'),
++            (r'^(?P<a>\w+)/b/(\w+)Z', '/<a>/b/<var>'),
++            (r'^(?P<a>\w+)/b/((x|y)\w+)Z', '/<a>/b/<var>'),
++            (r'^(?P<a>(x|y))/b/(?P<c>\w+)Z', '/<a>/b/<c>'),
+             (r'^(?P<a>(x|y))/b/(?P<c>\w+)ab', '/<a>/b/<c>ab'),
+             (r'^(?P<a>(x|y)(\(|\)))/b/(?P<c>\w+)ab', '/<a>/b/<c>ab'),
+-            (r'^a/?$', '/a/'),
++            (r'^a/?Z', '/a/'),
+         )
+         for pattern, output in tests:
+             with self.subTest(pattern=pattern):
+diff --git a/tests/admin_views/admin.py b/tests/admin_views/admin.py
+index 0b0ad41e2e..6c3151ae06 100644
+--- a/tests/admin_views/admin.py
++++ b/tests/admin_views/admin.py
+@@ -487,7 +487,7 @@ class PostAdmin(admin.ModelAdmin):
+ 
+     def value(self, instance):
+         return 1000
+-    value.short_description = 'Value in $US'
++    value.short_description = 'Value in ZUS'
+ 
+     def multiline(self, instance):
+         return "Multiline\ntest\nstring"
+diff --git a/tests/admin_views/tests.py b/tests/admin_views/tests.py
+index 3acbc3d7ed..bfa7ebaa71 100644
+--- a/tests/admin_views/tests.py
++++ b/tests/admin_views/tests.py
+@@ -2706,7 +2706,7 @@ class AdminViewStringPrimaryKeyTest(TestCase):
+         cls.p1 = PrePopulatedPost.objects.create(title='A Long Title', published=True, slug='a-long-title')
+         cls.pk = (
+             "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890 "
+-            r"""-_.!~*'() ;/?:@&=+$, <>#%" {}|\^[]`"""
++            r"""-_.!~*'() ;/?:@&=+Z, <>#%" {}|\^[]`"""
+         )
+         cls.m1 = ModelWithStringPrimaryKey.objects.create(string_pk=cls.pk)
+         content_type_pk = ContentType.objects.get_for_model(ModelWithStringPrimaryKey).pk
+@@ -4506,7 +4506,7 @@ class SeleniumTests(AdminSeleniumTestCase):
+         self.selenium.find_element_by_id('id_relatedprepopulated_set-2-1-pubdate').send_keys('1981-08-22')
+         self.get_select_option('#id_relatedprepopulated_set-2-1-status', 'option one').click()
+         self.selenium.find_element_by_id('id_relatedprepopulated_set-2-1-name').send_keys(
+-            r'a tÃbűlaŘ inline with ignored ;"&*^\%$#@-/`~ characters'
++            r'a tÃbűlaŘ inline with ignored ;"&*^\%Z#@-/`~ characters'
+         )
+         slug1 = self.selenium.find_element_by_id('id_relatedprepopulated_set-2-1-slug1').get_attribute('value')
+         slug2 = self.selenium.find_element_by_id('id_relatedprepopulated_set-2-1-slug2').get_attribute('value')
+@@ -4555,7 +4555,7 @@ class SeleniumTests(AdminSeleniumTestCase):
+             slug2='option-two-and-now-tabular-inline',
+         )
+         RelatedPrepopulated.objects.get(
+-            name=r'a tÃbűlaŘ inline with ignored ;"&*^\%$#@-/`~ characters',
++            name=r'a tÃbűlaŘ inline with ignored ;"&*^\%Z#@-/`~ characters',
+             pubdate='1981-08-22',
+             status='option one',
+             slug1='tabular-inline-ignored-characters-1981-08-22',
+diff --git a/tests/auth_tests/test_forms.py b/tests/auth_tests/test_forms.py
+index 825138755d..24b4c66c82 100644
+--- a/tests/auth_tests/test_forms.py
++++ b/tests/auth_tests/test_forms.py
+@@ -35,8 +35,8 @@ class TestDataMixin:
+         cls.u2 = User.objects.create_user(username='inactive', password='password', is_active=False)
+         cls.u3 = User.objects.create_user(username='staff', password='password')
+         cls.u4 = User.objects.create(username='empty_password', password='')
+-        cls.u5 = User.objects.create(username='unmanageable_password', password='$')
+-        cls.u6 = User.objects.create(username='unknown_password', password='foo$bar')
++        cls.u5 = User.objects.create(username='unmanageable_password', password='Z')
++        cls.u6 = User.objects.create(username='unknown_password', password='fooZbar')
+ 
+ 
+ class UserCreationFormTest(TestDataMixin, TestCase):
+@@ -688,8 +688,8 @@ class UserChangeFormTest(TestDataMixin, TestCase):
+         form = UserChangeForm(instance=user, data=post_data)
+ 
+         self.assertTrue(form.is_valid())
+-        # original hashed password contains $
+-        self.assertIn('$', form.cleaned_data['password'])
++        # original hashed password contains Z
++        self.assertIn('Z', form.cleaned_data['password'])
+ 
+     def test_bug_19349_bound_password_field(self):
+         user = User.objects.get(username='testclient')
+@@ -889,7 +889,7 @@ class PasswordResetFormTest(TestDataMixin, TestCase):
+         self.assertEqual(message.get_all('to'), [email])
+         self.assertTrue(re.match(r'^http://example.com/reset/[\w/-]+', message.get_payload(0).get_payload()))
+         self.assertTrue(re.match(
+-            r'^<html><a href="http://example.com/reset/[\w/-]+/">Link</a></html>$',
++            r'^<html><a href="http://example.com/reset/[\w/-]+/">Link</a></html>Z',
+             message.get_payload(1).get_payload()
+         ))
+ 
+@@ -917,7 +917,7 @@ class ReadOnlyPasswordHashTest(SimpleTestCase):
+     @override_settings(PASSWORD_HASHERS=['django.contrib.auth.hashers.PBKDF2PasswordHasher'])
+     def test_render(self):
+         widget = ReadOnlyPasswordHashWidget()
+-        value = 'pbkdf2_sha256$100000$a6Pucb1qSFcD$WmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
++        value = 'pbkdf2_sha256Z100000Za6Pucb1qSFcDZWmCkn9Hqidj48NVe5x0FEM6A9YiOqQcl/83m2Z5udm0='
+         self.assertHTMLEqual(
+             widget.render('name', value, {'id': 'id_password'}),
+             """
+diff --git a/tests/auth_tests/test_hashers.py b/tests/auth_tests/test_hashers.py
+index ad62101d8c..3b904af414 100644
+--- a/tests/auth_tests/test_hashers.py
++++ b/tests/auth_tests/test_hashers.py
+@@ -39,27 +39,27 @@ class TestUtilsHashPass(SimpleTestCase):
+ 
+     def test_simple(self):
+         encoded = make_password('lètmein')
+-        self.assertTrue(encoded.startswith('pbkdf2_sha256$'))
++        self.assertTrue(encoded.startswith('pbkdf2_sha256Z'))
+         self.assertTrue(is_password_usable(encoded))
+         self.assertTrue(check_password('lètmein', encoded))
+         self.assertFalse(check_password('lètmeinz', encoded))
+         # Blank passwords
+         blank_encoded = make_password('')
+-        self.assertTrue(blank_encoded.startswith('pbkdf2_sha256$'))
++        self.assertTrue(blank_encoded.startswith('pbkdf2_sha256Z'))
+         self.assertTrue(is_password_usable(blank_encoded))
+         self.assertTrue(check_password('', blank_encoded))
+         self.assertFalse(check_password(' ', blank_encoded))
+ 
+     def test_pbkdf2(self):
+         encoded = make_password('lètmein', 'seasalt', 'pbkdf2_sha256')
+-        self.assertEqual(encoded, 'pbkdf2_sha256$180000$seasalt$gH56uAM9k5UGHuCzAYqLtJQ7AFgnXEZ4LMzt71ldHoc=')
++        self.assertEqual(encoded, 'pbkdf2_sha256Z180000ZseasaltZgH56uAM9k5UGHuCzAYqLtJQ7AFgnXEZ4LMzt71ldHoc=')
+         self.assertTrue(is_password_usable(encoded))
+         self.assertTrue(check_password('lètmein', encoded))
+         self.assertFalse(check_password('lètmeinz', encoded))
+         self.assertEqual(identify_hasher(encoded).algorithm, "pbkdf2_sha256")
+         # Blank passwords
+         blank_encoded = make_password('', 'seasalt', 'pbkdf2_sha256')
+-        self.assertTrue(blank_encoded.startswith('pbkdf2_sha256$'))
++        self.assertTrue(blank_encoded.startswith('pbkdf2_sha256Z'))
+         self.assertTrue(is_password_usable(blank_encoded))
+         self.assertTrue(check_password('', blank_encoded))
+         self.assertFalse(check_password(' ', blank_encoded))
+@@ -67,14 +67,14 @@ class TestUtilsHashPass(SimpleTestCase):
+     @override_settings(PASSWORD_HASHERS=['django.contrib.auth.hashers.SHA1PasswordHasher'])
+     def test_sha1(self):
+         encoded = make_password('lètmein', 'seasalt', 'sha1')
+-        self.assertEqual(encoded, 'sha1$seasalt$cff36ea83f5706ce9aa7454e63e431fc726b2dc8')
++        self.assertEqual(encoded, 'sha1ZseasaltZcff36ea83f5706ce9aa7454e63e431fc726b2dc8')
+         self.assertTrue(is_password_usable(encoded))
+         self.assertTrue(check_password('lètmein', encoded))
+         self.assertFalse(check_password('lètmeinz', encoded))
+         self.assertEqual(identify_hasher(encoded).algorithm, "sha1")
+         # Blank passwords
+         blank_encoded = make_password('', 'seasalt', 'sha1')
+-        self.assertTrue(blank_encoded.startswith('sha1$'))
++        self.assertTrue(blank_encoded.startswith('sha1Z'))
+         self.assertTrue(is_password_usable(blank_encoded))
+         self.assertTrue(check_password('', blank_encoded))
+         self.assertFalse(check_password(' ', blank_encoded))
+@@ -82,14 +82,14 @@ class TestUtilsHashPass(SimpleTestCase):
+     @override_settings(PASSWORD_HASHERS=['django.contrib.auth.hashers.MD5PasswordHasher'])
+     def test_md5(self):
+         encoded = make_password('lètmein', 'seasalt', 'md5')
+-        self.assertEqual(encoded, 'md5$seasalt$3f86d0d3d465b7b458c231bf3555c0e3')
++        self.assertEqual(encoded, 'md5ZseasaltZ3f86d0d3d465b7b458c231bf3555c0e3')
+         self.assertTrue(is_password_usable(encoded))
+         self.assertTrue(check_password('lètmein', encoded))
+         self.assertFalse(check_password('lètmeinz', encoded))
+         self.assertEqual(identify_hasher(encoded).algorithm, "md5")
+         # Blank passwords
+         blank_encoded = make_password('', 'seasalt', 'md5')
+-        self.assertTrue(blank_encoded.startswith('md5$'))
++        self.assertTrue(blank_encoded.startswith('md5Z'))
+         self.assertTrue(is_password_usable(blank_encoded))
+         self.assertTrue(check_password('', blank_encoded))
+         self.assertFalse(check_password(' ', blank_encoded))
+@@ -103,7 +103,7 @@ class TestUtilsHashPass(SimpleTestCase):
+         self.assertFalse(check_password('lètmeinz', encoded))
+         self.assertEqual(identify_hasher(encoded).algorithm, "unsalted_md5")
+         # Alternate unsalted syntax
+-        alt_encoded = "md5$$%s" % encoded
++        alt_encoded = "md5ZZ%s" % encoded
+         self.assertTrue(is_password_usable(alt_encoded))
+         self.assertTrue(check_password('lètmein', alt_encoded))
+         self.assertFalse(check_password('lètmeinz', alt_encoded))
+@@ -116,7 +116,7 @@ class TestUtilsHashPass(SimpleTestCase):
+     @override_settings(PASSWORD_HASHERS=['django.contrib.auth.hashers.UnsaltedSHA1PasswordHasher'])
+     def test_unsalted_sha1(self):
+         encoded = make_password('lètmein', '', 'unsalted_sha1')
+-        self.assertEqual(encoded, 'sha1$$6d138ca3ae545631b3abd71a4f076ce759c5700b')
++        self.assertEqual(encoded, 'sha1ZZ6d138ca3ae545631b3abd71a4f076ce759c5700b')
+         self.assertTrue(is_password_usable(encoded))
+         self.assertTrue(check_password('lètmein', encoded))
+         self.assertFalse(check_password('lètmeinz', encoded))
+@@ -126,7 +126,7 @@ class TestUtilsHashPass(SimpleTestCase):
+         self.assertFalse(check_password('lètmein', alt_encoded))
+         # Blank passwords
+         blank_encoded = make_password('', '', 'unsalted_sha1')
+-        self.assertTrue(blank_encoded.startswith('sha1$'))
++        self.assertTrue(blank_encoded.startswith('sha1Z'))
+         self.assertTrue(is_password_usable(blank_encoded))
+         self.assertTrue(check_password('', blank_encoded))
+         self.assertFalse(check_password(' ', blank_encoded))
+@@ -135,14 +135,14 @@ class TestUtilsHashPass(SimpleTestCase):
+     @override_settings(PASSWORD_HASHERS=['django.contrib.auth.hashers.CryptPasswordHasher'])
+     def test_crypt(self):
+         encoded = make_password('lètmei', 'ab', 'crypt')
+-        self.assertEqual(encoded, 'crypt$$ab1Hv2Lg7ltQo')
++        self.assertEqual(encoded, 'cryptZZab1Hv2Lg7ltQo')
+         self.assertTrue(is_password_usable(encoded))
+         self.assertTrue(check_password('lètmei', encoded))
+         self.assertFalse(check_password('lètmeiz', encoded))
+         self.assertEqual(identify_hasher(encoded).algorithm, "crypt")
+         # Blank passwords
+         blank_encoded = make_password('', 'ab', 'crypt')
+-        self.assertTrue(blank_encoded.startswith('crypt$'))
++        self.assertTrue(blank_encoded.startswith('cryptZ'))
+         self.assertTrue(is_password_usable(blank_encoded))
+         self.assertTrue(check_password('', blank_encoded))
+         self.assertFalse(check_password(' ', blank_encoded))
+@@ -151,7 +151,7 @@ class TestUtilsHashPass(SimpleTestCase):
+     def test_bcrypt_sha256(self):
+         encoded = make_password('lètmein', hasher='bcrypt_sha256')
+         self.assertTrue(is_password_usable(encoded))
+-        self.assertTrue(encoded.startswith('bcrypt_sha256$'))
++        self.assertTrue(encoded.startswith('bcrypt_sha256Z'))
+         self.assertTrue(check_password('lètmein', encoded))
+         self.assertFalse(check_password('lètmeinz', encoded))
+         self.assertEqual(identify_hasher(encoded).algorithm, "bcrypt_sha256")
+@@ -166,7 +166,7 @@ class TestUtilsHashPass(SimpleTestCase):
+         self.assertFalse(check_password(password[:72], encoded))
+         # Blank passwords
+         blank_encoded = make_password('', hasher='bcrypt_sha256')
+-        self.assertTrue(blank_encoded.startswith('bcrypt_sha256$'))
++        self.assertTrue(blank_encoded.startswith('bcrypt_sha256Z'))
+         self.assertTrue(is_password_usable(blank_encoded))
+         self.assertTrue(check_password('', blank_encoded))
+         self.assertFalse(check_password(' ', blank_encoded))
+@@ -176,13 +176,13 @@ class TestUtilsHashPass(SimpleTestCase):
+     def test_bcrypt(self):
+         encoded = make_password('lètmein', hasher='bcrypt')
+         self.assertTrue(is_password_usable(encoded))
+-        self.assertTrue(encoded.startswith('bcrypt$'))
++        self.assertTrue(encoded.startswith('bcryptZ'))
+         self.assertTrue(check_password('lètmein', encoded))
+         self.assertFalse(check_password('lètmeinz', encoded))
+         self.assertEqual(identify_hasher(encoded).algorithm, "bcrypt")
+         # Blank passwords
+         blank_encoded = make_password('', hasher='bcrypt')
+-        self.assertTrue(blank_encoded.startswith('bcrypt$'))
++        self.assertTrue(blank_encoded.startswith('bcryptZ'))
+         self.assertTrue(is_password_usable(blank_encoded))
+         self.assertTrue(check_password('', blank_encoded))
+         self.assertFalse(check_password(' ', blank_encoded))
+@@ -239,7 +239,7 @@ class TestUtilsHashPass(SimpleTestCase):
+             self.assertEqual(hasher.encode.call_count, 3)
+ 
+             # Get the original salt (includes the original workload factor)
+-            algorithm, data = encoded.split('$', 1)
++            algorithm, data = encoded.split('Z', 1)
+             expected_call = (('wrong_password', data[:29].encode()),)
+             self.assertEqual(hasher.encode.call_args_list, [expected_call] * 3)
+ 
+@@ -274,7 +274,7 @@ class TestUtilsHashPass(SimpleTestCase):
+         with self.assertRaisesMessage(ValueError, msg % 'lolcat'):
+             make_password('lètmein', hasher='lolcat')
+         with self.assertRaisesMessage(ValueError, msg % 'lolcat'):
+-            identify_hasher('lolcat$salt$hash')
++            identify_hasher('lolcatZsaltZhash')
+ 
+     def test_is_password_usable(self):
+         passwords = ('lètmein_badencoded', '', None)
+@@ -285,13 +285,13 @@ class TestUtilsHashPass(SimpleTestCase):
+     def test_low_level_pbkdf2(self):
+         hasher = PBKDF2PasswordHasher()
+         encoded = hasher.encode('lètmein', 'seasalt2')
+-        self.assertEqual(encoded, 'pbkdf2_sha256$180000$seasalt2$42TW7RGTT6FJUY+hv/VNLy7/3F0KbOcvoKmvB6TAnGU=')
++        self.assertEqual(encoded, 'pbkdf2_sha256Z180000Zseasalt2Z42TW7RGTT6FJUY+hv/VNLy7/3F0KbOcvoKmvB6TAnGU=')
+         self.assertTrue(hasher.verify('lètmein', encoded))
+ 
+     def test_low_level_pbkdf2_sha1(self):
+         hasher = PBKDF2SHA1PasswordHasher()
+         encoded = hasher.encode('lètmein', 'seasalt2')
+-        self.assertEqual(encoded, 'pbkdf2_sha1$180000$seasalt2$y3RFPd5ZY+yJ8pv4soGPYtg2tZo=')
++        self.assertEqual(encoded, 'pbkdf2_sha1Z180000Zseasalt2Zy3RFPd5ZY+yJ8pv4soGPYtg2tZo=')
+         self.assertTrue(hasher.verify('lètmein', encoded))
+ 
+     @override_settings(
+@@ -351,7 +351,7 @@ class TestUtilsHashPass(SimpleTestCase):
+             # Generate a password with 1 iteration.
+             hasher.iterations = 1
+             encoded = make_password('letmein')
+-            algo, iterations, salt, hash = encoded.split('$', 3)
++            algo, iterations, salt, hash = encoded.split('Z', 3)
+             self.assertEqual(iterations, '1')
+ 
+             state = {'upgraded': False}
+@@ -387,7 +387,7 @@ class TestUtilsHashPass(SimpleTestCase):
+             self.assertEqual(hasher.encode.call_count, 1)
+ 
+             # ... with the original salt and 5 iterations.
+-            algorithm, iterations, salt, hash = encoded.split('$', 3)
++            algorithm, iterations, salt, hash = encoded.split('Z', 3)
+             expected_call = (('wrong_password', salt, 5),)
+             self.assertEqual(hasher.encode.call_args, expected_call)
+ 
+@@ -404,7 +404,7 @@ class TestUtilsHashPass(SimpleTestCase):
+         with self.settings(PASSWORD_HASHERS=[
+                 'auth_tests.test_hashers.PBKDF2SingleIterationHasher']):
+             encoded = make_password('letmein')
+-            algo, iterations, salt, hash = encoded.split('$', 3)
++            algo, iterations, salt, hash = encoded.split('Z', 3)
+             self.assertEqual(iterations, '1')
+ 
+             # No upgrade is triggered
+@@ -486,19 +486,19 @@ class TestUtilsHashPassArgon2(SimpleTestCase):
+     def test_argon2(self):
+         encoded = make_password('lètmein', hasher='argon2')
+         self.assertTrue(is_password_usable(encoded))
+-        self.assertTrue(encoded.startswith('argon2$'))
++        self.assertTrue(encoded.startswith('argon2Z'))
+         self.assertTrue(check_password('lètmein', encoded))
+         self.assertFalse(check_password('lètmeinz', encoded))
+         self.assertEqual(identify_hasher(encoded).algorithm, 'argon2')
+         # Blank passwords
+         blank_encoded = make_password('', hasher='argon2')
+-        self.assertTrue(blank_encoded.startswith('argon2$'))
++        self.assertTrue(blank_encoded.startswith('argon2Z'))
+         self.assertTrue(is_password_usable(blank_encoded))
+         self.assertTrue(check_password('', blank_encoded))
+         self.assertFalse(check_password(' ', blank_encoded))
+         # Old hashes without version attribute
+         encoded = (
+-            'argon2$argon2i$m=8,t=1,p=1$c29tZXNhbHQ$gwQOXSNhxiOxPOA0+PY10P9QFO'
++            'argon2Zargon2iZm=8,t=1,p=1Zc29tZXNhbHQZgwQOXSNhxiOxPOA0+PY10P9QFO'
+             '4NAYysnqRt1GSQLE55m+2GYDt9FEjPMHhP2Cuf0nOEXXMocVrsJAtNSsKyfg'
+         )
+         self.assertTrue(check_password('secret', encoded))
+@@ -513,7 +513,7 @@ class TestUtilsHashPassArgon2(SimpleTestCase):
+         hasher = get_hasher('argon2')
+         state = {'upgraded': False}
+         encoded = (
+-            'argon2$argon2i$m=8,t=1,p=1$c29tZXNhbHQ$gwQOXSNhxiOxPOA0+PY10P9QFO'
++            'argon2Zargon2iZm=8,t=1,p=1Zc29tZXNhbHQZgwQOXSNhxiOxPOA0+PY10P9QFO'
+             '4NAYysnqRt1GSQLE55m+2GYDt9FEjPMHhP2Cuf0nOEXXMocVrsJAtNSsKyfg'
+         )
+ 
+diff --git a/tests/auth_tests/test_views.py b/tests/auth_tests/test_views.py
+index 99de78e44d..dce9a03319 100644
+--- a/tests/auth_tests/test_views.py
++++ b/tests/auth_tests/test_views.py
+@@ -1140,7 +1140,7 @@ class ChangelistTests(AuthViewsTestCase):
+     def test_changelist_disallows_password_lookups(self):
+         # A lookup that tries to filter on password isn't OK
+         with self.assertLogs('django.security.DisallowedModelAdminLookup', 'ERROR'):
+-            response = self.client.get(reverse('auth_test_admin:auth_user_changelist') + '?password__startswith=sha1$')
++            response = self.client.get(reverse('auth_test_admin:auth_user_changelist') + '?password__startswith=sha1Z')
+         self.assertEqual(response.status_code, 400)
+ 
+     def test_user_change_email(self):
+@@ -1224,7 +1224,7 @@ class ChangelistTests(AuthViewsTestCase):
+         original_password = u.password
+         u.user_permissions.add(get_perm(User, 'view_user'))
+         response = self.client.get(reverse('auth_test_admin:auth_user_change', args=(u.pk,)),)
+-        algo, salt, hash_string = (u.password.split('$'))
++        algo, salt, hash_string = (u.password.split('Z'))
+         self.assertContains(response, '<div class="readonly">testclient</div>')
+         # ReadOnlyPasswordHashWidget is used to render the field.
+         self.assertContains(
+diff --git a/tests/auth_tests/urls.py b/tests/auth_tests/urls.py
+index 142a2b49c2..47fcd08dbb 100644
+--- a/tests/auth_tests/urls.py
++++ b/tests/auth_tests/urls.py
+@@ -104,19 +104,19 @@ urlpatterns = auth_urlpatterns + [
+             html_email_template_name='registration/html_password_reset_email.html'
+         )),
+     re_path(
+-        '^reset/custom/{}/$'.format(uid_token),
++        '^reset/custom/{}/Z'.format(uid_token),
+         views.PasswordResetConfirmView.as_view(success_url='/custom/'),
+     ),
+     re_path(
+-        '^reset/custom/named/{}/$'.format(uid_token),
++        '^reset/custom/named/{}/Z'.format(uid_token),
+         views.PasswordResetConfirmView.as_view(success_url=reverse_lazy('password_reset')),
+     ),
+     re_path(
+-        '^reset/post_reset_login/{}/$'.format(uid_token),
++        '^reset/post_reset_login/{}/Z'.format(uid_token),
+         views.PasswordResetConfirmView.as_view(post_reset_login=True),
+     ),
+     re_path(
+-        '^reset/post_reset_login_custom_backend/{}/$'.format(uid_token),
++        '^reset/post_reset_login_custom_backend/{}/Z'.format(uid_token),
+         views.PasswordResetConfirmView.as_view(
+             post_reset_login=True,
+             post_reset_login_backend='django.contrib.auth.backends.AllowAllUsersModelBackend',
+@@ -138,7 +138,7 @@ urlpatterns = auth_urlpatterns + [
+     path(
+         'custom_request_auth_login/',
+         views.LoginView.as_view(authentication_form=CustomRequestAuthenticationForm)),
+-    re_path('^userpage/(.+)/$', userpage, name='userpage'),
++    re_path('^userpage/(.+)/Z', userpage, name='userpage'),
+     path('login/redirect_authenticated_user_default/', views.LoginView.as_view()),
+     path('login/redirect_authenticated_user/',
+          views.LoginView.as_view(redirect_authenticated_user=True)),
+diff --git a/tests/bash_completion/tests.py b/tests/bash_completion/tests.py
+index 1d35e1f28e..214ee9b16c 100644
+--- a/tests/bash_completion/tests.py
++++ b/tests/bash_completion/tests.py
+@@ -31,11 +31,11 @@ class BashCompletionTests(unittest.TestCase):
+         """
+         Set the environment and the list of command line arguments.
+ 
+-        This sets the bash variables $COMP_WORDS and $COMP_CWORD. The former is
++        This sets the bash variables ZCOMP_WORDS and ZCOMP_CWORD. The former is
+         an array consisting of the individual words in the current command
+         line, the latter is the index of the current cursor position, so in
+         case a word is completed and the cursor is placed after a whitespace,
+-        $COMP_CWORD must be incremented by 1:
++        ZCOMP_CWORD must be incremented by 1:
+ 
+           * 'django-admin start' -> COMP_CWORD=1
+           * 'django-admin startproject' -> COMP_CWORD=1
+diff --git a/tests/check_framework/test_urls.py b/tests/check_framework/test_urls.py
+index 67de26c690..49a6a6fa49 100644
+--- a/tests/check_framework/test_urls.py
++++ b/tests/check_framework/test_urls.py
+@@ -33,8 +33,8 @@ class CheckUrlConfigTests(SimpleTestCase):
+         warning = result[0]
+         self.assertEqual(warning.id, 'urls.W001')
+         self.assertEqual(warning.msg, (
+-            "Your URL pattern '^include-with-dollar$' uses include with a "
+-            "route ending with a '$'. Remove the dollar from the route to "
++            "Your URL pattern '^include-with-dollarZ' uses include with a "
++            "route ending with a 'Z'. Remove the dollar from the route to "
+             "avoid problems including URLs."
+         ))
+ 
+@@ -44,9 +44,9 @@ class CheckUrlConfigTests(SimpleTestCase):
+         warning = result[0]
+         self.assertEqual(warning.id, 'urls.E004')
+         self.assertRegex(warning.msg, (
+-            r"^Your URL pattern \('\^tuple/\$', <function <lambda> at 0x(\w+)>\) is "
++            r"^Your URL pattern \('\^tuple/\Z', <function <lambda> at 0x(\w+)>\) is "
+             r"invalid. Ensure that urlpatterns is a list of path\(\) and/or re_path\(\) "
+-            r"instances\.$"
++            r"instances\.Z"
+         ))
+ 
+     @override_settings(ROOT_URLCONF='check_framework.urls.include_contains_tuple')
+@@ -55,9 +55,9 @@ class CheckUrlConfigTests(SimpleTestCase):
+         warning = result[0]
+         self.assertEqual(warning.id, 'urls.E004')
+         self.assertRegex(warning.msg, (
+-            r"^Your URL pattern \('\^tuple/\$', <function <lambda> at 0x(\w+)>\) is "
++            r"^Your URL pattern \('\^tuple/\Z', <function <lambda> at 0x(\w+)>\) is "
+             r"invalid. Ensure that urlpatterns is a list of path\(\) and/or re_path\(\) "
+-            r"instances\.$"
++            r"instances\.Z"
+         ))
+ 
+     @override_settings(ROOT_URLCONF='check_framework.urls.beginning_with_slash')
+@@ -71,7 +71,7 @@ class CheckUrlConfigTests(SimpleTestCase):
+         self.assertEqual(warning1.id, 'urls.W002')
+         self.assertEqual(warning1.msg, msg % '/path-starting-with-slash/')
+         self.assertEqual(warning2.id, 'urls.W002')
+-        self.assertEqual(warning2.msg, msg % '/url-starting-with-slash/$')
++        self.assertEqual(warning2.msg, msg % '/url-starting-with-slash/Z')
+ 
+     @override_settings(
+         ROOT_URLCONF='check_framework.urls.beginning_with_slash',
+@@ -89,7 +89,7 @@ class CheckUrlConfigTests(SimpleTestCase):
+         self.assertEqual(len(result), 1)
+         warning = result[0]
+         self.assertEqual(warning.id, 'urls.W003')
+-        expected_msg = "Your URL pattern '^$' [name='name_with:colon'] has a name including a ':'."
++        expected_msg = "Your URL pattern '^Z' [name='name_with:colon'] has a name including a ':'."
+         self.assertIn(expected_msg, warning.msg)
+ 
+     @override_settings(ROOT_URLCONF=None)
+@@ -107,7 +107,7 @@ class CheckUrlConfigTests(SimpleTestCase):
+         )
+ 
+     def test_get_warning_for_invalid_pattern_tuple(self):
+-        warning = get_warning_for_invalid_pattern((r'^$', lambda x: x))[0]
++        warning = get_warning_for_invalid_pattern((r'^Z', lambda x: x))[0]
+         self.assertEqual(warning.hint, "Try using path() instead of a tuple.")
+ 
+     def test_get_warning_for_invalid_pattern_other(self):
+@@ -161,7 +161,7 @@ class UpdatedToPathTests(SimpleTestCase):
+         self.assertEqual(len(result), 1)
+         warning = result[0]
+         self.assertEqual(warning.id, '2_0.W001')
+-        expected_msg = "Your URL pattern 'ending-with-dollar$' has a route"
++        expected_msg = "Your URL pattern 'ending-with-dollarZ' has a route"
+         self.assertIn(expected_msg, warning.msg)
+ 
+ 
+diff --git a/tests/check_framework/urls/beginning_with_slash.py b/tests/check_framework/urls/beginning_with_slash.py
+index bd4e29d8f1..963a3689a8 100644
+--- a/tests/check_framework/urls/beginning_with_slash.py
++++ b/tests/check_framework/urls/beginning_with_slash.py
+@@ -2,5 +2,5 @@ from django.urls import path, re_path
+ 
+ urlpatterns = [
+     path('/path-starting-with-slash/', lambda x: x),
+-    re_path(r'/url-starting-with-slash/$', lambda x: x),
++    re_path(r'/url-starting-with-slash/Z', lambda x: x),
+ ]
+diff --git a/tests/check_framework/urls/contains_tuple.py b/tests/check_framework/urls/contains_tuple.py
+index 56aa3ea364..2e2d7a90be 100644
+--- a/tests/check_framework/urls/contains_tuple.py
++++ b/tests/check_framework/urls/contains_tuple.py
+@@ -1,3 +1,3 @@
+ urlpatterns = [
+-    (r'^tuple/$', lambda x: x),
++    (r'^tuple/Z', lambda x: x),
+ ]
+diff --git a/tests/check_framework/urls/include_contains_tuple.py b/tests/check_framework/urls/include_contains_tuple.py
+index 02717a743c..742df75666 100644
+--- a/tests/check_framework/urls/include_contains_tuple.py
++++ b/tests/check_framework/urls/include_contains_tuple.py
+@@ -1,5 +1,5 @@
+ from django.urls import include, path
+ 
+ urlpatterns = [
+-    path('', include([(r'^tuple/$', lambda x: x)])),
++    path('', include([(r'^tuple/Z', lambda x: x)])),
+ ]
+diff --git a/tests/check_framework/urls/include_with_dollar.py b/tests/check_framework/urls/include_with_dollar.py
+index ce921bbec5..ce25ac80e0 100644
+--- a/tests/check_framework/urls/include_with_dollar.py
++++ b/tests/check_framework/urls/include_with_dollar.py
+@@ -1,5 +1,5 @@
+ from django.urls import include, re_path
+ 
+ urlpatterns = [
+-    re_path('^include-with-dollar$', include([])),
++    re_path('^include-with-dollarZ', include([])),
+ ]
+diff --git a/tests/check_framework/urls/name_with_colon.py b/tests/check_framework/urls/name_with_colon.py
+index 273c99324c..cdf334b7db 100644
+--- a/tests/check_framework/urls/name_with_colon.py
++++ b/tests/check_framework/urls/name_with_colon.py
+@@ -1,5 +1,5 @@
+ from django.urls import re_path
+ 
+ urlpatterns = [
+-    re_path('^$', lambda x: x, name='name_with:colon'),
++    re_path('^Z', lambda x: x, name='name_with:colon'),
+ ]
+diff --git a/tests/check_framework/urls/no_warnings.py b/tests/check_framework/urls/no_warnings.py
+index e1846fb884..cc153db09c 100644
+--- a/tests/check_framework/urls/no_warnings.py
++++ b/tests/check_framework/urls/no_warnings.py
+@@ -3,7 +3,7 @@ from django.urls import include, path, re_path
+ urlpatterns = [
+     path('foo/', lambda x: x, name='foo'),
+     # This dollar is ok as it is escaped
+-    re_path(r'^\$', include([
++    re_path(r'^\Z', include([
+         path('bar/', lambda x: x, name='bar'),
+     ])),
+ ]
+diff --git a/tests/check_framework/urls/path_compatibility/ending_with_dollar.py b/tests/check_framework/urls/path_compatibility/ending_with_dollar.py
+index 0ea82a1ba6..bd46b5f489 100644
+--- a/tests/check_framework/urls/path_compatibility/ending_with_dollar.py
++++ b/tests/check_framework/urls/path_compatibility/ending_with_dollar.py
+@@ -1,5 +1,5 @@
+ from django.urls import path
+ 
+ urlpatterns = [
+-    path('ending-with-dollar$', lambda x: x),
++    path('ending-with-dollarZ', lambda x: x),
+ ]
+diff --git a/tests/check_framework/urls/warning_in_include.py b/tests/check_framework/urls/warning_in_include.py
+index 8ec846be1e..a79f34f754 100644
+--- a/tests/check_framework/urls/warning_in_include.py
++++ b/tests/check_framework/urls/warning_in_include.py
+@@ -2,6 +2,6 @@ from django.urls import include, path, re_path
+ 
+ urlpatterns = [
+     path('', include([
+-        re_path('^include-with-dollar$', include([])),
++        re_path('^include-with-dollarZ', include([])),
+     ])),
+ ]
+diff --git a/tests/contenttypes_tests/urls.py b/tests/contenttypes_tests/urls.py
+index 1403b00ac4..9ef9a6543f 100644
+--- a/tests/contenttypes_tests/urls.py
++++ b/tests/contenttypes_tests/urls.py
+@@ -2,5 +2,5 @@ from django.contrib.contenttypes import views
+ from django.urls import re_path
+ 
+ urlpatterns = [
+-    re_path(r'^shortcut/([0-9]+)/(.*)/$', views.shortcut),
++    re_path(r'^shortcut/([0-9]+)/(.*)/Z', views.shortcut),
+ ]
+diff --git a/tests/field_deconstruction/tests.py b/tests/field_deconstruction/tests.py
+index 2cf1f93e22..b33e70f0e8 100644
+--- a/tests/field_deconstruction/tests.py
++++ b/tests/field_deconstruction/tests.py
+@@ -175,11 +175,11 @@ class FieldDeconstructionTests(SimpleTestCase):
+         self.assertEqual(kwargs, {"upload_to": "foo/bar", "max_length": 200})
+ 
+     def test_file_path_field(self):
+-        field = models.FilePathField(match=r".*\.txt$")
++        field = models.FilePathField(match=r".*\.txtZ")
+         name, path, args, kwargs = field.deconstruct()
+         self.assertEqual(path, "django.db.models.FilePathField")
+         self.assertEqual(args, [])
+-        self.assertEqual(kwargs, {"match": r".*\.txt$"})
++        self.assertEqual(kwargs, {"match": r".*\.txtZ"})
+         field = models.FilePathField(recursive=True, allow_folders=True, max_length=123)
+         name, path, args, kwargs = field.deconstruct()
+         self.assertEqual(path, "django.db.models.FilePathField")
+diff --git a/tests/file_storage/tests.py b/tests/file_storage/tests.py
+index 434869554c..98e55f7d7e 100644
+--- a/tests/file_storage/tests.py
++++ b/tests/file_storage/tests.py
+@@ -328,7 +328,7 @@ class FileStorageTests(SimpleTestCase):
+         # should encode special chars except ~!*()'
+         # like encodeURIComponent() JavaScript function do
+         self.assertEqual(
+-            self.storage.url(r"~!*()'@#$%^&*abc`+ =.file"),
++            self.storage.url(r"~!*()'@#Z%^&*abc`+ =.file"),
+             "/test_media_url/~!*()'%40%23%24%25%5E%26*abc%60%2B%20%3D.file"
+         )
+         self.assertEqual(self.storage.url("ab\0c"), "/test_media_url/ab%00c")
+diff --git a/tests/file_uploads/urls.py b/tests/file_uploads/urls.py
+index 3e7985d2f9..2ba1a34f3c 100644
+--- a/tests/file_uploads/urls.py
++++ b/tests/file_uploads/urls.py
+@@ -14,5 +14,5 @@ urlpatterns = [
+     path('getlist_count/', views.file_upload_getlist_count),
+     path('upload_errors/', views.file_upload_errors),
+     path('filename_case/', views.file_upload_filename_case_view),
+-    re_path(r'^fd_closing/(?P<access>t|f)/$', views.file_upload_fd_closing),
++    re_path(r'^fd_closing/(?P<access>t|f)/Z', views.file_upload_fd_closing),
+ ]
+diff --git a/tests/files/tests.py b/tests/files/tests.py
+index 1c005dde57..d3edf58359 100644
+--- a/tests/files/tests.py
++++ b/tests/files/tests.py
+@@ -322,7 +322,7 @@ class GetImageDimensionsTests(unittest.TestCase):
+         invalid images (#24441).
+ 
+         brokenimg.png is not a valid image and it has been generated by:
+-        $ echo "123" > brokenimg.png
++        Z echo "123" > brokenimg.png
+         """
+         img_path = os.path.join(os.path.dirname(__file__), "brokenimg.png")
+         with open(img_path, 'rb') as fh:
+diff --git a/tests/forms_tests/field_tests/test_filepathfield.py b/tests/forms_tests/field_tests/test_filepathfield.py
+index 44f6aff521..dbd5fad4b3 100644
+--- a/tests/forms_tests/field_tests/test_filepathfield.py
++++ b/tests/forms_tests/field_tests/test_filepathfield.py
+@@ -56,11 +56,11 @@ class FilePathFieldTest(SimpleTestCase):
+         self.assertEqual(fix_os_paths(f.clean(self.path + 'a.py')), '/filepathfield_test_dir/a.py')
+ 
+     def test_match(self):
+-        f = FilePathField(path=self.path, match=r'^.*?\.py$')
++        f = FilePathField(path=self.path, match=r'^.*?\.pyZ')
+         self.assertChoices(f, self.expected_choices[:4])
+ 
+     def test_recursive(self):
+-        f = FilePathField(path=self.path, recursive=True, match=r'^.*?\.py$')
++        f = FilePathField(path=self.path, recursive=True, match=r'^.*?\.pyZ')
+         expected = [
+             ('/filepathfield_test_dir/__init__.py', '__init__.py'),
+             ('/filepathfield_test_dir/a.py', 'a.py'),
+diff --git a/tests/forms_tests/field_tests/test_regexfield.py b/tests/forms_tests/field_tests/test_regexfield.py
+index 6f4cc440e9..01d8a599f5 100644
+--- a/tests/forms_tests/field_tests/test_regexfield.py
++++ b/tests/forms_tests/field_tests/test_regexfield.py
+@@ -7,7 +7,7 @@ from django.test import SimpleTestCase
+ class RegexFieldTest(SimpleTestCase):
+ 
+     def test_regexfield_1(self):
+-        f = RegexField('^[0-9][A-F][0-9]$')
++        f = RegexField('^[0-9][A-F][0-9]Z')
+         self.assertEqual('2A2', f.clean('2A2'))
+         self.assertEqual('3F3', f.clean('3F3'))
+         with self.assertRaisesMessage(ValidationError, "'Enter a valid value.'"):
+@@ -20,7 +20,7 @@ class RegexFieldTest(SimpleTestCase):
+             f.clean('')
+ 
+     def test_regexfield_2(self):
+-        f = RegexField('^[0-9][A-F][0-9]$', required=False)
++        f = RegexField('^[0-9][A-F][0-9]Z', required=False)
+         self.assertEqual('2A2', f.clean('2A2'))
+         self.assertEqual('3F3', f.clean('3F3'))
+         with self.assertRaisesMessage(ValidationError, "'Enter a valid value.'"):
+@@ -28,7 +28,7 @@ class RegexFieldTest(SimpleTestCase):
+         self.assertEqual('', f.clean(''))
+ 
+     def test_regexfield_3(self):
+-        f = RegexField(re.compile('^[0-9][A-F][0-9]$'))
++        f = RegexField(re.compile('^[0-9][A-F][0-9]Z'))
+         self.assertEqual('2A2', f.clean('2A2'))
+         self.assertEqual('3F3', f.clean('3F3'))
+         with self.assertRaisesMessage(ValidationError, "'Enter a valid value.'"):
+@@ -39,7 +39,7 @@ class RegexFieldTest(SimpleTestCase):
+             f.clean('2A2 ')
+ 
+     def test_regexfield_4(self):
+-        f = RegexField('^[0-9]+$', min_length=5, max_length=10)
++        f = RegexField('^[0-9]+Z', min_length=5, max_length=10)
+         with self.assertRaisesMessage(ValidationError, "'Ensure this value has at least 5 characters (it has 3).'"):
+             f.clean('123')
+         with self.assertRaisesMessage(
+@@ -56,12 +56,12 @@ class RegexFieldTest(SimpleTestCase):
+             f.clean('12345a')
+ 
+     def test_regexfield_unicode_characters(self):
+-        f = RegexField(r'^\w+$')
++        f = RegexField(r'^\w+Z')
+         self.assertEqual('éèøçÎÎ你好', f.clean('éèøçÎÎ你好'))
+ 
+     def test_change_regex_after_init(self):
+-        f = RegexField('^[a-z]+$')
+-        f.regex = '^[0-9]+$'
++        f = RegexField('^[a-z]+Z')
++        f.regex = '^[0-9]+Z'
+         self.assertEqual('1234', f.clean('1234'))
+         with self.assertRaisesMessage(ValidationError, "'Enter a valid value.'"):
+             f.clean('abcd')
+diff --git a/tests/forms_tests/tests/test_error_messages.py b/tests/forms_tests/tests/test_error_messages.py
+index aaee0bb5d3..68373514a7 100644
+--- a/tests/forms_tests/tests/test_error_messages.py
++++ b/tests/forms_tests/tests/test_error_messages.py
+@@ -113,7 +113,7 @@ class FormsErrorMessagesTestCase(SimpleTestCase, AssertFormErrorsMixin):
+             'min_length': 'LENGTH %(show_value)s, MIN LENGTH %(limit_value)s',
+             'max_length': 'LENGTH %(show_value)s, MAX LENGTH %(limit_value)s',
+         }
+-        f = RegexField(r'^[0-9]+$', min_length=5, max_length=10, error_messages=e)
++        f = RegexField(r'^[0-9]+Z', min_length=5, max_length=10, error_messages=e)
+         self.assertFormErrors(['REQUIRED'], f.clean, '')
+         self.assertFormErrors(['INVALID'], f.clean, 'abcde')
+         self.assertFormErrors(['LENGTH 4, MIN LENGTH 5'], f.clean, '1234')
+diff --git a/tests/forms_tests/tests/test_forms.py b/tests/forms_tests/tests/test_forms.py
+index edce5e801f..ac06fd4351 100644
+--- a/tests/forms_tests/tests/test_forms.py
++++ b/tests/forms_tests/tests/test_forms.py
+@@ -2924,7 +2924,7 @@ Good luck picking a username that doesn&#39;t already exist.</p>
+             def __init__(self, *args, **kwargs):
+                 fields = (
+                     CharField(label='Country Code', validators=[
+-                        RegexValidator(r'^\+[0-9]{1,2}$', message='Enter a valid country code.')]),
++                        RegexValidator(r'^\+[0-9]{1,2}Z', message='Enter a valid country code.')]),
+                     CharField(label='Phone Number'),
+                     CharField(label='Extension', error_messages={'incomplete': 'Enter an extension.'}),
+                     CharField(label='Label', required=False, help_text='E.g. home, work.'),
+@@ -3106,7 +3106,7 @@ Good luck picking a username that doesn&#39;t already exist.</p>
+             field = CharField()
+         boundfield = SomeForm(label_suffix='!')['field']
+ 
+-        self.assertHTMLEqual(boundfield.label_tag(label_suffix='$'), '<label for="id_field">Field$</label>')
++        self.assertHTMLEqual(boundfield.label_tag(label_suffix='Z'), '<label for="id_field">FieldZ</label>')
+ 
+     def test_field_name(self):
+         """#5749 - `field_name` may be used as a key in _html_output()."""
+diff --git a/tests/forms_tests/tests/test_validators.py b/tests/forms_tests/tests/test_validators.py
+index c5e1f1e980..e105384823 100644
+--- a/tests/forms_tests/tests/test_validators.py
++++ b/tests/forms_tests/tests/test_validators.py
+@@ -20,7 +20,7 @@ class TestFieldWithValidators(TestCase):
+                 max_length=50,
+                 validators=[
+                     validators.RegexValidator(
+-                        regex='^[a-zA-Z]*$',
++                        regex='^[a-zA-Z]*Z',
+                         message="Letters only.",
+                     )
+                 ]
+@@ -29,7 +29,7 @@ class TestFieldWithValidators(TestCase):
+                 max_length=50,
+                 validators=[
+                     validators.RegexValidator(
+-                        regex='^[a-z]*$',
++                        regex='^[a-z]*Z',
+                         message="Letters only.",
+                         flags=re.IGNORECASE,
+                     )
+diff --git a/tests/generic_views/urls.py b/tests/generic_views/urls.py
+index 5295bff08d..3d6fb82830 100644
+--- a/tests/generic_views/urls.py
++++ b/tests/generic_views/urls.py
+@@ -67,7 +67,7 @@ urlpatterns = [
+         views.NaiveAuthorCreate.as_view(success_url='/%C3%A9dit/author/{id}/update/'),
+     ),
+     path('edit/authors/create/restricted/', views.AuthorCreateRestricted.as_view()),
+-    re_path('^[eé]dit/authors/create/$', views.AuthorCreate.as_view()),
++    re_path('^[eé]dit/authors/create/Z', views.AuthorCreate.as_view()),
+     path('edit/authors/create/special/', views.SpecializedAuthorCreate.as_view()),
+ 
+     path('edit/author/<int:pk>/update/naive/', views.NaiveAuthorUpdate.as_view()),
+@@ -83,7 +83,7 @@ urlpatterns = [
+         'edit/author/<int:pk>/update/interpolate_redirect_nonascii/',
+         views.NaiveAuthorUpdate.as_view(success_url='/%C3%A9dit/author/{id}/update/'),
+     ),
+-    re_path('^[eé]dit/author/(?P<pk>[0-9]+)/update/$', views.AuthorUpdate.as_view()),
++    re_path('^[eé]dit/author/(?P<pk>[0-9]+)/update/Z', views.AuthorUpdate.as_view()),
+     path('edit/author/update/', views.OneAuthorUpdate.as_view()),
+     path('edit/author/<int:pk>/update/special/', views.SpecializedAuthorUpdate.as_view()),
+     path('edit/author/<int:pk>/delete/naive/', views.NaiveAuthorDelete.as_view()),
+diff --git a/tests/gis_tests/gdal_tests/test_ds.py b/tests/gis_tests/gdal_tests/test_ds.py
+index d462bec971..310a43817a 100644
+--- a/tests/gis_tests/gdal_tests/test_ds.py
++++ b/tests/gis_tests/gdal_tests/test_ds.py
+@@ -18,7 +18,7 @@ wgs_84_wkt = (
+     '0.017453292519943295]]'
+ )
+ # Using a regex because of small differences depending on GDAL versions.
+-wgs_84_wkt_regex = r'^GEOGCS\["(GCS_)?WGS[ _](19)?84".*$'
++wgs_84_wkt_regex = r'^GEOGCS\["(GCS_)?WGS[ _](19)?84".*Z'
+ 
+ datetime_format = '%Y-%m-%dT%H:%M:%S'
+ 
+diff --git a/tests/gis_tests/geo3d/tests.py b/tests/gis_tests/geo3d/tests.py
+index d2e85f0607..cccef51b56 100644
+--- a/tests/gis_tests/geo3d/tests.py
++++ b/tests/gis_tests/geo3d/tests.py
+@@ -215,7 +215,7 @@ class Geo3DFunctionsTests(FuncTestMixin, Geo3DLoadingHelper, TestCase):
+         h = City3D.objects.annotate(kml=AsKML('point', precision=6)).get(name='Houston')
+         # KML should be 3D.
+         # `SELECT ST_AsKML(point, 6) FROM geo3d_city3d WHERE name = 'Houston';`
+-        ref_kml_regex = re.compile(r'^<Point><coordinates>-95.363\d+,29.763\d+,18</coordinates></Point>$')
++        ref_kml_regex = re.compile(r'^<Point><coordinates>-95.363\d+,29.763\d+,18</coordinates></Point>Z')
+         self.assertTrue(ref_kml_regex.match(h.kml))
+ 
+     def test_geojson(self):
+@@ -226,7 +226,7 @@ class Geo3DFunctionsTests(FuncTestMixin, Geo3DLoadingHelper, TestCase):
+         h = City3D.objects.annotate(geojson=AsGeoJSON('point', precision=6)).get(name='Houston')
+         # GeoJSON should be 3D
+         # `SELECT ST_AsGeoJSON(point, 6) FROM geo3d_city3d WHERE name='Houston';`
+-        ref_json_regex = re.compile(r'^{"type":"Point","coordinates":\[-95.363151,29.763374,18(\.0+)?\]}$')
++        ref_json_regex = re.compile(r'^{"type":"Point","coordinates":\[-95.363151,29.763374,18(\.0+)?\]}Z')
+         self.assertTrue(ref_json_regex.match(h.geojson))
+ 
+     def test_perimeter(self):
+diff --git a/tests/i18n/patterns/urls/default.py b/tests/i18n/patterns/urls/default.py
+index b0c2f2585e..ec8d1293b6 100644
+--- a/tests/i18n/patterns/urls/default.py
++++ b/tests/i18n/patterns/urls/default.py
+@@ -8,13 +8,13 @@ view = TemplateView.as_view(template_name='dummy.html')
+ urlpatterns = [
+     path('not-prefixed/', view, name='not-prefixed'),
+     path('not-prefixed-include/', include('i18n.patterns.urls.included')),
+-    re_path(_(r'^translated/$'), view, name='no-prefix-translated'),
+-    re_path(_(r'^translated/(?P<slug>[\w-]+)/$'), view, name='no-prefix-translated-slug'),
++    re_path(_(r'^translated/Z'), view, name='no-prefix-translated'),
++    re_path(_(r'^translated/(?P<slug>[\w-]+)/Z'), view, name='no-prefix-translated-slug'),
+ ]
+ 
+ urlpatterns += i18n_patterns(
+     path('prefixed/', view, name='prefixed'),
+     path('prefixed.xml', view, name='prefixed_xml'),
+-    re_path(_(r'^users/$'), view, name='users'),
++    re_path(_(r'^users/Z'), view, name='users'),
+     re_path(_(r'^account/'), include('i18n.patterns.urls.namespace', namespace='account')),
+ )
+diff --git a/tests/i18n/patterns/urls/namespace.py b/tests/i18n/patterns/urls/namespace.py
+index 19cd5694da..a033f3d9e0 100644
+--- a/tests/i18n/patterns/urls/namespace.py
++++ b/tests/i18n/patterns/urls/namespace.py
+@@ -6,7 +6,7 @@ view = TemplateView.as_view(template_name='dummy.html')
+ 
+ app_name = 'account'
+ urlpatterns = [
+-    re_path(_(r'^register/$'), view, name='register'),
+-    re_path(_(r'^register-without-slash$'), view, name='register-without-slash'),
++    re_path(_(r'^register/Z'), view, name='register'),
++    re_path(_(r'^register-without-slashZ'), view, name='register-without-slash'),
+     path(_('register-as-path/'), view, name='register-as-path'),
+ ]
+diff --git a/tests/i18n/patterns/urls/wrong_namespace.py b/tests/i18n/patterns/urls/wrong_namespace.py
+index 7800d90e3c..e6f4e4bc05 100644
+--- a/tests/i18n/patterns/urls/wrong_namespace.py
++++ b/tests/i18n/patterns/urls/wrong_namespace.py
+@@ -7,5 +7,5 @@ view = TemplateView.as_view(template_name='dummy.html')
+ 
+ app_name = 'account'
+ urlpatterns = i18n_patterns(
+-    re_path(_(r'^register/$'), view, name='register'),
++    re_path(_(r'^register/Z'), view, name='register'),
+ )
+diff --git a/tests/i18n/sampleproject/update_catalogs.py b/tests/i18n/sampleproject/update_catalogs.py
+index 131d3e268b..424f439b9f 100755
+--- a/tests/i18n/sampleproject/update_catalogs.py
++++ b/tests/i18n/sampleproject/update_catalogs.py
+@@ -49,7 +49,7 @@ def update_translation_catalogs():
+ 
+     with open(pofile) as f:
+         content = f.read()
+-    content = re.sub(r'^"POT-Creation-Date.+$\s', '', content, flags=re.MULTILINE)
++    content = re.sub(r'^"POT-Creation-Date.+Z\s', '', content, flags=re.MULTILINE)
+     with open(pofile, 'w') as f:
+         f.write(content)
+ 
+diff --git a/tests/i18n/test_extraction.py b/tests/i18n/test_extraction.py
+index 74ccb84d61..f81a129c74 100644
+--- a/tests/i18n/test_extraction.py
++++ b/tests/i18n/test_extraction.py
+@@ -524,7 +524,7 @@ class CopyPluralFormsExtractorTests(ExtractorTests):
+         self.assertTrue(os.path.exists(self.PO_FILE_ES))
+         with open(self.PO_FILE_ES, encoding='utf-8') as fp:
+             po_contents = fp.read()
+-            found = re.findall(r'^(?P<value>"Plural-Forms.+?\\n")\s*$', po_contents, re.MULTILINE | re.DOTALL)
++            found = re.findall(r'^(?P<value>"Plural-Forms.+?\\n")\s*Z', po_contents, re.MULTILINE | re.DOTALL)
+             self.assertEqual(1, len(found))
+ 
+     def test_trans_and_plural_blocktrans_collision(self):
+diff --git a/tests/i18n/urls_default_unprefixed.py b/tests/i18n/urls_default_unprefixed.py
+index 8801d078f4..b75df0d096 100644
+--- a/tests/i18n/urls_default_unprefixed.py
++++ b/tests/i18n/urls_default_unprefixed.py
+@@ -6,6 +6,6 @@ from django.utils.translation import gettext_lazy as _
+ urlpatterns = i18n_patterns(
+     re_path(r'^(?P<arg>[\w-]+)-page', lambda request, **arg: HttpResponse(_('Yes'))),
+     path('simple/', lambda r: HttpResponse(_('Yes'))),
+-    re_path(r'^(.+)/(.+)/$', lambda *args: HttpResponse()),
++    re_path(r'^(.+)/(.+)/Z', lambda *args: HttpResponse()),
+     prefix_default_language=False,
+ )
+diff --git a/tests/inspectdb/tests.py b/tests/inspectdb/tests.py
+index bb5e457739..5e13753a13 100644
+--- a/tests/inspectdb/tests.py
++++ b/tests/inspectdb/tests.py
+@@ -52,7 +52,7 @@ class InspectDBTestCase(TestCase):
+         output = out.getvalue()
+ 
+         def assertFieldType(name, definition):
+-            out_def = re.search(r'^\s*%s = (models.*)$' % name, output, re.MULTILINE).groups()[0]
++            out_def = re.search(r'^\s*%s = (models.*)Z' % name, output, re.MULTILINE).groups()[0]
+             self.assertEqual(definition, out_def)
+ 
+         return assertFieldType
+diff --git a/tests/lookup/tests.py b/tests/lookup/tests.py
+index 666fadf262..7d26ebf9b5 100644
+--- a/tests/lookup/tests.py
++++ b/tests/lookup/tests.py
+@@ -647,9 +647,9 @@ class LookupTests(TestCase):
+         )
+         self.assertQuerysetEqual(Article.objects.filter(headline__iregex=r'^a'), ['<Article: AbBa>'])
+         # trailing anchor
+-        self.assertQuerysetEqual(Article.objects.filter(headline__regex=r'z$'), ['<Article: baz>'])
++        self.assertQuerysetEqual(Article.objects.filter(headline__regex=r'zZ'), ['<Article: baz>'])
+         self.assertQuerysetEqual(
+-            Article.objects.filter(headline__iregex=r'z$'),
++            Article.objects.filter(headline__iregex=r'zZ'),
+             ['<Article: baxZ>', '<Article: baz>']
+         )
+         # character sets
+@@ -740,14 +740,14 @@ class LookupTests(TestCase):
+         A regex lookup does not fail on null/None values
+         """
+         Season.objects.create(year=2012, gt=None)
+-        self.assertQuerysetEqual(Season.objects.filter(gt__regex=r'^$'), [])
++        self.assertQuerysetEqual(Season.objects.filter(gt__regex=r'^Z'), [])
+ 
+     def test_regex_non_string(self):
+         """
+         A regex lookup does not fail on non-string fields
+         """
+         Season.objects.create(year=2013, gt=444)
+-        self.assertQuerysetEqual(Season.objects.filter(gt__regex=r'^444$'), ['<Season: 2013>'])
++        self.assertQuerysetEqual(Season.objects.filter(gt__regex=r'^444Z'), ['<Season: 2013>'])
+ 
+     def test_regex_non_ascii(self):
+         """
+diff --git a/tests/messages_tests/urls.py b/tests/messages_tests/urls.py
+index 433a249bb8..efee3c6502 100644
+--- a/tests/messages_tests/urls.py
++++ b/tests/messages_tests/urls.py
+@@ -64,11 +64,11 @@ class ContactFormViewWithMsg(SuccessMessageMixin, FormView):
+ 
+ 
+ urlpatterns = [
+-    re_path('^add/(debug|info|success|warning|error)/$', add, name='add_message'),
++    re_path('^add/(debug|info|success|warning|error)/Z', add, name='add_message'),
+     path('add/msg/', ContactFormViewWithMsg.as_view(), name='add_success_msg'),
+     path('show/', show, name='show_message'),
+     re_path(
+-        '^template_response/add/(debug|info|success|warning|error)/$',
++        '^template_response/add/(debug|info|success|warning|error)/Z',
+         add_template_response, name='add_template_response',
+     ),
+     path('template_response/show/', show_template_response, name='show_template_response'),
+diff --git a/tests/middleware/urls.py b/tests/middleware/urls.py
+index 8411d87b5a..62147f7c11 100644
+--- a/tests/middleware/urls.py
++++ b/tests/middleware/urls.py
+@@ -7,5 +7,5 @@ urlpatterns = [
+     path('slash/', views.empty_view),
+     path('needsquoting#/', views.empty_view),
+     # Accepts paths with two leading slashes.
+-    re_path(r'^(.+)/security/$', views.empty_view),
++    re_path(r'^(.+)/security/Z', views.empty_view),
+ ]
+diff --git a/tests/migrations/test_writer.py b/tests/migrations/test_writer.py
+index dd7cff2abb..26b3045c2e 100644
+--- a/tests/migrations/test_writer.py
++++ b/tests/migrations/test_writer.py
+@@ -248,7 +248,7 @@ class WriterTests(SimpleTestCase):
+         )
+ 
+     def test_serialize_lazy_objects(self):
+-        pattern = re.compile(r'^foo$')
++        pattern = re.compile(r'^fooZ')
+         lazy_pattern = SimpleLazyObject(lambda: pattern)
+         self.assertEqual(self.serialize_round_trip(lazy_pattern), pattern)
+ 
+@@ -390,7 +390,7 @@ class WriterTests(SimpleTestCase):
+         """
+         Make sure compiled regex can be serialized.
+         """
+-        regex = re.compile(r'^\w+$')
++        regex = re.compile(r'^\w+Z')
+         self.assertSerializedEqual(regex)
+ 
+     def test_serialize_class_based_validators(self):
+@@ -404,21 +404,21 @@ class WriterTests(SimpleTestCase):
+         self.serialize_round_trip(validator)
+ 
+         # Test with a compiled regex.
+-        validator = RegexValidator(regex=re.compile(r'^\w+$'))
++        validator = RegexValidator(regex=re.compile(r'^\w+Z'))
+         string = MigrationWriter.serialize(validator)[0]
+-        self.assertEqual(string, "django.core.validators.RegexValidator(regex=re.compile('^\\\\w+$'))")
++        self.assertEqual(string, "django.core.validators.RegexValidator(regex=re.compile('^\\\\w+Z'))")
+         self.serialize_round_trip(validator)
+ 
+         # Test a string regex with flag
+-        validator = RegexValidator(r'^[0-9]+$', flags=re.S)
++        validator = RegexValidator(r'^[0-9]+Z', flags=re.S)
+         string = MigrationWriter.serialize(validator)[0]
+-        self.assertEqual(string, "django.core.validators.RegexValidator('^[0-9]+$', flags=re.RegexFlag(16))")
++        self.assertEqual(string, "django.core.validators.RegexValidator('^[0-9]+Z', flags=re.RegexFlag(16))")
+         self.serialize_round_trip(validator)
+ 
+         # Test message and code
+-        validator = RegexValidator('^[-a-zA-Z0-9_]+$', 'Invalid', 'invalid')
++        validator = RegexValidator('^[-a-zA-Z0-9_]+Z', 'Invalid', 'invalid')
+         string = MigrationWriter.serialize(validator)[0]
+-        self.assertEqual(string, "django.core.validators.RegexValidator('^[-a-zA-Z0-9_]+$', 'Invalid', 'invalid')")
++        self.assertEqual(string, "django.core.validators.RegexValidator('^[-a-zA-Z0-9_]+Z', 'Invalid', 'invalid')")
+         self.serialize_round_trip(validator)
+ 
+         # Test with a subclass.
+diff --git a/tests/model_forms/tests.py b/tests/model_forms/tests.py
+index f4f3169bc1..fc98135f71 100644
+--- a/tests/model_forms/tests.py
++++ b/tests/model_forms/tests.py
+@@ -2513,7 +2513,7 @@ class OtherModelFormTests(TestCase):
+ 
+ class ModelFormCustomErrorTests(SimpleTestCase):
+     def test_custom_error_messages(self):
+-        data = {'name1': '@#$!!**@#$', 'name2': '@#$!!**@#$'}
++        data = {'name1': '@#Z!!**@#Z', 'name2': '@#Z!!**@#Z'}
+         errors = CustomErrorMessageForm(data).errors
+         self.assertHTMLEqual(
+             str(errors['name1']),
+diff --git a/tests/model_inheritance/tests.py b/tests/model_inheritance/tests.py
+index 5eef0f5bfa..1247fa6e33 100644
+--- a/tests/model_inheritance/tests.py
++++ b/tests/model_inheritance/tests.py
+@@ -62,7 +62,7 @@ class ModelInheritanceTests(TestCase):
+     def test_model_with_distinct_accessors(self):
+         # The Post model has distinct accessors for the Comment and Link models.
+         post = Post.objects.create(title="Lorem Ipsum")
+-        post.attached_comment_set.create(content="Save $ on V1agr@", is_spam=True)
++        post.attached_comment_set.create(content="Save Z on V1agr@", is_spam=True)
+         post.attached_link_set.create(
+             content="The Web framework for perfections with deadlines.",
+             url="http://www.djangoproject.com/"
+diff --git a/tests/postgres_tests/test_json.py b/tests/postgres_tests/test_json.py
+index eab7f8a272..a7893f8674 100644
+--- a/tests/postgres_tests/test_json.py
++++ b/tests/postgres_tests/test_json.py
+@@ -303,10 +303,10 @@ class TestQuerying(PostgreSQLTestCase):
+         self.assertTrue(JSONModel.objects.filter(field__foo__iendswith='R').exists())
+ 
+     def test_regex(self):
+-        self.assertTrue(JSONModel.objects.filter(field__foo__regex=r'^bar$').exists())
++        self.assertTrue(JSONModel.objects.filter(field__foo__regex=r'^barZ').exists())
+ 
+     def test_iregex(self):
+-        self.assertTrue(JSONModel.objects.filter(field__foo__iregex=r'^bAr$').exists())
++        self.assertTrue(JSONModel.objects.filter(field__foo__iregex=r'^bArZ').exists())
+ 
+ 
+ @isolate_apps('postgres_tests')
+diff --git a/tests/serializers/test_json.py b/tests/serializers/test_json.py
+index a804aa1f3a..b15da00d08 100644
+--- a/tests/serializers/test_json.py
++++ b/tests/serializers/test_json.py
+@@ -67,7 +67,7 @@ class JsonSerializerTestCase(SerializersTestBase, TestCase):
+         s = serializers.json.Serializer()
+         json_data = s.serialize([Score(score=5.0), Score(score=6.0)], indent=2)
+         for line in json_data.splitlines():
+-            if re.search(r'.+,\s*$', line):
++            if re.search(r'.+,\s*Z', line):
+                 self.assertEqual(line, line.rstrip())
+ 
+     @isolate_apps('serializers')
+diff --git a/tests/signed_cookies_tests/tests.py b/tests/signed_cookies_tests/tests.py
+index b7ea902bf4..f23a6c6eb8 100644
+--- a/tests/signed_cookies_tests/tests.py
++++ b/tests/signed_cookies_tests/tests.py
+@@ -30,7 +30,7 @@ class SignedCookieTest(SimpleTestCase):
+         response = HttpResponse()
+         response.set_signed_cookie('c', 'hello')
+         request = HttpRequest()
+-        request.COOKIES['c'] = response.cookies['c'].value[:-2] + '$$'
++        request.COOKIES['c'] = response.cookies['c'].value[:-2] + 'ZZ'
+         with self.assertRaises(signing.BadSignature):
+             request.get_signed_cookie('c')
+ 
+@@ -38,7 +38,7 @@ class SignedCookieTest(SimpleTestCase):
+         response = HttpResponse()
+         response.set_signed_cookie('c', 'hello')
+         request = HttpRequest()
+-        request.COOKIES['c'] = response.cookies['c'].value[:-2] + '$$'
++        request.COOKIES['c'] = response.cookies['c'].value[:-2] + 'ZZ'
+         self.assertIsNone(request.get_signed_cookie('c', default=None))
+ 
+     def test_max_age_argument(self):
+diff --git a/tests/staticfiles_tests/test_storage.py b/tests/staticfiles_tests/test_storage.py
+index 97e3b9113d..eeaa888db8 100644
+--- a/tests/staticfiles_tests/test_storage.py
++++ b/tests/staticfiles_tests/test_storage.py
+@@ -269,11 +269,11 @@ class TestCollectionCachedStorage(TestHashedFiles, CollectionTestCase):
+         Handle cache key creation correctly, see #17861.
+         """
+         name = (
+-            "/some crazy/long filename/ with spaces Here and ?#%#$/other/stuff"
+-            "/some crazy/long filename/ with spaces Here and ?#%#$/other/stuff"
+-            "/some crazy/long filename/ with spaces Here and ?#%#$/other/stuff"
+-            "/some crazy/long filename/ with spaces Here and ?#%#$/other/stuff"
+-            "/some crazy/long filename/ with spaces Here and ?#%#$/other/stuff"
++            "/some crazy/long filename/ with spaces Here and ?#%#Z/other/stuff"
++            "/some crazy/long filename/ with spaces Here and ?#%#Z/other/stuff"
++            "/some crazy/long filename/ with spaces Here and ?#%#Z/other/stuff"
++            "/some crazy/long filename/ with spaces Here and ?#%#Z/other/stuff"
++            "/some crazy/long filename/ with spaces Here and ?#%#Z/other/stuff"
+             "/some crazy/\x16\xb4"
+         )
+         cache_key = storage.staticfiles_storage.hash_key(name)
+diff --git a/tests/staticfiles_tests/urls/default.py b/tests/staticfiles_tests/urls/default.py
+index 7d45483131..948fc6214e 100644
+--- a/tests/staticfiles_tests/urls/default.py
++++ b/tests/staticfiles_tests/urls/default.py
+@@ -2,5 +2,5 @@ from django.contrib.staticfiles import views
+ from django.urls import re_path
+ 
+ urlpatterns = [
+-    re_path('^static/(?P<path>.*)$', views.serve),
++    re_path('^static/(?P<path>.*)Z', views.serve),
+ ]
+diff --git a/tests/template_tests/filter_tests/test_slugify.py b/tests/template_tests/filter_tests/test_slugify.py
+index b1d617f5bc..c68c8978bc 100644
+--- a/tests/template_tests/filter_tests/test_slugify.py
++++ b/tests/template_tests/filter_tests/test_slugify.py
+@@ -27,7 +27,7 @@ class FunctionTests(SimpleTestCase):
+ 
+     def test_slugify(self):
+         self.assertEqual(
+-            slugify(' Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/'),
++            slugify(' Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.Z!/'),
+             'jack-jill-like-numbers-123-and-4-and-silly-characters',
+         )
+ 
+@@ -43,6 +43,6 @@ class FunctionTests(SimpleTestCase):
+     def test_slugify_lazy_string(self):
+         lazy_str = lazy(lambda string: string, str)
+         self.assertEqual(
+-            slugify(lazy_str(' Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/')),
++            slugify(lazy_str(' Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.Z!/')),
+             'jack-jill-like-numbers-123-and-4-and-silly-characters',
+         )
+diff --git a/tests/template_tests/syntax_tests/test_url.py b/tests/template_tests/syntax_tests/test_url.py
+index a6cc2d50a0..fb3f1ed931 100644
+--- a/tests/template_tests/syntax_tests/test_url.py
++++ b/tests/template_tests/syntax_tests/test_url.py
+@@ -75,10 +75,10 @@ class UrlTagTests(SimpleTestCase):
+         output = self.engine.render_to_string('url11', {'client': {'id': 1}})
+         self.assertEqual(output, '/client/1/==/')
+ 
+-    @setup({'url12': '{% url "client_action" id=client.id action="!$&\'()*+,;=~:@," %}'})
++    @setup({'url12': '{% url "client_action" id=client.id action="!Z&\'()*+,;=~:@," %}'})
+     def test_url12(self):
+         output = self.engine.render_to_string('url12', {'client': {'id': 1}})
+-        self.assertEqual(output, '/client/1/!$&amp;&#39;()*+,;=~:@,/')
++        self.assertEqual(output, '/client/1/!Z&amp;&#39;()*+,;=~:@,/')
+ 
+     @setup({'url13': '{% url "client_action" id=client.id action=arg|join:"-" %}'})
+     def test_url13(self):
+@@ -113,11 +113,11 @@ class UrlTagTests(SimpleTestCase):
+         self.assertEqual(output, '/named-client/1/')
+ 
+     @setup({'url21': '{% autoescape off %}'
+-                     '{% url "client_action" id=client.id action="!$&\'()*+,;=~:@," %}'
++                     '{% url "client_action" id=client.id action="!Z&\'()*+,;=~:@," %}'
+                      '{% endautoescape %}'})
+     def test_url21(self):
+         output = self.engine.render_to_string('url21', {'client': {'id': 1}})
+-        self.assertEqual(output, '/client/1/!$&\'()*+,;=~:@,/')
++        self.assertEqual(output, '/client/1/!Z&\'()*+,;=~:@,/')
+ 
+     # Failures
+     @setup({'url-fail01': '{% url %}'})
+diff --git a/tests/template_tests/urls.py b/tests/template_tests/urls.py
+index c9d6900baf..c640fa3efa 100644
+--- a/tests/template_tests/urls.py
++++ b/tests/template_tests/urls.py
+@@ -5,17 +5,17 @@ from . import views
+ ns_patterns = [
+     # Test urls for testing reverse lookups
+     path('', views.index, name='index'),
+-    re_path(r'^client/([0-9,]+)/$', views.client, name='client'),
+-    re_path(r'^client/(?P<id>[0-9]+)/(?P<action>[^/]+)/$', views.client_action, name='client_action'),
+-    re_path(r'^client/(?P<client_id>[0-9]+)/(?P<action>[^/]+)/$', views.client_action, name='client_action'),
+-    re_path(r'^named-client/([0-9]+)/$', views.client2, name="named.client"),
++    re_path(r'^client/([0-9,]+)/Z', views.client, name='client'),
++    re_path(r'^client/(?P<id>[0-9]+)/(?P<action>[^/]+)/Z', views.client_action, name='client_action'),
++    re_path(r'^client/(?P<client_id>[0-9]+)/(?P<action>[^/]+)/Z', views.client_action, name='client_action'),
++    re_path(r'^named-client/([0-9]+)/Z', views.client2, name="named.client"),
+ ]
+ 
+ 
+ urlpatterns = ns_patterns + [
+     # Unicode strings are permitted everywhere.
+-    re_path(r'^Юникод/(\w+)/$', views.client2, name="метка_оператора"),
+-    re_path(r'^Юникод/(?P<tag>\S+)/$', views.client2, name="метка_оператора_2"),
++    re_path(r'^Юникод/(\w+)/Z', views.client2, name="метка_оператора"),
++    re_path(r'^Юникод/(?P<tag>\S+)/Z', views.client2, name="метка_оператора_2"),
+ 
+     # Test urls for namespaces and current_app
+     path('ns1/', include((ns_patterns, 'app'), 'ns1')),
+diff --git a/tests/urlpatterns/more_urls.py b/tests/urlpatterns/more_urls.py
+index c7d789dda0..9df6435075 100644
+--- a/tests/urlpatterns/more_urls.py
++++ b/tests/urlpatterns/more_urls.py
+@@ -3,5 +3,5 @@ from django.urls import re_path
+ from . import views
+ 
+ urlpatterns = [
+-    re_path(r'^more/(?P<extra>\w+)/$', views.empty_view, name='inner-more'),
++    re_path(r'^more/(?P<extra>\w+)/Z', views.empty_view, name='inner-more'),
+ ]
+diff --git a/tests/urlpatterns/path_urls.py b/tests/urlpatterns/path_urls.py
+index 953fe6b6d7..7de1298754 100644
+--- a/tests/urlpatterns/path_urls.py
++++ b/tests/urlpatterns/path_urls.py
+@@ -10,7 +10,7 @@ urlpatterns = [
+     path('users/', views.empty_view, name='users'),
+     path('users/<id>/', views.empty_view, name='user-with-id'),
+     path('included_urls/', include('urlpatterns.included_urls')),
+-    re_path(r'^regex/(?P<pk>[0-9]+)/$', views.empty_view, name='regex'),
++    re_path(r'^regex/(?P<pk>[0-9]+)/Z', views.empty_view, name='regex'),
+     path('', include('urlpatterns.more_urls')),
+     path('<lang>/<path:url>/', views.empty_view, name='lang-and-path'),
+ ]
+diff --git a/tests/urlpatterns/test_resolvers.py b/tests/urlpatterns/test_resolvers.py
+index a32e8edaf7..d0fee402b3 100644
+--- a/tests/urlpatterns/test_resolvers.py
++++ b/tests/urlpatterns/test_resolvers.py
+@@ -6,7 +6,7 @@ from django.utils.translation import gettext_lazy as _
+ class RegexPatternTests(SimpleTestCase):
+ 
+     def test_str(self):
+-        self.assertEqual(str(RegexPattern(_('^translated/$'))), '^translated/$')
++        self.assertEqual(str(RegexPattern(_('^translated/Z'))), '^translated/Z')
+ 
+ 
+ class RoutePatternTests(SimpleTestCase):
+diff --git a/tests/urlpatterns/tests.py b/tests/urlpatterns/tests.py
+index f696cd531d..070a47205c 100644
+--- a/tests/urlpatterns/tests.py
++++ b/tests/urlpatterns/tests.py
+@@ -52,7 +52,7 @@ class SimplifiedURLTests(SimpleTestCase):
+         match = resolve('/regex/1/')
+         self.assertEqual(match.url_name, 'regex')
+         self.assertEqual(match.kwargs, {'pk': '1'})
+-        self.assertEqual(match.route, '^regex/(?P<pk>[0-9]+)/$')
++        self.assertEqual(match.route, '^regex/(?P<pk>[0-9]+)/Z')
+ 
+     def test_path_lookup_with_inclusion(self):
+         match = resolve('/included_urls/extra/something/')
+@@ -62,12 +62,12 @@ class SimplifiedURLTests(SimpleTestCase):
+     def test_path_lookup_with_empty_string_inclusion(self):
+         match = resolve('/more/99/')
+         self.assertEqual(match.url_name, 'inner-more')
+-        self.assertEqual(match.route, r'^more/(?P<extra>\w+)/$')
++        self.assertEqual(match.route, r'^more/(?P<extra>\w+)/Z')
+ 
+     def test_path_lookup_with_double_inclusion(self):
+         match = resolve('/included_urls/more/some_value/')
+         self.assertEqual(match.url_name, 'inner-more')
+-        self.assertEqual(match.route, r'included_urls/more/(?P<extra>\w+)/$')
++        self.assertEqual(match.route, r'included_urls/more/(?P<extra>\w+)/Z')
+ 
+     def test_path_reverse_without_parameter(self):
+         url = reverse('articles-2003')
+diff --git a/tests/urlpatterns_reverse/erroneous_urls.py b/tests/urlpatterns_reverse/erroneous_urls.py
+index d8ccf2fc61..6ea6dcfa0f 100644
+--- a/tests/urlpatterns_reverse/erroneous_urls.py
++++ b/tests/urlpatterns_reverse/erroneous_urls.py
+@@ -3,5 +3,5 @@ from django.urls import re_path
+ from . import views
+ 
+ urlpatterns = [
+-    re_path(r'(regex_error/$', views.empty_view),
++    re_path(r'(regex_error/Z', views.empty_view),
+ ]
+diff --git a/tests/urlpatterns_reverse/extra_urls.py b/tests/urlpatterns_reverse/extra_urls.py
+index dac9a87fd2..af01de582e 100644
+--- a/tests/urlpatterns_reverse/extra_urls.py
++++ b/tests/urlpatterns_reverse/extra_urls.py
+@@ -7,8 +7,8 @@ from django.urls import include, path, re_path
+ from .views import empty_view
+ 
+ urlpatterns = [
+-    re_path('^e-places/([0-9]+)/$', empty_view, name='extra-places'),
+-    re_path(r'^e-people/(?P<name>\w+)/$', empty_view, name='extra-people'),
++    re_path('^e-places/([0-9]+)/Z', empty_view, name='extra-places'),
++    re_path(r'^e-people/(?P<name>\w+)/Z', empty_view, name='extra-people'),
+     path('', include('urlpatterns_reverse.included_urls2')),
+     re_path(r'^prefix/(?P<prefix>\w+)/', include('urlpatterns_reverse.included_urls2')),
+ ]
+diff --git a/tests/urlpatterns_reverse/included_app_urls.py b/tests/urlpatterns_reverse/included_app_urls.py
+index e8c0469143..5fb76f6366 100644
+--- a/tests/urlpatterns_reverse/included_app_urls.py
++++ b/tests/urlpatterns_reverse/included_app_urls.py
+@@ -5,12 +5,12 @@ from . import views
+ app_name = 'inc-app'
+ urlpatterns = [
+     path('normal/', views.empty_view, name='inc-normal-view'),
+-    re_path('^normal/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', views.empty_view, name='inc-normal-view'),
++    re_path('^normal/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', views.empty_view, name='inc-normal-view'),
+ 
+-    re_path(r'^\+\\\$\*/$', views.empty_view, name='inc-special-view'),
++    re_path(r'^\+\\\Z\*/Z', views.empty_view, name='inc-special-view'),
+ 
+-    re_path('^mixed_args/([0-9]+)/(?P<arg2>[0-9]+)/$', views.empty_view, name='inc-mixed-args'),
+-    re_path('^no_kwargs/([0-9]+)/([0-9]+)/$', views.empty_view, name='inc-no-kwargs'),
++    re_path('^mixed_args/([0-9]+)/(?P<arg2>[0-9]+)/Z', views.empty_view, name='inc-mixed-args'),
++    re_path('^no_kwargs/([0-9]+)/([0-9]+)/Z', views.empty_view, name='inc-no-kwargs'),
+ 
+-    re_path('^view_class/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', views.view_class_instance, name='inc-view-class'),
++    re_path('^view_class/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', views.view_class_instance, name='inc-view-class'),
+ ]
+diff --git a/tests/urlpatterns_reverse/included_named_urls.py b/tests/urlpatterns_reverse/included_named_urls.py
+index e0b00dd4ed..26cc8e8422 100644
+--- a/tests/urlpatterns_reverse/included_named_urls.py
++++ b/tests/urlpatterns_reverse/included_named_urls.py
+@@ -4,7 +4,7 @@ from .views import empty_view
+ 
+ urlpatterns = [
+     path('', empty_view, name="named-url3"),
+-    re_path(r'^extra/(?P<extra>\w+)/$', empty_view, name="named-url4"),
+-    re_path(r'^(?P<one>[0-9]+)|(?P<two>[0-9]+)/$', empty_view),
++    re_path(r'^extra/(?P<extra>\w+)/Z', empty_view, name="named-url4"),
++    re_path(r'^(?P<one>[0-9]+)|(?P<two>[0-9]+)/Z', empty_view),
+     path('included/', include('urlpatterns_reverse.included_named_urls2')),
+ ]
+diff --git a/tests/urlpatterns_reverse/included_named_urls2.py b/tests/urlpatterns_reverse/included_named_urls2.py
+index d8103eae04..f835b7391e 100644
+--- a/tests/urlpatterns_reverse/included_named_urls2.py
++++ b/tests/urlpatterns_reverse/included_named_urls2.py
+@@ -4,6 +4,6 @@ from .views import empty_view
+ 
+ urlpatterns = [
+     path('', empty_view, name="named-url5"),
+-    re_path(r'^extra/(?P<extra>\w+)/$', empty_view, name="named-url6"),
+-    re_path(r'^(?P<one>[0-9]+)|(?P<two>[0-9]+)/$', empty_view),
++    re_path(r'^extra/(?P<extra>\w+)/Z', empty_view, name="named-url6"),
++    re_path(r'^(?P<one>[0-9]+)|(?P<two>[0-9]+)/Z', empty_view),
+ ]
+diff --git a/tests/urlpatterns_reverse/included_namespace_urls.py b/tests/urlpatterns_reverse/included_namespace_urls.py
+index 0b3b2b5a19..ea536d54be 100644
+--- a/tests/urlpatterns_reverse/included_namespace_urls.py
++++ b/tests/urlpatterns_reverse/included_namespace_urls.py
+@@ -9,14 +9,14 @@ testobj4 = URLObject('testapp', 'test-ns4')
+ app_name = 'included_namespace_urls'
+ urlpatterns = [
+     path('normal/', empty_view, name='inc-normal-view'),
+-    re_path('^normal/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', empty_view, name='inc-normal-view'),
++    re_path('^normal/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', empty_view, name='inc-normal-view'),
+ 
+-    re_path(r'^\+\\\$\*/$', empty_view, name='inc-special-view'),
++    re_path(r'^\+\\\Z\*/Z', empty_view, name='inc-special-view'),
+ 
+-    re_path('^mixed_args/([0-9]+)/(?P<arg2>[0-9]+)/$', empty_view, name='inc-mixed-args'),
+-    re_path('^no_kwargs/([0-9]+)/([0-9]+)/$', empty_view, name='inc-no-kwargs'),
++    re_path('^mixed_args/([0-9]+)/(?P<arg2>[0-9]+)/Z', empty_view, name='inc-mixed-args'),
++    re_path('^no_kwargs/([0-9]+)/([0-9]+)/Z', empty_view, name='inc-no-kwargs'),
+ 
+-    re_path('^view_class/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', view_class_instance, name='inc-view-class'),
++    re_path('^view_class/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', view_class_instance, name='inc-view-class'),
+ 
+     path('test3/', include(*testobj3.urls)),
+     path('test4/', include(*testobj4.urls)),
+diff --git a/tests/urlpatterns_reverse/included_no_kwargs_urls.py b/tests/urlpatterns_reverse/included_no_kwargs_urls.py
+index aa1a1a51a7..758fcb1a59 100644
+--- a/tests/urlpatterns_reverse/included_no_kwargs_urls.py
++++ b/tests/urlpatterns_reverse/included_no_kwargs_urls.py
+@@ -3,5 +3,5 @@ from django.urls import re_path
+ from .views import empty_view
+ 
+ urlpatterns = [
+-    re_path('^inner-no-kwargs/([0-9]+)/$', empty_view, name="inner-no-kwargs")
++    re_path('^inner-no-kwargs/([0-9]+)/Z', empty_view, name="inner-no-kwargs")
+ ]
+diff --git a/tests/urlpatterns_reverse/included_urls.py b/tests/urlpatterns_reverse/included_urls.py
+index f34010b28f..0c853b61ae 100644
+--- a/tests/urlpatterns_reverse/included_urls.py
++++ b/tests/urlpatterns_reverse/included_urls.py
+@@ -4,6 +4,6 @@ from .views import empty_view
+ 
+ urlpatterns = [
+     path('', empty_view, name='inner-nothing'),
+-    re_path(r'extra/(?P<extra>\w+)/$', empty_view, name='inner-extra'),
+-    re_path(r'(?P<one>[0-9]+)|(?P<two>[0-9]+)/$', empty_view, name='inner-disjunction'),
++    re_path(r'extra/(?P<extra>\w+)/Z', empty_view, name='inner-extra'),
++    re_path(r'(?P<one>[0-9]+)|(?P<two>[0-9]+)/Z', empty_view, name='inner-disjunction'),
+ ]
+diff --git a/tests/urlpatterns_reverse/included_urls2.py b/tests/urlpatterns_reverse/included_urls2.py
+index ec61aecce1..fa96af4b85 100644
+--- a/tests/urlpatterns_reverse/included_urls2.py
++++ b/tests/urlpatterns_reverse/included_urls2.py
+@@ -10,6 +10,6 @@ from django.urls import re_path
+ from .views import empty_view
+ 
+ urlpatterns = [
+-    re_path(r'^part/(?P<value>\w+)/$', empty_view, name='part'),
+-    re_path(r'^part2/(?:(?P<value>\w+)/)?$', empty_view, name='part2'),
++    re_path(r'^part/(?P<value>\w+)/Z', empty_view, name='part'),
++    re_path(r'^part2/(?:(?P<value>\w+)/)?Z', empty_view, name='part2'),
+ ]
+diff --git a/tests/urlpatterns_reverse/named_urls.py b/tests/urlpatterns_reverse/named_urls.py
+index 06bb834dc7..3b52015068 100644
+--- a/tests/urlpatterns_reverse/named_urls.py
++++ b/tests/urlpatterns_reverse/named_urls.py
+@@ -4,7 +4,7 @@ from .views import empty_view
+ 
+ urlpatterns = [
+     path('', empty_view, name='named-url1'),
+-    re_path(r'^extra/(?P<extra>\w+)/$', empty_view, name='named-url2'),
+-    re_path(r'^(?P<one>[0-9]+)|(?P<two>[0-9]+)/$', empty_view),
++    re_path(r'^extra/(?P<extra>\w+)/Z', empty_view, name='named-url2'),
++    re_path(r'^(?P<one>[0-9]+)|(?P<two>[0-9]+)/Z', empty_view),
+     path('included/', include('urlpatterns_reverse.included_named_urls')),
+ ]
+diff --git a/tests/urlpatterns_reverse/named_urls_conflict.py b/tests/urlpatterns_reverse/named_urls_conflict.py
+index b1f883271f..e80604fc70 100644
+--- a/tests/urlpatterns_reverse/named_urls_conflict.py
++++ b/tests/urlpatterns_reverse/named_urls_conflict.py
+@@ -7,11 +7,11 @@ urlpatterns = [
+     path('conflict/cannot-go-here/', empty_view, name='name-conflict'),
+     path('conflict/', empty_view, name='name-conflict'),
+     # One kwarg
+-    re_path(r'^conflict-first/(?P<first>\w+)/$', empty_view, name='name-conflict'),
+-    re_path(r'^conflict-cannot-go-here/(?P<middle>\w+)/$', empty_view, name='name-conflict'),
+-    re_path(r'^conflict-middle/(?P<middle>\w+)/$', empty_view, name='name-conflict'),
+-    re_path(r'^conflict-last/(?P<last>\w+)/$', empty_view, name='name-conflict'),
++    re_path(r'^conflict-first/(?P<first>\w+)/Z', empty_view, name='name-conflict'),
++    re_path(r'^conflict-cannot-go-here/(?P<middle>\w+)/Z', empty_view, name='name-conflict'),
++    re_path(r'^conflict-middle/(?P<middle>\w+)/Z', empty_view, name='name-conflict'),
++    re_path(r'^conflict-last/(?P<last>\w+)/Z', empty_view, name='name-conflict'),
+     # Two kwargs
+-    re_path(r'^conflict/(?P<another>\w+)/(?P<extra>\w+)/cannot-go-here/$', empty_view, name='name-conflict'),
+-    re_path(r'^conflict/(?P<extra>\w+)/(?P<another>\w+)/$', empty_view, name='name-conflict'),
++    re_path(r'^conflict/(?P<another>\w+)/(?P<extra>\w+)/cannot-go-here/Z', empty_view, name='name-conflict'),
++    re_path(r'^conflict/(?P<extra>\w+)/(?P<another>\w+)/Z', empty_view, name='name-conflict'),
+ ]
+diff --git a/tests/urlpatterns_reverse/namespace_urls.py b/tests/urlpatterns_reverse/namespace_urls.py
+index a8fd7bb878..568131f87f 100644
+--- a/tests/urlpatterns_reverse/namespace_urls.py
++++ b/tests/urlpatterns_reverse/namespace_urls.py
+@@ -15,18 +15,18 @@ newappobj1 = URLObject('newapp')
+ app_name = 'namespace_urls'
+ urlpatterns = [
+     path('normal/', views.empty_view, name='normal-view'),
+-    re_path(r'^normal/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', views.empty_view, name='normal-view'),
++    re_path(r'^normal/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', views.empty_view, name='normal-view'),
+     path('resolver_match/', views.pass_resolver_match_view, name='test-resolver-match'),
+ 
+-    re_path(r'^\+\\\$\*/$', views.empty_view, name='special-view'),
++    re_path(r'^\+\\\Z\*/Z', views.empty_view, name='special-view'),
+ 
+-    re_path(r'^mixed_args/([0-9]+)/(?P<arg2>[0-9]+)/$', views.empty_view, name='mixed-args'),
+-    re_path(r'^no_kwargs/([0-9]+)/([0-9]+)/$', views.empty_view, name='no-kwargs'),
++    re_path(r'^mixed_args/([0-9]+)/(?P<arg2>[0-9]+)/Z', views.empty_view, name='mixed-args'),
++    re_path(r'^no_kwargs/([0-9]+)/([0-9]+)/Z', views.empty_view, name='no-kwargs'),
+ 
+-    re_path(r'^view_class/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', views.view_class_instance, name='view-class'),
++    re_path(r'^view_class/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', views.view_class_instance, name='view-class'),
+ 
+-    re_path(r'^unnamed/normal/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', views.empty_view),
+-    re_path(r'^unnamed/view_class/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', views.view_class_instance),
++    re_path(r'^unnamed/normal/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', views.empty_view),
++    re_path(r'^unnamed/view_class/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', views.view_class_instance),
+ 
+     path('test1/', include(*testobj1.urls)),
+     path('test2/', include(*testobj2.urls)),
+@@ -57,5 +57,5 @@ urlpatterns = [
+         include('urlpatterns_reverse.included_namespace_urls', namespace='inc-outer')
+     ),
+ 
+-    re_path(r'^\+\\\$\*/', include('urlpatterns_reverse.namespace_urls', namespace='special')),
++    re_path(r'^\+\\\Z\*/', include('urlpatterns_reverse.namespace_urls', namespace='special')),
+ ]
+diff --git a/tests/urlpatterns_reverse/test_localeregexdescriptor.py b/tests/urlpatterns_reverse/test_localeregexdescriptor.py
+index 25e6cd962a..d1c6045b6d 100644
+--- a/tests/urlpatterns_reverse/test_localeregexdescriptor.py
++++ b/tests/urlpatterns_reverse/test_localeregexdescriptor.py
+@@ -18,7 +18,7 @@ class LocaleRegexDescriptorTests(SimpleTestCase):
+         translation.trans_real._translations = {}
+ 
+     def test_translated_regex_compiled_per_language(self):
+-        provider = RegexPattern(translation.gettext_lazy('^foo/$'))
++        provider = RegexPattern(translation.gettext_lazy('^foo/Z'))
+         with translation.override('de'):
+             de_compiled = provider.regex
+             # compiled only once per language
+@@ -27,12 +27,12 @@ class LocaleRegexDescriptorTests(SimpleTestCase):
+                 de_compiled_2 = provider.regex
+         with translation.override('fr'):
+             fr_compiled = provider.regex
+-        self.assertEqual(fr_compiled.pattern, '^foo-fr/$')
+-        self.assertEqual(de_compiled.pattern, '^foo-de/$')
++        self.assertEqual(fr_compiled.pattern, '^foo-fr/Z')
++        self.assertEqual(de_compiled.pattern, '^foo-de/Z')
+         self.assertEqual(de_compiled, de_compiled_2)
+ 
+     def test_nontranslated_regex_compiled_once(self):
+-        provider = RegexPattern('^foo/$')
++        provider = RegexPattern('^foo/Z')
+         with translation.override('de'):
+             de_compiled = provider.regex
+         with translation.override('fr'):
+@@ -40,8 +40,8 @@ class LocaleRegexDescriptorTests(SimpleTestCase):
+             error = AssertionError('tried to compile non-translated url regex twice')
+             with mock.patch('django.urls.resolvers.re.compile', side_effect=error):
+                 fr_compiled = provider.regex
+-        self.assertEqual(de_compiled.pattern, '^foo/$')
+-        self.assertEqual(fr_compiled.pattern, '^foo/$')
++        self.assertEqual(de_compiled.pattern, '^foo/Z')
++        self.assertEqual(fr_compiled.pattern, '^foo/Z')
+ 
+     def test_regex_compile_error(self):
+         """Regex errors are re-raised as ImproperlyConfigured."""
+diff --git a/tests/urlpatterns_reverse/tests.py b/tests/urlpatterns_reverse/tests.py
+index ba8cbedf4a..d78f746c6e 100644
+--- a/tests/urlpatterns_reverse/tests.py
++++ b/tests/urlpatterns_reverse/tests.py
+@@ -192,16 +192,16 @@ test_data = (
+     ('people6', '/people//adrian/', ['adrian'], {}),
+     ('range', '/character_set/a/', [], {}),
+     ('range2', '/character_set/x/', [], {}),
+-    ('price', '/price/$10/', ['10'], {}),
+-    ('price2', '/price/$10/', ['10'], {}),
+-    ('price3', '/price/$10/', ['10'], {}),
+-    ('product', '/product/chocolate+($2.00)/', [], {'price': '2.00', 'product': 'chocolate'}),
++    ('price', '/price/Z10/', ['10'], {}),
++    ('price2', '/price/Z10/', ['10'], {}),
++    ('price3', '/price/Z10/', ['10'], {}),
++    ('product', '/product/chocolate+(Z2.00)/', [], {'price': '2.00', 'product': 'chocolate'}),
+     ('headlines', '/headlines/2007.5.21/', [], {'year': 2007, 'month': 5, 'day': 21}),
+     (
+         'windows', r'/windows_path/C:%5CDocuments%20and%20Settings%5Cspam/', [],
+         {'drive_name': 'C', 'path': r'Documents and Settings\spam'}
+     ),
+-    ('special', r'/special_chars/~@+%5C$*%7C/', [r'~@+\$*|'], {}),
++    ('special', r'/special_chars/~@+%5CZ*%7C/', [r'~@+\Z*|'], {}),
+     ('special', r'/special_chars/some%20resource/', [r'some resource'], {}),
+     ('special', r'/special_chars/10%25%20complete/', [r'10% complete'], {}),
+     ('special', r'/special_chars/some%20resource/', [], {'chars': r'some resource'}),
+@@ -262,7 +262,7 @@ class NoURLPatternsTests(SimpleTestCase):
+         """
+         URLResolver should raise an exception when no urlpatterns exist.
+         """
+-        resolver = URLResolver(RegexPattern(r'^$'), settings.ROOT_URLCONF)
++        resolver = URLResolver(RegexPattern(r'^Z'), settings.ROOT_URLCONF)
+ 
+         with self.assertRaisesMessage(
+             ImproperlyConfigured,
+@@ -331,7 +331,7 @@ class URLPatternReverse(SimpleTestCase):
+ 
+     def test_patterns_reported(self):
+         # Regression for #17076
+-        with self.assertRaisesMessage(NoReverseMatch, r"1 pattern(s) tried: ['people/(?P<name>\\w+)/$']"):
++        with self.assertRaisesMessage(NoReverseMatch, r"1 pattern(s) tried: ['people/(?P<name>\\w+)/Z']"):
+             # this url exists, but requires an argument
+             reverse("people", args=[])
+ 
+@@ -655,7 +655,7 @@ class NamespaceTests(SimpleTestCase):
+             ('normal-view', [], {}, '/normal/'),
+             ('normal-view', [37, 42], {}, '/normal/37/42/'),
+             ('normal-view', [], {'arg1': 42, 'arg2': 37}, '/normal/42/37/'),
+-            ('special-view', [], {}, '/+%5C$*/'),
++            ('special-view', [], {}, '/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -667,7 +667,7 @@ class NamespaceTests(SimpleTestCase):
+             ('included_namespace_urls:inc-normal-view', [], {}, '/included/normal/'),
+             ('included_namespace_urls:inc-normal-view', [37, 42], {}, '/included/normal/37/42/'),
+             ('included_namespace_urls:inc-normal-view', [], {'arg1': 42, 'arg2': 37}, '/included/normal/42/37/'),
+-            ('included_namespace_urls:inc-special-view', [], {}, '/included/+%5C$*/'),
++            ('included_namespace_urls:inc-special-view', [], {}, '/included/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -679,7 +679,7 @@ class NamespaceTests(SimpleTestCase):
+             ('test-ns1:urlobject-view', [], {}, '/test1/inner/'),
+             ('test-ns1:urlobject-view', [37, 42], {}, '/test1/inner/37/42/'),
+             ('test-ns1:urlobject-view', [], {'arg1': 42, 'arg2': 37}, '/test1/inner/42/37/'),
+-            ('test-ns1:urlobject-special-view', [], {}, '/test1/inner/+%5C$*/'),
++            ('test-ns1:urlobject-special-view', [], {}, '/test1/inner/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -694,7 +694,7 @@ class NamespaceTests(SimpleTestCase):
+             ('new-ns1:urlobject-view', [], {}, '/newapp1/inner/'),
+             ('new-ns1:urlobject-view', [37, 42], {}, '/newapp1/inner/37/42/'),
+             ('new-ns1:urlobject-view', [], {'arg1': 42, 'arg2': 37}, '/newapp1/inner/42/37/'),
+-            ('new-ns1:urlobject-special-view', [], {}, '/newapp1/inner/+%5C$*/'),
++            ('new-ns1:urlobject-special-view', [], {}, '/newapp1/inner/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -709,7 +709,7 @@ class NamespaceTests(SimpleTestCase):
+             ('newapp:urlobject-view', [], {}, '/new-default/inner/'),
+             ('newapp:urlobject-view', [37, 42], {}, '/new-default/inner/37/42/'),
+             ('newapp:urlobject-view', [], {'arg1': 42, 'arg2': 37}, '/new-default/inner/42/37/'),
+-            ('newapp:urlobject-special-view', [], {}, '/new-default/inner/+%5C$*/'),
++            ('newapp:urlobject-special-view', [], {}, '/new-default/inner/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -724,7 +724,7 @@ class NamespaceTests(SimpleTestCase):
+                 'included_namespace_urls:test-ns3:urlobject-view', [], {'arg1': 42, 'arg2': 37},
+                 '/included/test3/inner/42/37/',
+             ),
+-            ('included_namespace_urls:test-ns3:urlobject-special-view', [], {}, '/included/test3/inner/+%5C$*/'),
++            ('included_namespace_urls:test-ns3:urlobject-special-view', [], {}, '/included/test3/inner/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -736,7 +736,7 @@ class NamespaceTests(SimpleTestCase):
+             ('inc-ns1:inc-normal-view', [], {}, '/ns-included1/normal/'),
+             ('inc-ns1:inc-normal-view', [37, 42], {}, '/ns-included1/normal/37/42/'),
+             ('inc-ns1:inc-normal-view', [], {'arg1': 42, 'arg2': 37}, '/ns-included1/normal/42/37/'),
+-            ('inc-ns1:inc-special-view', [], {}, '/ns-included1/+%5C$*/'),
++            ('inc-ns1:inc-special-view', [], {}, '/ns-included1/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -751,7 +751,7 @@ class NamespaceTests(SimpleTestCase):
+             ('app-ns1:inc-normal-view', [], {}, '/app-included1/normal/'),
+             ('app-ns1:inc-normal-view', [37, 42], {}, '/app-included1/normal/37/42/'),
+             ('app-ns1:inc-normal-view', [], {'arg1': 42, 'arg2': 37}, '/app-included1/normal/42/37/'),
+-            ('app-ns1:inc-special-view', [], {}, '/app-included1/+%5C$*/'),
++            ('app-ns1:inc-special-view', [], {}, '/app-included1/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -767,8 +767,8 @@ class NamespaceTests(SimpleTestCase):
+             ('inc-outer:inc-normal-view', [42], {}, '/ns-outer/42/normal/'),
+             ('inc-outer:inc-normal-view', [], {'arg1': 37, 'arg2': 4, 'outer': 42}, '/ns-outer/42/normal/37/4/'),
+             ('inc-outer:inc-normal-view', [42, 37, 4], {}, '/ns-outer/42/normal/37/4/'),
+-            ('inc-outer:inc-special-view', [], {'outer': 42}, '/ns-outer/42/+%5C$*/'),
+-            ('inc-outer:inc-special-view', [42], {}, '/ns-outer/42/+%5C$*/'),
++            ('inc-outer:inc-special-view', [], {'outer': 42}, '/ns-outer/42/+%5CZ*/'),
++            ('inc-outer:inc-special-view', [42], {}, '/ns-outer/42/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -783,7 +783,7 @@ class NamespaceTests(SimpleTestCase):
+                 'inc-ns1:test-ns3:urlobject-view', [], {'arg1': 42, 'arg2': 37},
+                 '/ns-included1/test3/inner/42/37/',
+             ),
+-            ('inc-ns1:test-ns3:urlobject-special-view', [], {}, '/ns-included1/test3/inner/+%5C$*/'),
++            ('inc-ns1:test-ns3:urlobject-special-view', [], {}, '/ns-included1/test3/inner/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -806,7 +806,7 @@ class NamespaceTests(SimpleTestCase):
+             ),
+             (
+                 'inc-ns1:inc-ns4:inc-ns1:test-ns3:urlobject-special-view', [], {},
+-                '/ns-included1/ns-included4/ns-included1/test3/inner/+%5C$*/',
++                '/ns-included1/ns-included4/ns-included1/test3/inner/+%5CZ*/',
+             ),
+         ]
+         for name, args, kwargs, expected in test_urls:
+@@ -819,7 +819,7 @@ class NamespaceTests(SimpleTestCase):
+             ('testapp:urlobject-view', [], {}, '/default/inner/'),
+             ('testapp:urlobject-view', [37, 42], {}, '/default/inner/37/42/'),
+             ('testapp:urlobject-view', [], {'arg1': 42, 'arg2': 37}, '/default/inner/42/37/'),
+-            ('testapp:urlobject-special-view', [], {}, '/default/inner/+%5C$*/'),
++            ('testapp:urlobject-special-view', [], {}, '/default/inner/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -831,7 +831,7 @@ class NamespaceTests(SimpleTestCase):
+             ('testapp:urlobject-view', [], {}, 'test-ns3', '/default/inner/'),
+             ('testapp:urlobject-view', [37, 42], {}, 'test-ns3', '/default/inner/37/42/'),
+             ('testapp:urlobject-view', [], {'arg1': 42, 'arg2': 37}, 'test-ns3', '/default/inner/42/37/'),
+-            ('testapp:urlobject-special-view', [], {}, 'test-ns3', '/default/inner/+%5C$*/'),
++            ('testapp:urlobject-special-view', [], {}, 'test-ns3', '/default/inner/+%5CZ*/'),
+         ]
+         for name, args, kwargs, current_app, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs, current_app=current_app):
+@@ -846,11 +846,11 @@ class NamespaceTests(SimpleTestCase):
+             ('nodefault:urlobject-view', [], {}, None, '/other2/inner/'),
+             ('nodefault:urlobject-view', [37, 42], {}, None, '/other2/inner/37/42/'),
+             ('nodefault:urlobject-view', [], {'arg1': 42, 'arg2': 37}, None, '/other2/inner/42/37/'),
+-            ('nodefault:urlobject-special-view', [], {}, None, '/other2/inner/+%5C$*/'),
++            ('nodefault:urlobject-special-view', [], {}, None, '/other2/inner/+%5CZ*/'),
+             ('nodefault:urlobject-view', [], {}, 'other-ns1', '/other1/inner/'),
+             ('nodefault:urlobject-view', [37, 42], {}, 'other-ns1', '/other1/inner/37/42/'),
+             ('nodefault:urlobject-view', [], {'arg1': 42, 'arg2': 37}, 'other-ns1', '/other1/inner/42/37/'),
+-            ('nodefault:urlobject-special-view', [], {}, 'other-ns1', '/other1/inner/+%5C$*/'),
++            ('nodefault:urlobject-special-view', [], {}, 'other-ns1', '/other1/inner/+%5CZ*/'),
+         ]
+         for name, args, kwargs, current_app, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs, current_app=current_app):
+@@ -858,13 +858,13 @@ class NamespaceTests(SimpleTestCase):
+ 
+     def test_special_chars_namespace(self):
+         test_urls = [
+-            ('special:included_namespace_urls:inc-normal-view', [], {}, '/+%5C$*/included/normal/'),
+-            ('special:included_namespace_urls:inc-normal-view', [37, 42], {}, '/+%5C$*/included/normal/37/42/'),
++            ('special:included_namespace_urls:inc-normal-view', [], {}, '/+%5CZ*/included/normal/'),
++            ('special:included_namespace_urls:inc-normal-view', [37, 42], {}, '/+%5CZ*/included/normal/37/42/'),
+             (
+                 'special:included_namespace_urls:inc-normal-view', [], {'arg1': 42, 'arg2': 37},
+-                '/+%5C$*/included/normal/42/37/',
++                '/+%5CZ*/included/normal/42/37/',
+             ),
+-            ('special:included_namespace_urls:inc-special-view', [], {}, '/+%5C$*/included/+%5C$*/'),
++            ('special:included_namespace_urls:inc-special-view', [], {}, '/+%5CZ*/included/+%5CZ*/'),
+         ]
+         for name, args, kwargs, expected in test_urls:
+             with self.subTest(name=name, args=args, kwargs=kwargs):
+@@ -890,7 +890,7 @@ class NamespaceTests(SimpleTestCase):
+             ('inc-ns1:testapp:urlobject-view', [], {}, None, '/ns-included1/test4/inner/'),
+             ('inc-ns1:testapp:urlobject-view', [37, 42], {}, None, '/ns-included1/test4/inner/37/42/'),
+             ('inc-ns1:testapp:urlobject-view', [], {'arg1': 42, 'arg2': 37}, None, '/ns-included1/test4/inner/42/37/'),
+-            ('inc-ns1:testapp:urlobject-special-view', [], {}, None, '/ns-included1/test4/inner/+%5C$*/'),
++            ('inc-ns1:testapp:urlobject-special-view', [], {}, None, '/ns-included1/test4/inner/+%5CZ*/'),
+             ('inc-ns1:testapp:urlobject-view', [], {}, 'inc-ns1:test-ns3', '/ns-included1/test3/inner/'),
+             ('inc-ns1:testapp:urlobject-view', [37, 42], {}, 'inc-ns1:test-ns3', '/ns-included1/test3/inner/37/42/'),
+             (
+@@ -899,7 +899,7 @@ class NamespaceTests(SimpleTestCase):
+             ),
+             (
+                 'inc-ns1:testapp:urlobject-special-view', [], {}, 'inc-ns1:test-ns3',
+-                '/ns-included1/test3/inner/+%5C$*/',
++                '/ns-included1/test3/inner/+%5CZ*/',
+             ),
+         ]
+         for name, args, kwargs, current_app, expected in test_urls:
+@@ -920,7 +920,7 @@ class NamespaceTests(SimpleTestCase):
+             ),
+             (
+                 'inc-ns1:testapp:urlobject-special-view', [], {}, 'nonexistent:test-ns3',
+-                '/ns-included1/test4/inner/+%5C$*/',
++                '/ns-included1/test4/inner/+%5CZ*/',
+             ),
+         ]
+         for name, args, kwargs, current_app, expected in test_urls:
+@@ -1049,8 +1049,8 @@ class ErrorHandlerResolutionTests(SimpleTestCase):
+     def setUp(self):
+         urlconf = 'urlpatterns_reverse.urls_error_handlers'
+         urlconf_callables = 'urlpatterns_reverse.urls_error_handlers_callables'
+-        self.resolver = URLResolver(RegexPattern(r'^$'), urlconf)
+-        self.callable_resolver = URLResolver(RegexPattern(r'^$'), urlconf_callables)
++        self.resolver = URLResolver(RegexPattern(r'^Z'), urlconf)
++        self.callable_resolver = URLResolver(RegexPattern(r'^Z'), urlconf_callables)
+ 
+     def test_named_handlers(self):
+         handler = (empty_view, {})
+@@ -1132,7 +1132,7 @@ class ResolverMatchTests(SimpleTestCase):
+             repr(resolve('/no_kwargs/42/37/')),
+             "ResolverMatch(func=urlpatterns_reverse.views.empty_view, "
+             "args=('42', '37'), kwargs={}, url_name=no-kwargs, app_names=[], "
+-            "namespaces=[], route=^no_kwargs/([0-9]+)/([0-9]+)/$)",
++            "namespaces=[], route=^no_kwargs/([0-9]+)/([0-9]+)/Z)",
+         )
+ 
+ 
+@@ -1146,7 +1146,7 @@ class ErroneousViewTests(SimpleTestCase):
+ 
+     def test_invalid_regex(self):
+         # Regex contains an error (refs #6170)
+-        msg = '(regex_error/$" is not a valid regular expression'
++        msg = '(regex_error/Z" is not a valid regular expression'
+         with self.assertRaisesMessage(ImproperlyConfigured, msg):
+             reverse(views.empty_view)
+ 
+@@ -1197,8 +1197,8 @@ class ViewLoadingTests(SimpleTestCase):
+ class IncludeTests(SimpleTestCase):
+     url_patterns = [
+         path('inner/', views.empty_view, name='urlobject-view'),
+-        re_path(r'^inner/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', views.empty_view, name='urlobject-view'),
+-        re_path(r'^inner/\+\\\$\*/$', views.empty_view, name='urlobject-special-view'),
++        re_path(r'^inner/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', views.empty_view, name='urlobject-view'),
++        re_path(r'^inner/\+\\\Z\*/Z', views.empty_view, name='urlobject-special-view'),
+     ]
+     app_urls = URLObject('inc-app')
+ 
+diff --git a/tests/urlpatterns_reverse/urls.py b/tests/urlpatterns_reverse/urls.py
+index f3c27b8e13..d14f287a58 100644
+--- a/tests/urlpatterns_reverse/urls.py
++++ b/tests/urlpatterns_reverse/urls.py
+@@ -11,52 +11,52 @@ other_patterns = [
+ ]
+ 
+ urlpatterns = [
+-    re_path(r'^places/([0-9]+)/$', empty_view, name='places'),
+-    re_path(r'^places?/$', empty_view, name='places?'),
+-    re_path(r'^places+/$', empty_view, name='places+'),
+-    re_path(r'^places*/$', empty_view, name='places*'),
+-    re_path(r'^(?:places/)?$', empty_view, name='places2?'),
+-    re_path(r'^(?:places/)+$', empty_view, name='places2+'),
+-    re_path(r'^(?:places/)*$', empty_view, name='places2*'),
++    re_path(r'^places/([0-9]+)/Z', empty_view, name='places'),
++    re_path(r'^places?/Z', empty_view, name='places?'),
++    re_path(r'^places+/Z', empty_view, name='places+'),
++    re_path(r'^places*/Z', empty_view, name='places*'),
++    re_path(r'^(?:places/)?Z', empty_view, name='places2?'),
++    re_path(r'^(?:places/)+Z', empty_view, name='places2+'),
++    re_path(r'^(?:places/)*Z', empty_view, name='places2*'),
+     re_path(r'^places/([0-9]+|[a-z_]+)/', empty_view, name='places3'),
+-    re_path(r'^places/(?P<id>[0-9]+)/$', empty_view, name='places4'),
+-    re_path(r'^people/(?P<name>\w+)/$', empty_view, name='people'),
+-    re_path(r'^people/(?:name/)$', empty_view, name='people2'),
+-    re_path(r'^people/(?:name/(\w+)/)?$', empty_view, name='people2a'),
+-    re_path(r'^people/(?P<name>\w+)-(?P=name)/$', empty_view, name='people_backref'),
++    re_path(r'^places/(?P<id>[0-9]+)/Z', empty_view, name='places4'),
++    re_path(r'^people/(?P<name>\w+)/Z', empty_view, name='people'),
++    re_path(r'^people/(?:name/)Z', empty_view, name='people2'),
++    re_path(r'^people/(?:name/(\w+)/)?Z', empty_view, name='people2a'),
++    re_path(r'^people/(?P<name>\w+)-(?P=name)/Z', empty_view, name='people_backref'),
+     re_path(r'^optional/(?P<name>.*)/(?:.+/)?', empty_view, name='optional'),
+     re_path(r'^optional/(?P<arg1>\d+)/(?:(?P<arg2>\d+)/)?', absolute_kwargs_view, name='named_optional'),
+-    re_path(r'^optional/(?P<arg1>\d+)/(?:(?P<arg2>\d+)/)?$', absolute_kwargs_view, name='named_optional_terminated'),
+-    re_path(r'^nested/noncapture/(?:(?P<p>\w+))$', empty_view, name='nested-noncapture'),
+-    re_path(r'^nested/capture/((\w+)/)?$', empty_view, name='nested-capture'),
+-    re_path(r'^nested/capture/mixed/((?P<p>\w+))$', empty_view, name='nested-mixedcapture'),
+-    re_path(r'^nested/capture/named/(?P<outer>(?P<inner>\w+)/)?$', empty_view, name='nested-namedcapture'),
+-    re_path(r'^hardcoded/$', empty_view, name='hardcoded'),
+-    re_path(r'^hardcoded/doc\.pdf$', empty_view, name='hardcoded2'),
+-    re_path(r'^people/(?P<state>\w\w)/(?P<name>\w+)/$', empty_view, name='people3'),
+-    re_path(r'^people/(?P<state>\w\w)/(?P<name>[0-9])/$', empty_view, name='people4'),
+-    re_path(r'^people/((?P<state>\w\w)/test)?/(\w+)/$', empty_view, name='people6'),
+-    re_path(r'^character_set/[abcdef0-9]/$', empty_view, name='range'),
+-    re_path(r'^character_set/[\w]/$', empty_view, name='range2'),
+-    re_path(r'^price/\$([0-9]+)/$', empty_view, name='price'),
+-    re_path(r'^price/[$]([0-9]+)/$', empty_view, name='price2'),
+-    re_path(r'^price/[\$]([0-9]+)/$', empty_view, name='price3'),
+-    re_path(r'^product/(?P<product>\w+)\+\(\$(?P<price>[0-9]+(\.[0-9]+)?)\)/$', empty_view, name='product'),
+-    re_path(r'^headlines/(?P<year>[0-9]+)\.(?P<month>[0-9]+)\.(?P<day>[0-9]+)/$', empty_view, name='headlines'),
+-    re_path(r'^windows_path/(?P<drive_name>[A-Z]):\\(?P<path>.+)/$', empty_view, name='windows'),
+-    re_path(r'^special_chars/(?P<chars>.+)/$', empty_view, name='special'),
+-    re_path(r'^(?P<name>.+)/[0-9]+/$', empty_view, name='mixed'),
+-    re_path(r'^repeats/a{1,2}/$', empty_view, name='repeats'),
+-    re_path(r'^repeats/a{2,4}/$', empty_view, name='repeats2'),
+-    re_path(r'^repeats/a{2}/$', empty_view, name='repeats3'),
++    re_path(r'^optional/(?P<arg1>\d+)/(?:(?P<arg2>\d+)/)?Z', absolute_kwargs_view, name='named_optional_terminated'),
++    re_path(r'^nested/noncapture/(?:(?P<p>\w+))Z', empty_view, name='nested-noncapture'),
++    re_path(r'^nested/capture/((\w+)/)?Z', empty_view, name='nested-capture'),
++    re_path(r'^nested/capture/mixed/((?P<p>\w+))Z', empty_view, name='nested-mixedcapture'),
++    re_path(r'^nested/capture/named/(?P<outer>(?P<inner>\w+)/)?Z', empty_view, name='nested-namedcapture'),
++    re_path(r'^hardcoded/Z', empty_view, name='hardcoded'),
++    re_path(r'^hardcoded/doc\.pdfZ', empty_view, name='hardcoded2'),
++    re_path(r'^people/(?P<state>\w\w)/(?P<name>\w+)/Z', empty_view, name='people3'),
++    re_path(r'^people/(?P<state>\w\w)/(?P<name>[0-9])/Z', empty_view, name='people4'),
++    re_path(r'^people/((?P<state>\w\w)/test)?/(\w+)/Z', empty_view, name='people6'),
++    re_path(r'^character_set/[abcdef0-9]/Z', empty_view, name='range'),
++    re_path(r'^character_set/[\w]/Z', empty_view, name='range2'),
++    re_path(r'^price/\Z([0-9]+)/Z', empty_view, name='price'),
++    re_path(r'^price/[Z]([0-9]+)/Z', empty_view, name='price2'),
++    re_path(r'^price/[\Z]([0-9]+)/Z', empty_view, name='price3'),
++    re_path(r'^product/(?P<product>\w+)\+\(\Z(?P<price>[0-9]+(\.[0-9]+)?)\)/Z', empty_view, name='product'),
++    re_path(r'^headlines/(?P<year>[0-9]+)\.(?P<month>[0-9]+)\.(?P<day>[0-9]+)/Z', empty_view, name='headlines'),
++    re_path(r'^windows_path/(?P<drive_name>[A-Z]):\\(?P<path>.+)/Z', empty_view, name='windows'),
++    re_path(r'^special_chars/(?P<chars>.+)/Z', empty_view, name='special'),
++    re_path(r'^(?P<name>.+)/[0-9]+/Z', empty_view, name='mixed'),
++    re_path(r'^repeats/a{1,2}/Z', empty_view, name='repeats'),
++    re_path(r'^repeats/a{2,4}/Z', empty_view, name='repeats2'),
++    re_path(r'^repeats/a{2}/Z', empty_view, name='repeats3'),
+     re_path(r'^test/1/?', empty_view, name='test'),
+     re_path(r'^outer/(?P<outer>[0-9]+)/', include('urlpatterns_reverse.included_urls')),
+     re_path(r'^outer-no-kwargs/([0-9]+)/', include('urlpatterns_reverse.included_no_kwargs_urls')),
+     re_path('', include('urlpatterns_reverse.extra_urls')),
+-    re_path(r'^lookahead-/(?!not-a-city)(?P<city>[^/]+)/$', empty_view, name='lookahead-negative'),
+-    re_path(r'^lookahead\+/(?=a-city)(?P<city>[^/]+)/$', empty_view, name='lookahead-positive'),
+-    re_path(r'^lookbehind-/(?P<city>[^/]+)(?<!not-a-city)/$', empty_view, name='lookbehind-negative'),
+-    re_path(r'^lookbehind\+/(?P<city>[^/]+)(?<=a-city)/$', empty_view, name='lookbehind-positive'),
++    re_path(r'^lookahead-/(?!not-a-city)(?P<city>[^/]+)/Z', empty_view, name='lookahead-negative'),
++    re_path(r'^lookahead\+/(?=a-city)(?P<city>[^/]+)/Z', empty_view, name='lookahead-positive'),
++    re_path(r'^lookbehind-/(?P<city>[^/]+)(?<!not-a-city)/Z', empty_view, name='lookbehind-negative'),
++    re_path(r'^lookbehind\+/(?P<city>[^/]+)(?<=a-city)/Z', empty_view, name='lookbehind-positive'),
+ 
+     # Partials should be fine.
+     path('partial/', empty_view_partial, name='partial'),
+@@ -64,16 +64,16 @@ urlpatterns = [
+     path('partial_wrapped/', empty_view_wrapped, name='partial_wrapped'),
+ 
+     # This is non-reversible, but we shouldn't blow up when parsing it.
+-    re_path(r'^(?:foo|bar)(\w+)/$', empty_view, name='disjunction'),
++    re_path(r'^(?:foo|bar)(\w+)/Z', empty_view, name='disjunction'),
+ 
+     path('absolute_arg_view/', absolute_kwargs_view),
+ 
+     # Tests for #13154. Mixed syntax to test both ways of defining URLs.
+-    re_path(r'^defaults_view1/(?P<arg1>[0-9]+)/$', defaults_view, {'arg2': 1}, name='defaults'),
+-    re_path(r'^defaults_view2/(?P<arg1>[0-9]+)/$', defaults_view, {'arg2': 2}, 'defaults'),
++    re_path(r'^defaults_view1/(?P<arg1>[0-9]+)/Z', defaults_view, {'arg2': 1}, name='defaults'),
++    re_path(r'^defaults_view2/(?P<arg1>[0-9]+)/Z', defaults_view, {'arg2': 2}, 'defaults'),
+ 
+     path('includes/', include(other_patterns)),
+ 
+     # Security tests
+-    re_path('(.+)/security/$', empty_view, name='security'),
++    re_path('(.+)/security/Z', empty_view, name='security'),
+ ]
+diff --git a/tests/urlpatterns_reverse/utils.py b/tests/urlpatterns_reverse/utils.py
+index c1f9a55913..a5a66ab04c 100644
+--- a/tests/urlpatterns_reverse/utils.py
++++ b/tests/urlpatterns_reverse/utils.py
+@@ -6,8 +6,8 @@ from . import views
+ class URLObject:
+     urlpatterns = [
+         path('inner/', views.empty_view, name='urlobject-view'),
+-        re_path(r'^inner/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/$', views.empty_view, name='urlobject-view'),
+-        re_path(r'^inner/\+\\\$\*/$', views.empty_view, name='urlobject-special-view'),
++        re_path(r'^inner/(?P<arg1>[0-9]+)/(?P<arg2>[0-9]+)/Z', views.empty_view, name='urlobject-view'),
++        re_path(r'^inner/\+\\\Z\*/Z', views.empty_view, name='urlobject-special-view'),
+     ]
+ 
+     def __init__(self, app_name, namespace=None):
+diff --git a/tests/user_commands/tests.py b/tests/user_commands/tests.py
+index 2d1f8f834d..ed4880f58f 100644
+--- a/tests/user_commands/tests.py
++++ b/tests/user_commands/tests.py
+@@ -265,7 +265,7 @@ class UtilsTests(SimpleTestCase):
+         key = get_random_secret_key()
+         self.assertEqual(len(key), 50)
+         for char in key:
+-            self.assertIn(char, 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)')
++            self.assertIn(char, 'abcdefghijklmnopqrstuvwxyz0123456789!@#Z%^&*(-_=+)')
+ 
+     def test_is_ignored_path_true(self):
+         patterns = (
+diff --git a/tests/utils_tests/test_baseconv.py b/tests/utils_tests/test_baseconv.py
+index b6bfc5ef20..8b28be64a6 100644
+--- a/tests/utils_tests/test_baseconv.py
++++ b/tests/utils_tests/test_baseconv.py
+@@ -14,11 +14,11 @@ class TestBaseConv(TestCase):
+                 self.assertEqual(i, converter.decode(converter.encode(i)))
+ 
+     def test_base11(self):
+-        base11 = BaseConverter('0123456789-', sign='$')
++        base11 = BaseConverter('0123456789-', sign='Z')
+         self.assertEqual(base11.encode(1234), '-22')
+         self.assertEqual(base11.decode('-22'), 1234)
+-        self.assertEqual(base11.encode(-1234), '$-22')
+-        self.assertEqual(base11.decode('$-22'), -1234)
++        self.assertEqual(base11.encode(-1234), 'Z-22')
++        self.assertEqual(base11.decode('Z-22'), -1234)
+ 
+     def test_base20(self):
+         base20 = BaseConverter('0123456789abcdefghij')
+@@ -30,8 +30,8 @@ class TestBaseConv(TestCase):
+     def test_base64(self):
+         self.assertEqual(base64.encode(1234), 'JI')
+         self.assertEqual(base64.decode('JI'), 1234)
+-        self.assertEqual(base64.encode(-1234), '$JI')
+-        self.assertEqual(base64.decode('$JI'), -1234)
++        self.assertEqual(base64.encode(-1234), 'ZJI')
++        self.assertEqual(base64.decode('ZJI'), -1234)
+ 
+     def test_base7(self):
+         base7 = BaseConverter('cjdhel3', sign='g')
+diff --git a/tests/utils_tests/test_html.py b/tests/utils_tests/test_html.py
+index d87927cdfe..721953112a 100644
+--- a/tests/utils_tests/test_html.py
++++ b/tests/utils_tests/test_html.py
+@@ -173,7 +173,7 @@ class TestUtilsHtml(SimpleTestCase):
+         items = (
+             ('http://öäü.com/', 'http://xn--4ca9at.com/'),
+             ('http://öäü.com/öäü/', 'http://xn--4ca9at.com/%C3%B6%C3%A4%C3%BC/'),
+-            # Everything unsafe is quoted, !*'();:@&=+$,/?#[]~ is considered
++            # Everything unsafe is quoted, !*'();:@&=+Z,/?#[]~ is considered
+             # safe as per RFC.
+             ('http://example.com/path/öäü/', 'http://example.com/path/%C3%B6%C3%A4%C3%BC/'),
+             ('http://example.com/%C3%B6/ä/', 'http://example.com/%C3%B6/%C3%A4/'),
+diff --git a/tests/utils_tests/test_jslex.py b/tests/utils_tests/test_jslex.py
+index bf737b8fd2..e24ee566c2 100644
+--- a/tests/utils_tests/test_jslex.py
++++ b/tests/utils_tests/test_jslex.py
+@@ -8,7 +8,7 @@ from django.utils.jslex import JsLexer, prepare_js_for_gettext
+ class JsTokensTest(SimpleTestCase):
+     LEX_CASES = [
+         # ids
+-        ("a ABC $ _ a123", ["id a", "id ABC", "id $", "id _", "id a123"]),
++        ("a ABC Z _ a123", ["id a", "id ABC", "id Z", "id _", "id a123"]),
+         ("\\u1234 abc\\u0020 \\u0065_\\u0067", ["id \\u1234", "id abc\\u0020", "id \\u0065_\\u0067"]),
+         # numbers
+         ("123 1.234 0.123e-3 0 1E+40 1e1 .123", [
+diff --git a/tests/utils_tests/test_regex_helper.py b/tests/utils_tests/test_regex_helper.py
+index 77bcd5bb35..35fd030bbb 100644
+--- a/tests/utils_tests/test_regex_helper.py
++++ b/tests/utils_tests/test_regex_helper.py
+@@ -11,8 +11,8 @@ class NormalizeTests(unittest.TestCase):
+         self.assertEqual(result, expected)
+ 
+     def test_escape(self):
+-        pattern = r"\\\^\$\.\|\?\*\+\(\)\["
+-        expected = [('\\^$.|?*+()[', [])]
++        pattern = r"\\\^\Z\.\|\?\*\+\(\)\["
++        expected = [('\\^Z.|?*+()[', [])]
+         result = regex_helper.normalize(pattern)
+         self.assertEqual(result, expected)
+ 
+diff --git a/tests/utils_tests/test_text.py b/tests/utils_tests/test_text.py
+index 2d584c1cdd..f2c5f596e3 100644
+--- a/tests/utils_tests/test_text.py
++++ b/tests/utils_tests/test_text.py
+@@ -212,7 +212,7 @@ class TestUtilsText(SimpleTestCase):
+             self.assertEqual(text.unescape_string_literal(lazystr(value)), output)
+ 
+     def test_get_valid_filename(self):
+-        filename = "^&'@{}[],$=!-#()%+~_123.txt"
++        filename = "^&'@{}[],Z=!-#()%+~_123.txt"
+         self.assertEqual(text.get_valid_filename(filename), "-_123.txt")
+         self.assertEqual(text.get_valid_filename(lazystr(filename)), "-_123.txt")
+ 
+diff --git a/tests/view_tests/tests/test_debug.py b/tests/view_tests/tests/test_debug.py
+index a6e5275c9f..bdf66112b3 100644
+--- a/tests/view_tests/tests/test_debug.py
++++ b/tests/view_tests/tests/test_debug.py
+@@ -112,7 +112,7 @@ class DebugViewTests(SimpleTestCase):
+         self.assertContains(response, "Django tried these URL patterns", status_code=404)
+         self.assertContains(response, "<code>not-in-urls</code>, didn't match", status_code=404)
+         # Pattern and view name of a RegexURLPattern appear.
+-        self.assertContains(response, r"^regex-post/(?P&lt;pk&gt;[0-9]+)/$", status_code=404)
++        self.assertContains(response, r"^regex-post/(?P&lt;pk&gt;[0-9]+)/Z", status_code=404)
+         self.assertContains(response, "[name='regex-post']", status_code=404)
+         # Pattern and view name of a RoutePattern appear.
+         self.assertContains(response, r"path-post/&lt;int:pk&gt;/", status_code=404)
+diff --git a/tests/view_tests/tests/test_static.py b/tests/view_tests/tests/test_static.py
+index f4c58e0611..898a87abc4 100644
+--- a/tests/view_tests/tests/test_static.py
++++ b/tests/view_tests/tests/test_static.py
+@@ -149,7 +149,7 @@ class StaticHelperTest(StaticTests):
+         urls.urlpatterns = self._old_views_urlpatterns
+ 
+     def test_prefix(self):
+-        self.assertEqual(static('test')[0].pattern.regex.pattern, '^test(?P<path>.*)$')
++        self.assertEqual(static('test')[0].pattern.regex.pattern, '^test(?P<path>.*)Z')
+ 
+     @override_settings(DEBUG=False)
+     def test_debug_off(self):
+diff --git a/tests/view_tests/urls.py b/tests/view_tests/urls.py
+index 34415b06e0..3763475ff8 100644
+--- a/tests/view_tests/urls.py
++++ b/tests/view_tests/urls.py
+@@ -48,11 +48,11 @@ urlpatterns = [
+     path('jsoni18n/', i18n.JSONCatalog.as_view(packages=['view_tests'])),
+ 
+     # Static views
+-    re_path(r'^site_media/(?P<path>.*)$', static.serve, {'document_root': media_dir, 'show_indexes': True}),
++    re_path(r'^site_media/(?P<path>.*)Z', static.serve, {'document_root': media_dir, 'show_indexes': True}),
+ ]
+ 
+ urlpatterns += i18n_patterns(
+-    re_path(_(r'^translated/$'), views.index_page, name='i18n_prefixed'),
++    re_path(_(r'^translated/Z'), views.index_page, name='i18n_prefixed'),
+ )
+ 
+ urlpatterns += [
+@@ -63,8 +63,8 @@ urlpatterns += [
+         name='raises_template_does_not_exist'
+     ),
+     path('render_no_template/', views.render_no_template, name='render_no_template'),
+-    re_path(r'^test-setlang/(?P<parameter>[^/]+)/$', views.with_parameter, name='with_parameter'),
++    re_path(r'^test-setlang/(?P<parameter>[^/]+)/Z', views.with_parameter, name='with_parameter'),
+     # Patterns to test the technical 404.
+-    re_path(r'^regex-post/(?P<pk>[0-9]+)/$', views.index_page, name='regex-post'),
++    re_path(r'^regex-post/(?P<pk>[0-9]+)/Z', views.index_page, name='regex-post'),
+     path('path-post/<int:pk>/', views.index_page, name='path-post'),
+ ]
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -e .
+Obtaining file:///testbed
+Requirement already satisfied: pytz in /opt/miniconda3/envs/testbed/lib/python3.6/site-packages (from Django==3.0.dev20190322115239) (2024.2)
+Requirement already satisfied: sqlparse in /opt/miniconda3/envs/testbed/lib/python3.6/site-packages (from Django==3.0.dev20190322115239) (0.4.4)
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 3.0.dev20190322115239
+    Uninstalling Django-3.0.dev20190322115239:
+      Successfully uninstalled Django-3.0.dev20190322115239
+  Running setup.py develop for Django
+Successfully installed Django-3.0.dev20190322115239
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ git checkout d26b2424437dabeeca94d7900b37d2df4410da0c tests/auth_tests/test_validators.py
+Updated 0 paths from cb08383bf7
++ git apply -v -
+Checking patch tests/auth_tests/test_validators.py...
+Applied patch tests/auth_tests/test_validators.py cleanly.
++ ./tests/runtests.py --verbosity 2 --settings=test_sqlite --parallel 1 auth_tests.test_validators
+Traceback (most recent call last):
+  File "./tests/runtests.py", line 17, in <module>
+    from django.test import TestCase, TransactionTestCase
+  File "/testbed/django/test/__init__.py", line 3, in <module>
+    from django.test.client import Client, RequestFactory
+  File "/testbed/django/test/client.py", line 14, in <module>
+    from django.core.handlers.base import BaseHandler
+  File "/testbed/django/core/handlers/base.py", line 8, in <module>
+    from django.urls import get_resolver, set_urlconf
+  File "/testbed/django/urls/__init__.py", line 1, in <module>
+    from .base import (
+  File "/testbed/django/urls/base.py", line 8, in <module>
+    from .exceptions import NoReverseMatch, Resolver404
+  File "/testbed/django/urls/exceptions.py", line 1, in <module>
+    from django.http import Http404
+  File "/testbed/django/http/__init__.py", line 2, in <module>
+    from django.http.request import (
+  File "/testbed/django/http/request.py", line 8, in <module>
+    from django.core import signing
+  File "/testbed/django/core/signing.py", line 44, in <module>
+    from django.utils import baseconv
+  File "/testbed/django/utils/baseconv.py", line 101, in <module>
+    base64 = BaseConverter(BASE64_ALPHABET, sign='Z')
+  File "/testbed/django/utils/baseconv.py", line 55, in __init__
+    raise ValueError('Sign character found in converter base digits.')
+ValueError: Sign character found in converter base digits.
++ git checkout d26b2424437dabeeca94d7900b37d2df4410da0c tests/auth_tests/test_validators.py
+Updated 1 path from cb08383bf7

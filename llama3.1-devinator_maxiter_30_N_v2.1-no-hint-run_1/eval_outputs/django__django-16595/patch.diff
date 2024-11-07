@@ -1,0 +1,51 @@
+diff --git a/error.log b/error.log
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git a/migrations.py b/migrations.py
+new file mode 100644
+index 0000000000..b5140055a3
+--- /dev/null
++++ b/migrations.py
+@@ -0,0 +1,39 @@
++from django.db import migrations
++
++def migrate(apps, schema_editor):
++    # Create a new model
++    Model = apps.get_model('books', 'Book')
++    Model.objects.create(title='New Title')
++
++# Define the migration
++class Migration(migrations.Migration):
++
++    dependencies = [
++        ('books', '0001_initial'),
++    ]
++
++    operations = [
++        migrations.AddField(
++            model_name='book',
++            name='title',
++            field=models.CharField(max_length=256, null=True),
++        ),
++        migrations.AlterField(
++            model_name='book',
++            name='title',
++            field=models.CharField(max_length=128, null=True),
++        ),
++        migrations.AlterField(
++            model_name='book',
++            name='title',
++            field=models.CharField(max_length=128, null=True, help_text="help"),
++        ),
++        migrations.AlterField(
++            model_name='book',
++            name='title',
++            field=models.CharField(max_length=128, null=True, help_text="help", default=None),
++        ),
++    ]
++
++# Run the migration
++migrate(None, None)
+diff --git a/optimize.py b/optimize.py
+new file mode 100644
+index 0000000000..e69de29bb2

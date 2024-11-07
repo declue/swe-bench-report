@@ -1,0 +1,7 @@
+diff --git a/error.log b/error.log
+new file mode 100644
+index 000000000..961c84443
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1 @@
++python3: can't open file 'reproduce_error.py': [Errno 2] No such file or directory

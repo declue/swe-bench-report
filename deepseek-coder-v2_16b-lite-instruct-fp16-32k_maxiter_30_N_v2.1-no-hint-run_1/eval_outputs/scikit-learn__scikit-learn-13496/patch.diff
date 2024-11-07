@@ -1,0 +1,53 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 000000000..a3f14f652
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,5 @@
++from sklearn.ensemble import IsolationForest
++
++# Create an instance of IsolationForest without warm_start
++iforest = IsolationForest()
++print("Isolation Forest created without warm_start")
+diff --git a/sklearn/ensemble/__init__.py b/sklearn/ensemble/__init__.py
+index 5586a9e1e..f649746f8 100644
+--- a/sklearn/ensemble/__init__.py
++++ b/sklearn/ensemble/__init__.py
+@@ -33,3 +33,11 @@ __all__ = ["BaseEnsemble",
+            "AdaBoostRegressor", "VotingClassifier",
+            "bagging", "forest", "gradient_boosting",
+            "partial_dependence", "weight_boosting"]
++
++# no changes before
++from .bagging import BaseBagging, BaggingClassifier, BaggingRegressor
++from .forest import RandomForestClassifier, ExtraTreesClassifier
++from .iforest import IsolationForest
++from .weight_boosting import AdaBoostClassifier, AdaBoostRegressor
++# no changes here
++
+diff --git "a/sklearn/ensemble/iforest.py\"" "b/sklearn/ensemble/iforest.py\""
+new file mode 100644
+index 000000000..220305a30
+--- /dev/null
++++ "b/sklearn/ensemble/iforest.py\""
+@@ -0,0 +1,20 @@
++class IsolationForest(BaseBagging):
++    """
++    ...
++    
++    Parameters:
++    -----------
++    **Other parameters...**
++    
++    warm_start : bool, optional (default=False)
++        When set to ``True``, reuse the solution of the previous call to fit
++        and add more estimators to the ensemble, otherwise, just fit a whole
++        new forest. See :term:`the Glossary <warm_start>`.
++    
++    ...
++    """
+++   def __init__(self, *, n_estimators=100, max_samples='auto', contamination='auto', max_features=1.0, bootstrap=False, n_jobs=None, random_state=None, verbose=0, warm_start=False):
++        super().__init__(
++            base_estimator=ExtraTreeRegressor(
++                max_features=1,
++                splitter='random',

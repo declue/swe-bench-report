@@ -1,0 +1,47 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..d06f3dd6d6
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,41 @@
++import os
++import django
++from django.conf import settings
++from django.contrib.admin import helpers, AdminSite
++from django.urls import reverse, NoReverseMatch, include, path
++from urllib.parse import quote
++
++# Configure Django settings
++os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django.conf.global_settings')
++django.setup()
++
++# Update Django settings to include the 'contenttypes' app
++settings.INSTALLED_APPS = ['django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes']
++
++# Mock URL configuration for testing
++urlpatterns = [
++    path('custom-admin/', include(AdminSite().urls)),
++]
++
++class MockRemoteField:
++    def __init__(self, pk):
++        self.pk = pk
++
++def get_admin_url(remote_field, remote_obj):
++    url = reverse('custom-admin:index')  # Changed to 'custom-admin:index' for the custom Admin Site
++    return f"{url}?q={quote(remote_obj.pk)}"
++
++try:
++    remote_field = MockRemoteField("test_pk")
++    url = get_admin_url(remote_field, remote_field)
++    print(f"Generated URL: {url}")
++except NoReverseMatch as e:
++    print(f"Error: {e}")
++
++# Mock contenttype model and related functionality to avoid database-related operations
++class ContentType:
++    pass
++
++django.contrib.contenttypes.models.ContentType = ContentType
++django.contrib.contenttypes.fields.GenericForeignKey = lambda *args, **kwargs: None
++

@@ -1,0 +1,47 @@
+diff --git a/example/core/models.py b/example/core/models.py
+new file mode 100644
+index 0000000000..cf00d85fb2
+--- /dev/null
++++ b/example/core/models.py
+@@ -0,0 +1,8 @@
++from django.db import models
++
++class MyBigAutoField(models.BigAutoField):
++    pass
++
++class MySmallAutoField(models.SmallAutoField):
++    pass
++
+diff --git a/example/manage.py b/example/manage.py
+new file mode 100644
+index 0000000000..f7e444db94
+--- /dev/null
++++ b/example/manage.py
+@@ -0,0 +1,17 @@
++# example/manage.py
++
++import os
++import sys
++
++def main():
++    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'example.settings')
++    try:
++        from django.core.management import execute_from_command_line
++    except ImportError as exc:
++        raise ImportError(
++            "Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?"
++        ) from exc
++    execute_from_command_line(sys.argv)
++
++if __name__ == '__main__':
++    main()
+diff --git a/example/settings.py b/example/settings.py
+new file mode 100644
+index 0000000000..2379bb4885
+--- /dev/null
++++ b/example/settings.py
+@@ -0,0 +1,4 @@
++# example/settings.py
++
++DEFAULT_AUTO_FIELD = "example.core.models.MyBigAutoField"
++

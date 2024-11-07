@@ -1,0 +1,16 @@
+diff --git a/example.py b/example.py
+new file mode 100644
+index 000000000..9f70190af
+--- /dev/null
++++ b/example.py
+@@ -0,0 +1,10 @@
++__all__ = []
++
++def foo():
++    "docstring"
++
++def bar():
++    "docstring"
++
++def baz():
++    "docstring"

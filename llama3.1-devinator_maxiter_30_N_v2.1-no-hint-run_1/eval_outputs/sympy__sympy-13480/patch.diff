@@ -1,0 +1,53 @@
+diff --git a/isympy.py b/isympy.py
+index 9f6d92cc92..84691b25c0 100644
+--- a/isympy.py
++++ b/isympy.py
+@@ -344,3 +344,5 @@ def main():
+ 
+ if __name__ == "__main__":
+     main()
++import sympy as sp
++sp.coth(sp.log(sp.tan(sp.Symbol('x')))).subs(sp.Symbol('x'), 2)
+diff --git a/output.log b/output.log
+new file mode 100644
+index 0000000000..015bc1a013
+--- /dev/null
++++ b/output.log
+@@ -0,0 +1,29 @@
++/testbed/sympy/core/basic.py:3: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
++  from collections import Mapping, defaultdict
++/testbed/sympy/core/containers.py:271: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
++  class OrderedSet(collections.MutableSet):
++/testbed/sympy/solvers/diophantine.py:3188: SyntaxWarning: "is" with a literal. Did you mean "=="?
++  if feasible is 1:  # it's prime and k == 2
++/testbed/sympy/plotting/plot.py:28: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
++  from collections import Callable
++Couldn't locate IPython. Having IPython installed is greatly recommended.
++See http://ipython.scipy.org for more details. If you use Debian/Ubuntu,
++just install the 'ipython' package and start isympy again.
++
++Python console for SymPy 1.1.2.dev (Python 3.9.19-64-bit) (ground types: python)
++
++These commands were executed:
++>>> from __future__ import division
++>>> from sympy import *
++>>> x, y, z, t = symbols('x y z t')
++>>> k, m, n = symbols('k m n', integer=True)
++>>> f, g, h = symbols('f g h', cls=Function)
++>>> init_printing()
++
++Documentation can be found at http://docs.sympy.org/dev
++
++Python 3.9.19 (main, May  6 2024, 19:43:03) 
++[GCC 11.2.0] on linux
++Type "help", "copyright", "credits" or "license" for more information.
++(SymPyConsole)
++>>> 
+\ No newline at end of file
+diff --git a/reproduce.log b/reproduce.log
+new file mode 100644
+index 0000000000..8769ee82fd
+--- /dev/null
++++ b/reproduce.log
+@@ -0,0 +1 @@
++python3: can't open file '/testbed/test_reproduce.py': [Errno 2] No such file or directory

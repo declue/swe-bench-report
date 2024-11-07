@@ -1,0 +1,17 @@
+diff --git a/error.log b/error.log
+new file mode 100644
+index 0000000000..4d3b1239a5
+--- /dev/null
++++ b/error.log
+@@ -0,0 +1,4 @@
++  File "reproduce_error.py", line 1
++    import random\nmodel = random.choice(['choice1', 'choice2'])\nif model not in ['choice1', 'choice2']:\n    raise ValueError('Invalid choice')
++                                                                                                                                                ^
++SyntaxError: unexpected character after line continuation character
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..508d5a76c9
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1 @@
++import random\nmodel = random.choice(['choice1', 'choice2'])\nif model not in ['choice1', 'choice2']:\n    raise ValueError('Invalid choice')

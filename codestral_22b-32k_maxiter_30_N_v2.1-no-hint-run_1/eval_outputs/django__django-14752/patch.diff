@@ -1,0 +1,35 @@
+diff --git a/django/contrib/admin/views/autocomplete.py b/django/contrib/admin/views/autocomplete.py
+index 3903e4c98c..17550c2e2a 100644
+--- a/django/contrib/admin/views/autocomplete.py
++++ b/django/contrib/admin/views/autocomplete.py
+@@ -3,12 +3,14 @@ from django.core.exceptions import FieldDoesNotExist, PermissionDenied
+ from django.http import Http404, JsonResponse
+ from django.views.generic.list import BaseListView
+ 
+-
+ class AutocompleteJsonView(BaseListView):
+     """Handle AutocompleteWidget's AJAX requests for data."""
+     paginate_by = 20
+     admin_site = None
+ 
++    def serialize_result(self, obj, to_field_name):
++        return {'id': str(getattr(obj, to_field_name)), 'text': str(obj)}
++
+     def get(self, request, *args, **kwargs):
+         """
+         Return a JsonResponse with search results of the form:
+@@ -26,8 +28,7 @@ class AutocompleteJsonView(BaseListView):
+         context = self.get_context_data()
+         return JsonResponse({
+             'results': [
+-                {'id': str(getattr(obj, to_field_name)), 'text': str(obj)}
+-                for obj in context['object_list']
++                self.serialize_result(obj, to_field_name) for obj in context['object_list']
+             ],
+             'pagination': {'more': context['page_obj'].has_next()},
+         })
+@@ -100,3 +101,4 @@ class AutocompleteJsonView(BaseListView):
+     def has_perm(self, request, obj=None):
+         """Check if user has permission to access the related model."""
+         return self.model_admin.has_view_permission(request, obj=obj)
++
