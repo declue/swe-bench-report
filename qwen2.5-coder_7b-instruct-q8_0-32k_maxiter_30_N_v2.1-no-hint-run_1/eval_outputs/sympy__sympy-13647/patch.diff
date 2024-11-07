@@ -1,0 +1,24 @@
+diff --git a/sympy/test_col_insert.py b/sympy/test_col_insert.py
+new file mode 100644
+index 0000000000..f64a48db08
+--- /dev/null
++++ b/sympy/test_col_insert.py
+@@ -0,0 +1,18 @@
++import sympy as sm
++
++def test_col_insert():
++    M = sm.eye(6)
++    V = 2 * sm.ones(6, 2)
++    result = M.col_insert(3, V)
++    expected_result = sm.Matrix([
++        [1, 0, 0, 2, 2, 1, 0, 0],
++        [0, 1, 0, 2, 2, 0, 1, 0],
++        [0, 0, 1, 2, 2, 0, 0, 1],
++        [0, 0, 0, 2, 2, 0, 0, 0],
++        [0, 0, 0, 2, 2, 0, 0, 0],
++        [0, 0, 0, 2, 2, 0, 0, 0]
++    ])
++    assert result == expected_result
++
++if __name__ == '__main__':
++    test_col_insert()

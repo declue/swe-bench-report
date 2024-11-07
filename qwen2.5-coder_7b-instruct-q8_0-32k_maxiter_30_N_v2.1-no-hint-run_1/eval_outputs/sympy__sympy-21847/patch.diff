@@ -1,0 +1,22 @@
+diff --git a/server.log b/server.log
+new file mode 100644
+index 0000000000..6dc73a5eb0
+--- /dev/null
++++ b/server.log
+@@ -0,0 +1 @@
++[x3**3, x2**3, x1**3]
+diff --git a/test_itermonomials.py b/test_itermonomials.py
+new file mode 100644
+index 0000000000..cf8e40774d
+--- /dev/null
++++ b/test_itermonomials.py
+@@ -0,0 +1,9 @@
++import sympy as sp
++from sympy.polys.orderings import monomial_key
++
++x1, x2, x3 = sp.symbols('x1, x2, x3')
++states = [x1, x2, x3]
++max_degrees = 3
++min_degrees = 3
++monomials = sorted(sp.itermonomials(states, max_degrees, min_degrees=min_degrees), key=monomial_key('grlex', states))
++print(monomials)

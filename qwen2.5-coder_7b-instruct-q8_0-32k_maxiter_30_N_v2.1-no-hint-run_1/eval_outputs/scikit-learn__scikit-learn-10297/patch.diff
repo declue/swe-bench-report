@@ -1,0 +1,99 @@
+diff --git a/doc/modules/classes.rst b/doc/modules/classes.rst
+index 5977e2f01..3b12f478a 100644
+--- a/doc/modules/classes.rst
++++ b/doc/modules/classes.rst
+@@ -1304,9 +1304,9 @@ Estimators
+ 
+ .. autosummary::
+    :toctree: generated/
+-   :template: function.rst
++   :template: class.rst
+ 
+-   svm.l1_min_c
++   linear_model.RidgeClassifierCV
+ 
+ Low-level methods
+ -----------------
+@@ -1318,6 +1318,7 @@ Low-level methods
+    svm.libsvm.cross_validation
+    svm.libsvm.decision_function
+    svm.libsvm.fit
++
+    svm.libsvm.predict
+    svm.libsvm.predict_proba
+ 
+@@ -1452,3 +1453,4 @@ To be removed in 0.20
+    grid_search.fit_grid_point
+    learning_curve.learning_curve
+    learning_curve.validation_curve
++
+diff --git a/server.log b/server.log
+new file mode 100644
+index 000000000..4c7637584
+--- /dev/null
++++ b/server.log
+@@ -0,0 +1,4 @@
++Traceback (most recent call last):
++  File "test_ridge_classifier_cv.py", line 10, in <module>
++    store_cv_values = True).fit(x, y)
++TypeError: __init__() got an unexpected keyword argument 'store_cv_values'
+diff --git a/sklearn/linear_model/_ridge.py b/sklearn/linear_model/_ridge.py
+new file mode 100644
+index 000000000..aed9d73a8
+--- /dev/null
++++ b/sklearn/linear_model/_ridge.py
+@@ -0,0 +1,37 @@
++from sklearn.linear_model._base import LinearModel, RegressorMixin
++from sklearn.linear_model._ridge import RidgeCV as _RidgeCV
++from sklearn.utils.validation import check_X_y
++
++class RidgeClassifierCV(_RidgeCV):
++    def __init__(self, alphas=None, fit_intercept=True, normalize=False,
++                 scoring=None, cv=None, gcv_mode=None, store_cv_values=False,
++                 copy_X=True, max_iter=None, tol=1e-3, class_weight=None,
++                 n_jobs=None, verbose=False, random_state=None):
++        super().__init__(alphas=alphas, fit_intercept=fit_intercept, normalize=normalize,
++                         scoring=scoring, cv=cv, gcv_mode=gcv_mode,
++                         copy_X=copy_X, max_iter=max_iter, tol=tol,
++                         class_weight=class_weight, n_jobs=n_jobs, verbose=verbose,
++                         random_state=random_state)
++        self.store_cv_values = store_cv_values
++
++    def fit(self, X, y):
++        X, y = check_X_y(X, y, accept_sparse='csc', dtype=np.float64)
++        if self.normalize:
++            X, _, _ = self._preprocess_data(X, copy=self.copy_X,
++                                            check_input=True)
++
++        return super().fit(X, y)
++
++    def predict(self, X):
++        X = self._validate_for_predict(X, check_input=True)
++        scores = self.decision_function(X)
++        classes = np.unique(y)
++        if len(classes) == 2:
++            return (scores > 0).astype(int)
++        else:
++            return np.argmax(scores, axis=1)
++
++    def decision_function(self, X):
++        X = self._validate_for_predict(X, check_input=True)
++        scores = super().decision_function(X)
++        return scores
+diff --git a/test_ridge_classifier_cv.py b/test_ridge_classifier_cv.py
+new file mode 100644
+index 000000000..69341c730
+--- /dev/null
++++ b/test_ridge_classifier_cv.py
+@@ -0,0 +1,11 @@
++import numpy as np
++from sklearn import linear_model as lm
++
++#test database
++n = 100
++x = np.random.randn(n, 30)
++y = np.random.normal(size = n)
++
++rr = lm.RidgeClassifierCV(alphas = np.arange(0.1, 1000, 0.1), normalize = True,
++                                         store_cv_values = True).fit(x, y)
++

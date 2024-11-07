@@ -1,0 +1,42 @@
+diff --git a/sklearn/ensemble/voting.py b/sklearn/ensemble/voting.py
+index 7afa7180c..b30f90220 100644
+--- a/sklearn/ensemble/voting.py
++++ b/sklearn/ensemble/voting.py
+@@ -29,6 +29,8 @@ from ..utils import Bunch
+ 
+ def _parallel_fit_estimator(estimator, X, y, sample_weight=None):
+     """Private function used to fit an estimator within a job."""
++    if estimator is None:
++        return None
+     if sample_weight is not None:
+         estimator.fit(X, y, sample_weight=sample_weight)
+     else:
+@@ -37,6 +39,7 @@ def _parallel_fit_estimator(estimator, X, y, sample_weight=None):
+ 
+ 
+ class _BaseVoting(_BaseComposition, TransformerMixin):
++
+     """Base class for voting.
+ 
+     Warning: This class should not be used directly. Use derived classes
+@@ -486,3 +489,4 @@ class VotingRegressor(_BaseVoting, RegressorMixin):
+         """
+         check_is_fitted(self, 'estimators_')
+         return self._predict(X)
++
+diff --git a/test_voting.py b/test_voting.py
+new file mode 100644
+index 000000000..e01778b85
+--- /dev/null
++++ b/test_voting.py
+@@ -0,0 +1,10 @@
++from sklearn.datasets import load_iris
++from sklearn.linear_model import LogisticRegression
++from sklearn.ensemble import RandomForestClassifier, VotingClassifier
++import numpy as np
++
++X, y = load_iris(return_X_y=True)
++voter = VotingClassifier(estimators=[('lr', LogisticRegression()), ('rf', RandomForestClassifier())])
++voter.fit(X, y, sample_weight=np.ones(y.shape))
++voter.set_params(lr=None)
++voter.fit(X, y, sample_weight=np.ones(y.shape))

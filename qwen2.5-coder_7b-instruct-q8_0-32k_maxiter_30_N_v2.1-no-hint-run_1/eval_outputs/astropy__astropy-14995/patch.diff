@@ -1,0 +1,51 @@
+diff --git a/astropy/reproduce_error.py b/astropy/reproduce_error.py
+new file mode 100644
+index 0000000000..b0d9e7d215
+--- /dev/null
++++ b/astropy/reproduce_error.py
+@@ -0,0 +1,25 @@
++import numpy as np
++from astropy.nddata import NDDataRef
++
++array = np.array([[0, 1, 0], [1, 0, 1], [0, 1, 0]])
++mask = np.array([[0, 1, 64], [8, 0, 1], [2, 1, 0]])
++
++nref_nomask = NDDataRef(array)
++nref_mask = NDDataRef(array, mask=mask)
++
++# multiply no mask by constant (no mask * no mask)
++print(nref_nomask.multiply(1., handle_mask=np.bitwise_or).mask)   # returns nothing, no mask,  OK
++
++# multiply no mask by itself (no mask * no mask)
++print(nref_nomask.multiply(nref_nomask, handle_mask=np.bitwise_or).mask) # return nothing, no mask, OK
++
++# multiply mask by constant (mask * no mask)
++print(nref_mask.multiply(1., handle_mask=np.bitwise_or).mask)
++...
++
++# multiply mask by itself (mask * mask)
++print(nref_mask.multiply(nref_mask, handle_mask=np.bitwise_or).mask)
++
++# multiply mask by no mask (mask * no mask)
++print(nref_mask.multiply(nref_nomask, handle_mask=np.bitwise_or).mask)
++...
+diff --git a/astropy/server.log b/astropy/server.log
+new file mode 100644
+index 0000000000..05081cf3d8
+--- /dev/null
++++ b/astropy/server.log
+@@ -0,0 +1,14 @@
++None
++None
++Traceback (most recent call last):
++  File "/workspace/astropy__astropy__5.2/astropy/reproduce_error.py", line 17, in <module>
++    print(nref_mask.multiply(1., handle_mask=np.bitwise_or).mask)
++  File "/testbed/astropy/nddata/mixins/ndarithmetic.py", line 618, in multiply
++    return self._prepare_then_do_arithmetic(
++  File "/testbed/astropy/nddata/mixins/ndarithmetic.py", line 731, in _prepare_then_do_arithmetic
++    result, init_kwds = operand._arithmetic(operation, operand2, **kwargs)
++  File "/testbed/astropy/nddata/mixins/ndarithmetic.py", line 335, in _arithmetic
++    kwargs["mask"] = self._arithmetic_mask(
++  File "/testbed/astropy/nddata/mixins/ndarithmetic.py", line 527, in _arithmetic_mask
++    return handle_mask(self.mask, operand.mask, **kwds)
++TypeError: unsupported operand type(s) for |: 'int' and 'NoneType'

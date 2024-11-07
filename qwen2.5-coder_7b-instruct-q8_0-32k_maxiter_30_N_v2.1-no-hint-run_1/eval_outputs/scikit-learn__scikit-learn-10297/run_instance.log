@@ -1,0 +1,83 @@
+2024-11-07 19:18:42,799 - INFO - Environment image sweb.env.x86_64.aa92880033da20ca313928:latest found for scikit-learn__scikit-learn-10297
+Building instance image sweb.eval.x86_64.scikit-learn__scikit-learn-10297:latest for scikit-learn__scikit-learn-10297
+2024-11-07 19:18:42,803 - INFO - Image sweb.eval.x86_64.scikit-learn__scikit-learn-10297:latest already exists, skipping build.
+2024-11-07 19:18:42,803 - INFO - Creating container for scikit-learn__scikit-learn-10297...
+2024-11-07 19:18:42,867 - INFO - Container for scikit-learn__scikit-learn-10297 created: b399fa50456358e97052b102e3d760cd1eeea7ff9b2cef06852b8987de90ddab
+2024-11-07 19:18:43,232 - INFO - Container for scikit-learn__scikit-learn-10297 started: b399fa50456358e97052b102e3d760cd1eeea7ff9b2cef06852b8987de90ddab
+2024-11-07 19:18:43,234 - INFO - Intermediate patch for scikit-learn__scikit-learn-10297 written to logs/run_evaluation/20241107_191834/qwen2.5-coder_7b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/scikit-learn__scikit-learn-10297/patch.diff, now applying to container...
+2024-11-07 19:18:43,357 - INFO - Failed to apply patch to container, trying again...
+2024-11-07 19:18:43,384 - INFO - >>>>> Applied Patch:
+patching file doc/modules/classes.rst
+patching file server.log
+patching file sklearn/linear_model/_ridge.py
+patching file test_ridge_classifier_cv.py
+
+2024-11-07 19:18:43,721 - INFO - Git diff before:
+diff --git a/doc/modules/classes.rst b/doc/modules/classes.rst
+index 5977e2f01..3b12f478a 100644
+--- a/doc/modules/classes.rst
++++ b/doc/modules/classes.rst
+@@ -1304,9 +1304,9 @@ Estimators
+ 
+ .. autosummary::
+    :toctree: generated/
+-   :template: function.rst
++   :template: class.rst
+ 
+-   svm.l1_min_c
++   linear_model.RidgeClassifierCV
+ 
+ Low-level methods
+ -----------------
+@@ -1318,6 +1318,7 @@ Low-level methods
+    svm.libsvm.cross_validation
+    svm.libsvm.decision_function
+    svm.libsvm.fit
++
+    svm.libsvm.predict
+    svm.libsvm.predict_proba
+ 
+@@ -1452,3 +1453,4 @@ To be removed in 0.20
+    grid_search.fit_grid_point
+    learning_curve.learning_curve
+    learning_curve.validation_curve
++
+2024-11-07 19:18:43,722 - INFO - Eval script for scikit-learn__scikit-learn-10297 written to logs/run_evaluation/20241107_191834/qwen2.5-coder_7b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/scikit-learn__scikit-learn-10297/eval.sh; copying to container...
+2024-11-07 19:18:46,922 - INFO - Test runtime: 3.10 seconds
+2024-11-07 19:18:46,922 - INFO - Test output for scikit-learn__scikit-learn-10297 written to logs/run_evaluation/20241107_191834/qwen2.5-coder_7b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/scikit-learn__scikit-learn-10297/test_output.txt
+2024-11-07 19:18:46,971 - INFO - Git diff after:
+diff --git a/doc/modules/classes.rst b/doc/modules/classes.rst
+index 5977e2f01..3b12f478a 100644
+--- a/doc/modules/classes.rst
++++ b/doc/modules/classes.rst
+@@ -1304,9 +1304,9 @@ Estimators
+ 
+ .. autosummary::
+    :toctree: generated/
+-   :template: function.rst
++   :template: class.rst
+ 
+-   svm.l1_min_c
++   linear_model.RidgeClassifierCV
+ 
+ Low-level methods
+ -----------------
+@@ -1318,6 +1318,7 @@ Low-level methods
+    svm.libsvm.cross_validation
+    svm.libsvm.decision_function
+    svm.libsvm.fit
++
+    svm.libsvm.predict
+    svm.libsvm.predict_proba
+ 
+@@ -1452,3 +1453,4 @@ To be removed in 0.20
+    grid_search.fit_grid_point
+    learning_curve.learning_curve
+    learning_curve.validation_curve
++
+2024-11-07 19:18:46,971 - INFO - Grading answer for scikit-learn__scikit-learn-10297...
+2024-11-07 19:18:46,974 - INFO - report: {'scikit-learn__scikit-learn-10297': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['sklearn/linear_model/tests/test_ridge.py::test_ridge_classifier_cv_store_cv_values']}, 'PASS_TO_PASS': {'success': ['sklearn/linear_model/tests/test_ridge.py::test_ridge', 'sklearn/linear_model/tests/test_ridge.py::test_primal_dual_relationship', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_singular', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_regression_sample_weights', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_sample_weights', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_shapes', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_intercept', 'sklearn/linear_model/tests/test_ridge.py::test_toy_ridge_object', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_vs_lstsq', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_individual_penalties', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_cv_sparse_svd', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_sparse_svd', 'sklearn/linear_model/tests/test_ridge.py::test_class_weights', 'sklearn/linear_model/tests/test_ridge.py::test_class_weight_vs_sample_weight', 'sklearn/linear_model/tests/test_ridge.py::test_class_weights_cv', 'sklearn/linear_model/tests/test_ridge.py::test_ridgecv_store_cv_values', 'sklearn/linear_model/tests/test_ridge.py::test_ridgecv_sample_weight', 'sklearn/linear_model/tests/test_ridge.py::test_raises_value_error_if_sample_weights_greater_than_1d', 'sklearn/linear_model/tests/test_ridge.py::test_sparse_design_with_sample_weights', 'sklearn/linear_model/tests/test_ridge.py::test_raises_value_error_if_solver_not_supported', 'sklearn/linear_model/tests/test_ridge.py::test_sparse_cg_max_iter', 'sklearn/linear_model/tests/test_ridge.py::test_n_iter', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_fit_intercept_sparse', 'sklearn/linear_model/tests/test_ridge.py::test_errors_and_values_helper', 'sklearn/linear_model/tests/test_ridge.py::test_errors_and_values_svd_helper', 'sklearn/linear_model/tests/test_ridge.py::test_ridge_classifier_no_support_multilabel', 'sklearn/linear_model/tests/test_ridge.py::test_dtype_match', 'sklearn/linear_model/tests/test_ridge.py::test_dtype_match_cholesky'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for scikit-learn__scikit-learn-10297: resolved: False
+2024-11-07 19:18:46,974 - INFO - Attempting to stop container sweb.eval.scikit-learn__scikit-learn-10297.20241107_191834...
+2024-11-07 19:19:02,128 - INFO - Attempting to remove container sweb.eval.scikit-learn__scikit-learn-10297.20241107_191834...
+2024-11-07 19:19:02,142 - INFO - Container sweb.eval.scikit-learn__scikit-learn-10297.20241107_191834 removed.

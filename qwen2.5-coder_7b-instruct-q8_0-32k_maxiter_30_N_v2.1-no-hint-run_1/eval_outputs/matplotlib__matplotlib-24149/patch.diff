@@ -1,0 +1,33 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..e7af91da6c
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,5 @@
++import numpy as np
++import matplotlib.pyplot as plt
++
++f, ax = plt.subplots()
++ax.bar([np.nan], [np.nan])
+diff --git a/server.log b/server.log
+new file mode 100644
+index 0000000000..e5d4e6c3a7
+--- /dev/null
++++ b/server.log
+@@ -0,0 +1,16 @@
++Traceback (most recent call last):
++  File "/workspace/matplotlib__matplotlib__3.6/reproduce_error.py", line 5, in <module>
++    ax.bar([np.nan], [np.nan])
++  File "/testbed/lib/matplotlib/__init__.py", line 1423, in inner
++    return func(ax, *map(sanitize_sequence, args), **kwargs)
++           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/testbed/lib/matplotlib/axes/_axes.py", line 2373, in bar
++    width = self._convert_dx(width, x0, x, self.convert_xunits)
++            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/testbed/lib/matplotlib/axes/_axes.py", line 2182, in _convert_dx
++    x0 = cbook._safe_first_finite(x0)
++         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/testbed/lib/matplotlib/cbook/__init__.py", line 1749, in _safe_first_finite
++    return next(val for val in obj if safe_isfinite(val))
++           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++StopIteration
