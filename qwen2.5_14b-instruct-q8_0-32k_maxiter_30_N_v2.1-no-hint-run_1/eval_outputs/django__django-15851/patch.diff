@@ -1,0 +1,31 @@
+diff --git a/django/core/management/commands/dbshell.py b/django/core/management/commands/dbshell.py
+index 30d2765afb..441e4ae12f 100644
+--- a/django/core/management/commands/dbshell.py
++++ b/django/core/management/commands/dbshell.py
+@@ -27,12 +27,16 @@ class Command(BaseCommand):
+     def handle(self, **options):
+         connection = connections[options["database"]]
+         try:
+-            connection.client.runshell(options["parameters"])
++            # Separate options and non-option arguments
++            db_params = [param for param in options['parameters'] if not param.startswith('-')]
++            opts_params = [param for param in options['parameters'] if param.startswith('-')]
++
++            # Ensure all options are passed first, followed by the database name
++            runshell_args = opts_params + [connection.settings_dict["NAME"]]
++
++            # Ensure all parameters are passed correctly to the shell command
++            connection.client.runshell(runshell_args)
+         except FileNotFoundError:
+-            # Note that we're assuming the FileNotFoundError relates to the
+-            # command missing. It could be raised for some other reason, in
+-            # which case this error message would be inaccurate. Still, this
+-            # message catches the common case.
+             raise CommandError(
+                 "You appear not to have the %r program installed or on your path."
+                 % connection.client.executable_name
+@@ -46,3 +50,4 @@ class Command(BaseCommand):
+                 ),
+                 returncode=e.returncode,
+             )
++

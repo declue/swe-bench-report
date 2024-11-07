@@ -1,0 +1,57 @@
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+index 00c19e2c55..24c2ea5292 100644
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -3,6 +3,8 @@ HTML Widget classes
+ """
+ 
+ import copy
++import json
++
+ import datetime
+ import warnings
+ from collections import defaultdict
+@@ -755,8 +757,6 @@ class SelectMultiple(Select):
+         # An unselected <select multiple> doesn't appear in POST data, so it's
+         # never known if the value is actually omitted.
+         return False
+-
+-
+ class RadioSelect(ChoiceWidget):
+     input_type = 'radio'
+     template_name = 'django/forms/widgets/radio.html'
+@@ -772,6 +772,18 @@ class RadioSelect(ChoiceWidget):
+             return ''
+         return super().id_for_label(id_, index)
+ 
++    def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):
++        context = super().create_option(name, value, label, selected, index, subindex, attrs)
++        if not value:
++            return context
++        # Convert the ModelChoiceIteratorValue to a hashable type (e.g., tuple or string) for use as a dictionary key.
++        if isinstance(value, dict):
++            key = tuple(sorted(value.items()))
++        else:
++            key = str(value)
++        if key in self.show_fields:  # This is a dict {1: ['first_name', 'last_name']}
++            context['attrs'] = {'data-fields': json.dumps(self.show_fields[key])}
++        return context
+ 
+ class CheckboxSelectMultiple(RadioSelect):
+     allow_multiple_selected = True
+@@ -779,6 +791,9 @@ class CheckboxSelectMultiple(RadioSelect):
+     template_name = 'django/forms/widgets/checkbox_select.html'
+     option_template_name = 'django/forms/widgets/checkbox_option.html'
+ 
++    template_name = 'django/forms/widgets/checkbox_select.html'
++    option_template_name = 'django/forms/widgets/checkbox_option.html'
++
+     def use_required_attribute(self, initial):
+         # Don't use the 'required' attribute because browser validation would
+         # require all checkboxes to be checked instead of at least one.
+@@ -1086,3 +1101,5 @@ class SelectDateWidget(Widget):
+             ('{}_{}'.format(name, interval) in data)
+             for interval in ('year', 'month', 'day')
+         )
++
++

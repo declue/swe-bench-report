@@ -1,0 +1,2641 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   sklearn/svm/base.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit fdbaa58acbead5a254f2e6d597dc1ab3b947f4c6
+Author: Roman Yurchak <rth.yurchak@pm.me>
+Date:   Mon Oct 7 17:35:01 2019 +0200
+
+    TST Skip some doctests if pillow not installed (#15131)
+
+diff --git a/build_tools/azure/install.sh b/build_tools/azure/install.sh
+index 4c0622396..b3a680d0a 100755
+--- a/build_tools/azure/install.sh
++++ b/build_tools/azure/install.sh
+@@ -93,7 +93,7 @@ elif [[ "$DISTRIB" == "conda-pip-latest" ]]; then
+     make_conda "python=$PYTHON_VERSION"
+     python -m pip install numpy scipy joblib cython
+     python -m pip install pytest==$PYTEST_VERSION pytest-cov pytest-xdist
+-    python -m pip install pandas matplotlib pyamg pillow
++    python -m pip install pandas matplotlib pyamg
+ fi
+ 
+ if [[ "$COVERAGE" == "true" ]]; then
+diff --git a/conftest.py b/conftest.py
+index 73326d6d2..0c0e21b69 100644
+--- a/conftest.py
++++ b/conftest.py
+@@ -13,6 +13,7 @@ from _pytest.doctest import DoctestItem
+ 
+ from sklearn import set_config
+ from sklearn.utils import _IS_32BIT
++from sklearn.externals import _pilutil
+ 
+ PYTEST_MIN_VERSION = '3.3.0'
+ 
+@@ -68,6 +69,13 @@ def pytest_collection_modifyitems(config, items):
+         for item in items:
+             if isinstance(item, DoctestItem):
+                 item.add_marker(skip_marker)
++    elif not _pilutil.pillow_installed:
++        skip_marker = pytest.mark.skip(reason="pillow (or PIL) not installed!")
++        for item in items:
++            if item.name in [
++                    "sklearn.feature_extraction.image.PatchExtractor",
++                    "sklearn.feature_extraction.image.extract_patches_2d"]:
++                item.add_marker(skip_marker)
+ 
+ 
+ def pytest_configure(config):
++ git diff fdbaa58acbead5a254f2e6d597dc1ab3b947f4c6
+diff --git a/sklearn/svm/base.py b/sklearn/svm/base.py
+index 64cebe837..f0a89eb21 100644
+--- a/sklearn/svm/base.py
++++ b/sklearn/svm/base.py
+@@ -282,35 +282,95 @@ class BaseLibSVM(BaseEstimator, metaclass=ABCMeta):
+ 
+         if hasattr(self, "classes_"):
+             n_class = len(self.classes_) - 1
+-        else:  # regression
+-            n_class = 1
+-        n_SV = self.support_vectors_.shape[0]
++def _sparse_fit(self, X, y, sample_weight=None):
++    """Fit a sparse SVC or SVR model according to the given training data and parameters.
+ 
+-        dual_coef_indices = np.tile(np.arange(n_SV), n_class)
+-        dual_coef_indptr = np.arange(0, dual_coef_indices.size + 1,
+-                                     dual_coef_indices.size / n_class)
+-        self.dual_coef_ = sp.csr_matrix(
+-            (dual_coef_data, dual_coef_indices, dual_coef_indptr),
+-            (n_class, n_SV))
++    Parameters
++    ----------
++    X : {array-like, sparse matrix} of shape (n_samples, n_features)
++        Training vectors, where `n_samples` is the number of samples
++        and `n_features` is the number of features.
++    y : array-like of shape (n_samples,)
++        Target values (class labels in classification, real numbers in
++        regression).
++    sample_weight : array-like of shape (n_samples,), default=None
++        Per-sample weights. Rescale C per sample. Higher weights
++        force the classifier to put more emphasis on these points.
+ 
+-    def predict(self, X):
+-        """Perform regression on samples in X.
++    Returns
++    -------
++    n_support_ : ndarray of shape (n_classes,) or None
++        Number of support vectors for each class.
++    """
++    if self.kernel == "precomputed":
++        raise ValueError("Precomputed kernels are not supported")
++
++    X = check_array(X, accept_sparse="csr")
++    y = column_or_1d(y)
++    n_samples, n_features = X.shape
++
++    # Check that the number of classes is greater than 0
++    if len(np.unique(y)) <= 1:
++        self.dual_coef_ = sp.csr_matrix([])
++        return None
++
++    dual_coef_indices, dual_coef_values, \
++        support_, support_vectors, pobj, n_iter = libsvm_sparse.libsvm_sparse(
++            "fit",
++            X.data,
++            X.indptr,
++            X.indices,
++            y.astype(np.float64),
++            sample_weight=sample_weight,
++            kernel=self.kernel,
++            degree=self.degree,
++            gamma=self.gamma,
++            coef0=self.coef0,
++            tol=self.tol,
++            C=self.C,
++            nu=self.nu,
++            epsilon=self.epsilon,
++            shrinking=self.shrinking,
++            probability=self.probability,
++            cache_size=self.cache_size,
++            class_weight=self.class_weight,
++            verbose=self.verbose,
++            max_iter=self.max_iter)
++
++    n_SV = support_.size
++    self.support_ = support_
++    self.support_vectors_ = support_vectors
++
++    if len(np.unique(y)) > 1:  # regression
++        n_class = 1
++    else:
++        n_class = np.unique(y).shape[0]
+ 
+-        For an one-class model, +1 (inlier) or -1 (outlier) is returned.
++    dual_coef_indices = np.tile(np.arange(n_SV), n_class)
++    dual_coef_indptr = np.arange(0, dual_coef_indices.size + 1,
++                                 dual_coef_indices.size / n_class)
++    self.dual_coef_ = sp.csr_matrix(
++        (dual_coef_values, dual_coef_indices, dual_coef_indptr),
++        (n_class, n_SV))
+ 
+-        Parameters
+-        ----------
+-        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+-            For kernel="precomputed", the expected shape of X is
+-            (n_samples_test, n_samples_train).
++def predict(self, X):
++    """Perform regression on samples in X.
+ 
+-        Returns
+-        -------
+-        y_pred : array, shape (n_samples,)
+-        """
+-        X = self._validate_for_predict(X)
+-        predict = self._sparse_predict if self._sparse else self._dense_predict
+-        return predict(X)
++    For an one-class model, +1 (inlier) or -1 (outlier) is returned.
++
++    Parameters
++    ----------
++    X : {array-like, sparse matrix}, shape (n_samples, n_features)
++        For kernel="precomputed", the expected shape of X is
++        (n_samples_test, n_samples_train).
++
++    Returns
++    -------
++    y_pred : array, shape (n_samples,)
++    """
++    X = self._validate_for_predict(X)
++    predict = self._sparse_predict if self._sparse else self._dense_predict
++    return predict(X)
+ 
+     def _dense_predict(self, X):
+         X = self._compute_kernel(X)
+@@ -950,3 +1010,4 @@ def _fit_liblinear(X, y, C, fit_intercept, intercept_scaling, class_weight,
+         intercept_ = 0.
+ 
+     return coef_, intercept_, n_iter_
++
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -v --no-use-pep517 --no-build-isolation -e .
+Using pip 21.2.2 from /opt/miniconda3/envs/testbed/lib/python3.6/site-packages/pip (python 3.6)
+Obtaining file:///testbed
+    Running command python setup.py egg_info
+    running egg_info
+    creating /tmp/pip-pip-egg-info-dlmejfr0/scikit_learn.egg-info
+    writing /tmp/pip-pip-egg-info-dlmejfr0/scikit_learn.egg-info/PKG-INFO
+    writing dependency_links to /tmp/pip-pip-egg-info-dlmejfr0/scikit_learn.egg-info/dependency_links.txt
+    writing requirements to /tmp/pip-pip-egg-info-dlmejfr0/scikit_learn.egg-info/requires.txt
+    writing top-level names to /tmp/pip-pip-egg-info-dlmejfr0/scikit_learn.egg-info/top_level.txt
+    writing manifest file '/tmp/pip-pip-egg-info-dlmejfr0/scikit_learn.egg-info/SOURCES.txt'
+    reading manifest file '/tmp/pip-pip-egg-info-dlmejfr0/scikit_learn.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    adding license file 'COPYING'
+    writing manifest file '/tmp/pip-pip-egg-info-dlmejfr0/scikit_learn.egg-info/SOURCES.txt'
+    Partial import of sklearn during the build process.
+Requirement already satisfied: numpy>=1.11.0 in /opt/miniconda3/envs/testbed/lib/python3.6/site-packages (from scikit-learn==0.22.dev0) (1.19.2)
+Requirement already satisfied: scipy>=0.17.0 in /opt/miniconda3/envs/testbed/lib/python3.6/site-packages (from scikit-learn==0.22.dev0) (1.5.2)
+Requirement already satisfied: joblib>=0.11 in /opt/miniconda3/envs/testbed/lib/python3.6/site-packages (from scikit-learn==0.22.dev0) (1.1.1)
+Installing collected packages: scikit-learn
+  Attempting uninstall: scikit-learn
+    Found existing installation: scikit-learn 0.22.dev0
+    Uninstalling scikit-learn-0.22.dev0:
+      Removing file or directory /opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scikit-learn.egg-link
+      Removing pth entries from /opt/miniconda3/envs/testbed/lib/python3.6/site-packages/easy-install.pth:
+      Removing entry: /testbed
+      Successfully uninstalled scikit-learn-0.22.dev0
+  Running setup.py develop for scikit-learn
+    Running command /opt/miniconda3/envs/testbed/bin/python -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/testbed/setup.py'"'"'; __file__='"'"'/testbed/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' develop --no-deps
+    C compiler: gcc -pthread -B /opt/miniconda3/envs/testbed/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
+
+    compile options: '-c'
+    extra options: '-fopenmp'
+    gcc: test_openmp.c
+    gcc -pthread -B /opt/miniconda3/envs/testbed/compiler_compat -Wl,--sysroot=/ objects/test_openmp.o -o test_openmp -fopenmp
+    running develop
+    running build_scripts
+    running egg_info
+    running build_src
+    build_src
+    building library "libsvm-skl" sources
+    building extension "sklearn.__check_build._check_build" sources
+    building extension "sklearn.preprocessing._csr_polynomial_expansion" sources
+    building extension "sklearn.cluster._dbscan_inner" sources
+    building extension "sklearn.cluster._hierarchical" sources
+    building extension "sklearn.cluster._k_means_elkan" sources
+    building extension "sklearn.cluster._k_means" sources
+    building extension "sklearn.datasets._svmlight_format" sources
+    building extension "sklearn.decomposition._online_lda" sources
+    building extension "sklearn.decomposition.cdnmf_fast" sources
+    building extension "sklearn.ensemble._gradient_boosting" sources
+    building extension "sklearn.ensemble._hist_gradient_boosting._gradient_boosting" sources
+    building extension "sklearn.ensemble._hist_gradient_boosting.histogram" sources
+    building extension "sklearn.ensemble._hist_gradient_boosting.splitting" sources
+    building extension "sklearn.ensemble._hist_gradient_boosting._binning" sources
+    building extension "sklearn.ensemble._hist_gradient_boosting._predictor" sources
+    building extension "sklearn.ensemble._hist_gradient_boosting._loss" sources
+    building extension "sklearn.ensemble._hist_gradient_boosting.common" sources
+    building extension "sklearn.ensemble._hist_gradient_boosting.utils" sources
+    building extension "sklearn.feature_extraction._hashing" sources
+    building extension "sklearn.manifold._utils" sources
+    building extension "sklearn.manifold._barnes_hut_tsne" sources
+    building extension "sklearn.metrics.cluster.expected_mutual_info_fast" sources
+    building extension "sklearn.metrics.pairwise_fast" sources
+    building extension "sklearn.neighbors.ball_tree" sources
+    building extension "sklearn.neighbors.kd_tree" sources
+    building extension "sklearn.neighbors.dist_metrics" sources
+    building extension "sklearn.neighbors.typedefs" sources
+    building extension "sklearn.neighbors.quad_tree" sources
+    building extension "sklearn.tree._tree" sources
+    building extension "sklearn.tree._splitter" sources
+    building extension "sklearn.tree._criterion" sources
+    building extension "sklearn.tree._utils" sources
+    building extension "sklearn.utils.sparsefuncs_fast" sources
+    building extension "sklearn.utils._cython_blas" sources
+    building extension "sklearn.utils.arrayfuncs" sources
+    building extension "sklearn.utils.murmurhash" sources
+    building extension "sklearn.utils.graph_shortest_path" sources
+    building extension "sklearn.utils.fast_dict" sources
+    building extension "sklearn.utils.seq_dataset" sources
+    building extension "sklearn.utils.weight_vector" sources
+    building extension "sklearn.utils._random" sources
+    building extension "sklearn.utils._logistic_sigmoid" sources
+    building extension "sklearn.svm.libsvm" sources
+    building extension "sklearn.svm.liblinear" sources
+    building extension "sklearn.svm.libsvm_sparse" sources
+    building extension "sklearn.linear_model.cd_fast" sources
+    building extension "sklearn.linear_model.sgd_fast" sources
+    building extension "sklearn.linear_model.sag_fast" sources
+    building extension "sklearn._isotonic" sources
+    building data_files sources
+    build_src: building npy-pkg config files
+    writing scikit_learn.egg-info/PKG-INFO
+    writing dependency_links to scikit_learn.egg-info/dependency_links.txt
+    writing requirements to scikit_learn.egg-info/requires.txt
+    writing top-level names to scikit_learn.egg-info/top_level.txt
+    reading manifest file 'scikit_learn.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    adding license file 'COPYING'
+    writing manifest file 'scikit_learn.egg-info/SOURCES.txt'
+    running build_ext
+    customize UnixCCompiler
+    customize UnixCCompiler using build_clib
+    customize UnixCCompiler
+    customize UnixCCompiler using build_ext_subclass
+    customize UnixCCompiler
+    customize UnixCCompiler using build_ext_subclass
+    Creating /opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scikit-learn.egg-link (link to .)
+    Adding scikit-learn 0.22.dev0 to easy-install.pth file
+
+    Installed /testbed
+    Partial import of sklearn during the build process.
+Successfully installed scikit-learn-0.22.dev0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ git checkout fdbaa58acbead5a254f2e6d597dc1ab3b947f4c6 sklearn/svm/tests/test_svm.py
+Updated 0 paths from be8c6bbbb
++ git apply -v -
+Checking patch sklearn/svm/tests/test_svm.py...
+Applied patch sklearn/svm/tests/test_svm.py cleanly.
++ pytest -rA sklearn/svm/tests/test_svm.py
+============================= test session starts ==============================
+platform linux -- Python 3.6.13, pytest-6.2.4, py-1.11.0, pluggy-0.13.1
+rootdir: /testbed, configfile: setup.cfg
+collected 86 items
+
+sklearn/svm/tests/test_svm.py FFFFF.FFFFFFFFFFFFFF...............FFFFFFF [ 48%]
+FFFFF.....F.F..........F.FFFFF.F..FFF..FF..F                             [100%]
+
+=================================== FAILURES ===================================
+____________________________ test_libsvm_parameters ____________________________
+
+    def test_libsvm_parameters():
+        # Test parameters on classes that make use of libsvm.
+        clf = svm.SVC(kernel='linear').fit(X, Y)
+        assert_array_equal(clf.dual_coef_, [[-0.25, .25]])
+        assert_array_equal(clf.support_, [1, 3])
+        assert_array_equal(clf.support_vectors_, (X[1], X[3]))
+        assert_array_equal(clf.intercept_, [0.])
+>       assert_array_equal(clf.predict(X), Y)
+
+sklearn/svm/tests/test_svm.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3..., kernel='linear',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = [[-2, -1], [-1, -1], [-1, -2], [1, 1], [1, 2], [2, 1]]
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+_______________________________ test_libsvm_iris _______________________________
+
+    def test_libsvm_iris():
+        # Check consistency on dataset iris.
+    
+        # shuffle the dataset so that labels are not ordered
+        for k in ('linear', 'rbf'):
+            clf = svm.SVC(kernel=k).fit(iris.data, iris.target)
+>           assert np.mean(clf.predict(iris.data) == iris.target) > 0.9
+
+sklearn/svm/tests/test_svm.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3..., kernel='linear',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = array([[6.1, 2.8, 4.7, 1.2],
+       [5.7, 3.8, 1.7, 0.3],
+       [7.7, 2.6, 6.9, 2.3],
+       [6. , 2.9, 4.5, 1.5],
+  ...],
+       [4.9, 2.5, 4.5, 1.7],
+       [5.8, 4. , 1.2, 0.2],
+       [5.8, 2.6, 4. , 1.2],
+       [7.1, 3. , 5.9, 2.1]])
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+_______________________________ test_precomputed _______________________________
+
+    def test_precomputed():
+        # SVC with a precomputed kernel.
+        # We test it with a toy dataset and with iris.
+        clf = svm.SVC(kernel='precomputed')
+        # Gram matrix for train data (square matrix)
+        # (we use just a linear kernel)
+        K = np.dot(X, np.array(X).T)
+        clf.fit(K, Y)
+        # Gram matrix for test data (rectangular matrix)
+        KT = np.dot(T, np.array(X).T)
+>       pred = clf.predict(KT)
+
+sklearn/svm/tests/test_svm.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3... kernel='precomputed', max_iter=-1, probability=False, random_state=None,
+    shrinking=True, tol=0.001, verbose=False)
+X = array([[ 3,  2,  3, -2, -3, -3],
+       [-6, -4, -6,  4,  6,  6],
+       [-8, -5, -7,  5,  7,  8]])
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+___________________________________ test_svr ___________________________________
+
+    def test_svr():
+        # Test Support Vector Regression
+    
+        diabetes = datasets.load_diabetes()
+        for clf in (svm.NuSVR(kernel='linear', nu=.4, C=1.0),
+                    svm.NuSVR(kernel='linear', nu=.4, C=10.),
+                    svm.SVR(kernel='linear', C=10.),
+                    svm.LinearSVR(C=10.),
+                    svm.LinearSVR(C=10.)):
+            clf.fit(diabetes.data, diabetes.target)
+>           assert clf.score(diabetes.data, diabetes.target) > 0.02
+
+sklearn/svm/tests/test_svm.py:170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NuSVR(C=1.0, cache_size=200, coef0=0.0, degree=3, gamma='scale',
+      kernel='linear', max_iter=-1, nu=0.4, shrinking=True, tol=0.001,
+      verbose=False)
+X = array([[ 0.03807591,  0.05068012,  0.06169621, ..., -0.00259226,
+         0.01990842, -0.01764613],
+       [-0.0018820...837, -0.02593034],
+       [-0.04547248, -0.04464164, -0.0730303 , ..., -0.03949338,
+        -0.00421986,  0.00306441]])
+y = array([151.,  75., 141., 206., 135.,  97., 138.,  63., 110., 310., 101.,
+        69., 179., 185., 118., 171., 166., 14...., 152., 120.,  67., 310.,
+        94., 183.,  66., 173.,  72.,  49.,  64.,  48., 178., 104., 132.,
+       220.,  57.])
+sample_weight = None
+
+    def score(self, X, y, sample_weight=None):
+        """Returns the coefficient of determination R^2 of the prediction.
+    
+        The coefficient R^2 is defined as (1 - u/v), where u is the residual
+        sum of squares ((y_true - y_pred) ** 2).sum() and v is the total
+        sum of squares ((y_true - y_true.mean()) ** 2).sum().
+        The best possible score is 1.0 and it can be negative (because the
+        model can be arbitrarily worse). A constant model that always
+        predicts the expected value of y, disregarding the input features,
+        would get a R^2 score of 0.0.
+    
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Test samples. For some estimators this may be a
+            precomputed kernel matrix instead, shape = (n_samples,
+            n_samples_fitted], where n_samples_fitted is the number of
+            samples used in the fitting for the estimator.
+    
+        y : array-like of shape (n_samples,) or (n_samples, n_outputs)
+            True values for X.
+    
+        sample_weight : array-like of shape (n_samples,), default=None
+            Sample weights.
+    
+        Returns
+        -------
+        score : float
+            R^2 of self.predict(X) wrt. y.
+    
+        Notes
+        -----
+        The R2 score used when calling ``score`` on a regressor will use
+        ``multioutput='uniform_average'`` from version 0.23 to keep consistent
+        with :func:`~sklearn.metrics.r2_score`. This will influence the
+        ``score`` method of all the multioutput regressors (except for
+        :class:`~sklearn.multioutput.MultiOutputRegressor`). To specify the
+        default value manually and avoid the warning, please either call
+        :func:`~sklearn.metrics.r2_score` directly or make a custom scorer with
+        :func:`~sklearn.metrics.make_scorer` (the built-in scorer ``'r2'`` uses
+        ``multioutput='uniform_average'``).
+        """
+    
+        from .metrics import r2_score
+        from .metrics.regression import _check_reg_targets
+>       y_pred = self.predict(X)
+E       AttributeError: 'NuSVR' object has no attribute 'predict'
+
+sklearn/base.py:408: AttributeError
+________________________________ test_linearsvr ________________________________
+
+    def test_linearsvr():
+        # check that SVR(kernel='linear') and LinearSVC() give
+        # comparable results
+        diabetes = datasets.load_diabetes()
+        lsvr = svm.LinearSVR(C=1e3).fit(diabetes.data, diabetes.target)
+        score1 = lsvr.score(diabetes.data, diabetes.target)
+    
+        svr = svm.SVR(kernel='linear', C=1e3).fit(diabetes.data, diabetes.target)
+>       score2 = svr.score(diabetes.data, diabetes.target)
+
+sklearn/svm/tests/test_svm.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVR(C=1000.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='scale',
+    kernel='linear', max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+X = array([[ 0.03807591,  0.05068012,  0.06169621, ..., -0.00259226,
+         0.01990842, -0.01764613],
+       [-0.0018820...837, -0.02593034],
+       [-0.04547248, -0.04464164, -0.0730303 , ..., -0.03949338,
+        -0.00421986,  0.00306441]])
+y = array([151.,  75., 141., 206., 135.,  97., 138.,  63., 110., 310., 101.,
+        69., 179., 185., 118., 171., 166., 14...., 152., 120.,  67., 310.,
+        94., 183.,  66., 173.,  72.,  49.,  64.,  48., 178., 104., 132.,
+       220.,  57.])
+sample_weight = None
+
+    def score(self, X, y, sample_weight=None):
+        """Returns the coefficient of determination R^2 of the prediction.
+    
+        The coefficient R^2 is defined as (1 - u/v), where u is the residual
+        sum of squares ((y_true - y_pred) ** 2).sum() and v is the total
+        sum of squares ((y_true - y_true.mean()) ** 2).sum().
+        The best possible score is 1.0 and it can be negative (because the
+        model can be arbitrarily worse). A constant model that always
+        predicts the expected value of y, disregarding the input features,
+        would get a R^2 score of 0.0.
+    
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Test samples. For some estimators this may be a
+            precomputed kernel matrix instead, shape = (n_samples,
+            n_samples_fitted], where n_samples_fitted is the number of
+            samples used in the fitting for the estimator.
+    
+        y : array-like of shape (n_samples,) or (n_samples, n_outputs)
+            True values for X.
+    
+        sample_weight : array-like of shape (n_samples,), default=None
+            Sample weights.
+    
+        Returns
+        -------
+        score : float
+            R^2 of self.predict(X) wrt. y.
+    
+        Notes
+        -----
+        The R2 score used when calling ``score`` on a regressor will use
+        ``multioutput='uniform_average'`` from version 0.23 to keep consistent
+        with :func:`~sklearn.metrics.r2_score`. This will influence the
+        ``score`` method of all the multioutput regressors (except for
+        :class:`~sklearn.multioutput.MultiOutputRegressor`). To specify the
+        default value manually and avoid the warning, please either call
+        :func:`~sklearn.metrics.r2_score` directly or make a custom scorer with
+        :func:`~sklearn.metrics.make_scorer` (the built-in scorer ``'r2'`` uses
+        ``multioutput='uniform_average'``).
+        """
+    
+        from .metrics import r2_score
+        from .metrics.regression import _check_reg_targets
+>       y_pred = self.predict(X)
+E       AttributeError: 'SVR' object has no attribute 'predict'
+
+sklearn/base.py:408: AttributeError
+_______________________________ test_svr_errors ________________________________
+
+    def test_svr_errors():
+        X = [[0.0], [1.0]]
+        y = [0.0, 0.5]
+    
+        # Bad kernel
+        clf = svm.SVR(kernel=lambda x, y: np.array([[1.0]]))
+>       clf.fit(X, y)
+
+sklearn/svm/tests/test_svm.py:234: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sklearn/svm/base.py:198: in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='scale',
+    kernel=<function test_svr_errors.<locals>.<lambda> at 0x7ae56cb00840>,
+    max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+X = array([[0.],
+       [1.]]), y = array([0. , 0.5])
+sample_weight = array([], dtype=float64), solver_type = 3
+kernel = 'precomputed', random_seed = 587992435
+
+    def _dense_fit(self, X, y, sample_weight, solver_type, kernel,
+                   random_seed):
+        if callable(self.kernel):
+            # you must store a reference to X to compute the kernel in predict
+            # TODO: add keyword copy to copy on demand
+            self.__Xfit = X
+>           X = self._compute_kernel(X)
+E           AttributeError: 'SVR' object has no attribute '_compute_kernel'
+
+sklearn/svm/base.py:238: AttributeError
+________________________________ test_oneclass _________________________________
+
+    def test_oneclass():
+        # Test OneClassSVM
+        clf = svm.OneClassSVM()
+        clf.fit(X)
+>       pred = clf.predict(T)
+
+sklearn/svm/tests/test_svm.py:243: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OneClassSVM(cache_size=200, coef0=0.0, degree=3, gamma='scale', kernel='rbf',
+            max_iter=-1, nu=0.5, shrinking=True, tol=0.001, verbose=False)
+X = [[-1, -1], [2, 2], [3, 2]]
+
+    def predict(self, X):
+        """
+        Perform classification on samples in X.
+    
+        For a one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+>       y = super().predict(X)
+E       AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/classes.py:1308: AttributeError
+_______________________ test_oneclass_decision_function ________________________
+
+    def test_oneclass_decision_function():
+        # Test OneClassSVM decision function
+        clf = svm.OneClassSVM()
+        rnd = check_random_state(2)
+    
+        # Generate train data
+        X = 0.3 * rnd.randn(100, 2)
+        X_train = np.r_[X + 2, X - 2]
+    
+        # Generate some regular novel observations
+        X = 0.3 * rnd.randn(20, 2)
+        X_test = np.r_[X + 2, X - 2]
+        # Generate some abnormal novel observations
+        X_outliers = rnd.uniform(low=-4, high=4, size=(20, 2))
+    
+        # fit the model
+        clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
+        clf.fit(X_train)
+    
+        # predict things
+>       y_pred_test = clf.predict(X_test)
+
+sklearn/svm/tests/test_svm.py:275: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OneClassSVM(cache_size=200, coef0=0.0, degree=3, gamma=0.1, kernel='rbf',
+            max_iter=-1, nu=0.1, shrinking=True, tol=0.001, verbose=False)
+X = array([[ 1.65469912,  1.87204326],
+       [ 1.95555584,  2.45043107],
+       [ 2.26087946,  1.67387283],
+       [ 2.19...-2.1986627 ],
+       [-2.3070545 , -2.13445245],
+       [-2.75163744, -1.45220166],
+       [-2.51422022, -2.02299187]])
+
+    def predict(self, X):
+        """
+        Perform classification on samples in X.
+    
+        For a one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+>       y = super().predict(X)
+E       AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/classes.py:1308: AttributeError
+_________________________ test_oneclass_score_samples __________________________
+
+    def test_oneclass_score_samples():
+        X_train = [[1, 1], [1, 2], [2, 1]]
+        clf = svm.OneClassSVM(gamma=1).fit(X_train)
+>       assert_array_equal(clf.score_samples([[2., 2.]]),
+                           clf.decision_function([[2., 2.]]) + clf.offset_)
+
+sklearn/svm/tests/test_svm.py:288: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sklearn/svm/classes.py:1289: in score_samples
+    return self.decision_function(X) + self.offset_
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OneClassSVM(cache_size=200, coef0=0.0, degree=3, gamma=1, kernel='rbf',
+            max_iter=-1, nu=0.5, shrinking=True, tol=0.001, verbose=False)
+X = [[2.0, 2.0]]
+
+    def decision_function(self, X):
+        """Signed distance to the separating hyperplane.
+    
+        Signed distance is positive for an inlier and negative for an outlier.
+    
+        Parameters
+        ----------
+        X : array-like, shape (n_samples, n_features)
+    
+        Returns
+        -------
+        dec : array-like, shape (n_samples,)
+            Returns the decision function of the samples.
+        """
+>       dec = self._decision_function(X).ravel()
+E       AttributeError: 'OneClassSVM' object has no attribute '_decision_function'
+
+sklearn/svm/classes.py:1274: AttributeError
+______________________________ test_tweak_params _______________________________
+
+    def test_tweak_params():
+        # Make sure some tweaking of parameters works.
+        # We change clf.dual_coef_ at run time and expect .predict() to change
+        # accordingly. Notice that this is not trivial since it involves a lot
+        # of C/Python copying in the libsvm bindings.
+        # The success of this test ensures that the mapping between libsvm and
+        # the python classifier is complete.
+        clf = svm.SVC(kernel='linear', C=1.0)
+        clf.fit(X, Y)
+        assert_array_equal(clf.dual_coef_, [[-.25, .25]])
+>       assert_array_equal(clf.predict([[-.1, -.1]]), [1])
+
+sklearn/svm/tests/test_svm.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3..., kernel='linear',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = [[-0.1, -0.1]]
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+_______________________________ test_probability _______________________________
+
+    def test_probability():
+        # Predict probabilities using SVC
+        # This uses cross validation, so we use a slightly bigger testing set.
+    
+        for clf in (svm.SVC(probability=True, random_state=0, C=1.0),
+                    svm.NuSVC(probability=True, random_state=0)):
+            clf.fit(iris.data, iris.target)
+    
+>           prob_predict = clf.predict_proba(iris.data)
+
+sklearn/svm/tests/test_svm.py:315: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...'scale', kernel='rbf',
+    max_iter=-1, probability=True, random_state=0, shrinking=True, tol=0.001,
+    verbose=False)
+X = array([[6.1, 2.8, 4.7, 1.2],
+       [5.7, 3.8, 1.7, 0.3],
+       [7.7, 2.6, 6.9, 2.3],
+       [6. , 2.9, 4.5, 1.5],
+  ...],
+       [4.9, 2.5, 4.5, 1.7],
+       [5.8, 4. , 1.2, 0.2],
+       [5.8, 2.6, 4. , 1.2],
+       [7.1, 3. , 5.9, 2.1]])
+
+    def _predict_proba(self, X):
+>       X = self._validate_for_predict(X)
+E       AttributeError: 'SVC' object has no attribute '_validate_for_predict'
+
+sklearn/svm/base.py:696: AttributeError
+____________________________ test_decision_function ____________________________
+
+    def test_decision_function():
+        # Test decision_function
+        # Sanity check, test that decision_function implemented in python
+        # returns the same as the one in libsvm
+        # multi class:
+        clf = svm.SVC(kernel='linear', C=0.1,
+                      decision_function_shape='ovo').fit(iris.data, iris.target)
+    
+>       dec = np.dot(iris.data, clf.coef_.T) + clf.intercept_
+E       AttributeError: 'SVC' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:333: AttributeError
+_________________________ test_decision_function_shape _________________________
+
+    def test_decision_function_shape():
+        # check that decision_function_shape='ovr' gives
+        # correct shape and is consistent with predict
+    
+        clf = svm.SVC(kernel='linear', C=0.1,
+                      decision_function_shape='ovr').fit(iris.data, iris.target)
+>       dec = clf.decision_function(iris.data)
+
+sklearn/svm/tests/test_svm.py:363: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=0.1, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3..., kernel='linear',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = array([[6.1, 2.8, 4.7, 1.2],
+       [5.7, 3.8, 1.7, 0.3],
+       [7.7, 2.6, 6.9, 2.3],
+       [6. , 2.9, 4.5, 1.5],
+  ...],
+       [4.9, 2.5, 4.5, 1.7],
+       [5.8, 4. , 1.2, 0.2],
+       [5.8, 2.6, 4. , 1.2],
+       [7.1, 3. , 5.9, 2.1]])
+
+    def decision_function(self, X):
+        """Evaluates the decision function for the samples in X.
+    
+        Parameters
+        ----------
+        X : array-like, shape (n_samples, n_features)
+    
+        Returns
+        -------
+        X : array-like, shape (n_samples, n_classes * (n_classes-1) / 2)
+            Returns the decision function of the sample for each class
+            in the model.
+            If decision_function_shape='ovr', the shape is (n_samples,
+            n_classes).
+    
+        Notes
+        -----
+        If decision_function_shape='ovo', the function values are proportional
+        to the distance of the samples X to the separating hyperplane. If the
+        exact distances are required, divide the function values by the norm of
+        the weight vector (``coef_``). See also `this question
+        <https://stats.stackexchange.com/questions/14876/
+        interpreting-distance-from-hyperplane-in-svm>`_ for further details.
+        If decision_function_shape='ovr', the decision function is a monotonic
+        transformation of ovo decision function.
+        """
+>       dec = self._decision_function(X)
+E       AttributeError: 'SVC' object has no attribute '_decision_function'
+
+sklearn/svm/base.py:619: AttributeError
+_______________________________ test_svr_predict _______________________________
+
+    def test_svr_predict():
+        # Test SVR's decision_function
+        # Sanity check, test that predict implemented in python
+        # returns the same as the one in libsvm
+    
+        X = iris.data
+        y = iris.target
+    
+        # linear kernel
+        reg = svm.SVR(kernel='linear', C=0.1).fit(X, y)
+    
+>       dec = np.dot(X, reg.coef_.T) + reg.intercept_
+E       AttributeError: 'SVR' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:395: AttributeError
+_________________________________ test_weight __________________________________
+
+    def test_weight():
+        # Test class weights
+        clf = svm.SVC(class_weight={1: 0.1})
+        # we give a small weights to class 1
+        clf.fit(X, Y)
+        # so all predicted values belong to class 2
+>       assert_array_almost_equal(clf.predict(X), [2] * 6)
+
+sklearn/svm/tests/test_svm.py:412: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight={1: 0.1}, coef0=0.0,
+    decision_function_shape='ovr', degr...le', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = [[-2, -1], [-1, -1], [-1, -2], [1, 1], [1, 2], [2, 1]]
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+_____________ test_svm_classifier_sided_sample_weight[estimator0] ______________
+
+estimator = SVC(C=0.01, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=..., kernel='linear',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+
+    @pytest.mark.parametrize("estimator", [svm.SVC(C=1e-2), svm.NuSVC()])
+    def test_svm_classifier_sided_sample_weight(estimator):
+        # fit a linear SVM and check that giving more weight to opposed samples
+        # in the space will flip the decision toward these samples.
+        X = [[-2, 0], [-1, -1], [0, -2], [0, 2], [1, 1], [2, 0]]
+        estimator.set_params(kernel='linear')
+    
+        # check that with unit weights, a sample is supposed to be predicted on
+        # the boundary
+        sample_weight = [1] * 6
+        estimator.fit(X, Y, sample_weight=sample_weight)
+>       y_pred = estimator.decision_function([[-1., 1.]])
+
+sklearn/svm/tests/test_svm.py:436: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=0.01, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=..., kernel='linear',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = [[-1.0, 1.0]]
+
+    def decision_function(self, X):
+        """Evaluates the decision function for the samples in X.
+    
+        Parameters
+        ----------
+        X : array-like, shape (n_samples, n_features)
+    
+        Returns
+        -------
+        X : array-like, shape (n_samples, n_classes * (n_classes-1) / 2)
+            Returns the decision function of the sample for each class
+            in the model.
+            If decision_function_shape='ovr', the shape is (n_samples,
+            n_classes).
+    
+        Notes
+        -----
+        If decision_function_shape='ovo', the function values are proportional
+        to the distance of the samples X to the separating hyperplane. If the
+        exact distances are required, divide the function values by the norm of
+        the weight vector (``coef_``). See also `this question
+        <https://stats.stackexchange.com/questions/14876/
+        interpreting-distance-from-hyperplane-in-svm>`_ for further details.
+        If decision_function_shape='ovr', the decision function is a monotonic
+        transformation of ovo decision function.
+        """
+>       dec = self._decision_function(X)
+E       AttributeError: 'SVC' object has no attribute '_decision_function'
+
+sklearn/svm/base.py:619: AttributeError
+_____________ test_svm_classifier_sided_sample_weight[estimator1] ______________
+
+estimator = NuSVC(break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+      decision_function_shape='ovr', degree=3, g...near',
+      max_iter=-1, nu=0.5, probability=False, random_state=None, shrinking=True,
+      tol=0.001, verbose=False)
+
+    @pytest.mark.parametrize("estimator", [svm.SVC(C=1e-2), svm.NuSVC()])
+    def test_svm_classifier_sided_sample_weight(estimator):
+        # fit a linear SVM and check that giving more weight to opposed samples
+        # in the space will flip the decision toward these samples.
+        X = [[-2, 0], [-1, -1], [0, -2], [0, 2], [1, 1], [2, 0]]
+        estimator.set_params(kernel='linear')
+    
+        # check that with unit weights, a sample is supposed to be predicted on
+        # the boundary
+        sample_weight = [1] * 6
+        estimator.fit(X, Y, sample_weight=sample_weight)
+>       y_pred = estimator.decision_function([[-1., 1.]])
+
+sklearn/svm/tests/test_svm.py:436: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NuSVC(break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+      decision_function_shape='ovr', degree=3, g...near',
+      max_iter=-1, nu=0.5, probability=False, random_state=None, shrinking=True,
+      tol=0.001, verbose=False)
+X = [[-1.0, 1.0]]
+
+    def decision_function(self, X):
+        """Evaluates the decision function for the samples in X.
+    
+        Parameters
+        ----------
+        X : array-like, shape (n_samples, n_features)
+    
+        Returns
+        -------
+        X : array-like, shape (n_samples, n_classes * (n_classes-1) / 2)
+            Returns the decision function of the sample for each class
+            in the model.
+            If decision_function_shape='ovr', the shape is (n_samples,
+            n_classes).
+    
+        Notes
+        -----
+        If decision_function_shape='ovo', the function values are proportional
+        to the distance of the samples X to the separating hyperplane. If the
+        exact distances are required, divide the function values by the norm of
+        the weight vector (``coef_``). See also `this question
+        <https://stats.stackexchange.com/questions/14876/
+        interpreting-distance-from-hyperplane-in-svm>`_ for further details.
+        If decision_function_shape='ovr', the decision function is a monotonic
+        transformation of ovo decision function.
+        """
+>       dec = self._decision_function(X)
+E       AttributeError: 'NuSVC' object has no attribute '_decision_function'
+
+sklearn/svm/base.py:619: AttributeError
+______________ test_svm_regressor_sided_sample_weight[estimator0] ______________
+
+estimator = SVR(C=0.01, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='scale',
+    kernel='linear', max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+
+    @pytest.mark.parametrize(
+        "estimator",
+        [svm.SVR(C=1e-2), svm.NuSVR(C=1e-2)]
+    )
+    def test_svm_regressor_sided_sample_weight(estimator):
+        # similar test to test_svm_classifier_sided_sample_weight but for
+        # SVM regressors
+        X = [[-2, 0], [-1, -1], [0, -2], [0, 2], [1, 1], [2, 0]]
+        estimator.set_params(kernel='linear')
+    
+        # check that with unit weights, a sample is supposed to be predicted on
+        # the boundary
+        sample_weight = [1] * 6
+        estimator.fit(X, Y, sample_weight=sample_weight)
+>       y_pred = estimator.predict([[-1., 1.]])
+E       AttributeError: 'SVR' object has no attribute 'predict'
+
+sklearn/svm/tests/test_svm.py:465: AttributeError
+______________ test_svm_regressor_sided_sample_weight[estimator1] ______________
+
+estimator = NuSVR(C=0.01, cache_size=200, coef0=0.0, degree=3, gamma='scale',
+      kernel='linear', max_iter=-1, nu=0.5, shrinking=True, tol=0.001,
+      verbose=False)
+
+    @pytest.mark.parametrize(
+        "estimator",
+        [svm.SVR(C=1e-2), svm.NuSVR(C=1e-2)]
+    )
+    def test_svm_regressor_sided_sample_weight(estimator):
+        # similar test to test_svm_classifier_sided_sample_weight but for
+        # SVM regressors
+        X = [[-2, 0], [-1, -1], [0, -2], [0, 2], [1, 1], [2, 0]]
+        estimator.set_params(kernel='linear')
+    
+        # check that with unit weights, a sample is supposed to be predicted on
+        # the boundary
+        sample_weight = [1] * 6
+        estimator.fit(X, Y, sample_weight=sample_weight)
+>       y_pred = estimator.predict([[-1., 1.]])
+E       AttributeError: 'NuSVR' object has no attribute 'predict'
+
+sklearn/svm/tests/test_svm.py:465: AttributeError
+_____ test_negative_weights_svc_leave_two_labels[partial-mask-label-1-SVC] _____
+
+Classifier = <class 'sklearn.svm.classes.SVC'>
+model = {'when-left': [0.3998, 0.4], 'when-right': [0.4, 0.3999]}
+sample_weight = [1, -0.5, 1, 1, 1, 1], mask_side = 'when-left'
+
+    @pytest.mark.parametrize(
+        "Classifier, model",
+        [(svm.SVC, {'when-left': [0.3998,  0.4], 'when-right': [0.4,  0.3999]}),
+         (svm.NuSVC, {'when-left': [0.3333,  0.3333],
+          'when-right': [0.3333, 0.3333]})],
+        ids=['SVC', 'NuSVC']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight, mask_side",
+        [([1, -0.5, 1, 1, 1, 1], 'when-left'),
+         ([1, 1, 1, 0, 1, 1], 'when-right')],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weights_svc_leave_two_labels(Classifier, model,
+                                                   sample_weight, mask_side):
+        clf = Classifier(kernel='linear')
+        clf.fit(X, Y, sample_weight=sample_weight)
+>       assert_allclose(clf.coef_, [model[mask_side]], rtol=1e-3)
+E       AttributeError: 'SVC' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:554: AttributeError
+____ test_negative_weights_svc_leave_two_labels[partial-mask-label-1-NuSVC] ____
+
+Classifier = <class 'sklearn.svm.classes.NuSVC'>
+model = {'when-left': [0.3333, 0.3333], 'when-right': [0.3333, 0.3333]}
+sample_weight = [1, -0.5, 1, 1, 1, 1], mask_side = 'when-left'
+
+    @pytest.mark.parametrize(
+        "Classifier, model",
+        [(svm.SVC, {'when-left': [0.3998,  0.4], 'when-right': [0.4,  0.3999]}),
+         (svm.NuSVC, {'when-left': [0.3333,  0.3333],
+          'when-right': [0.3333, 0.3333]})],
+        ids=['SVC', 'NuSVC']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight, mask_side",
+        [([1, -0.5, 1, 1, 1, 1], 'when-left'),
+         ([1, 1, 1, 0, 1, 1], 'when-right')],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weights_svc_leave_two_labels(Classifier, model,
+                                                   sample_weight, mask_side):
+        clf = Classifier(kernel='linear')
+        clf.fit(X, Y, sample_weight=sample_weight)
+>       assert_allclose(clf.coef_, [model[mask_side]], rtol=1e-3)
+E       AttributeError: 'NuSVC' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:554: AttributeError
+_____ test_negative_weights_svc_leave_two_labels[partial-mask-label-2-SVC] _____
+
+Classifier = <class 'sklearn.svm.classes.SVC'>
+model = {'when-left': [0.3998, 0.4], 'when-right': [0.4, 0.3999]}
+sample_weight = [1, 1, 1, 0, 1, 1], mask_side = 'when-right'
+
+    @pytest.mark.parametrize(
+        "Classifier, model",
+        [(svm.SVC, {'when-left': [0.3998,  0.4], 'when-right': [0.4,  0.3999]}),
+         (svm.NuSVC, {'when-left': [0.3333,  0.3333],
+          'when-right': [0.3333, 0.3333]})],
+        ids=['SVC', 'NuSVC']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight, mask_side",
+        [([1, -0.5, 1, 1, 1, 1], 'when-left'),
+         ([1, 1, 1, 0, 1, 1], 'when-right')],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weights_svc_leave_two_labels(Classifier, model,
+                                                   sample_weight, mask_side):
+        clf = Classifier(kernel='linear')
+        clf.fit(X, Y, sample_weight=sample_weight)
+>       assert_allclose(clf.coef_, [model[mask_side]], rtol=1e-3)
+E       AttributeError: 'SVC' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:554: AttributeError
+____ test_negative_weights_svc_leave_two_labels[partial-mask-label-2-NuSVC] ____
+
+Classifier = <class 'sklearn.svm.classes.NuSVC'>
+model = {'when-left': [0.3333, 0.3333], 'when-right': [0.3333, 0.3333]}
+sample_weight = [1, 1, 1, 0, 1, 1], mask_side = 'when-right'
+
+    @pytest.mark.parametrize(
+        "Classifier, model",
+        [(svm.SVC, {'when-left': [0.3998,  0.4], 'when-right': [0.4,  0.3999]}),
+         (svm.NuSVC, {'when-left': [0.3333,  0.3333],
+          'when-right': [0.3333, 0.3333]})],
+        ids=['SVC', 'NuSVC']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight, mask_side",
+        [([1, -0.5, 1, 1, 1, 1], 'when-left'),
+         ([1, 1, 1, 0, 1, 1], 'when-right')],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weights_svc_leave_two_labels(Classifier, model,
+                                                   sample_weight, mask_side):
+        clf = Classifier(kernel='linear')
+        clf.fit(X, Y, sample_weight=sample_weight)
+>       assert_allclose(clf.coef_, [model[mask_side]], rtol=1e-3)
+E       AttributeError: 'NuSVC' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:554: AttributeError
+_________ test_negative_weight_equal_coeffs[partial-mask-label-1-SVC] __________
+
+Estimator = <class 'sklearn.svm.classes.SVC'>
+sample_weight = [1, -0.5, 1, 1, 1, 1]
+
+    @pytest.mark.parametrize(
+        "Estimator",
+        [svm.SVC, svm.NuSVC, svm.NuSVR],
+        ids=['SVC', 'NuSVC', 'NuSVR']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight",
+        [[1, -0.5, 1, 1, 1, 1], [1, 1, 1, 0, 1, 1]],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weight_equal_coeffs(Estimator, sample_weight):
+        # model generates equal coefficients
+        est = Estimator(kernel='linear')
+        est.fit(X, Y, sample_weight=sample_weight)
+>       coef = np.abs(est.coef_).ravel()
+E       AttributeError: 'SVC' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:571: AttributeError
+________ test_negative_weight_equal_coeffs[partial-mask-label-1-NuSVC] _________
+
+Estimator = <class 'sklearn.svm.classes.NuSVC'>
+sample_weight = [1, -0.5, 1, 1, 1, 1]
+
+    @pytest.mark.parametrize(
+        "Estimator",
+        [svm.SVC, svm.NuSVC, svm.NuSVR],
+        ids=['SVC', 'NuSVC', 'NuSVR']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight",
+        [[1, -0.5, 1, 1, 1, 1], [1, 1, 1, 0, 1, 1]],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weight_equal_coeffs(Estimator, sample_weight):
+        # model generates equal coefficients
+        est = Estimator(kernel='linear')
+        est.fit(X, Y, sample_weight=sample_weight)
+>       coef = np.abs(est.coef_).ravel()
+E       AttributeError: 'NuSVC' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:571: AttributeError
+________ test_negative_weight_equal_coeffs[partial-mask-label-1-NuSVR] _________
+
+Estimator = <class 'sklearn.svm.classes.NuSVR'>
+sample_weight = [1, -0.5, 1, 1, 1, 1]
+
+    @pytest.mark.parametrize(
+        "Estimator",
+        [svm.SVC, svm.NuSVC, svm.NuSVR],
+        ids=['SVC', 'NuSVC', 'NuSVR']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight",
+        [[1, -0.5, 1, 1, 1, 1], [1, 1, 1, 0, 1, 1]],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weight_equal_coeffs(Estimator, sample_weight):
+        # model generates equal coefficients
+        est = Estimator(kernel='linear')
+        est.fit(X, Y, sample_weight=sample_weight)
+>       coef = np.abs(est.coef_).ravel()
+E       AttributeError: 'NuSVR' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:571: AttributeError
+_________ test_negative_weight_equal_coeffs[partial-mask-label-2-SVC] __________
+
+Estimator = <class 'sklearn.svm.classes.SVC'>
+sample_weight = [1, 1, 1, 0, 1, 1]
+
+    @pytest.mark.parametrize(
+        "Estimator",
+        [svm.SVC, svm.NuSVC, svm.NuSVR],
+        ids=['SVC', 'NuSVC', 'NuSVR']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight",
+        [[1, -0.5, 1, 1, 1, 1], [1, 1, 1, 0, 1, 1]],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weight_equal_coeffs(Estimator, sample_weight):
+        # model generates equal coefficients
+        est = Estimator(kernel='linear')
+        est.fit(X, Y, sample_weight=sample_weight)
+>       coef = np.abs(est.coef_).ravel()
+E       AttributeError: 'SVC' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:571: AttributeError
+________ test_negative_weight_equal_coeffs[partial-mask-label-2-NuSVC] _________
+
+Estimator = <class 'sklearn.svm.classes.NuSVC'>
+sample_weight = [1, 1, 1, 0, 1, 1]
+
+    @pytest.mark.parametrize(
+        "Estimator",
+        [svm.SVC, svm.NuSVC, svm.NuSVR],
+        ids=['SVC', 'NuSVC', 'NuSVR']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight",
+        [[1, -0.5, 1, 1, 1, 1], [1, 1, 1, 0, 1, 1]],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weight_equal_coeffs(Estimator, sample_weight):
+        # model generates equal coefficients
+        est = Estimator(kernel='linear')
+        est.fit(X, Y, sample_weight=sample_weight)
+>       coef = np.abs(est.coef_).ravel()
+E       AttributeError: 'NuSVC' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:571: AttributeError
+________ test_negative_weight_equal_coeffs[partial-mask-label-2-NuSVR] _________
+
+Estimator = <class 'sklearn.svm.classes.NuSVR'>
+sample_weight = [1, 1, 1, 0, 1, 1]
+
+    @pytest.mark.parametrize(
+        "Estimator",
+        [svm.SVC, svm.NuSVC, svm.NuSVR],
+        ids=['SVC', 'NuSVC', 'NuSVR']
+    )
+    @pytest.mark.parametrize(
+        "sample_weight",
+        [[1, -0.5, 1, 1, 1, 1], [1, 1, 1, 0, 1, 1]],
+        ids=['partial-mask-label-1', 'partial-mask-label-2']
+    )
+    def test_negative_weight_equal_coeffs(Estimator, sample_weight):
+        # model generates equal coefficients
+        est = Estimator(kernel='linear')
+        est.fit(X, Y, sample_weight=sample_weight)
+>       coef = np.abs(est.coef_).ravel()
+E       AttributeError: 'NuSVR' object has no attribute 'coef_'
+
+sklearn/svm/tests/test_svm.py:571: AttributeError
+_______________________________ test_auto_weight _______________________________
+
+    @ignore_warnings(category=UndefinedMetricWarning)
+    def test_auto_weight():
+        # Test class weights for imbalanced data
+        from sklearn.linear_model import LogisticRegression
+        # We take as dataset the two-dimensional projection of iris so
+        # that it is not separable and remove half of predictors from
+        # class 1.
+        # We add one to the targets as a non-regression test:
+        # class_weight="balanced"
+        # used to work only when the labels where a range [0..K).
+        from sklearn.utils import compute_class_weight
+        X, y = iris.data[:, :2], iris.target + 1
+        unbalanced = np.delete(np.arange(y.size), np.where(y > 2)[0][::2])
+    
+        classes = np.unique(y[unbalanced])
+        class_weights = compute_class_weight('balanced', classes, y[unbalanced])
+        assert np.argmax(class_weights) == 2
+    
+        for clf in (svm.SVC(kernel='linear'), svm.LinearSVC(random_state=0),
+                    LogisticRegression()):
+            # check that score is better when class='balanced' is set.
+>           y_pred = clf.fit(X[unbalanced], y[unbalanced]).predict(X)
+
+sklearn/svm/tests/test_svm.py:596: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3..., kernel='linear',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = array([[6.1, 2.8],
+       [5.7, 3.8],
+       [7.7, 2.6],
+       [6. , 2.9],
+       [6.8, 2.8],
+       [5.4, 3.4],
+    .... ],
+       [5.4, 3.4],
+       [6.1, 2.8],
+       [4.9, 2.5],
+       [5.8, 4. ],
+       [5.8, 2.6],
+       [7.1, 3. ]])
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+________________________________ test_bad_input ________________________________
+
+    def test_bad_input():
+        # Test that it gives proper exception on deficient input
+        # impossible value of C
+        with pytest.raises(ValueError):
+            svm.SVC(C=-1).fit(X, Y)
+    
+        # impossible value of nu
+        clf = svm.NuSVC(nu=0.0)
+        with pytest.raises(ValueError):
+            clf.fit(X, Y)
+    
+        Y2 = Y[:-1]  # wrong dimensions for labels
+        with pytest.raises(ValueError):
+            clf.fit(X, Y2)
+    
+        # Test with arrays that are non-contiguous.
+        for clf in (svm.SVC(), svm.LinearSVC(random_state=0)):
+            Xf = np.asfortranarray(X)
+            assert not Xf.flags['C_CONTIGUOUS']
+            yf = np.ascontiguousarray(np.tile(Y, (2, 1)).T)
+            yf = yf[:, -1]
+            assert not yf.flags['F_CONTIGUOUS']
+            assert not yf.flags['C_CONTIGUOUS']
+            clf.fit(Xf, yf)
+>           assert_array_equal(clf.predict(T), true_result)
+
+sklearn/svm/tests/test_svm.py:628: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...le', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = [[-1, -1], [2, 2], [3, 2]]
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+_____________________________ test_unicode_kernel ______________________________
+
+    def test_unicode_kernel():
+        # Test that a unicode kernel name does not cause a TypeError
+        clf = svm.SVC(kernel='linear', probability=True)
+        clf.fit(X, Y)
+>       clf.predict_proba(T)
+
+sklearn/svm/tests/test_svm.py:676: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...', kernel='linear',
+    max_iter=-1, probability=True, random_state=None, shrinking=True, tol=0.001,
+    verbose=False)
+X = [[-1, -1], [2, 2], [3, 2]]
+
+    def _predict_proba(self, X):
+>       X = self._validate_for_predict(X)
+E       AttributeError: 'SVC' object has no attribute '_validate_for_predict'
+
+sklearn/svm/base.py:696: AttributeError
+____________________ test_sparse_fit_support_vectors_empty _____________________
+
+    def test_sparse_fit_support_vectors_empty():
+        # Regression test for #14893
+        X_train = sparse.csr_matrix([[0, 1, 0, 0],
+                                     [0, 0, 0, 1],
+                                     [0, 0, 1, 0],
+                                     [0, 0, 0, 1]])
+        y_train = np.array([0.04, 0.04, 0.10, 0.16])
+        model = svm.SVR(kernel='linear')
+>       model.fit(X_train, y_train)
+
+sklearn/svm/tests/test_svm.py:701: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='scale',
+    kernel='linear', max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+X = <4x4 sparse matrix of type '<class 'numpy.float64'>'
+	with 4 stored elements in Compressed Sparse Row format>
+y = array([0.04, 0.04, 0.1 , 0.16]), sample_weight = array([], dtype=float64)
+
+    def fit(self, X, y, sample_weight=None):
+        """Fit the SVM model according to the given training data.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            Training vectors, where n_samples is the number of samples
+            and n_features is the number of features.
+            For kernel="precomputed", the expected shape of X is
+            (n_samples, n_samples).
+    
+        y : array-like, shape (n_samples,)
+            Target values (class labels in classification, real numbers in
+            regression)
+    
+        sample_weight : array-like, shape (n_samples,)
+            Per-sample weights. Rescale C per sample. Higher weights
+            force the classifier to put more emphasis on these points.
+    
+        Returns
+        -------
+        self : object
+    
+        Notes
+        -----
+        If X and y are not C-ordered and contiguous arrays of np.float64 and
+        X is not a scipy.sparse.csr_matrix, X and/or y may be copied.
+    
+        If X is a dense array, then the other methods will not support sparse
+        matrices as input.
+        """
+    
+        rnd = check_random_state(self.random_state)
+    
+        sparse = sp.isspmatrix(X)
+        if sparse and self.kernel == "precomputed":
+            raise TypeError("Sparse precomputed kernels are not supported.")
+        self._sparse = sparse and not callable(self.kernel)
+    
+        X, y = check_X_y(X, y, dtype=np.float64,
+                         order='C', accept_sparse='csr',
+                         accept_large_sparse=False)
+        y = self._validate_targets(y)
+    
+        sample_weight = np.asarray([]
+                                   if sample_weight is None
+                                   else sample_weight, dtype=np.float64)
+        solver_type = LIBSVM_IMPL.index(self._impl)
+    
+        # input validation
+        if solver_type != 2 and X.shape[0] != y.shape[0]:
+            raise ValueError("X and y have incompatible shapes.\n" +
+                             "X has %s samples, but y has %s." %
+                             (X.shape[0], y.shape[0]))
+    
+        if self.kernel == "precomputed" and X.shape[0] != X.shape[1]:
+            raise ValueError("Precomputed matrix must be a square matrix."
+                             " Input is a {}x{} matrix."
+                             .format(X.shape[0], X.shape[1]))
+    
+        if sample_weight.shape[0] > 0 and sample_weight.shape[0] != X.shape[0]:
+            raise ValueError("sample_weight and X have incompatible shapes: "
+                             "%r vs %r\n"
+                             "Note: Sparse matrices cannot be indexed w/"
+                             "boolean masks (use `indices=True` in CV)."
+                             % (sample_weight.shape, X.shape))
+    
+        if isinstance(self.gamma, str):
+            if self.gamma == 'scale':
+                # var = E[X^2] - E[X]^2 if sparse
+                X_var = ((X.multiply(X)).mean() - (X.mean()) ** 2
+                         if sparse else X.var())
+                self._gamma = 1.0 / (X.shape[1] * X_var) if X_var != 0 else 1.0
+            elif self.gamma == 'auto':
+                self._gamma = 1.0 / X.shape[1]
+            else:
+                raise ValueError(
+                    "When 'gamma' is a string, it should be either 'scale' or "
+                    "'auto'. Got '{}' instead.".format(self.gamma)
+                )
+        else:
+            self._gamma = self.gamma
+    
+        kernel = self.kernel
+        if callable(kernel):
+            kernel = 'precomputed'
+    
+        fit = self._sparse_fit if self._sparse else self._dense_fit
+        if self.verbose:  # pragma: no cover
+            print('[LibSVM]', end='')
+    
+        seed = rnd.randint(np.iinfo('i').max)
+        fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+        # see comment on the other call to np.iinfo in this file
+    
+        self.shape_fit_ = X.shape
+    
+        # In binary case, we need to flip the sign of coef, intercept and
+        # decision function. Use self._intercept_ and self._dual_coef_
+        # internally.
+        self._intercept_ = self.intercept_.copy()
+>       self._dual_coef_ = self.dual_coef_
+E       AttributeError: 'SVR' object has no attribute 'dual_coef_'
+
+sklearn/svm/base.py:207: AttributeError
+_________________________ test_immutable_coef_property _________________________
+
+    def test_immutable_coef_property():
+        # Check that primal coef modification are not silently ignored
+        svms = [
+            svm.SVC(kernel='linear').fit(iris.data, iris.target),
+            svm.NuSVC(kernel='linear').fit(iris.data, iris.target),
+            svm.SVR(kernel='linear').fit(iris.data, iris.target),
+            svm.NuSVR(kernel='linear').fit(iris.data, iris.target),
+            svm.OneClassSVM(kernel='linear').fit(iris.data),
+        ]
+        for clf in svms:
+            with pytest.raises(AttributeError):
+>               clf.__setattr__('coef_', np.arange(3))
+E               Failed: DID NOT RAISE <class 'AttributeError'>
+
+sklearn/svm/tests/test_svm.py:953: Failed
+_____________________ test_svc_clone_with_callable_kernel ______________________
+
+    def test_svc_clone_with_callable_kernel():
+        # create SVM with callable linear kernel, check that results are the same
+        # as with built-in linear kernel
+        svm_callable = svm.SVC(kernel=lambda x, y: np.dot(x, y.T),
+                               probability=True, random_state=0,
+                               decision_function_shape='ovr')
+        # clone for checking clonability with lambda functions..
+        svm_cloned = base.clone(svm_callable)
+>       svm_cloned.fit(iris.data, iris.target)
+
+sklearn/svm/tests/test_svm.py:980: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sklearn/svm/base.py:198: in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...a> at 0x7ae494761598>,
+    max_iter=-1, probability=True, random_state=0, shrinking=True, tol=0.001,
+    verbose=False)
+X = array([[6.1, 2.8, 4.7, 1.2],
+       [5.7, 3.8, 1.7, 0.3],
+       [7.7, 2.6, 6.9, 2.3],
+       [6. , 2.9, 4.5, 1.5],
+  ...],
+       [4.9, 2.5, 4.5, 1.7],
+       [5.8, 4. , 1.2, 0.2],
+       [5.8, 2.6, 4. , 1.2],
+       [7.1, 3. , 5.9, 2.1]])
+y = array([1., 0., 2., 1., 1., 0., 1., 2., 1., 1., 2., 0., 0., 0., 0., 1., 2.,
+       1., 1., 2., 0., 2., 0., 2., 2., 2., ...1., 1., 0., 1., 2., 2., 0., 1., 2., 2., 0., 2., 0., 1.,
+       2., 2., 1., 2., 1., 1., 2., 2., 0., 1., 2., 0., 1., 2.])
+sample_weight = array([], dtype=float64), solver_type = 0
+kernel = 'precomputed', random_seed = 209652396
+
+    def _dense_fit(self, X, y, sample_weight, solver_type, kernel,
+                   random_seed):
+        if callable(self.kernel):
+            # you must store a reference to X to compute the kernel in predict
+            # TODO: add keyword copy to copy on demand
+            self.__Xfit = X
+>           X = self._compute_kernel(X)
+E           AttributeError: 'SVC' object has no attribute '_compute_kernel'
+
+sklearn/svm/base.py:238: AttributeError
+_____________________________ test_svc_bad_kernel ______________________________
+
+    def test_svc_bad_kernel():
+        svc = svm.SVC(kernel=lambda x, y: x)
+        with pytest.raises(ValueError):
+>           svc.fit(X, Y)
+
+sklearn/svm/tests/test_svm.py:1003: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sklearn/svm/base.py:198: in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...t 0x7ae4947617b8>,
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = array([[-2., -1.],
+       [-1., -1.],
+       [-1., -2.],
+       [ 1.,  1.],
+       [ 1.,  2.],
+       [ 2.,  1.]])
+y = array([0., 0., 0., 1., 1., 1.]), sample_weight = array([], dtype=float64)
+solver_type = 0, kernel = 'precomputed', random_seed = 2094669304
+
+    def _dense_fit(self, X, y, sample_weight, solver_type, kernel,
+                   random_seed):
+        if callable(self.kernel):
+            # you must store a reference to X to compute the kernel in predict
+            # TODO: add keyword copy to copy on demand
+            self.__Xfit = X
+>           X = self._compute_kernel(X)
+E           AttributeError: 'SVC' object has no attribute '_compute_kernel'
+
+sklearn/svm/base.py:238: AttributeError
+_________________________________ test_timeout _________________________________
+
+    def test_timeout():
+        a = svm.SVC(kernel=lambda x, y: np.dot(x, y.T), probability=True,
+                    random_state=0, max_iter=1)
+>       assert_warns(ConvergenceWarning, a.fit, X, Y)
+
+sklearn/svm/tests/test_svm.py:1009: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sklearn/utils/testing.py:123: in assert_warns
+    result = func(*args, **kw)
+sklearn/svm/base.py:198: in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...da> at 0x7ae494761488>,
+    max_iter=1, probability=True, random_state=0, shrinking=True, tol=0.001,
+    verbose=False)
+X = array([[-2., -1.],
+       [-1., -1.],
+       [-1., -2.],
+       [ 1.,  1.],
+       [ 1.,  2.],
+       [ 2.,  1.]])
+y = array([0., 0., 0., 1., 1., 1.]), sample_weight = array([], dtype=float64)
+solver_type = 0, kernel = 'precomputed', random_seed = 209652396
+
+    def _dense_fit(self, X, y, sample_weight, solver_type, kernel,
+                   random_seed):
+        if callable(self.kernel):
+            # you must store a reference to X to compute the kernel in predict
+            # TODO: add keyword copy to copy on demand
+            self.__Xfit = X
+>           X = self._compute_kernel(X)
+E           AttributeError: 'SVC' object has no attribute '_compute_kernel'
+
+sklearn/svm/base.py:238: AttributeError
+________________________________ test_unfitted _________________________________
+
+    def test_unfitted():
+        X = "foo!"  # input validation not required when SVM not fitted
+    
+        clf = svm.SVC()
+        with pytest.raises(Exception, match=r".*\bSVC\b.*\bnot\b.*\bfitted\b"):
+            clf.predict(X)
+    
+        clf = svm.NuSVR()
+        with pytest.raises(Exception, match=r".*\bNuSVR\b.*\bnot\b.*\bfitted\b"):
+>           clf.predict(X)
+E           AttributeError: 'NuSVR' object has no attribute 'predict'
+
+sklearn/svm/tests/test_svm.py:1021: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+    def test_unfitted():
+        X = "foo!"  # input validation not required when SVM not fitted
+    
+        clf = svm.SVC()
+        with pytest.raises(Exception, match=r".*\bSVC\b.*\bnot\b.*\bfitted\b"):
+            clf.predict(X)
+    
+        clf = svm.NuSVR()
+        with pytest.raises(Exception, match=r".*\bNuSVR\b.*\bnot\b.*\bfitted\b"):
+>           clf.predict(X)
+E           AssertionError: Regex pattern '.*\\bNuSVR\\b.*\\bnot\\b.*\\bfitted\\b' does not match "'NuSVR' object has no attribute 'predict'".
+
+sklearn/svm/tests/test_svm.py:1021: AssertionError
+____________________________ test_consistent_proba _____________________________
+
+    @ignore_warnings
+    def test_consistent_proba():
+        a = svm.SVC(probability=True, max_iter=1, random_state=0)
+>       proba_1 = a.fit(X, Y).predict_proba(X)
+
+sklearn/svm/tests/test_svm.py:1028: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...='scale', kernel='rbf',
+    max_iter=1, probability=True, random_state=0, shrinking=True, tol=0.001,
+    verbose=False)
+X = [[-2, -1], [-1, -1], [-1, -2], [1, 1], [1, 2], [2, 1]]
+
+    def _predict_proba(self, X):
+>       X = self._validate_for_predict(X)
+E       AttributeError: 'SVC' object has no attribute '_validate_for_predict'
+
+sklearn/svm/base.py:696: AttributeError
+______________________________ test_svr_coef_sign ______________________________
+
+    def test_svr_coef_sign():
+        # Test that SVR(kernel="linear") has coef_ with the right sign.
+        # Non-regression test for #2933.
+        X = np.random.RandomState(21).randn(10, 3)
+        y = np.random.RandomState(12).randn(10)
+    
+        for svr in [svm.SVR(kernel='linear'), svm.NuSVR(kernel='linear'),
+                    svm.LinearSVR()]:
+            svr.fit(X, y)
+>           assert_array_almost_equal(svr.predict(X),
+                                      np.dot(X, svr.coef_.ravel()) + svr.intercept_)
+E           AttributeError: 'SVR' object has no attribute 'predict'
+
+sklearn/svm/tests/test_svm.py:1055: AttributeError
+__________________________ test_hasattr_predict_proba __________________________
+
+    def test_hasattr_predict_proba():
+        # Method must be (un)available before or after fit, switched by
+        # `probability` param
+    
+        G = svm.SVC(probability=True)
+        assert hasattr(G, 'predict_proba')
+        G.fit(iris.data, iris.target)
+        assert hasattr(G, 'predict_proba')
+    
+        G = svm.SVC(probability=False)
+        assert not hasattr(G, 'predict_proba')
+        G.fit(iris.data, iris.target)
+        assert not hasattr(G, 'predict_proba')
+    
+        # Switching to `probability=True` after fitting should make
+        # predict_proba available, but calling it must not work:
+        G.probability = True
+        assert hasattr(G, 'predict_proba')
+        msg = "predict_proba is not available when fitted with probability=False"
+>       assert_raise_message(NotFittedError, msg, G.predict_proba, iris.data)
+
+sklearn/svm/tests/test_svm.py:1097: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sklearn/utils/testing.py:380: in assert_raise_message
+    function(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...ale', kernel='rbf',
+    max_iter=-1, probability=True, random_state=None, shrinking=True, tol=0.001,
+    verbose=False)
+X = array([[6.1, 2.8, 4.7, 1.2],
+       [5.7, 3.8, 1.7, 0.3],
+       [7.7, 2.6, 6.9, 2.3],
+       [6. , 2.9, 4.5, 1.5],
+  ...],
+       [4.9, 2.5, 4.5, 1.7],
+       [5.8, 4. , 1.2, 0.2],
+       [5.8, 2.6, 4. , 1.2],
+       [7.1, 3. , 5.9, 2.1]])
+
+    def _predict_proba(self, X):
+>       X = self._validate_for_predict(X)
+E       AttributeError: 'SVC' object has no attribute '_validate_for_predict'
+
+sklearn/svm/base.py:696: AttributeError
+____________________ test_decision_function_shape_two_class ____________________
+
+estimator = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...le', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = array([[ 4.21850347,  2.23419161],
+       [ 0.90779887,  0.45984362],
+       [-0.27652528,  5.08127768],
+       [ 0.08...-1.32573949],
+       [ 3.00468833,  0.9852149 ],
+       [-0.63762777,  4.09104705],
+       [ 0.829832  ,  1.74202664]])
+
+    def _predict_binary(estimator, X):
+        """Make predictions using a single binary estimator."""
+        if is_regressor(estimator):
+            return estimator.predict(X)
+        try:
+>           score = np.ravel(estimator.decision_function(X))
+
+sklearn/multiclass.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...le', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = array([[ 4.21850347,  2.23419161],
+       [ 0.90779887,  0.45984362],
+       [-0.27652528,  5.08127768],
+       [ 0.08...-1.32573949],
+       [ 3.00468833,  0.9852149 ],
+       [-0.63762777,  4.09104705],
+       [ 0.829832  ,  1.74202664]])
+
+    def decision_function(self, X):
+        """Evaluates the decision function for the samples in X.
+    
+        Parameters
+        ----------
+        X : array-like, shape (n_samples, n_features)
+    
+        Returns
+        -------
+        X : array-like, shape (n_samples, n_classes * (n_classes-1) / 2)
+            Returns the decision function of the sample for each class
+            in the model.
+            If decision_function_shape='ovr', the shape is (n_samples,
+            n_classes).
+    
+        Notes
+        -----
+        If decision_function_shape='ovo', the function values are proportional
+        to the distance of the samples X to the separating hyperplane. If the
+        exact distances are required, divide the function values by the norm of
+        the weight vector (``coef_``). See also `this question
+        <https://stats.stackexchange.com/questions/14876/
+        interpreting-distance-from-hyperplane-in-svm>`_ for further details.
+        If decision_function_shape='ovr', the decision function is a monotonic
+        transformation of ovo decision function.
+        """
+>       dec = self._decision_function(X)
+E       AttributeError: 'SVC' object has no attribute '_decision_function'
+
+sklearn/svm/base.py:619: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+    def test_decision_function_shape_two_class():
+        for n_classes in [2, 3]:
+            X, y = make_blobs(centers=n_classes, random_state=0)
+            for estimator in [svm.SVC, svm.NuSVC]:
+                clf = OneVsRestClassifier(
+                    estimator(decision_function_shape="ovr")).fit(X, y)
+>               assert len(clf.predict(X)) == len(y)
+
+sklearn/svm/tests/test_svm.py:1106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sklearn/multiclass.py:315: in predict
+    indices.extend(np.where(_predict_binary(e, X) > thresh)[0])
+sklearn/multiclass.py:97: in _predict_binary
+    score = estimator.predict_proba(X)[:, 1]
+sklearn/svm/base.py:692: in predict_proba
+    self._check_proba()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...le', kernel='rbf',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+
+    def _check_proba(self):
+        if not self.probability:
+>           raise AttributeError("predict_proba is not available when "
+                                 " probability=False")
+E           AttributeError: predict_proba is not available when  probability=False
+
+sklearn/svm/base.py:659: AttributeError
+__________________________ test_ovr_decision_function __________________________
+
+    def test_ovr_decision_function():
+        # One point from each quadrant represents one class
+        X_train = np.array([[1, 1], [-1, 1], [-1, -1], [1, -1]])
+        y_train = [0, 1, 2, 3]
+    
+        # First point is closer to the decision boundaries than the second point
+        base_points = np.array([[5, 5], [10, 10]])
+    
+        # For all the quadrants (classes)
+        X_test = np.vstack((
+            base_points * [1, 1],    # Q1
+            base_points * [-1, 1],   # Q2
+            base_points * [-1, -1],  # Q3
+            base_points * [1, -1]    # Q4
+            ))
+    
+        y_test = [0] * 2 + [1] * 2 + [2] * 2 + [3] * 2
+    
+        clf = svm.SVC(kernel='linear', decision_function_shape='ovr')
+        clf.fit(X_train, y_train)
+    
+>       y_pred = clf.predict(X_test)
+
+sklearn/svm/tests/test_svm.py:1130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3..., kernel='linear',
+    max_iter=-1, probability=False, random_state=None, shrinking=True,
+    tol=0.001, verbose=False)
+X = array([[  5,   5],
+       [ 10,  10],
+       [ -5,   5],
+       [-10,  10],
+       [ -5,  -5],
+       [-10, -10],
+       [  5,  -5],
+       [ 10, -10]])
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+________________________ test_svc_ovr_tie_breaking[SVC] ________________________
+
+SVCClass = <class 'sklearn.svm.classes.SVC'>
+
+    @pytest.mark.parametrize("SVCClass", [svm.SVC, svm.NuSVC])
+    def test_svc_ovr_tie_breaking(SVCClass):
+        """Test if predict breaks ties in OVR mode.
+        Related issue: https://github.com/scikit-learn/scikit-learn/issues/8277
+        """
+        X, y = make_blobs(random_state=27)
+    
+        xs = np.linspace(X[:, 0].min(), X[:, 0].max(), 1000)
+        ys = np.linspace(X[:, 1].min(), X[:, 1].max(), 1000)
+        xx, yy = np.meshgrid(xs, ys)
+    
+        svm = SVCClass(kernel="linear", decision_function_shape='ovr',
+                       break_ties=False, random_state=42).fit(X, y)
+>       pred = svm.predict(np.c_[xx.ravel(), yy.ravel()])
+
+sklearn/svm/tests/test_svm.py:1175: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3...e', kernel='linear',
+    max_iter=-1, probability=False, random_state=42, shrinking=True, tol=0.001,
+    verbose=False)
+X = array([[-5.67388799,  3.66998425],
+       [-5.6611233 ,  3.66998425],
+       [-5.64835861,  3.66998425],
+       ...,
+       [ 7.0525111 , 11.13132312],
+       [ 7.0652758 , 11.13132312],
+       [ 7.07804049, 11.13132312]])
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+_______________________ test_svc_ovr_tie_breaking[NuSVC] _______________________
+
+SVCClass = <class 'sklearn.svm.classes.NuSVC'>
+
+    @pytest.mark.parametrize("SVCClass", [svm.SVC, svm.NuSVC])
+    def test_svc_ovr_tie_breaking(SVCClass):
+        """Test if predict breaks ties in OVR mode.
+        Related issue: https://github.com/scikit-learn/scikit-learn/issues/8277
+        """
+        X, y = make_blobs(random_state=27)
+    
+        xs = np.linspace(X[:, 0].min(), X[:, 0].max(), 1000)
+        ys = np.linspace(X[:, 1].min(), X[:, 1].max(), 1000)
+        xx, yy = np.meshgrid(xs, ys)
+    
+        svm = SVCClass(kernel="linear", decision_function_shape='ovr',
+                       break_ties=False, random_state=42).fit(X, y)
+>       pred = svm.predict(np.c_[xx.ravel(), yy.ravel()])
+
+sklearn/svm/tests/test_svm.py:1175: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NuSVC(break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+      decision_function_shape='ovr', degree=3, g...linear',
+      max_iter=-1, nu=0.5, probability=False, random_state=42, shrinking=True,
+      tol=0.001, verbose=False)
+X = array([[-5.67388799,  3.66998425],
+       [-5.6611233 ,  3.66998425],
+       [-5.64835861,  3.66998425],
+       ...,
+       [ 7.0525111 , 11.13132312],
+       [ 7.0652758 , 11.13132312],
+       [ 7.07804049, 11.13132312]])
+
+    def predict(self, X):
+        """Perform classification on samples in X.
+    
+        For an one-class model, +1 or -1 is returned.
+    
+        Parameters
+        ----------
+        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+            For kernel="precomputed", the expected shape of X is
+            [n_samples_test, n_samples_train]
+    
+        Returns
+        -------
+        y_pred : array, shape (n_samples,)
+            Class labels for samples in X.
+        """
+        check_is_fitted(self)
+        if self.break_ties and self.decision_function_shape == 'ovo':
+            raise ValueError("break_ties must be False when "
+                             "decision_function_shape is 'ovo'")
+    
+        if (self.break_ties
+                and self.decision_function_shape == 'ovr'
+                and len(self.classes_) > 2):
+            y = np.argmax(self.decision_function(X), axis=1)
+        else:
+>           y = super().predict(X)
+E           AttributeError: 'super' object has no attribute 'predict'
+
+sklearn/svm/base.py:650: AttributeError
+_________________________ test_n_support_oneclass_svr __________________________
+
+    def test_n_support_oneclass_svr():
+        # Make n_support is correct for oneclass and SVR (used to be
+        # non-initialized)
+        # this is a non regression test for issue #14774
+        X = np.array([[0], [0.44], [0.45], [0.46], [1]])
+        clf = svm.OneClassSVM()
+        assert not hasattr(clf, 'n_support_')
+        clf.fit(X)
+>       assert clf.n_support_ == clf.support_vectors_.shape[0]
+E       AttributeError: 'OneClassSVM' object has no attribute 'n_support_'
+
+sklearn/svm/tests/test_svm.py:1214: AttributeError
+==================================== PASSES ====================================
+____ test_negative_sample_weights_mask_all_samples[weights-are-zero-NuSVC] _____
+----------------------------- Captured stderr call -----------------------------
+warning: class label 0 specified in weight is not found
+warning: class label 1 specified in weight is not found
+____________________________ test_linearsvc_verbose ____________________________
+----------------------------- Captured stdout call -----------------------------
+[LibLinear]
+=========================== short test summary info ============================
+PASSED sklearn/svm/tests/test_svm.py::test_linearsvr_fit_sampleweight
+PASSED sklearn/svm/tests/test_svm.py::test_svm_equivalence_sample_weight_C
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-zero-SVC]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-zero-NuSVC]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-zero-SVR]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-zero-NuSVR]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-zero-OneClassSVM]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-negative-SVC]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-negative-NuSVC]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-negative-SVR]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-negative-NuSVR]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_sample_weights_mask_all_samples[weights-are-negative-OneClassSVM]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_weights_svc_leave_just_one_label[mask-label-1-SVC]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_weights_svc_leave_just_one_label[mask-label-1-NuSVC]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_weights_svc_leave_just_one_label[mask-label-2-SVC]
+PASSED sklearn/svm/tests/test_svm.py::test_negative_weights_svc_leave_just_one_label[mask-label-2-NuSVC]
+PASSED sklearn/svm/tests/test_svm.py::test_svm_gamma_error[SVC-data0]
+PASSED sklearn/svm/tests/test_svm.py::test_svm_gamma_error[NuSVC-data1]
+PASSED sklearn/svm/tests/test_svm.py::test_svm_gamma_error[SVR-data2]
+PASSED sklearn/svm/tests/test_svm.py::test_svm_gamma_error[NuSVR-data3]
+PASSED sklearn/svm/tests/test_svm.py::test_svm_gamma_error[OneClassSVM-data4]
+PASSED sklearn/svm/tests/test_svm.py::test_sparse_precomputed
+PASSED sklearn/svm/tests/test_svm.py::test_linearsvc_parameters
+PASSED sklearn/svm/tests/test_svm.py::test_linearsvx_loss_penalty_deprecations
+PASSED sklearn/svm/tests/test_svm.py::test_linear_svx_uppercase_loss_penality_raises_error
+PASSED sklearn/svm/tests/test_svm.py::test_linearsvc
+PASSED sklearn/svm/tests/test_svm.py::test_linearsvc_crammer_singer
+PASSED sklearn/svm/tests/test_svm.py::test_linearsvc_fit_sampleweight
+PASSED sklearn/svm/tests/test_svm.py::test_crammer_singer_binary
+PASSED sklearn/svm/tests/test_svm.py::test_linearsvc_iris
+PASSED sklearn/svm/tests/test_svm.py::test_dense_liblinear_intercept_handling
+PASSED sklearn/svm/tests/test_svm.py::test_liblinear_set_coef
+PASSED sklearn/svm/tests/test_svm.py::test_linearsvc_verbose
+PASSED sklearn/svm/tests/test_svm.py::test_linear_svm_convergence_warnings
+PASSED sklearn/svm/tests/test_svm.py::test_linear_svc_intercept_scaling
+PASSED sklearn/svm/tests/test_svm.py::test_lsvc_intercept_scaling_zero
+PASSED sklearn/svm/tests/test_svm.py::test_svc_invalid_break_ties_param[SVC]
+PASSED sklearn/svm/tests/test_svm.py::test_svc_invalid_break_ties_param[NuSVC]
+PASSED sklearn/svm/tests/test_svm.py::test_gamma_auto
+PASSED sklearn/svm/tests/test_svm.py::test_gamma_scale
+FAILED sklearn/svm/tests/test_svm.py::test_libsvm_parameters - AttributeError...
+FAILED sklearn/svm/tests/test_svm.py::test_libsvm_iris - AttributeError: 'sup...
+FAILED sklearn/svm/tests/test_svm.py::test_precomputed - AttributeError: 'sup...
+FAILED sklearn/svm/tests/test_svm.py::test_svr - AttributeError: 'NuSVR' obje...
+FAILED sklearn/svm/tests/test_svm.py::test_linearsvr - AttributeError: 'SVR' ...
+FAILED sklearn/svm/tests/test_svm.py::test_svr_errors - AttributeError: 'SVR'...
+FAILED sklearn/svm/tests/test_svm.py::test_oneclass - AttributeError: 'super'...
+FAILED sklearn/svm/tests/test_svm.py::test_oneclass_decision_function - Attri...
+FAILED sklearn/svm/tests/test_svm.py::test_oneclass_score_samples - Attribute...
+FAILED sklearn/svm/tests/test_svm.py::test_tweak_params - AttributeError: 'su...
+FAILED sklearn/svm/tests/test_svm.py::test_probability - AttributeError: 'SVC...
+FAILED sklearn/svm/tests/test_svm.py::test_decision_function - AttributeError...
+FAILED sklearn/svm/tests/test_svm.py::test_decision_function_shape - Attribut...
+FAILED sklearn/svm/tests/test_svm.py::test_svr_predict - AttributeError: 'SVR...
+FAILED sklearn/svm/tests/test_svm.py::test_weight - AttributeError: 'super' o...
+FAILED sklearn/svm/tests/test_svm.py::test_svm_classifier_sided_sample_weight[estimator0]
+FAILED sklearn/svm/tests/test_svm.py::test_svm_classifier_sided_sample_weight[estimator1]
+FAILED sklearn/svm/tests/test_svm.py::test_svm_regressor_sided_sample_weight[estimator0]
+FAILED sklearn/svm/tests/test_svm.py::test_svm_regressor_sided_sample_weight[estimator1]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weights_svc_leave_two_labels[partial-mask-label-1-SVC]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weights_svc_leave_two_labels[partial-mask-label-1-NuSVC]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weights_svc_leave_two_labels[partial-mask-label-2-SVC]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weights_svc_leave_two_labels[partial-mask-label-2-NuSVC]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weight_equal_coeffs[partial-mask-label-1-SVC]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weight_equal_coeffs[partial-mask-label-1-NuSVC]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weight_equal_coeffs[partial-mask-label-1-NuSVR]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weight_equal_coeffs[partial-mask-label-2-SVC]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weight_equal_coeffs[partial-mask-label-2-NuSVC]
+FAILED sklearn/svm/tests/test_svm.py::test_negative_weight_equal_coeffs[partial-mask-label-2-NuSVR]
+FAILED sklearn/svm/tests/test_svm.py::test_auto_weight - AttributeError: 'sup...
+FAILED sklearn/svm/tests/test_svm.py::test_bad_input - AttributeError: 'super...
+FAILED sklearn/svm/tests/test_svm.py::test_unicode_kernel - AttributeError: '...
+FAILED sklearn/svm/tests/test_svm.py::test_sparse_fit_support_vectors_empty
+FAILED sklearn/svm/tests/test_svm.py::test_immutable_coef_property - Failed: ...
+FAILED sklearn/svm/tests/test_svm.py::test_svc_clone_with_callable_kernel - A...
+FAILED sklearn/svm/tests/test_svm.py::test_svc_bad_kernel - AttributeError: '...
+FAILED sklearn/svm/tests/test_svm.py::test_timeout - AttributeError: 'SVC' ob...
+FAILED sklearn/svm/tests/test_svm.py::test_unfitted - AssertionError: Regex p...
+FAILED sklearn/svm/tests/test_svm.py::test_consistent_proba - AttributeError:...
+FAILED sklearn/svm/tests/test_svm.py::test_svr_coef_sign - AttributeError: 'S...
+FAILED sklearn/svm/tests/test_svm.py::test_hasattr_predict_proba - AttributeE...
+FAILED sklearn/svm/tests/test_svm.py::test_decision_function_shape_two_class
+FAILED sklearn/svm/tests/test_svm.py::test_ovr_decision_function - AttributeE...
+FAILED sklearn/svm/tests/test_svm.py::test_svc_ovr_tie_breaking[SVC] - Attrib...
+FAILED sklearn/svm/tests/test_svm.py::test_svc_ovr_tie_breaking[NuSVC] - Attr...
+FAILED sklearn/svm/tests/test_svm.py::test_n_support_oneclass_svr - Attribute...
+================== 46 failed, 40 passed, 11 warnings in 1.92s ==================
++ git checkout fdbaa58acbead5a254f2e6d597dc1ab3b947f4c6 sklearn/svm/tests/test_svm.py
+Updated 1 path from be8c6bbbb

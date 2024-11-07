@@ -1,0 +1,92 @@
+diff --git a/django/db/models/fields/__init__.py b/django/db/models/fields/__init__.py
+index 28374272f4..9af1a7aab9 100644
+--- a/django/db/models/fields/__init__.py
++++ b/django/db/models/fields/__init__.py
+@@ -174,6 +174,25 @@ class Field(RegisterLookupMixin):
+         messages.update(error_messages or {})
+         self._error_messages = error_messages  # Store for deconstruction later
+         self.error_messages = messages
++        
++    def __eq__(self, other):
++        if isinstance(other, Field):
++            return (type(self) == type(other)
++                    and self.model == other.model
++                    and self.name == other.name)
++        else:
++            return False
++
++    def __hash__(self):
++        return hash((type(self), self.model, self.name))
++
++    def __lt__(self, other):
++        if isinstance(other, Field):
++            # Order by model first, then creation_counter
++            return (self.model < other.model or
++                    self.creation_counter < other.creation_counter)
++        else:
++            return False
+ 
+     def __str__(self):
+         """
+@@ -198,6 +217,7 @@ class Field(RegisterLookupMixin):
+         return [
+             *self._check_field_name(),
+             *self._check_choices(),
++
+             *self._check_db_index(),
+             *self._check_null_allowed_for_primary_keys(),
+             *self._check_backend_specific_checks(**kwargs),
+@@ -2454,3 +2474,4 @@ class SmallAutoField(AutoFieldMixin, SmallIntegerField):
+ 
+     def rel_db_type(self, connection):
+         return SmallIntegerField().db_type(connection=connection)
++
+diff --git a/reproduce_issue.py b/reproduce_issue.py
+new file mode 100644
+index 0000000000..9c17c20852
+--- /dev/null
++++ b/reproduce_issue.py
+@@ -0,0 +1,30 @@
++import os
++import django
++
++os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings')
++django.setup()
++
++from django.db import models
++from django.conf import settings  # Import the settings module explicitly
++from django.apps.registry import apps
++
++class A(models.Model):
++    class Meta:
++        abstract = True
++        app_label = 'testapp'  # Explicitly set the app label
++    myfield = models.IntegerField()
++
++class B(A):
++    class Meta:
++        app_label = 'testapp'
++
++class C(A):
++    class Meta:
++        app_label = 'testapp'
++
++if __name__ == '__main__':
++    apps.populate(settings.INSTALLED_APPS)
++    
++    print(len({B._meta.get_field('myfield'), C._meta.get_field('myfield')}))
++    print(B._meta.get_field('myfield') == C._meta.get_field('myfield'))
++
+diff --git a/settings.py b/settings.py
+new file mode 100644
+index 0000000000..5661e30607
+--- /dev/null
++++ b/settings.py
+@@ -0,0 +1,7 @@
++from django.conf import settings
++
++settings.configure(
++    INSTALLED_APPS=[
++        'django.contrib.contenttypes',
++    ],
++)

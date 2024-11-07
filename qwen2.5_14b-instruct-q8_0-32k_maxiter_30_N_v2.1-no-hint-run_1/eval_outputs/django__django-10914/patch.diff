@@ -1,0 +1,86 @@
+diff --git a/django/core/files/storage.py b/django/core/files/storage.py
+index cbdab1de47..4e0d4b564d 100644
+--- a/django/core/files/storage.py
++++ b/django/core/files/storage.py
+@@ -277,16 +277,30 @@ class FileSystemStorage(Storage):
+                 name = self.get_available_name(name)
+                 full_path = self.path(name)
+             else:
++                try:
++                    # A new name is needed if the file exists.
++                    name = self.get_available_name(name)
++                    full_path = self.path(name)
++                except FileExistsError:
++                    pass
++
+                 # OK, the file save worked. Break out of the loop.
+                 break
+ 
+         if self.file_permissions_mode is not None:
+             os.chmod(full_path, self.file_permissions_mode)
+ 
++        # Ensure file permissions are set to default if not explicitly configured
++        if settings.FILE_UPLOAD_PERMISSIONS is None:
++            settings.FILE_UPLOAD_PERMISSIONS = 0o644
++
++        os.chmod(full_path, settings.FILE_UPLOAD_PERMISSIONS)
++
+         # Store filenames with forward slashes, even on Windows.
+         return name.replace('\\', '/')
+ 
+     def delete(self, name):
++
+         assert name, "The name argument is not allowed to be empty."
+         name = self.path(name)
+         # If the file or directory exists, delete it from the filesystem.
+@@ -358,3 +372,4 @@ class DefaultStorage(LazyObject):
+ 
+ 
+ default_storage = DefaultStorage()
++
+diff --git a/media/test_file.txt b/media/test_file.txt
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git a/media/test_file_Fpko4Br.txt b/media/test_file_Fpko4Br.txt
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git a/media/test_file_ImFt8xc.txt b/media/test_file_ImFt8xc.txt
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git a/media/test_file_iTlfdfy.txt b/media/test_file_iTlfdfy.txt
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git a/media/test_file_vw3CN9A.txt b/media/test_file_vw3CN9A.txt
+new file mode 100644
+index 0000000000..e69de29bb2
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..c9818ac30e
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,25 @@
++import os
++from django.conf import settings, global_settings as default_settings
++settings.configure(
++    MEDIA_ROOT=os.path.join(os.getcwd(), 'media'),
++)
++from django import setup as django_setup
++
++# Initialize Django
++django_setup()
++
++# Ensure media directory exists
++os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
++print(f'MEDIA_ROOT: {settings.MEDIA_ROOT}')
++
++file_path = os.path.join(settings.MEDIA_ROOT, 'test_file.txt')
++with open(file_path, 'w') as f:
++    pass  # Create an empty file
++
++# Set the permissions explicitly
++os.chmod(file_path, 0o644)
++print(f'File saved to: {file_path}')
++try:
++    print(oct(os.stat(file_path).st_mode & 0o777))
++except FileNotFoundError as e:
++    print(e)

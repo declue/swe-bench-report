@@ -1,0 +1,136 @@
+2024-11-08 07:06:01,792 - INFO - Environment image sweb.env.x86_64.934a137824256b612e9dc5:latest found for django__django-14915
+Building instance image sweb.eval.x86_64.django__django-14915:latest for django__django-14915
+2024-11-08 07:06:01,799 - INFO - Image sweb.eval.x86_64.django__django-14915:latest already exists, skipping build.
+2024-11-08 07:06:01,799 - INFO - Creating container for django__django-14915...
+2024-11-08 07:06:01,988 - INFO - Container for django__django-14915 created: 8f30acdf628d17e3546e7246bf5011fab64a1e98e3510662d3338ebaffa0b61d
+2024-11-08 07:06:02,758 - INFO - Container for django__django-14915 started: 8f30acdf628d17e3546e7246bf5011fab64a1e98e3510662d3338ebaffa0b61d
+2024-11-08 07:06:02,758 - INFO - Intermediate patch for django__django-14915 written to logs/run_evaluation/20241108_070548/qwen2.5_14b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/django__django-14915/patch.diff, now applying to container...
+2024-11-08 07:06:02,917 - INFO - Failed to apply patch to container, trying again...
+2024-11-08 07:06:02,977 - INFO - >>>>> Applied Patch:
+patching file django/forms/widgets.py
+
+2024-11-08 07:06:04,395 - INFO - Git diff before:
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+index 00c19e2c55..24c2ea5292 100644
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -3,6 +3,8 @@ HTML Widget classes
+ """
+ 
+ import copy
++import json
++
+ import datetime
+ import warnings
+ from collections import defaultdict
+@@ -755,8 +757,6 @@ class SelectMultiple(Select):
+         # An unselected <select multiple> doesn't appear in POST data, so it's
+         # never known if the value is actually omitted.
+         return False
+-
+-
+ class RadioSelect(ChoiceWidget):
+     input_type = 'radio'
+     template_name = 'django/forms/widgets/radio.html'
+@@ -772,6 +772,18 @@ class RadioSelect(ChoiceWidget):
+             return ''
+         return super().id_for_label(id_, index)
+ 
++    def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):
++        context = super().create_option(name, value, label, selected, index, subindex, attrs)
++        if not value:
++            return context
++        # Convert the ModelChoiceIteratorValue to a hashable type (e.g., tuple or string) for use as a dictionary key.
++        if isinstance(value, dict):
++            key = tuple(sorted(value.items()))
++        else:
++            key = str(value)
++        if key in self.show_fields:  # This is a dict {1: ['first_name', 'last_name']}
++            context['attrs'] = {'data-fields': json.dumps(self.show_fields[key])}
++        return context
+ 
+ class CheckboxSelectMultiple(RadioSelect):
+     allow_multiple_selected = True
+@@ -779,6 +791,9 @@ class CheckboxSelectMultiple(RadioSelect):
+     template_name = 'django/forms/widgets/checkbox_select.html'
+     option_template_name = 'django/forms/widgets/checkbox_option.html'
+ 
++    template_name = 'django/forms/widgets/checkbox_select.html'
++    option_template_name = 'django/forms/widgets/checkbox_option.html'
++
+     def use_required_attribute(self, initial):
+         # Don't use the 'required' attribute because browser validation would
+         # require all checkboxes to be checked instead of at least one.
+@@ -1086,3 +1101,5 @@ class SelectDateWidget(Widget):
+             ('{}_{}'.format(name, interval) in data)
+             for interval in ('year', 'month', 'day')
+         )
++
++
+2024-11-08 07:06:04,397 - INFO - Eval script for django__django-14915 written to logs/run_evaluation/20241108_070548/qwen2.5_14b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/django__django-14915/eval.sh; copying to container...
+2024-11-08 07:06:10,075 - INFO - Test runtime: 5.53 seconds
+2024-11-08 07:06:10,075 - INFO - Test output for django__django-14915 written to logs/run_evaluation/20241108_070548/qwen2.5_14b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/django__django-14915/test_output.txt
+2024-11-08 07:06:10,113 - INFO - Git diff after:
+diff --git a/django/forms/widgets.py b/django/forms/widgets.py
+index 00c19e2c55..24c2ea5292 100644
+--- a/django/forms/widgets.py
++++ b/django/forms/widgets.py
+@@ -3,6 +3,8 @@ HTML Widget classes
+ """
+ 
+ import copy
++import json
++
+ import datetime
+ import warnings
+ from collections import defaultdict
+@@ -755,8 +757,6 @@ class SelectMultiple(Select):
+         # An unselected <select multiple> doesn't appear in POST data, so it's
+         # never known if the value is actually omitted.
+         return False
+-
+-
+ class RadioSelect(ChoiceWidget):
+     input_type = 'radio'
+     template_name = 'django/forms/widgets/radio.html'
+@@ -772,6 +772,18 @@ class RadioSelect(ChoiceWidget):
+             return ''
+         return super().id_for_label(id_, index)
+ 
++    def create_option(self, name, value, label, selected, index, subindex=None, attrs=None):
++        context = super().create_option(name, value, label, selected, index, subindex, attrs)
++        if not value:
++            return context
++        # Convert the ModelChoiceIteratorValue to a hashable type (e.g., tuple or string) for use as a dictionary key.
++        if isinstance(value, dict):
++            key = tuple(sorted(value.items()))
++        else:
++            key = str(value)
++        if key in self.show_fields:  # This is a dict {1: ['first_name', 'last_name']}
++            context['attrs'] = {'data-fields': json.dumps(self.show_fields[key])}
++        return context
+ 
+ class CheckboxSelectMultiple(RadioSelect):
+     allow_multiple_selected = True
+@@ -779,6 +791,9 @@ class CheckboxSelectMultiple(RadioSelect):
+     template_name = 'django/forms/widgets/checkbox_select.html'
+     option_template_name = 'django/forms/widgets/checkbox_option.html'
+ 
++    template_name = 'django/forms/widgets/checkbox_select.html'
++    option_template_name = 'django/forms/widgets/checkbox_option.html'
++
+     def use_required_attribute(self, initial):
+         # Don't use the 'required' attribute because browser validation would
+         # require all checkboxes to be checked instead of at least one.
+@@ -1086,3 +1101,5 @@ class SelectDateWidget(Widget):
+             ('{}_{}'.format(name, interval) in data)
+             for interval in ('year', 'month', 'day')
+         )
++
++
+2024-11-08 07:06:10,113 - INFO - Grading answer for django__django-14915...
+2024-11-08 07:06:10,116 - INFO - report: {'django__django-14915': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['test_choice_value_hash (model_forms.test_modelchoicefield.ModelChoiceFieldTests)']}, 'PASS_TO_PASS': {'success': ['test_basics (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_choices (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_choices_bool (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_choices_bool_empty_label (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_choices_freshness (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_choices_not_fetched_when_not_rendering (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_choices_radio_blank (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_clean_model_instance (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_clean_to_field_name (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_deepcopies_widget (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_disabled_modelchoicefield (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_disabled_modelchoicefield_has_changed (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_disabled_modelchoicefield_initial_model_instance (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_disabled_modelmultiplechoicefield_has_changed (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_disabled_multiplemodelchoicefield (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'Iterator defaults to ModelChoiceIterator and can be overridden with', 'test_queryset_manager (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_queryset_none (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_result_cache_not_shared (model_forms.test_modelchoicefield.ModelChoiceFieldTests)'], 'failure': ['test_choice_iterator_passes_model_to_widget (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', 'test_custom_choice_iterator_passes_model_to_widget (model_forms.test_modelchoicefield.ModelChoiceFieldTests)', "ModelChoiceField with RadioSelect widget doesn't produce unnecessary", "Widgets that render multiple subwidgets shouldn't make more than one"]}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for django__django-14915: resolved: False
+2024-11-08 07:06:10,116 - INFO - Attempting to stop container sweb.eval.django__django-14915.20241108_070548...
+2024-11-08 07:06:25,648 - INFO - Attempting to remove container sweb.eval.django__django-14915.20241108_070548...
+2024-11-08 07:06:25,671 - INFO - Container sweb.eval.django__django-14915.20241108_070548 removed.

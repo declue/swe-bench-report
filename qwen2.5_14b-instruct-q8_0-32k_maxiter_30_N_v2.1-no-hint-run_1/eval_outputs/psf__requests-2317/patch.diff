@@ -1,0 +1,75 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 00000000..3434e8a5
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,11 @@
++import requests
++from requests import sessions, PreparedRequest
++from urllib.parse import urlparse
++s = sessions.Session()
++req = PreparedRequest()
++req.method = b'GET'
++req.url = 'http://example.com'
++s.prepare_request(req)
++s.send(req)
++print('Sent request with method:', req.method.decode())
++
+diff --git a/requests/sessions.py b/requests/sessions.py
+index d701ff2e..7156e36d 100644
+--- a/requests/sessions.py
++++ b/requests/sessions.py
+@@ -95,13 +95,25 @@ class SessionRedirectMixin(object):
+ 
+         while resp.is_redirect:
+             prepared_request = req.copy()
+-
+             if i > 0:
+                 # Update history and keep track of redirects.
+                 hist.append(resp)
+                 new_hist = list(hist)
+                 resp.history = new_hist
+ 
++                prepared_request = req.copy()
++                url = resp.headers.get('location')
++                headers = merge_setting(
++                    {'Host': urlparse(url).hostname},
++                    prepared_request.headers,
++                    dict_class=CaseInsensitiveDict
++                )
++                if 'Host' in headers:
++                    del headers['Host']
++                # Ensure method is correctly handled as a binary string.
++                prepared_request.method = resp.next_request.method if hasattr(resp, 'next_request') else b'GET'
++
++
+             try:
+                 resp.content  # Consume socket so it can be released
+             except (ChunkedEncodingError, ContentDecodingError, RuntimeError):
+@@ -346,7 +358,12 @@ class Session(SessionRedirectMixin):
+         """
+         cookies = request.cookies or {}
+ 
++        from requests import cookies
++
+         # Bootstrap CookieJar.
++        if isinstance(cookies, (dict, cookies.RequestsCookieJar)):
++            cookies = cookiejar_from_dict(cookies)
++
+         if not isinstance(cookies, cookielib.CookieJar):
+             cookies = cookiejar_from_dict(cookies)
+ 
+@@ -355,6 +372,7 @@ class Session(SessionRedirectMixin):
+             merge_cookies(RequestsCookieJar(), self.cookies), cookies)
+ 
+ 
++
+         # Set environment's basic authentication if not explicitly set.
+         auth = request.auth
+         if self.trust_env and not auth and not self.auth:
+@@ -669,3 +687,5 @@ def session():
+     """Returns a :class:`Session` for context-management."""
+ 
+     return Session()
++
++

@@ -1,0 +1,154 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 000000000..82c3a960f
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,16 @@
++from sklearn.ensemble import VotingClassifier
++from sklearn.linear_model import LogisticRegression
++from sklearn.ensemble import RandomForestClassifier
++from sklearn.datasets import load_iris
++import numpy as np
++X, y = load_iris(return_X_y=True)
++voter = VotingClassifier(
++    estimators=[('lr', LogisticRegression()),
++                ('rf', RandomForestClassifier())]
++)
++voter.fit(X, y, sample_weight=np.ones(y.shape))
++voter.set_params(lr=None)
++try:
++    voter.fit(X, y, sample_weight=np.ones(y.shape))
++except AttributeError as e:
++    print(f"Caught an error: {e}")
+diff --git a/sklearn/ensemble/voting.py b/sklearn/ensemble/voting.py
+index 7afa7180c..8c2c5d81e 100644
+--- a/sklearn/ensemble/voting.py
++++ b/sklearn/ensemble/voting.py
+@@ -486,3 +486,127 @@ class VotingRegressor(_BaseVoting, RegressorMixin):
+         """
+         check_is_fitted(self, 'estimators_')
+         return self._predict(X)
++# ... (existing code)
++
++def fit(self, X, y, sample_weight=None):
++    """Fit the estimators.
++
++    Parameters
++    ----------
++    X : {array-like, sparse matrix} of shape (n_samples, n_features)
++        Training vectors, where `n_samples` is the number of samples and
++        `n_features` is the number of features.
++    y : array-like of shape (n_samples,)
++        Target values.
++    sample_weight : array-like of shape (n_samples,) or None, default=None
++        Sample weights. If None, then samples are equally weighted.
++
++    Returns
++    -------
++    self : object
++        Fitted estimator.
++    """
++    if sample_weight is not None:
++        # Skip fitting for estimators that are None when sample weights are provided
++        if sample_weight is not None:
++            estimators = [(name, est) for name, est in self.estimators_ if est is not None]
++        else:
++            estimators = self.estimators_
++
++        names, estimators = zip(*estimators)
++
++        n_estimators = len(estimators)
++
++        # Ensure that we only fit non-None estimators
++        self.le_ = LabelEncoder().fit(y)
++        self.classes_ = self.le_.classes_
++        y = self.le_.transform(y)
++
++        self.estimators_ = []
++        for name, est in estimators:
++            if est is not None:  # Ensure the estimator is not None before fitting
++                fitted_estimator = clone(est).fit(X, y)
++                self.estimators_.append((name, fitted_estimator))
++            else:
++                self.estimators_.append((name, None))
++
++        return self
++
++def set_params(self, **params):
++    """Set the parameters of this estimator.
++    
++    Parameters
++    ----------
++    **params : dict
++        Estimator parameters.
++
++    Returns
++    -------
++    self : object
++        Estimator instance.
++    """
++    if 'estimators' in params:
++        # Remove any None estimators from the list before setting them
++        new_estimators = [(name, est) for name, est in params['estimators'] if est is not None]
++        super().set_params(estimators=new_estimators)
++    else:
++        super().set_params(**params)
++
++    return self
++
++def fit(self, X, y, sample_weight=None):
++    """Fit the estimators.
++
++    Parameters
++    ----------
++    X : {array-like, sparse matrix} of shape (n_samples, n_features)
++        Training vectors, where `n_samples` is the number of samples and
++        `n_features` is the number of features.
++    y : array-like of shape (n_samples,)
++        Target values.
++    sample_weight : array-like of shape (n_samples,) or None, default=None
++        Sample weights. If None, then samples are equally weighted.
++
++    Returns
++    -------
++    self : object
++        Fitted estimator.
++    """
++    if sample_weight is not None:
++        # Skip fitting for estimators that are None when sample weights are provided
++        estimators = [(name, est) for name, est in self.estimators_ if est is not None]
++    else:
++        estimators = self.estimators_
++
++    names, estimators = zip(*estimators)
++
++    n_estimators = len(estimators)
++
++    # Ensure that we only fit non-None estimators
++    self.le_ = LabelEncoder().fit(y)
++    self.classes_ = self.le_.classes_
++    y = self.le_.transform(y)
++
++    self.estimators_ = []
++    for name, est in estimators:
++        if est is not None:  # Ensure the estimator is not None before fitting
++            fitted_estimator = clone(est).fit(X, y)
++            self.estimators_.append((name, fitted_estimator))
++        else:
++            self.estimators_.append((name, None))
++
++    return self
++
++# ... (existing code)
++
++
++# ... (existing code)
++
++
++
++
++
++
++
++
++

@@ -1,0 +1,66 @@
+diff --git a/sklearn/linear_model/ridge.py b/sklearn/linear_model/ridge.py
+index 911c74ae3..b8eb48635 100644
+--- a/sklearn/linear_model/ridge.py
++++ b/sklearn/linear_model/ridge.py
+@@ -1095,8 +1095,19 @@ class _BaseRidgeCV(LinearModel):
+         self.scoring = scoring
+         self.cv = cv
+         self.gcv_mode = gcv_mode
++        # Add the following line to include `store_cv_values` in the constructor
+         self.store_cv_values = store_cv_values
+ 
++class RidgeClassifierCV(_BaseRidgeCV, LinearClassifierMixin):
++    def __init__(self, alphas=(0.1, 1.0, 10.0), fit_intercept=True,
++                 normalize=False, scoring=None, cv=3, class_weight=None,
++                 store_cv_values=False):
++        # Add `store_cv_values` as an argument in the constructor
++        super().__init__(alphas=alphas, fit_intercept=fit_intercept,
++                         normalize=normalize, scoring=scoring, cv=cv,
++                         gcv_mode='auto', store_cv_values=store_cv_values)
++        self.class_weight = class_weight
++
+     def fit(self, X, y, sample_weight=None):
+         """Fit Ridge regression model
+ 
+@@ -1108,17 +1119,21 @@ class _BaseRidgeCV(LinearModel):
+         y : array-like, shape = [n_samples] or [n_samples, n_targets]
+             Target values. Will be cast to X's dtype if necessary
+ 
++
+         sample_weight : float or array-like of shape [n_samples]
+             Sample weight
+ 
+         Returns
+         -------
+         self : object
++
++
+         """
+         if self.cv is None:
+             estimator = _RidgeGCV(self.alphas,
+                                   fit_intercept=self.fit_intercept,
+                                   normalize=self.normalize,
++
+                                   scoring=self.scoring,
+                                   gcv_mode=self.gcv_mode,
+                                   store_cv_values=self.store_cv_values)
+@@ -1132,6 +1147,7 @@ class _BaseRidgeCV(LinearModel):
+                                  " are incompatible")
+             parameters = {'alpha': self.alphas}
+             gs = GridSearchCV(Ridge(fit_intercept=self.fit_intercept,
++
+                                     normalize=self.normalize),
+                               parameters, cv=self.cv, scoring=self.scoring)
+             gs.fit(X, y, sample_weight=sample_weight)
+@@ -1379,3 +1395,11 @@ class RidgeClassifierCV(LinearClassifierMixin, _BaseRidgeCV):
+     @property
+     def classes_(self):
+         return self._label_binarizer.classes_
++
++
++
++
++
++
++
++

@@ -1,0 +1,129 @@
+diff --git a/sklearn/svm/base.py b/sklearn/svm/base.py
+index 64cebe837..f0a89eb21 100644
+--- a/sklearn/svm/base.py
++++ b/sklearn/svm/base.py
+@@ -282,35 +282,95 @@ class BaseLibSVM(BaseEstimator, metaclass=ABCMeta):
+ 
+         if hasattr(self, "classes_"):
+             n_class = len(self.classes_) - 1
+-        else:  # regression
+-            n_class = 1
+-        n_SV = self.support_vectors_.shape[0]
++def _sparse_fit(self, X, y, sample_weight=None):
++    """Fit a sparse SVC or SVR model according to the given training data and parameters.
+ 
+-        dual_coef_indices = np.tile(np.arange(n_SV), n_class)
+-        dual_coef_indptr = np.arange(0, dual_coef_indices.size + 1,
+-                                     dual_coef_indices.size / n_class)
+-        self.dual_coef_ = sp.csr_matrix(
+-            (dual_coef_data, dual_coef_indices, dual_coef_indptr),
+-            (n_class, n_SV))
++    Parameters
++    ----------
++    X : {array-like, sparse matrix} of shape (n_samples, n_features)
++        Training vectors, where `n_samples` is the number of samples
++        and `n_features` is the number of features.
++    y : array-like of shape (n_samples,)
++        Target values (class labels in classification, real numbers in
++        regression).
++    sample_weight : array-like of shape (n_samples,), default=None
++        Per-sample weights. Rescale C per sample. Higher weights
++        force the classifier to put more emphasis on these points.
+ 
+-    def predict(self, X):
+-        """Perform regression on samples in X.
++    Returns
++    -------
++    n_support_ : ndarray of shape (n_classes,) or None
++        Number of support vectors for each class.
++    """
++    if self.kernel == "precomputed":
++        raise ValueError("Precomputed kernels are not supported")
++
++    X = check_array(X, accept_sparse="csr")
++    y = column_or_1d(y)
++    n_samples, n_features = X.shape
++
++    # Check that the number of classes is greater than 0
++    if len(np.unique(y)) <= 1:
++        self.dual_coef_ = sp.csr_matrix([])
++        return None
++
++    dual_coef_indices, dual_coef_values, \
++        support_, support_vectors, pobj, n_iter = libsvm_sparse.libsvm_sparse(
++            "fit",
++            X.data,
++            X.indptr,
++            X.indices,
++            y.astype(np.float64),
++            sample_weight=sample_weight,
++            kernel=self.kernel,
++            degree=self.degree,
++            gamma=self.gamma,
++            coef0=self.coef0,
++            tol=self.tol,
++            C=self.C,
++            nu=self.nu,
++            epsilon=self.epsilon,
++            shrinking=self.shrinking,
++            probability=self.probability,
++            cache_size=self.cache_size,
++            class_weight=self.class_weight,
++            verbose=self.verbose,
++            max_iter=self.max_iter)
++
++    n_SV = support_.size
++    self.support_ = support_
++    self.support_vectors_ = support_vectors
++
++    if len(np.unique(y)) > 1:  # regression
++        n_class = 1
++    else:
++        n_class = np.unique(y).shape[0]
+ 
+-        For an one-class model, +1 (inlier) or -1 (outlier) is returned.
++    dual_coef_indices = np.tile(np.arange(n_SV), n_class)
++    dual_coef_indptr = np.arange(0, dual_coef_indices.size + 1,
++                                 dual_coef_indices.size / n_class)
++    self.dual_coef_ = sp.csr_matrix(
++        (dual_coef_values, dual_coef_indices, dual_coef_indptr),
++        (n_class, n_SV))
+ 
+-        Parameters
+-        ----------
+-        X : {array-like, sparse matrix}, shape (n_samples, n_features)
+-            For kernel="precomputed", the expected shape of X is
+-            (n_samples_test, n_samples_train).
++def predict(self, X):
++    """Perform regression on samples in X.
+ 
+-        Returns
+-        -------
+-        y_pred : array, shape (n_samples,)
+-        """
+-        X = self._validate_for_predict(X)
+-        predict = self._sparse_predict if self._sparse else self._dense_predict
+-        return predict(X)
++    For an one-class model, +1 (inlier) or -1 (outlier) is returned.
++
++    Parameters
++    ----------
++    X : {array-like, sparse matrix}, shape (n_samples, n_features)
++        For kernel="precomputed", the expected shape of X is
++        (n_samples_test, n_samples_train).
++
++    Returns
++    -------
++    y_pred : array, shape (n_samples,)
++    """
++    X = self._validate_for_predict(X)
++    predict = self._sparse_predict if self._sparse else self._dense_predict
++    return predict(X)
+ 
+     def _dense_predict(self, X):
+         X = self._compute_kernel(X)
+@@ -950,3 +1010,4 @@ def _fit_liblinear(X, y, C, fit_intercept, intercept_scaling, class_weight,
+         intercept_ = 0.
+ 
+     return coef_, intercept_, n_iter_
++

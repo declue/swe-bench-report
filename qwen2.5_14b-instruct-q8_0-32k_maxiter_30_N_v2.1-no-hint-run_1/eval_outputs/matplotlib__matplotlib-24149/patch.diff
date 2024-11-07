@@ -1,0 +1,40 @@
+diff --git a/src/matplotlib/axes/_axes.py b/src/matplotlib/axes/_axes.py
+new file mode 100644
+index 0000000000..547b77f710
+--- /dev/null
++++ b/src/matplotlib/axes/_axes.py
+@@ -0,0 +1,20 @@
++2170 try:
++    2171     # attempt to add the width to x0; this works for
++    2172     # datetime+timedelta, for instance
++    (...)
++
++    2179     # removes the units from unit packages like `pint` that
++    2180     # wrap numpy arrays.
++    2181     try:
++    2182         x0 = cbook._safe_first_finite(x0)
++    2183     except (TypeError, IndexError, KeyError):
++    2184         pass
++    2185 
++    2186     # Handle the case where all elements are NaNs directly
++    2187     if np.all(np.isnan(x0)):
++    2188         x0 = [np.nan]
++    2189     else:
++    2190         pass
++
++
++
+diff --git a/src/matplotlib/cbook/__init__.py b/src/matplotlib/cbook/__init__.py
+new file mode 100644
+index 0000000000..8d7bb27769
+--- /dev/null
++++ b/src/matplotlib/cbook/__init__.py
+@@ -0,0 +1,8 @@
++1749         return next(val for val in obj if safe_isfinite(val))
++    1750     except StopIteration:
++    1751         try:
++    1752             if np.all(np.isnan(obj)):
++    1753                 return [np.nan]
++    1754         except Exception as e:
++    1755             pass
++

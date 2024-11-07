@@ -1,0 +1,80 @@
+diff --git a/docs/source/conf.py b/docs/source/conf.py
+new file mode 100644
+index 000000000..da4ef5ef8
+--- /dev/null
++++ b/docs/source/conf.py
+@@ -0,0 +1,4 @@
++import sys
++sys.path.insert(0, '..')
++
++extensions = ['sphinx.ext.autodoc']
+diff --git a/docs/source/index.rst b/docs/source/index.rst
+new file mode 100644
+index 000000000..740c3c182
+--- /dev/null
++++ b/docs/source/index.rst
+@@ -0,0 +1,2 @@
++.. automodule:: example
++   :members:
+diff --git a/example.py b/example.py
+new file mode 100644
+index 000000000..c39e90a36
+--- /dev/null
++++ b/example.py
+@@ -0,0 +1,13 @@
++__all__ = []
++
++
++def foo():
++    """docstring"""
++
++
++def bar():
++    """docstring"""
++
++
++def baz():
++    """docstring"""
+diff --git a/sphinx/ext/autodoc/__init__.py b/sphinx/ext/autodoc/__init__.py
+index d85d79617..48fc14bf1 100644
+--- a/sphinx/ext/autodoc/__init__.py
++++ b/sphinx/ext/autodoc/__init__.py
+@@ -1074,6 +1074,13 @@ class ModuleDocumenter(Documenter):
+     def get_object_members(self, want_all: bool) -> Tuple[bool, ObjectMembers]:
+         members = self.get_module_members()
+         if want_all:
++            if self.__all__ is None or len(self.__all__) == 0:
++                # Skip processing members if __all__ is empty
++                return True, []
++
++            # for implicit module members, check __module__ to avoid documenting imported objects
++            return True, list(members.values())
++        
+             if not self.__all__:
+                 # for implicit module members, check __module__ to avoid
+                 # documenting imported objects
+@@ -1085,7 +1092,9 @@ class ModuleDocumenter(Documenter):
+ 
+                 return False, list(members.values())
+         else:
++
+             memberlist = self.options.members or []
++
+             ret = []
+             for name in memberlist:
+                 if name in members:
+@@ -1124,6 +1133,7 @@ class ModuleLevelDocumenter(Documenter):
+     """
+     def resolve_name(self, modname: str, parents: Any, path: str, base: Any
+                      ) -> Tuple[str, List[str]]:
++
+         if modname is None:
+             if path:
+                 modname = path.rstrip('.')
+@@ -2615,3 +2625,6 @@ def setup(app: Sphinx) -> Dict[str, Any]:
+     app.setup_extension('sphinx.ext.autodoc.typehints')
+ 
+     return {'version': sphinx.__display_version__, 'parallel_read_safe': True}
++
++
++

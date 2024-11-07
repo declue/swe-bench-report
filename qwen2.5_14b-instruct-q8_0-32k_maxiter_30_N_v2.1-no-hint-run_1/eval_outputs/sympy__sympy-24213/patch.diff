@@ -1,0 +1,121 @@
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..3b7b02108f
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,17 @@
++from sympy.physics import units
++from sympy.physics.units.systems.si import SI
++
++v1 = units.Quantity('v1')
++SI.set_quantity_dimension(v1, units.velocity)
++SI.set_quantity_scale_factor(v1, 2 * units.meter / units.second)
++
++a1 = units.Quantity('a1')
++SI.set_quantity_dimension(a1, units.acceleration)
++SI.set_quantity_scale_factor(a1, -9.8 * units.meter / units.second**2)
++
++t1 = units.Quantity('t1')
++SI.set_quantity_dimension(t1, units.time)
++SI.set_quantity_scale_factor(t1, 5 * units.second)
++
++expr1 = a1*t1 + v1
++print(SI._collect_factor_and_dimension(expr1))
+diff --git a/sympy/physics/units/unitsystem.py b/sympy/physics/units/unitsystem.py
+index a436880c4b..dad054194a 100644
+--- a/sympy/physics/units/unitsystem.py
++++ b/sympy/physics/units/unitsystem.py
+@@ -9,7 +9,7 @@
+ from sympy.core.mul import Mul
+ from sympy.core.power import Pow
+ from sympy.core.singleton import S
+-from sympy.physics.units.dimensions import _QuantityMapper
++from sympy.physics.units.dimensions import _QuantityMapper, DimProd  # Added this line for DimProd
+ from sympy.physics.units.quantities import Quantity
+ 
+ from .dimensions import Dimension
+@@ -100,8 +100,6 @@ def get_unit_system(unit_system):
+                 )
+             )
+ 
+-        return UnitSystem._unit_systems[unit_system]
+-
+     @staticmethod
+     def get_default_unit_system():
+         return UnitSystem._unit_systems["SI"]
+@@ -154,52 +152,32 @@ def _collect_factor_and_dimension(self, expr):
+         Return tuple with scale factor expression and dimension expression.
+         """
+         from sympy.physics.units import Quantity
+-        if isinstance(expr, Quantity):
+-            return expr.scale_factor, expr.dimension
+-        elif isinstance(expr, Mul):
+-            factor = 1
+-            dimension = Dimension(1)
+-            for arg in expr.args:
+-                arg_factor, arg_dim = self._collect_factor_and_dimension(arg)
+-                factor *= arg_factor
+-                dimension *= arg_dim
+-            return factor, dimension
+-        elif isinstance(expr, Pow):
+-            factor, dim = self._collect_factor_and_dimension(expr.base)
+-            exp_factor, exp_dim = self._collect_factor_and_dimension(expr.exp)
+-            if self.get_dimension_system().is_dimensionless(exp_dim):
+-                exp_dim = 1
+-            return factor ** exp_factor, dim ** (exp_factor * exp_dim)
+-        elif isinstance(expr, Add):
+-            factor, dim = self._collect_factor_and_dimension(expr.args[0])
+-            for addend in expr.args[1:]:
+-                addend_factor, addend_dim = \
+-                    self._collect_factor_and_dimension(addend)
+-                if dim != addend_dim:
+-                    raise ValueError(
+-                        'Dimension of "{}" is {}, '
+-                        'but it should be {}'.format(
+-                            addend, addend_dim, dim))
+-                factor += addend_factor
+-            return factor, dim
+-        elif isinstance(expr, Derivative):
+-            factor, dim = self._collect_factor_and_dimension(expr.args[0])
+-            for independent, count in expr.variable_count:
+-                ifactor, idim = self._collect_factor_and_dimension(independent)
+-                factor /= ifactor**count
+-                dim /= idim**count
+-            return factor, dim
+-        elif isinstance(expr, Function):
+-            fds = [self._collect_factor_and_dimension(arg) for arg in expr.args]
+-            dims = [Dimension(1) if self.get_dimension_system().is_dimensionless(d[1]) else d[1] for d in fds]
+-            return (expr.func(*(f[0] for f in fds)), *dims)
+-        elif isinstance(expr, Dimension):
+-            return S.One, expr
+-        else:
+-            return expr, Dimension(1)
++        if not isinstance(expr, Add):
++            return (S.One, self.get_quantity_dimension(expr))
++
++        # Collect terms with the same dimension
++        grouped = {}
++        for term in expr.args:
++            dim = self.get_quantity_dimension(term)
++            if dim is None:
++                raise ValueError(f"Dimension of {term} cannot be determined")
++            
++            if dim not in grouped:
++                grouped[dim] = []
++            grouped[dim].append(term)
++
++        # Collect factors and dimensions
++        factors, dims = [], []
++        for dim, terms in grouped.items():
++            factor, _ = self._collect_factor_and_dimension(Add(*terms))
++            factors.append(factor)
++            dims.append(dim)
++
++        return Mul(*factors), Add(*dims)  # Directly use dimensions
+ 
+     def get_units_non_prefixed(self) -> tSet[Quantity]:
+         """
+         Return the units of the system that do not have a prefix.
+         """
+         return set(filter(lambda u: not u.is_prefixed and not u.is_physical_constant, self._units))
++

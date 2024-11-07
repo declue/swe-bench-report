@@ -1,0 +1,50 @@
+diff --git a/tests/apps.py b/tests/apps.py
+new file mode 100644
+index 0000000000..5570a8b888
+--- /dev/null
++++ b/tests/apps.py
+@@ -0,0 +1,5 @@
++from django.apps import AppConfig
++
++class TestModelConfig(AppConfig):
++    name = 'tests'
++
+diff --git a/tests/reproduce_error.py b/tests/reproduce_error.py
+new file mode 100644
+index 0000000000..6f6343f815
+--- /dev/null
++++ b/tests/reproduce_error.py
+@@ -0,0 +1,22 @@
++import os
++import sys
++sys.path.insert(0, '/workspace/django__django__3.0')
++sys.path.append(os.getcwd())
++from django.conf import settings
++settings.configure(
++    DATABASES={'default': {'ENGINE': 'django.db.backends.sqlite3'}},
++)
++import django
++from django.apps import apps
++from django.db import models, migrations
++django.setup()
++class TestModel(models.Model):
++    name = models.CharField(max_length=100)
++apps.register_model('test_app', TestModel)
++from django.core.management import call_command
++setup_test_environment()
++call_command('migrate', verbosity=0)
++test_instance = TestModel.objects.create(name='test')
++deleted_id = test_instance.id
++test_instance.delete()
++assert deleted_id is None
+diff --git a/tests/test_model.py b/tests/test_model.py
+new file mode 100644
+index 0000000000..67b5ceeb83
+--- /dev/null
++++ b/tests/test_model.py
+@@ -0,0 +1,5 @@
++from django.db import models
++
++class TestModel(models.Model):
++    name = models.CharField(max_length=100)
++

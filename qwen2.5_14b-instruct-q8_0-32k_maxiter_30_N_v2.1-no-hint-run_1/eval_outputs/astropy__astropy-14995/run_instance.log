@@ -1,0 +1,381 @@
+2024-11-08 07:06:01,777 - INFO - Environment image sweb.env.x86_64.428468730904ff6b4232aa:latest found for astropy__astropy-14995
+Building instance image sweb.eval.x86_64.astropy__astropy-14995:latest for astropy__astropy-14995
+2024-11-08 07:06:01,784 - INFO - Image sweb.eval.x86_64.astropy__astropy-14995:latest already exists, skipping build.
+2024-11-08 07:06:01,784 - INFO - Creating container for astropy__astropy-14995...
+2024-11-08 07:06:01,980 - INFO - Container for astropy__astropy-14995 created: 0032a0bd3c60a2909aac7f29890637cc33f78ebfa94725652d3d95d7c8cafb20
+2024-11-08 07:06:02,478 - INFO - Container for astropy__astropy-14995 started: 0032a0bd3c60a2909aac7f29890637cc33f78ebfa94725652d3d95d7c8cafb20
+2024-11-08 07:06:02,478 - INFO - Intermediate patch for astropy__astropy-14995 written to logs/run_evaluation/20241108_070548/qwen2.5_14b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/astropy__astropy-14995/patch.diff, now applying to container...
+2024-11-08 07:06:02,651 - INFO - Failed to apply patch to container, trying again...
+2024-11-08 07:06:02,685 - INFO - >>>>> Applied Patch:
+patching file astropy/nddata/mixins/ndarithmetic.py
+patching file reproduce_error.py
+
+2024-11-08 07:06:03,056 - INFO - Git diff before:
+diff --git a/astropy/nddata/mixins/ndarithmetic.py b/astropy/nddata/mixins/ndarithmetic.py
+index 4153dfccb2..fd52bb1953 100644
+--- a/astropy/nddata/mixins/ndarithmetic.py
++++ b/astropy/nddata/mixins/ndarithmetic.py
+@@ -473,6 +473,15 @@ class NDArithmeticMixin:
+             operand.uncertainty = None
+             return result_uncert
+ 
++        elif operand is not None and operand.uncertainty is None:
++            # As with self.uncertainty is None but the other way around.
++            operand.uncertainty = self.uncertainty.__class__(None)
++            result_uncert = self.uncertainty.propagate(
++                operation, operand, result, correlation
++            )
++            operand.uncertainty = None
++            return result_uncert
++
+         else:
+             # Both have uncertainties so just propagate.
+ 
+@@ -482,6 +491,108 @@ class NDArithmeticMixin:
+                 operation, operand, result, correlation, **axis_kwarg
+             )
+ 
++    def multiply(self, operand, operand2=None, **kwargs):
++        """
++        Performs multiplication by evaluating ``self`` * ``operand``.
++
++        Parameters
++        ----------
++        operand, operand2 : `NDData`-like instance
++            If ``operand2`` is ``None`` or not given it will perform the operation
++            ``self`` * ``operand``.
++            If ``operand2`` is given it will perform ``operand`` * ``operand2``.
++            If the method was called on a class rather than on the instance
++            ``operand2`` must be given.
++
++        propagate_uncertainties : `bool` or ``None``, optional
++            If ``None`` the result will have no uncertainty. If ``False`` the
++            result will have a copied version of the first operand that has an
++            uncertainty. If ``True`` the result will have a correctly propagated
++            uncertainty from the uncertainties of the operands but this assumes
++            that the uncertainties are `NDUncertainty`-like. Default is ``True``.
++
++        handle_mask : callable, ``'first_found'`` or ``None``, optional
++            If ``None`` the result will have no mask. If ``'first_found'`` the
++            result will have a copied version of the first operand that has a
++            mask. If it is a callable then the specified callable must
++            create the results ``mask`` and if necessary provide a copy.
++            Default is `numpy.logical_or`.
++
++        handle_meta : callable, ``'first_found'`` or ``None``, optional
++            If ``None`` the result will have no meta. If ``'first_found'`` the
++            result will have a copied version of the first operand that has a
++            (not empty) meta. If it is a callable then the specified callable must
++            create the results ``meta`` and if necessary provide a copy.
++            Default is ``None``.
++
++        compare_wcs : callable, ``'first_found'`` or ``None``, optional
++            If ``None`` the result will have no wcs and no comparison between
++            the wcs of the operands is made. If ``'first_found'`` the
++            result will have a copied version of the first operand that has a
++            wcs. If it is a callable then the specified callable must
++            compare the ``wcs``. The resulting ``wcs`` will be like if ``False``
++            was given otherwise it raises a ``ValueError`` if the comparison was
++            not successful. Default is ``'first_found'``.
++
++        uncertainty_correlation : number or `~numpy.ndarray`, optional
++            The correlation between the two operands is used for correct error
++            propagation for correlated data as given in:
++            https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas
++            Default is 0.
++
++        kwargs :
++            Any other parameter that should be passed to the callables used.
++
++        Returns
++        -------
++        result : `~astropy.nddata.NDData`-like
++            The resulting dataset
++
++        Notes
++        -----
++        If a ``callable`` is used for ``mask``, ``wcs`` or ``meta`` the
++        callable must accept the corresponding attributes as first two
++        parameters. If the callable also needs additional parameters these can be
++        defined as ``kwargs`` and must start with ``"wcs_"`` (for wcs callable) or
++        ``"meta_"`` (for meta callable). This startstring is removed before the
++        callable is called.
++
++        ``"first_found"`` can also be abbreviated with ``"ff"``.
++        """
++        # Perform the multiplication operation on data
++        result_data = self.data * (operand.data if operand2 is None else operand2.data)
++
++        # Handle uncertainties if present
++        propagate_uncertainties = kwargs.get('propagate_uncertainties', True)
++        if propagate_uncertainties:
++            uncertainty_correlation = kwargs.get('uncertainty_correlation', 0)
++            result_uncertainty = self.uncertainty * (operand.uncertainty if operand2 is None else operand2.uncertainty) * np.sqrt(1 + uncertainty_correlation**2)
++
++        # Handle masks
++        handle_mask = kwargs.get('handle_mask', np.logical_or)
++        
++        # Ensure that if any operand's mask is None, it is treated as an array of False values for bitwise operations
++        self_mask = np.zeros_like(self.data, dtype=bool) if self.mask is None else self.mask
++        operand_mask = np.zeros_like(operand.data, dtype=bool) if hasattr(operand, 'mask') and operand.mask is None else operand.mask
++        
++        result_mask = handle_mask(self_mask, operand_mask)
++
++        # Handle meta and wcs (if present)
++        handle_meta = kwargs.get('handle_meta')
++        if handle_meta is not None:
++            result_meta = handle_meta(self.meta, operand.meta) if operand2 is None else handle_meta(operand.meta, operand2.meta)
++        else:
++            result_meta = {}
++
++        compare_wcs = kwargs.get('compare_wcs', 'first_found')
++        if compare_wcs == 'first_found':
++            result_wcs = self.wcs if hasattr(self, 'wcs') and self.wcs is not None else (operand.wcs if operand2 is None else operand2.wcs)
++        elif callable(compare_wcs):
++            result_wcs = compare_wcs(self.wcs, operand.wcs) if operand2 is None else compare_wcs(operand.wcs, operand2.wcs)
++
++        # Create the resulting NDData object
++        return self.__class__(result_data, uncertainty=result_uncertainty, mask=result_mask, meta=result_meta, wcs=result_wcs)
++
+     def _arithmetic_mask(self, operation, operand, handle_mask, axis=None, **kwds):
+         """
+         Calculate the resulting mask.
+@@ -489,6 +600,7 @@ class NDArithmeticMixin:
+         This is implemented as the piecewise ``or`` operation if both have a
+         mask.
+ 
++
+         Parameters
+         ----------
+         operation : callable
+@@ -496,7 +608,10 @@ class NDArithmeticMixin:
+             By default, the ``operation`` will be ignored.
+ 
+         operand : `NDData`-like instance
++
++
+             The second operand wrapped in an instance of the same class as
++
+             self.
+ 
+         handle_mask : callable
+@@ -508,6 +623,7 @@ class NDArithmeticMixin:
+         Returns
+         -------
+         result_mask : any type
++
+             If only one mask was present this mask is returned.
+             If neither had a mask ``None`` is returned. Otherwise
+             ``handle_mask`` must create (and copy) the returned mask.
+@@ -748,3 +864,11 @@ class NDArithmeticMixin:
+ 
+         # Return a new class based on the result
+         return cls(result, **init_kwds)
++
++
++
++
++
++
++
++
+diff --git a/pyproject.toml b/pyproject.toml
+index 15bb49f22b..dc9c3c5f37 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools",
++requires = ["setuptools==68.0.0",
+             "setuptools_scm>=6.2",
+             "cython==0.29.34",
+             "oldest-supported-numpy",
+2024-11-08 07:06:03,056 - INFO - Eval script for astropy__astropy-14995 written to logs/run_evaluation/20241108_070548/qwen2.5_14b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/astropy__astropy-14995/eval.sh; copying to container...
+2024-11-08 07:06:38,425 - INFO - Test runtime: 35.24 seconds
+2024-11-08 07:06:38,426 - INFO - Test output for astropy__astropy-14995 written to logs/run_evaluation/20241108_070548/qwen2.5_14b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/astropy__astropy-14995/test_output.txt
+2024-11-08 07:06:38,470 - INFO - Git diff after:
+diff --git a/astropy/nddata/mixins/ndarithmetic.py b/astropy/nddata/mixins/ndarithmetic.py
+index 4153dfccb2..fd52bb1953 100644
+--- a/astropy/nddata/mixins/ndarithmetic.py
++++ b/astropy/nddata/mixins/ndarithmetic.py
+@@ -473,6 +473,15 @@ class NDArithmeticMixin:
+             operand.uncertainty = None
+             return result_uncert
+ 
++        elif operand is not None and operand.uncertainty is None:
++            # As with self.uncertainty is None but the other way around.
++            operand.uncertainty = self.uncertainty.__class__(None)
++            result_uncert = self.uncertainty.propagate(
++                operation, operand, result, correlation
++            )
++            operand.uncertainty = None
++            return result_uncert
++
+         else:
+             # Both have uncertainties so just propagate.
+ 
+@@ -482,6 +491,108 @@ class NDArithmeticMixin:
+                 operation, operand, result, correlation, **axis_kwarg
+             )
+ 
++    def multiply(self, operand, operand2=None, **kwargs):
++        """
++        Performs multiplication by evaluating ``self`` * ``operand``.
++
++        Parameters
++        ----------
++        operand, operand2 : `NDData`-like instance
++            If ``operand2`` is ``None`` or not given it will perform the operation
++            ``self`` * ``operand``.
++            If ``operand2`` is given it will perform ``operand`` * ``operand2``.
++            If the method was called on a class rather than on the instance
++            ``operand2`` must be given.
++
++        propagate_uncertainties : `bool` or ``None``, optional
++            If ``None`` the result will have no uncertainty. If ``False`` the
++            result will have a copied version of the first operand that has an
++            uncertainty. If ``True`` the result will have a correctly propagated
++            uncertainty from the uncertainties of the operands but this assumes
++            that the uncertainties are `NDUncertainty`-like. Default is ``True``.
++
++        handle_mask : callable, ``'first_found'`` or ``None``, optional
++            If ``None`` the result will have no mask. If ``'first_found'`` the
++            result will have a copied version of the first operand that has a
++            mask. If it is a callable then the specified callable must
++            create the results ``mask`` and if necessary provide a copy.
++            Default is `numpy.logical_or`.
++
++        handle_meta : callable, ``'first_found'`` or ``None``, optional
++            If ``None`` the result will have no meta. If ``'first_found'`` the
++            result will have a copied version of the first operand that has a
++            (not empty) meta. If it is a callable then the specified callable must
++            create the results ``meta`` and if necessary provide a copy.
++            Default is ``None``.
++
++        compare_wcs : callable, ``'first_found'`` or ``None``, optional
++            If ``None`` the result will have no wcs and no comparison between
++            the wcs of the operands is made. If ``'first_found'`` the
++            result will have a copied version of the first operand that has a
++            wcs. If it is a callable then the specified callable must
++            compare the ``wcs``. The resulting ``wcs`` will be like if ``False``
++            was given otherwise it raises a ``ValueError`` if the comparison was
++            not successful. Default is ``'first_found'``.
++
++        uncertainty_correlation : number or `~numpy.ndarray`, optional
++            The correlation between the two operands is used for correct error
++            propagation for correlated data as given in:
++            https://en.wikipedia.org/wiki/Propagation_of_uncertainty#Example_formulas
++            Default is 0.
++
++        kwargs :
++            Any other parameter that should be passed to the callables used.
++
++        Returns
++        -------
++        result : `~astropy.nddata.NDData`-like
++            The resulting dataset
++
++        Notes
++        -----
++        If a ``callable`` is used for ``mask``, ``wcs`` or ``meta`` the
++        callable must accept the corresponding attributes as first two
++        parameters. If the callable also needs additional parameters these can be
++        defined as ``kwargs`` and must start with ``"wcs_"`` (for wcs callable) or
++        ``"meta_"`` (for meta callable). This startstring is removed before the
++        callable is called.
++
++        ``"first_found"`` can also be abbreviated with ``"ff"``.
++        """
++        # Perform the multiplication operation on data
++        result_data = self.data * (operand.data if operand2 is None else operand2.data)
++
++        # Handle uncertainties if present
++        propagate_uncertainties = kwargs.get('propagate_uncertainties', True)
++        if propagate_uncertainties:
++            uncertainty_correlation = kwargs.get('uncertainty_correlation', 0)
++            result_uncertainty = self.uncertainty * (operand.uncertainty if operand2 is None else operand2.uncertainty) * np.sqrt(1 + uncertainty_correlation**2)
++
++        # Handle masks
++        handle_mask = kwargs.get('handle_mask', np.logical_or)
++        
++        # Ensure that if any operand's mask is None, it is treated as an array of False values for bitwise operations
++        self_mask = np.zeros_like(self.data, dtype=bool) if self.mask is None else self.mask
++        operand_mask = np.zeros_like(operand.data, dtype=bool) if hasattr(operand, 'mask') and operand.mask is None else operand.mask
++        
++        result_mask = handle_mask(self_mask, operand_mask)
++
++        # Handle meta and wcs (if present)
++        handle_meta = kwargs.get('handle_meta')
++        if handle_meta is not None:
++            result_meta = handle_meta(self.meta, operand.meta) if operand2 is None else handle_meta(operand.meta, operand2.meta)
++        else:
++            result_meta = {}
++
++        compare_wcs = kwargs.get('compare_wcs', 'first_found')
++        if compare_wcs == 'first_found':
++            result_wcs = self.wcs if hasattr(self, 'wcs') and self.wcs is not None else (operand.wcs if operand2 is None else operand2.wcs)
++        elif callable(compare_wcs):
++            result_wcs = compare_wcs(self.wcs, operand.wcs) if operand2 is None else compare_wcs(operand.wcs, operand2.wcs)
++
++        # Create the resulting NDData object
++        return self.__class__(result_data, uncertainty=result_uncertainty, mask=result_mask, meta=result_meta, wcs=result_wcs)
++
+     def _arithmetic_mask(self, operation, operand, handle_mask, axis=None, **kwds):
+         """
+         Calculate the resulting mask.
+@@ -489,6 +600,7 @@ class NDArithmeticMixin:
+         This is implemented as the piecewise ``or`` operation if both have a
+         mask.
+ 
++
+         Parameters
+         ----------
+         operation : callable
+@@ -496,7 +608,10 @@ class NDArithmeticMixin:
+             By default, the ``operation`` will be ignored.
+ 
+         operand : `NDData`-like instance
++
++
+             The second operand wrapped in an instance of the same class as
++
+             self.
+ 
+         handle_mask : callable
+@@ -508,6 +623,7 @@ class NDArithmeticMixin:
+         Returns
+         -------
+         result_mask : any type
++
+             If only one mask was present this mask is returned.
+             If neither had a mask ``None`` is returned. Otherwise
+             ``handle_mask`` must create (and copy) the returned mask.
+@@ -748,3 +864,11 @@ class NDArithmeticMixin:
+ 
+         # Return a new class based on the result
+         return cls(result, **init_kwds)
++
++
++
++
++
++
++
++
+diff --git a/pyproject.toml b/pyproject.toml
+index 15bb49f22b..dc9c3c5f37 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools",
++requires = ["setuptools==68.0.0",
+             "setuptools_scm>=6.2",
+             "cython==0.29.34",
+             "oldest-supported-numpy",
+2024-11-08 07:06:38,470 - INFO - Grading answer for astropy__astropy-14995...
+2024-11-08 07:06:38,483 - INFO - report: {'astropy__astropy-14995': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['astropy/nddata/mixins/tests/test_ndarithmetic.py::test_nddata_bitmask_arithmetic']}, 'PASS_TO_PASS': {'success': ['astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data[data10-data20]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data[data11-data21]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data[data12-data22]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data[data13-data23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data[data14-data24]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data[data15-data25]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data[data16-data26]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_invalid', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_identical[data10-data20]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_identical[data11-data21]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_identical[data12-data22]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_identical[data13-data23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_identical[data14-data24]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_identical[data15-data25]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_identical[data16-data26]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_identical[data17-data27]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_not_identical[data10-data20]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_not_identical[data11-data21]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_not_identical[data12-data22]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_unit_not_identical[data13-data23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_wcs[None-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_wcs[None-wcs21]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_wcs[wcs12-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_wcs[wcs13-wcs23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_wcs[wcs14-wcs24]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[None-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[None-False]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[True-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[False-False]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[True-False]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[False-True]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[True-True]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[mask17-mask27]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[mask18-mask28]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[mask19-mask29]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[mask110-mask210]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[mask111-mask211]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks[mask112-mask212]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_data_masks_invalid', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-1-uncert10-data20]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-0.5-uncert11-data21]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-0.25-uncert12-data22]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0-uncert13-data23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0.25-uncert14-data24]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0.5-uncert15-data25]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[1-uncert16-data26]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-1-uncert17-data27]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-0.5-uncert18-data28]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-0.25-uncert19-data29]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0-uncert110-data210]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0.25-uncert111-data211]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0.5-uncert112-data212]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[1-uncert113-data213]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-1-uncert114-data214]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-0.5-uncert115-data215]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-0.25-uncert116-data216]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0-uncert117-data217]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0.25-uncert118-data218]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0.5-uncert119-data219]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[1-uncert120-data220]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-1-uncert121-data221]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-0.5-uncert122-data222]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[-0.25-uncert123-data223]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0-uncert124-data224]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0.25-uncert125-data225]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[0.5-uncert126-data226]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation[1-uncert127-data227]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-1-uncert10-data20]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-0.5-uncert11-data21]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-0.25-uncert12-data22]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0-uncert13-data23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0.25-uncert14-data24]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0.5-uncert15-data25]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[1-uncert16-data26]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-1-uncert17-data27]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-0.5-uncert18-data28]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-0.25-uncert19-data29]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0-uncert110-data210]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0.25-uncert111-data211]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0.5-uncert112-data212]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[1-uncert113-data213]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-1-uncert114-data214]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-0.5-uncert115-data215]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-0.25-uncert116-data216]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0-uncert117-data217]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0.25-uncert118-data218]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0.5-uncert119-data219]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[1-uncert120-data220]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-1-uncert121-data221]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-0.5-uncert122-data222]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[-0.25-uncert123-data223]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0-uncert124-data224]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0.25-uncert125-data225]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[0.5-uncert126-data226]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_basic_with_correlation[1-uncert127-data227]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-1-uncert10-data20]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-0.5-uncert11-data21]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-0.25-uncert12-data22]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0-uncert13-data23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0.25-uncert14-data24]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0.5-uncert15-data25]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[1-uncert16-data26]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-1-uncert17-data27]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-0.5-uncert18-data28]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-0.25-uncert19-data29]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0-uncert110-data210]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0.25-uncert111-data211]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0.5-uncert112-data212]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[1-uncert113-data213]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-1-uncert114-data214]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-0.5-uncert115-data215]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-0.25-uncert116-data216]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0-uncert117-data217]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0.25-uncert118-data218]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0.5-uncert119-data219]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[1-uncert120-data220]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-1-uncert121-data221]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-0.5-uncert122-data222]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[-0.25-uncert123-data223]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0-uncert124-data224]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0.25-uncert125-data225]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[0.5-uncert126-data226]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_basic_with_correlation[1-uncert127-data227]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_basic_with_correlation_array', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_with_correlation_unsupported', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_one_missing', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert10-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert11-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[None-uncert22]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[None-uncert23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert14-uncert24]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert15-uncert25]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert16-uncert26]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert17-uncert27]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert18-uncert28]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert19-uncert29]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert110-uncert210]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_stddevuncertainty_with_units[uncert111-uncert211]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert10-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert11-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[None-uncert22]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[None-uncert23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert14-uncert24]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert15-uncert25]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert16-uncert26]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert17-uncert27]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert18-uncert28]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert19-uncert29]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert110-uncert210]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_varianceuncertainty_with_units[uncert111-uncert211]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert10-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert11-None]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[None-uncert22]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[None-uncert23]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert14-uncert24]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert15-uncert25]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert16-uncert26]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert17-uncert27]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert18-uncert28]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert19-uncert29]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert110-uncert210]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_inversevarianceuncertainty_with_units[uncert111-uncert211]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_handle_switches[ff]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_handle_switches[first_found]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_meta_func', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_wcs_func', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_mask_func', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_two_argument_useage[add]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_two_argument_useage[subtract]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_two_argument_useage[divide]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_two_argument_useage[multiply]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_two_argument_useage_non_nddata_first_arg[add]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_two_argument_useage_non_nddata_first_arg[subtract]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_two_argument_useage_non_nddata_first_arg[divide]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_two_argument_useage_non_nddata_first_arg[multiply]', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_arithmetics_unknown_uncertainties', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_psf_warning', 'astropy/nddata/mixins/tests/test_ndarithmetic.py::test_raise_method_not_supported'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for astropy__astropy-14995: resolved: False
+2024-11-08 07:06:38,483 - INFO - Attempting to stop container sweb.eval.astropy__astropy-14995.20241108_070548...
+2024-11-08 07:06:53,664 - INFO - Attempting to remove container sweb.eval.astropy__astropy-14995.20241108_070548...
+2024-11-08 07:06:53,691 - INFO - Container sweb.eval.astropy__astropy-14995.20241108_070548 removed.

@@ -1,0 +1,287 @@
+2024-11-08 07:06:25,616 - INFO - Environment image sweb.env.x86_64.aa92880033da20ca313928:latest found for scikit-learn__scikit-learn-13779
+Building instance image sweb.eval.x86_64.scikit-learn__scikit-learn-13779:latest for scikit-learn__scikit-learn-13779
+2024-11-08 07:06:25,618 - INFO - Image sweb.eval.x86_64.scikit-learn__scikit-learn-13779:latest already exists, skipping build.
+2024-11-08 07:06:25,618 - INFO - Creating container for scikit-learn__scikit-learn-13779...
+2024-11-08 07:06:25,651 - INFO - Container for scikit-learn__scikit-learn-13779 created: 9b5ecb3a636593e322559fc80e1d63ffd381922fa25c6daac3d1fee5c134536f
+2024-11-08 07:06:26,263 - INFO - Container for scikit-learn__scikit-learn-13779 started: 9b5ecb3a636593e322559fc80e1d63ffd381922fa25c6daac3d1fee5c134536f
+2024-11-08 07:06:26,263 - INFO - Intermediate patch for scikit-learn__scikit-learn-13779 written to logs/run_evaluation/20241108_070548/qwen2.5_14b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/scikit-learn__scikit-learn-13779/patch.diff, now applying to container...
+2024-11-08 07:06:26,471 - INFO - Failed to apply patch to container, trying again...
+2024-11-08 07:06:26,509 - INFO - >>>>> Applied Patch:
+patching file reproduce_error.py
+patching file sklearn/ensemble/voting.py
+
+2024-11-08 07:06:26,747 - INFO - Git diff before:
+diff --git a/sklearn/ensemble/voting.py b/sklearn/ensemble/voting.py
+index 7afa7180c..8c2c5d81e 100644
+--- a/sklearn/ensemble/voting.py
++++ b/sklearn/ensemble/voting.py
+@@ -486,3 +486,127 @@ class VotingRegressor(_BaseVoting, RegressorMixin):
+         """
+         check_is_fitted(self, 'estimators_')
+         return self._predict(X)
++# ... (existing code)
++
++def fit(self, X, y, sample_weight=None):
++    """Fit the estimators.
++
++    Parameters
++    ----------
++    X : {array-like, sparse matrix} of shape (n_samples, n_features)
++        Training vectors, where `n_samples` is the number of samples and
++        `n_features` is the number of features.
++    y : array-like of shape (n_samples,)
++        Target values.
++    sample_weight : array-like of shape (n_samples,) or None, default=None
++        Sample weights. If None, then samples are equally weighted.
++
++    Returns
++    -------
++    self : object
++        Fitted estimator.
++    """
++    if sample_weight is not None:
++        # Skip fitting for estimators that are None when sample weights are provided
++        if sample_weight is not None:
++            estimators = [(name, est) for name, est in self.estimators_ if est is not None]
++        else:
++            estimators = self.estimators_
++
++        names, estimators = zip(*estimators)
++
++        n_estimators = len(estimators)
++
++        # Ensure that we only fit non-None estimators
++        self.le_ = LabelEncoder().fit(y)
++        self.classes_ = self.le_.classes_
++        y = self.le_.transform(y)
++
++        self.estimators_ = []
++        for name, est in estimators:
++            if est is not None:  # Ensure the estimator is not None before fitting
++                fitted_estimator = clone(est).fit(X, y)
++                self.estimators_.append((name, fitted_estimator))
++            else:
++                self.estimators_.append((name, None))
++
++        return self
++
++def set_params(self, **params):
++    """Set the parameters of this estimator.
++    
++    Parameters
++    ----------
++    **params : dict
++        Estimator parameters.
++
++    Returns
++    -------
++    self : object
++        Estimator instance.
++    """
++    if 'estimators' in params:
++        # Remove any None estimators from the list before setting them
++        new_estimators = [(name, est) for name, est in params['estimators'] if est is not None]
++        super().set_params(estimators=new_estimators)
++    else:
++        super().set_params(**params)
++
++    return self
++
++def fit(self, X, y, sample_weight=None):
++    """Fit the estimators.
++
++    Parameters
++    ----------
++    X : {array-like, sparse matrix} of shape (n_samples, n_features)
++        Training vectors, where `n_samples` is the number of samples and
++        `n_features` is the number of features.
++    y : array-like of shape (n_samples,)
++        Target values.
++    sample_weight : array-like of shape (n_samples,) or None, default=None
++        Sample weights. If None, then samples are equally weighted.
++
++    Returns
++    -------
++    self : object
++        Fitted estimator.
++    """
++    if sample_weight is not None:
++        # Skip fitting for estimators that are None when sample weights are provided
++        estimators = [(name, est) for name, est in self.estimators_ if est is not None]
++    else:
++        estimators = self.estimators_
++
++    names, estimators = zip(*estimators)
++
++    n_estimators = len(estimators)
++
++    # Ensure that we only fit non-None estimators
++    self.le_ = LabelEncoder().fit(y)
++    self.classes_ = self.le_.classes_
++    y = self.le_.transform(y)
++
++    self.estimators_ = []
++    for name, est in estimators:
++        if est is not None:  # Ensure the estimator is not None before fitting
++            fitted_estimator = clone(est).fit(X, y)
++            self.estimators_.append((name, fitted_estimator))
++        else:
++            self.estimators_.append((name, None))
++
++    return self
++
++# ... (existing code)
++
++
++# ... (existing code)
++
++
++
++
++
++
++
++
++
+2024-11-08 07:06:26,748 - INFO - Eval script for scikit-learn__scikit-learn-13779 written to logs/run_evaluation/20241108_070548/qwen2.5_14b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/scikit-learn__scikit-learn-13779/eval.sh; copying to container...
+2024-11-08 07:06:31,885 - INFO - Test runtime: 5.01 seconds
+2024-11-08 07:06:31,885 - INFO - Test output for scikit-learn__scikit-learn-13779 written to logs/run_evaluation/20241108_070548/qwen2.5_14b-instruct-q8_0-32k_maxiter_30_N_v2.1-no-hint-run_1/scikit-learn__scikit-learn-13779/test_output.txt
+2024-11-08 07:06:31,927 - INFO - Git diff after:
+diff --git a/sklearn/ensemble/voting.py b/sklearn/ensemble/voting.py
+index 7afa7180c..8c2c5d81e 100644
+--- a/sklearn/ensemble/voting.py
++++ b/sklearn/ensemble/voting.py
+@@ -486,3 +486,127 @@ class VotingRegressor(_BaseVoting, RegressorMixin):
+         """
+         check_is_fitted(self, 'estimators_')
+         return self._predict(X)
++# ... (existing code)
++
++def fit(self, X, y, sample_weight=None):
++    """Fit the estimators.
++
++    Parameters
++    ----------
++    X : {array-like, sparse matrix} of shape (n_samples, n_features)
++        Training vectors, where `n_samples` is the number of samples and
++        `n_features` is the number of features.
++    y : array-like of shape (n_samples,)
++        Target values.
++    sample_weight : array-like of shape (n_samples,) or None, default=None
++        Sample weights. If None, then samples are equally weighted.
++
++    Returns
++    -------
++    self : object
++        Fitted estimator.
++    """
++    if sample_weight is not None:
++        # Skip fitting for estimators that are None when sample weights are provided
++        if sample_weight is not None:
++            estimators = [(name, est) for name, est in self.estimators_ if est is not None]
++        else:
++            estimators = self.estimators_
++
++        names, estimators = zip(*estimators)
++
++        n_estimators = len(estimators)
++
++        # Ensure that we only fit non-None estimators
++        self.le_ = LabelEncoder().fit(y)
++        self.classes_ = self.le_.classes_
++        y = self.le_.transform(y)
++
++        self.estimators_ = []
++        for name, est in estimators:
++            if est is not None:  # Ensure the estimator is not None before fitting
++                fitted_estimator = clone(est).fit(X, y)
++                self.estimators_.append((name, fitted_estimator))
++            else:
++                self.estimators_.append((name, None))
++
++        return self
++
++def set_params(self, **params):
++    """Set the parameters of this estimator.
++    
++    Parameters
++    ----------
++    **params : dict
++        Estimator parameters.
++
++    Returns
++    -------
++    self : object
++        Estimator instance.
++    """
++    if 'estimators' in params:
++        # Remove any None estimators from the list before setting them
++        new_estimators = [(name, est) for name, est in params['estimators'] if est is not None]
++        super().set_params(estimators=new_estimators)
++    else:
++        super().set_params(**params)
++
++    return self
++
++def fit(self, X, y, sample_weight=None):
++    """Fit the estimators.
++
++    Parameters
++    ----------
++    X : {array-like, sparse matrix} of shape (n_samples, n_features)
++        Training vectors, where `n_samples` is the number of samples and
++        `n_features` is the number of features.
++    y : array-like of shape (n_samples,)
++        Target values.
++    sample_weight : array-like of shape (n_samples,) or None, default=None
++        Sample weights. If None, then samples are equally weighted.
++
++    Returns
++    -------
++    self : object
++        Fitted estimator.
++    """
++    if sample_weight is not None:
++        # Skip fitting for estimators that are None when sample weights are provided
++        estimators = [(name, est) for name, est in self.estimators_ if est is not None]
++    else:
++        estimators = self.estimators_
++
++    names, estimators = zip(*estimators)
++
++    n_estimators = len(estimators)
++
++    # Ensure that we only fit non-None estimators
++    self.le_ = LabelEncoder().fit(y)
++    self.classes_ = self.le_.classes_
++    y = self.le_.transform(y)
++
++    self.estimators_ = []
++    for name, est in estimators:
++        if est is not None:  # Ensure the estimator is not None before fitting
++            fitted_estimator = clone(est).fit(X, y)
++            self.estimators_.append((name, fitted_estimator))
++        else:
++            self.estimators_.append((name, None))
++
++    return self
++
++# ... (existing code)
++
++
++# ... (existing code)
++
++
++
++
++
++
++
++
++
+2024-11-08 07:06:31,927 - INFO - Grading answer for scikit-learn__scikit-learn-13779...
+2024-11-08 07:06:31,934 - INFO - report: {'scikit-learn__scikit-learn-13779': {'patch_is_None': False, 'patch_exists': True, 'patch_successfully_applied': True, 'resolved': False, 'tests_status': {'FAIL_TO_PASS': {'success': [], 'failure': ['sklearn/ensemble/tests/test_voting.py::test_none_estimator_with_weights[X0-y0-voter0]', 'sklearn/ensemble/tests/test_voting.py::test_none_estimator_with_weights[X1-y1-voter1]']}, 'PASS_TO_PASS': {'success': ['sklearn/ensemble/tests/test_voting.py::test_estimator_init', 'sklearn/ensemble/tests/test_voting.py::test_predictproba_hardvoting', 'sklearn/ensemble/tests/test_voting.py::test_notfitted', 'sklearn/ensemble/tests/test_voting.py::test_majority_label_iris', 'sklearn/ensemble/tests/test_voting.py::test_tie_situation', 'sklearn/ensemble/tests/test_voting.py::test_weights_iris', 'sklearn/ensemble/tests/test_voting.py::test_weights_regressor', 'sklearn/ensemble/tests/test_voting.py::test_predict_on_toy_problem', 'sklearn/ensemble/tests/test_voting.py::test_predict_proba_on_toy_problem', 'sklearn/ensemble/tests/test_voting.py::test_multilabel', 'sklearn/ensemble/tests/test_voting.py::test_gridsearch', 'sklearn/ensemble/tests/test_voting.py::test_parallel_fit', 'sklearn/ensemble/tests/test_voting.py::test_sample_weight', 'sklearn/ensemble/tests/test_voting.py::test_sample_weight_kwargs', 'sklearn/ensemble/tests/test_voting.py::test_set_params', 'sklearn/ensemble/tests/test_voting.py::test_set_estimator_none', 'sklearn/ensemble/tests/test_voting.py::test_estimator_weights_format', 'sklearn/ensemble/tests/test_voting.py::test_transform'], 'failure': []}, 'FAIL_TO_FAIL': {'success': [], 'failure': []}, 'PASS_TO_FAIL': {'success': [], 'failure': []}}}}
+Result for scikit-learn__scikit-learn-13779: resolved: False
+2024-11-08 07:06:31,934 - INFO - Attempting to stop container sweb.eval.scikit-learn__scikit-learn-13779.20241108_070548...
+2024-11-08 07:06:47,095 - INFO - Attempting to remove container sweb.eval.scikit-learn__scikit-learn-13779.20241108_070548...
+2024-11-08 07:06:47,110 - INFO - Container sweb.eval.scikit-learn__scikit-learn-13779.20241108_070548 removed.

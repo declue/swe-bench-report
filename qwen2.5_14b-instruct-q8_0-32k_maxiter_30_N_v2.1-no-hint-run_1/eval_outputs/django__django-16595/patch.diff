@@ -1,0 +1,26 @@
+diff --git a/django/db/migrations/operations/fields.py b/django/db/migrations/operations/fields.py
+index cd3aab43ad..0077008635 100644
+--- a/django/db/migrations/operations/fields.py
++++ b/django/db/migrations/operations/fields.py
+@@ -67,11 +67,16 @@ class FieldOperation(Operation):
+         )
+ 
+     def reduce(self, operation, app_label):
++        if isinstance(operation, self.__class__) and self.is_same_field_operation(
++            operation
++        ):
++            return [operation]
+         return super().reduce(operation, app_label) or not operation.references_field(
+             self.model_name, self.name, app_label
+         )
+ 
+ 
++
+ class AddField(FieldOperation):
+     """Add a field to a model."""
+ 
+@@ -355,3 +360,4 @@ class RenameField(FieldOperation):
+             operation.references_field(self.model_name, self.old_name, app_label)
+             or operation.references_field(self.model_name, self.new_name, app_label)
+         )
++

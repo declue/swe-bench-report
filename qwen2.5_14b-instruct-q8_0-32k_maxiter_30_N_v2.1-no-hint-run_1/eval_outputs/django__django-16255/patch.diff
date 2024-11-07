@@ -1,0 +1,58 @@
+diff --git a/django/contrib/sitemaps/__init__.py b/django/contrib/sitemaps/__init__.py
+index 27756d9d96..2576cc6842 100644
+--- a/django/contrib/sitemaps/__init__.py
++++ b/django/contrib/sitemaps/__init__.py
+@@ -167,8 +167,21 @@ class Sitemap:
+             return None
+         if callable(self.lastmod):
+             try:
+-                return max([self.lastmod(item) for item in self.items()])
+-            except TypeError:
++                # Modify the exception handling to include ValueError as well.
++                return max([self.lastmod(item) for item in self.items()], default=None)
++            except (TypeError, ValueError):
++                return None
++        else:
++            return self.lastmod
++
++    def get_latest_lastmod(self):
++        if not hasattr(self, "lastmod"):
++            return None
++        if callable(self.lastmod):
++            try:
++                # Modify the exception handling to include ValueError as well.
++                return max([self.lastmod(item) for item in self.items()], default=None)
++            except (TypeError, ValueError):
+                 return None
+         else:
+             return self.lastmod
+@@ -182,6 +195,7 @@ class Sitemap:
+         for item in paginator_page.object_list:
+             loc = f"{protocol}://{domain}{self._location(item)}"
+             priority = self._get("priority", item)
++
+             lastmod = self._get("lastmod", item)
+ 
+             if all_items_lastmod:
+@@ -256,3 +270,4 @@ class GenericSitemap(Sitemap):
+                 .first()
+             )
+         return None
++
+diff --git a/reproduce_error.py b/reproduce_error.py
+new file mode 100644
+index 0000000000..0348afdbd9
+--- /dev/null
++++ b/reproduce_error.py
+@@ -0,0 +1,11 @@
++from django.contrib.sitemaps import Sitemap
++
++class EmptySitemap(Sitemap):
++    def items(self):
++        return []
++
++    def lastmod(self, item):
++        return None
++
++# This should raise a ValueError if the issue is not fixed
++EmptySitemap().get_latest_lastmod()
